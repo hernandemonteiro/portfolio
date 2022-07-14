@@ -18,7 +18,6 @@ export default function Template(props: TemplateProps) {
             </Head>
             <main className={styles.main}>
                 <div className={styles.BoxContent}>
-
                     {props.children}
                 </div>
                 <Footer />

@@ -16,7 +16,6 @@ export default function Home() {
   const [visible, setVisible] = useState<'Articles' | 'Article'>('Articles');
   return (
     <Template>
-<<<<<<< HEAD
       <Title />
       <hr />
       <div className={styles.Content}>
@@ -48,16 +47,6 @@ export default function Home() {
             </Articles>
           }
           {visible === 'Article' &&
-=======
-        <Title/>
-        <hr />
-        <div className={styles.Content}>
-          <Nav>
-            <ButtonNav>front-end</ButtonNav>
-          </Nav>
-          <div className={styles.ArticleBox}>
-            <Articles />
->>>>>>> 558be1014f8330f50f72f59ac67b393231ae0227
             <Article />
           }
         </div>
