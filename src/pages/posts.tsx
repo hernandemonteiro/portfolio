@@ -13,7 +13,7 @@ export default function Posts() {
             <hr />
             <div className={styles.Content}>
                 <Nav>
-                    <ButtonNav children={'Dashboard'} />
+                    <ButtonNav>Dashboard</ButtonNav>
                 </Nav>
                 <div className={styles.ArticleBox}>
                     {/* configurar jodit e estou usando Mui; */}
