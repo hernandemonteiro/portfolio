@@ -14,7 +14,7 @@ export default function Home() {
         <hr />
         <div className={styles.Content}>
           <Nav>
-            <ButtonNav children={'front-end'}/>
+            <ButtonNav>front-end</ButtonNav>
           </Nav>
           <div className={styles.ArticleBox}>
             <Articles />
