@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function Posts(){
-    return();
+    return(
+        <h1>Posts</h1>
+    );
 }
