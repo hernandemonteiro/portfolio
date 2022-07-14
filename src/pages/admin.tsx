@@ -2,7 +2,7 @@ import React from "react";
 import Login from "../components/Admin/Login";
 import Template from "../components/Template";
 import Title from "../components/UI/TitleName";
-import styles from "../styles/Template.module.css";
+import AdminPanel from "./admin";
 
 export default function Admin() {
     return (
@@ -10,6 +10,7 @@ export default function Admin() {
             <Title />
             <hr />
             <Login />
+            <AdminPanel/>
         </Template>
     )
 }

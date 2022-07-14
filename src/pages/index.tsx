@@ -12,15 +12,31 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 
+
 export default function Home() {
+
   const [visible, setVisible] = useState<'Articles' | 'Article'>('Articles');
+  const [category, setCategory] = useState<'Articles' | 'Article'>('Articles');
+  const [article, setArticle] = useState<'Articles' | 'Article'>('Articles');
+
+  function FiltrarPosts(categoria) {
+    setVisible('Articles');
+    console.log(categoria);
+  }
+
   return (
     <Template>
-      <Title />
+      <Title/>
       <hr />
       <div className={styles.Content}>
         <Nav>
-          <ButtonNav onClick={() => setVisible('Articles')}>inicio</ButtonNav>
+          {visible === 'Article' &&
+            <ButtonNav onClick={() => setVisible('Articles')}>inicio</ButtonNav>
+          }
+          <ButtonNav
+            onClick={() => FiltrarPosts('front-end')}>
+            Front-end
+          </ButtonNav>
         </Nav>
         <div className={styles.ArticleBox}>
           {visible === 'Articles' &&
@@ -43,7 +59,7 @@ export default function Home() {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
-              </Card><br/>
+              </Card><br />
             </Articles>
           }
           {visible === 'Article' &&
