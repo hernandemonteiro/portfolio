@@ -3,9 +3,10 @@ import Button from '@mui/material/Button';
 
 interface ButtonProps {
     children: any;
+    onClick?: any;
 }
 export default function ButtonNav(props: ButtonProps){
     return (
-        <Button className='m-2 bold' variant="contained">{props.children}</Button>
+        <Button onClick={props.onClick} className='m-2 bold' variant="contained">{props.children}</Button>
     )
 }
