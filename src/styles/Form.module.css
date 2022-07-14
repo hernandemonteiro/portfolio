@@ -1,0 +1,16 @@
+.FormBox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+
+}
+
+.Form {
+    width: 100%
+}
+
+.Input {
+    width: 60%;
+} 

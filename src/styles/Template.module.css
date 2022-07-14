@@ -1,0 +1,32 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding:  0 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BoxContent {
+  max-width: 100vw;
+  min-width: 100vh;
+  text-align: center;
+}
+
+.Content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ArticleBox {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  padding: 4%;
+  height: 100vh;
+}
+
