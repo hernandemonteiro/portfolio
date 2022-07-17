@@ -16,22 +16,25 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 export default function Home() {
 
   const [visible, setVisible] = useState<'Articles' | 'Article'>('Articles');
-  const [category, setCategory] = useState<'Articles' | 'Article'>('Articles');
+  const [category, setCategory] = useState('');
   const [article, setArticle] = useState<'Articles' | 'Article'>('Articles');
 
   function FiltrarPosts(categoria) {
     setVisible('Articles');
-    console.log(categoria);
+    setCategory(categoria);
   }
 
   return (
     <Template>
-      <Title/>
+      <Title />
       <hr />
       <div className={styles.Content}>
         <Nav>
           {visible === 'Article' &&
             <ButtonNav onClick={() => setVisible('Articles')}>inicio</ButtonNav>
+          }
+          {category !== '' &&
+            <ButtonNav onClick={() => setCategory('')}>Todos</ButtonNav>
           }
           <ButtonNav
             onClick={() => FiltrarPosts('front-end')}>
@@ -39,19 +42,19 @@ export default function Home() {
           </ButtonNav>
         </Nav>
         <div className={styles.ArticleBox}>
+
           {visible === 'Articles' &&
             <Articles>
+              {category !== '' &&
+                <>
+                  <h1>{category}</h1>
+                  <hr />
+                </>}
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea onClick={() => setVisible('Article')}>
-                  {/* <CardMedia
-                        component="img"
-                        height="140"
-                        image="/static/images/cards/contemplative-reptile.jpg"
-                        alt="green iguana"
-                    /> */}
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      Lizard
+                      O que é javascript?
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       Lizards are a widespread group of squamate reptiles, with over 6,000
