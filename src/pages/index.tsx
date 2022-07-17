@@ -31,10 +31,10 @@ export default function Home() {
       <div className={styles.Content}>
         <Nav>
           {visible === 'Article' &&
-            <ButtonNav onClick={() => setVisible('Articles')}>inicio</ButtonNav>
+            <ButtonNav onClick={() => setVisible('Articles')}>Voltar</ButtonNav>
           }
           {category !== '' &&
-            <ButtonNav onClick={() => setCategory('')}>Todos</ButtonNav>
+            <ButtonNav onClick={() => FiltrarPosts('')}>Todos</ButtonNav>
           }
           <ButtonNav
             onClick={() => FiltrarPosts('front-end')}>
@@ -57,8 +57,7 @@ export default function Home() {
                       O que é javascript?
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000
-                      species, ranging across all continents except Antarctica
+                      16/07/2022 front-end
                     </Typography>
                   </CardContent>
                 </CardActionArea>
