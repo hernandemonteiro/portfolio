@@ -4,4 +4,12 @@
     flex-direction: column;
     width: 30%;
     height: 100vh;
+    
+}
+
+@media (max-width: 600px) {
+    .NavBox {
+        height: 100%;
+        width: 100%;
+    }
 }

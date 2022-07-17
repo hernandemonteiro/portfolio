@@ -12,7 +12,7 @@
 
 .BoxContent {
   max-width: 100vw;
-  min-width: 100vh;
+  min-width: 80vw;
   text-align: center;
 }
 
@@ -28,5 +28,13 @@
   width: 70%;
   padding: 4%;
   height: 100vh;
+  overflow: auto;
+}
+
+@media (max-width: 600px) {
+  .ArticleBox {
+    width: 100%;
+  }
+
 }
 
