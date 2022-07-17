@@ -5,3 +5,8 @@
     width: 30%;
     height: 100vh;
 }
+
+.Btn {
+    margin: 0.7rem;
+    font-weight: bold;
+}
