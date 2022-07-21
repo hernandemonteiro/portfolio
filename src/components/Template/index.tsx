@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../styles/Template.module.css';
-import Footer from './Footer';
+import Footer from '../Footer';
 
 
 interface TemplateProps {
