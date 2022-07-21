@@ -1,6 +1,6 @@
 import Articles from "../components/Articles";
 import Article from "../components/Article";
-import Nav from "../components/Nav";
+import Nav from "../components/NavTemplate";
 import Template from "../components/Template";
 import styles from "../styles/Template.module.css";
 import ButtonNav from "../components/UI/buttonNav";
@@ -9,19 +9,45 @@ import { useState } from "react";
 import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, CardActions } from '@mui/material';
+import { CardActionArea } from '@mui/material';
+import { request } from "../lib/datocms";
+import parse from 'html-react-parser';
+import Link from "next/link";
 
 
+const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+  allPosts(first: $limit) {
+    title,
+    shortdescription,
+    date,
+    category,
+    post
+    }
+}`;
+export async function getStaticProps() {
+  const data = await request({
+    query: HOMEPAGE_QUERY,
+    variables: { limit: 10 }
+  });
+  return {
+    props: { data }
+  };
+}
 
-export default function Home() {
+export default function Home({ data }) {
 
   const [visible, setVisible] = useState<'Articles' | 'Article'>('Articles');
   const [category, setCategory] = useState('');
-  const [article, setArticle] = useState<'Articles' | 'Article'>('Articles');
+  const [article, setArticle] = useState('');
 
   function FiltrarPosts(categoria) {
     setVisible('Articles');
     setCategory(categoria);
+  }
+
+  function OpenArticle(seletor) {
+    setVisible('Article');
+    setArticle(seletor)
   }
 
   return (
@@ -36,10 +62,19 @@ export default function Home() {
           {category !== '' &&
             <ButtonNav onClick={() => FiltrarPosts('')}>Todos</ButtonNav>
           }
-          <ButtonNav
-            onClick={() => FiltrarPosts('front-end')}>
-            Front-end
-          </ButtonNav>
+          {data.allPosts.map(element => {
+
+            return <ButtonNav
+              onClick={() => FiltrarPosts(element.category)}>
+              {element.category}
+            </ButtonNav>
+          })}
+          <Link href='/portfolio'>
+            <ButtonNav>Portfolio</ButtonNav>
+          </Link>
+          <Link href='/curriculum'>
+            <ButtonNav>Sobre eu</ButtonNav>
+          </Link>
         </Nav>
         <div className={styles.ArticleBox}>
 
@@ -50,22 +85,36 @@ export default function Home() {
                   <h1>{category}</h1>
                   <hr />
                 </>}
-              <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea onClick={() => setVisible('Article')}>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      O que é javascript?
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      16/07/2022 front-end
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card><br />
+              {
+                data.allPosts.map((element, index) => {
+                  return <>
+                    <Card sx={{ maxWidth: 345 }}>
+                      <CardActionArea onClick={() => OpenArticle(index)}>
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            {element.title}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {element.date} {element.category}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card><br />
+                  </>
+                })
+              }
+
             </Articles>
           }
+
           {visible === 'Article' &&
-            <Article />
+            <Article>
+              {data.allPosts.map((element, index) => {
+                if (index == article) {
+                  return parse(element.post)
+                }
+              })}
+            </Article>
           }
         </div>
       </div>
