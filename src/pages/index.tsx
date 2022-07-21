@@ -5,7 +5,6 @@ import Template from "../components/Template";
 import styles from "../styles/Template.module.css";
 import ButtonNav from "../components/UI/buttonNav";
 import Title from "../components/UI/TitleName";
-import { useState } from "react";
 import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
@@ -13,6 +12,8 @@ import { CardActionArea } from '@mui/material';
 import { request } from "../lib/datocms";
 import parse from 'html-react-parser';
 import Link from "next/link";
+import useVisible from "../hooks/useVisible";
+import useHome from "../hooks/useHome";
 
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
@@ -35,20 +36,18 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
+  
+  const {
+    visible,
+    setVisible
+  } = useVisible('Articles');
 
-  const [visible, setVisible] = useState<'Articles' | 'Article'>('Articles');
-  const [category, setCategory] = useState('');
-  const [article, setArticle] = useState('');
-
-  function FiltrarPosts(categoria) {
-    setVisible('Articles');
-    setCategory(categoria);
-  }
-
-  function OpenArticle(seletor) {
-    setVisible('Article');
-    setArticle(seletor)
-  }
+  const {
+    FiltrarPosts,
+    OpenArticle,
+    article,
+    category
+  } = useHome();
 
   return (
     <Template>
@@ -65,10 +64,10 @@ export default function Home({ data }) {
           {data.allPosts.map(elementButton => {
 
             return (
-            <ButtonNav
-              onClick={() => FiltrarPosts(elementButton.category)}>
-              {elementButton.category}
-            </ButtonNav>)
+              <ButtonNav
+                onClick={() => FiltrarPosts(elementButton.category)}>
+                {elementButton.category}
+              </ButtonNav>)
           })}
           <Link href='/portfolio'>
             <ButtonNav>Portfolio</ButtonNav>
