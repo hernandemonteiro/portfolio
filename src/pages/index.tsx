@@ -62,12 +62,13 @@ export default function Home({ data }) {
           {category !== '' &&
             <ButtonNav onClick={() => FiltrarPosts('')}>Todos</ButtonNav>
           }
-          {data.allPosts.map(element => {
+          {data.allPosts.map(elementButton => {
 
-            return <ButtonNav
-              onClick={() => FiltrarPosts(element.category)}>
-              {element.category}
-            </ButtonNav>
+            return (
+            <ButtonNav
+              onClick={() => FiltrarPosts(elementButton.category)}>
+              {elementButton.category}
+            </ButtonNav>)
           })}
           <Link href='/portfolio'>
             <ButtonNav>Portfolio</ButtonNav>
