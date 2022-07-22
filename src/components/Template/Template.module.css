@@ -25,12 +25,17 @@
 
 .ArticleBox {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 70%;
-  padding: 4%;
+  padding: 2%;
   max-height: 100%;
   min-height: 100vh;
   overflow: auto;
+}
+
+.ArticleBox img {
+  max-width: 95%;
 }
 
 @media (max-width: 600px) {

@@ -1,19 +1,7 @@
-import Articles from "../components/Articles";
-import Article from "../components/Article";
-import Nav from "../components/NavTemplate";
 import Template from "../components/Template";
-import styles from "../styles/Template.module.css";
-import ButtonNav from "../components/UI/buttonNav";
-import Title from "../components/UI/TitleName";
-import CardContent from '@mui/material/CardContent';
-import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 import { request } from "../lib/datocms";
-import parse from 'html-react-parser';
-import Link from "next/link";
-import useVisible from "../hooks/useVisible";
-import useHome from "../hooks/useHome";
+import NavHome from "../components/NavHome";
+import CardArticle from "../components/CardArticle";
 
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
@@ -37,87 +25,21 @@ export async function getStaticProps() {
 
 export default function Home({ data }) {
 
-  const {
-    visible,
-    setVisible
-  } = useVisible('Articles');
-
-  const {
-    FiltrarPosts,
-    OpenArticle,
-    article,
-    category
-  } = useHome();
-
   return (
-    <Template>
-      <Title />
-      <hr />
-      <div className={styles.Content}>
-        <Nav>
-          {visible === 'Article' &&
-            <ButtonNav onClick={() => setVisible('Articles')}>Voltar</ButtonNav>
-          }
-          {category !== '' &&
-            <ButtonNav onClick={() => FiltrarPosts('')}>Todos</ButtonNav>
-          }
-          {data.allPosts.map(elementButton => {
+    <Template nav={<NavHome data={data} />}>
 
-            return (
-              <ButtonNav
-                onClick={() => FiltrarPosts(elementButton.category)}>
-                {elementButton.category}
-              </ButtonNav>)
-          })}
-          <Link href='/portfolio'>
-            <ButtonNav>Portfolio</ButtonNav>
-          </Link>
-          <Link href='/curriculum'>
-            <ButtonNav>Sobre eu</ButtonNav>
-          </Link>
-        </Nav>
-        <div className={styles.ArticleBox}>
-
-          {visible === 'Articles' &&
-            <Articles>
-              {category !== '' &&
-                <>
-                  <h1>{category}</h1>
-                  <hr />
-                </>}
-              {
-                data.allPosts.map((element, index) => {
-                  return <>
-                    <Card sx={{ maxWidth: 345 }}>
-                      <CardActionArea onClick={() => OpenArticle(index)}>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            {element.title}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {element.date} {element.category}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card><br />
-                  </>
-                })
-              }
-
-            </Articles>
-          }
-
-          {visible === 'Article' &&
-            <Article>
-              {data.allPosts.map((element, index) => {
-                if (index == article) {
-                  return parse(element.post)
-                }
-              })}
-            </Article>
-          }
-        </div>
-      </div>
+      {data.allPosts.map((element, index) => {
+        return(
+          <CardArticle
+            index={index}
+            title={element.title}
+            shortdescription={element.shortdescription}
+            date={element.date}
+            category={element.category}
+          />)
+      })
+      }
+      
     </Template>
   )
 }

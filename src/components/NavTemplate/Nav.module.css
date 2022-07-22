@@ -7,9 +7,19 @@
     
 }
 
+.MobileButtonMenu {
+    display: none;
+}
+
 @media (max-width: 600px) {
+
     .NavBox {
         height: 100%;
+        width: 100%;
+    }
+
+    .MobileButtonMenu {
+        display: block;
         width: 100%;
     }
 }
