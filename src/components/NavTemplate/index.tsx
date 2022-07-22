@@ -4,12 +4,9 @@ import styles from "./Nav.module.css";
 
 interface NavProps {
     children?: any;
-    ref?: any;
 }
 
 export default function Nav(props: NavProps) {
-
-    let menu = React.createRef();
 
     const [className, setClassName] = useState(`hiddenMenu`);
     function DropdownMenu(){
