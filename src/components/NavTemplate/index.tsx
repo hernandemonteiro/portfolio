@@ -8,15 +8,15 @@ interface NavProps {
 
 export default function Nav(props: NavProps) {
 
-    const [className, setClassName] = useState(`hiddenMenu`);
-    function DropdownMenu(){
+    const [className, setClassName] = useState< '' | 'hiddenMenu'>('hiddenMenu');
 
-        if(className === 'hiddenMenu'){
+    function DropdownMenu() {
+
+        if (className === 'hiddenMenu') {
             setClassName('');
-        }else {
+        } else {
             setClassName('hiddenMenu');
-        } 
-
+        }
     }
 
     return (
@@ -26,8 +26,8 @@ export default function Nav(props: NavProps) {
                 className={styles.MobileButtonMenu}>
                 Categorias
             </ButtonNav>
-            <nav 
-            className={`${className} ${styles.NavBox}`}>
+            <nav
+                className={`${className} ${styles.NavBox}`}>
                 {props.children}
             </nav>
 

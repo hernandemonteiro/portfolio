@@ -37,4 +37,11 @@ hr {
   font-weight: bold;
 }
 
+@media (max-width: 600px) {
+    
+  .hiddenMenu {
+      display: none;
+  }
+  
+}
 
