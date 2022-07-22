@@ -20,7 +20,7 @@ export default function CardArticle(props: CardArticleProps) {
     return (
         <Link href={`/artigo/${props.index}`}>
             <Card className={styles.CardArticle}
-                sx={{ minWidth: '90%' }}>
+                sx={{ maxWidth: '100%', minWidth: '95%' }}>
                 <CardActionArea>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
