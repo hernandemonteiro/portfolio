@@ -23,6 +23,8 @@
     .MobileButtonMenu {
         display: block;
         width: 100%;
+        padding: 2%;
+        background-color: rgb(14, 14, 214);
     }
 
     .hiddenMenu {

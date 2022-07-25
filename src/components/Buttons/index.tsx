@@ -14,6 +14,8 @@ export default function ButtonNav(props: ButtonProps){
             width: '100%',
             margin: '0.7rem',
             padding: '2%',
+            fontWeight: 'bold',
+            fontFamily: 'Cormorant SC',
         }} variant="contained">{props.children}</Button>
     )
 }

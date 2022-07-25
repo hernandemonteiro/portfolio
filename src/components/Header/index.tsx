@@ -7,7 +7,7 @@ export default function Header() {
         <div className={styles.Header}>
             <Typography
             sx={{
-                weight: 'bold',
+                fontWeight: 'bold',
                 margin: '0.75rem',
                 fontFamily: 'Cormorant SC',
             }}

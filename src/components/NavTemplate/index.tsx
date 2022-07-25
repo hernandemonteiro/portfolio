@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ButtonNav from "../Buttons";
 import styles from "./Nav.module.css";
 
 interface NavProps {
@@ -22,11 +21,11 @@ export default function Nav(props: NavProps) {
     
     return (
         <>
-            <ButtonNav
+            <button
                 onClick={() => (DropdownMenu())}
                 className={styles.MobileButtonMenu}>
                 Categorias
-            </ButtonNav>
+            </button>
             <nav
                 className={`${className} ${styles.NavBox}`}>
                 {props.children}
