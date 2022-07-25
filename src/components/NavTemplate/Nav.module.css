@@ -16,6 +16,7 @@
 @media (max-width: 600px) {
 
     .NavBox {
+        margin: 3%;
         height: 100%;
         width: 100%;
     }
