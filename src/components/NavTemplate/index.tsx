@@ -20,19 +20,19 @@ export default function Nav(props: NavProps) {
     }
 
     return (
-
-        <div className={styles.MobileContent}>
-            
-            <button
-                onClick={() => (DropdownMenu())}
-                className={styles.MobileButtonMenu}>
-                Categorias
-            </button>
+        <>
+            <div className={styles.MobileContent}>
+                <button
+                    onClick={() => (DropdownMenu())}
+                    className={styles.MobileButtonMenu}>
+                    Categorias
+                </button>
+            </div>
             <nav
                 className={`${className} ${styles.NavBox}`}>
                 {props.children}
             </nav>
+        </>
 
-        </div>
     )
 }
