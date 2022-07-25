@@ -9,8 +9,8 @@
 }
 
 .Title {
-    font-family: 'Cormorant SC', serif;
     font-weight: bold;
     color: black;
     margin: 0.7rem;
+    font-family: 'Cormorant SC', serif;
   }
