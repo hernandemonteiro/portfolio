@@ -51,6 +51,6 @@ export async function getStaticPaths() {
             // Object variant:
             { params: { index: '1' } },
         ],
-        fallback: true,
+        fallback: false,
     }
 }
