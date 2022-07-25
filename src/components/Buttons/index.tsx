@@ -10,6 +10,10 @@ interface ButtonProps {
 export default function ButtonNav(props: ButtonProps){
     return (
 
-        <Button onClick={props.onClick} className={`${props.className} ${styles.BtnNav}`} variant="contained">{props.children}</Button>
+        <Button onClick={props.onClick} sx={{
+            width: '100%',
+            margin: '0.7rem',
+            padding: '2%',
+        }} variant="contained">{props.children}</Button>
     )
 }
