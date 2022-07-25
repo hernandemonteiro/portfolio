@@ -22,7 +22,7 @@
 
     .MobileButtonMenu {
         display: block;
-        max-width: 100%;
+        min-width: 100%;
         padding: 2%;
         font-size: 0.8rem;
         color: white;
