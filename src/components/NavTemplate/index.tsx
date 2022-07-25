@@ -16,21 +16,18 @@ export default function Nav(props: NavProps) {
         } else {
             setClassName(styles.hiddenMenu);
         }
-        
+
     }
-    
+
     return (
-        <>
+        <nav
+            className={`${className} ${styles.NavBox}`}>
             <button
                 onClick={() => (DropdownMenu())}
                 className={styles.MobileButtonMenu}>
                 Categorias
             </button>
-            <nav
-                className={`${className} ${styles.NavBox}`}>
-                {props.children}
-            </nav>
-
-        </>
+            {props.children}
+        </nav>
     )
 }
