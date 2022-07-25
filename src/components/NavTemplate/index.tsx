@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ButtonNav from "../Buttons";
 import styles from "./Nav.module.css";
 
@@ -8,17 +8,18 @@ interface NavProps {
 
 export default function Nav(props: NavProps) {
 
-    const [className, setClassName] = useState< '' | 'hiddenMenu'>('hiddenMenu');
+    const [className, setClassName] = useState<any>(styles.hiddenMenu);
 
     function DropdownMenu() {
 
-        if (className === 'hiddenMenu') {
+        if (className === styles.hiddenMenu) {
             setClassName('');
         } else {
-            setClassName('hiddenMenu');
+            setClassName(styles.hiddenMenu);
         }
+        
     }
-
+    
     return (
         <>
             <ButtonNav

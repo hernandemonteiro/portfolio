@@ -22,4 +22,8 @@
         display: block;
         width: 100%;
     }
+
+    .hiddenMenu {
+        display: none;
+    }
 }

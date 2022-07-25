@@ -4,7 +4,7 @@ import NavHome from "../components/NavHome";
 import CardArticle from "../components/CardArticle";
 
 
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+const QUERY = `query HomePage($limit: IntType) {
   allPosts(first: $limit) {
     title,
     shortdescription,
@@ -15,7 +15,7 @@ const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
 }`;
 export async function getStaticProps() {
   const data = await request({
-    query: HOMEPAGE_QUERY,
+    query: QUERY,
     variables: { limit: 10 }
   });
   return {
