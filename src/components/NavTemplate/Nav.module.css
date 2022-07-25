@@ -4,13 +4,13 @@
     flex-direction: column;
     width: 30%;
     height: 100vh;
-    
+
 }
 
-.MobileButtonMenu {
-    display: hidden;
-    width: 0px;
-    height: 0px;
+@media only screen and (min-width: 600px) {
+    .MobileButtonMenu {
+        display: none !important;
+    }
 }
 
 @media (max-width: 600px) {

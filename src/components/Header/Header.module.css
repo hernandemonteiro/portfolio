@@ -7,3 +7,10 @@
     padding: 2%;
     text-align: center;
 }
+
+.Title {
+    font-family: 'Cormorant SC', serif;
+    font-weight: bold;
+    color: black;
+    margin: 0.7rem;
+  }
