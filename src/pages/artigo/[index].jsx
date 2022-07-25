@@ -25,7 +25,7 @@ export async function getStaticProps() {
 export default function Artigo({ data }) {
 
     let router = useRouter();
-    const query: any = router.query.index;
+    const query = router.query.index;
 
         return (
             <Template nav={<NavArticle data={data} />}>
