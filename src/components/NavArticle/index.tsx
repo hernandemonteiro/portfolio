@@ -4,17 +4,17 @@ import Nav from '../NavTemplate';
 import ButtonNav from '../Buttons';
 
 export default function NavArticle({ data }) {
+    let category = data.allPosts.map(element => element.category);
+    let newCategory: any = [...new Set(category)];
     return (
         <Nav>
-            <Link href='/'>
-                <ButtonNav>Inicio</ButtonNav>
-            </Link>
-            {data.allPosts.map(elementButton => {
+            {newCategory.map(element => {
                 return (
+                    <Link href={`/category/${element}`}>
                         <ButtonNav>
-                            {elementButton.category}
+                            {element}
                         </ButtonNav>
-                )
+                    </Link>)
             })}
             <Link href='/portfolio'>
                 <ButtonNav>Portfolio</ButtonNav>

@@ -3,15 +3,18 @@ import React from 'react';
 import Nav from '../NavTemplate';
 import ButtonNav from '../Buttons';
 
-export default function NavHome({data}) {
+export default function NavHome({ data }) {
+    let category = data.allPosts.map(element => element.category);
+    let newCategory: any = [...new Set(category)];
     return (
         <Nav>
-            {data.allPosts.map(element => {
-
+            {newCategory.map(element => {
                 return (
-                    <ButtonNav>
-                        {element.category}
-                    </ButtonNav>)
+                    <Link href={`/category/${element}`}>
+                        <ButtonNav>
+                            {element}
+                        </ButtonNav>
+                    </Link>)
             })}
             <Link href='/portfolio'>
                 <ButtonNav>Portfolio</ButtonNav>

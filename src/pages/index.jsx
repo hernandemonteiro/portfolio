@@ -9,14 +9,13 @@ const QUERY = `query HomePage($limit: IntType) {
     title,
     shortdescription,
     date,
-    category,
-    post
+    category
     }
 }`;
 export async function getStaticProps() {
   const data = await request({
     query: QUERY,
-    variables: { limit: 10 }
+    variables: { limit: 5 }
   });
   return {
     props: { data }
@@ -24,7 +23,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
-
+  console.log(data.allPosts);
   return (
     <Template nav={<NavHome data={data} />}>
 

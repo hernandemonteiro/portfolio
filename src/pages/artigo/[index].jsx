@@ -23,20 +23,22 @@ export async function getStaticProps() {
 
 
 export default function Artigo({ data }) {
-
+    
     let router = useRouter();
     const query = router.query.index;
-
         return (
             <Template nav={<NavArticle data={data} />}>
                 {  data.allPosts.map((element, index) => {
+
                         if (query == index) {
                             return parse(element.post)
                         }
                     })
+                    
                 }
             </Template>
         )
+        
     
     
 
@@ -49,7 +51,7 @@ export async function getStaticPaths() {
             // String variant:
             `/artigo/0`,
             // Object variant:
-            { params: { index: '1' } },
+            { params: { index: '1', } },
         ],
         fallback: false,
     }
