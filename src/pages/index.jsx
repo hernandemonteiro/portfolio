@@ -1,10 +1,10 @@
 import Template from "../components/Template";
 import { request } from "../lib/datocms";
-import NavHome from "../components/NavHome";
+import Nav from "../components/Nav";
 import CardArticle from "../components/CardArticle";
 
 
-const QUERY = `query HomePage($limit: IntType) {
+const QUERY = `query Home($limit: IntType) {
   allPosts(first: $limit) {
     title,
     shortdescription,
@@ -13,19 +13,19 @@ const QUERY = `query HomePage($limit: IntType) {
     }
 }`;
 export async function getStaticProps() {
-  const data = await request({
-    query: QUERY,
-    variables: { limit: 5 }
-  });
-  return {
-    props: { data }
-  };
+    const data = await request({
+        query: QUERY,
+        variables: { limit: 5 }
+    });
+    return {
+        props: { data }
+    };
 }
 
 export default function Home({ data }) {
-  console.log(data.allPosts);
+  
   return (
-    <Template nav={<NavHome data={data} />}>
+    <Template nav={<Nav data={data} />} >
 
       {data.allPosts.map((element, index) => {
         return(

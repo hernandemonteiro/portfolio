@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from 'next/router';
 import { request } from "../../lib/datocms";
 import parse from 'html-react-parser';
 import Template from "../../components/Template";
-import NavArticle from "../../components/NavArticle";
+import Nav from "../../components/Nav";
 
 const ARTIGO_QUERY = `query Artigo($limit: IntType) {
     allPosts(first: $limit) {
@@ -11,48 +11,43 @@ const ARTIGO_QUERY = `query Artigo($limit: IntType) {
       post
       }
   }`;
-export async function getStaticProps() {
+  
+  export async function getStaticProps() {
+
     const data = await request({
-        query: ARTIGO_QUERY,
-        variables: { limit: 10 }
-    });
+            query: ARTIGO_QUERY,
+            variables: { limit: 10 }
+        });
     return {
-        props: { data }
+        props: {data}
     };
-}
-
-
-export default function Artigo({ data }) {
     
+  }
+
+export default function Artigo({data}) {
     let router = useRouter();
     const query = router.query.index;
-        return (
-            <Template nav={<NavArticle data={data} />}>
-                {  data.allPosts.map((element, index) => {
+    return (
+        <Template nav={<Nav data={data} />} >
+            {data.allPosts.map((element, index) => {
 
-                        if (query == index) {
-                            return parse(element.post)
-                        }
-                    })
-                    
+                if (query == index) {
+
+                    return parse(element.post)
                 }
-            </Template>
-        )
-        
-    
-    
+            })
 
-    
+            }
+        </Template>
+    )
 }
+
 
 export async function getStaticPaths() {
     return {
         paths: [
-            // String variant:
-            `/artigo/0`,
-            // Object variant:
-            { params: { index: '1', } },
+            { params: { index: '0' } },
         ],
-        fallback: false,
+        fallback: 'blocking'
     }
 }

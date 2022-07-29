@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Nav.module.css";
 
-interface NavProps {
-    children?: any;
-}
+export default function Nav(props) {
 
-export default function Nav(props: NavProps) {
-
-    const [className, setClassName] = useState<any>(styles.hiddenMenu);
+    const [className, setClassName] = useState(styles.hiddenMenu);
 
     function DropdownMenu() {
 

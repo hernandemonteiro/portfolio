@@ -1,10 +1,9 @@
 import React from 'react';
-import NavCurriculum from '../../components/NavCurriculum';
 import Template from '../../components/Template';
 
 export default function Curriculum() {
   return (
-    <Template nav={<NavCurriculum />}>
+    <Template>
       <h5>Curriculum</h5>
       <hr />
     </Template>

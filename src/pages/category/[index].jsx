@@ -1,6 +1,6 @@
 import Template from "../../components/Template";
 import { request } from "../../lib/datocms";
-import NavHome from "../../components/NavHome";
+import Nav from "../../components/Nav";
 import CardArticle from "../../components/CardArticle";
 import { useRouter } from "next/router";
 
@@ -24,40 +24,39 @@ export async function getStaticProps() {
 }
 
 export default function Category({ data }) {
-    let router = useRouter();
-    const query = router.query.index;
-    console.log(data.allPosts);
-    return (
-        <Template nav={<NavHome data={data} />}>
-            <>
-                <h2>{query}</h2>
-            </>
-            {data.allPosts.map((element, index) => {
+    var router = useRouter();
+    var query = router.query.index;
+        return (
+            
+            <Template nav={<Nav data={data} />}>
+                <>
+                    <h2>{query}</h2>
+                </>
+                {data.allPosts.map((element, index) => {
 
-                if(element.category === query){
-                return (
-                    <CardArticle
-                        index={index}
-                        title={element.title}
-                        shortdescription={element.shortdescription}
-                        date={element.date}
-                        category={element.category}
-                    />)}
-            })
+                    if (element.category === query) {
+                        return (
+                            <CardArticle
+                                index={index}
+                                title={element.title}
+                                shortdescription={element.shortdescription}
+                                date={element.date}
+                                category={element.category}
+                            />)
+                    }
+                })
+                }
+
+            </Template>
+        )
             }
 
-        </Template>
-    )
-}
 
 export async function getStaticPaths() {
     return {
         paths: [
-            // String variant:
-            `/category/Front-end`,
-            // Object variant:
-            { params: { index: 'Back-End' } },
+            { params: { index: 'Front-end' } },
         ],
-        fallback: false,
+        fallback: 'blocking'
     }
 }

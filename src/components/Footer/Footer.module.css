@@ -8,3 +8,14 @@
     flex-direction: column;
     flex-wrap: wrap;
   }
+
+  .SocialIcons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .SocialIcons > a {
+    margin: 2%
+  }

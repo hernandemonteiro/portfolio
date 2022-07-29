@@ -5,7 +5,7 @@ import ButtonNav from '../Buttons';
 
 export default function NavHome({ data }) {
     let category = data.allPosts.map(element => element.category);
-    let newCategory: any = [...new Set(category)];
+    let newCategory = [...new Set(category)];
     return (
         <Nav>
             {newCategory.map(element => {
@@ -16,12 +16,6 @@ export default function NavHome({ data }) {
                         </ButtonNav>
                     </Link>)
             })}
-            <Link href='/portfolio'>
-                <ButtonNav>Portfolio</ButtonNav>
-            </Link>
-            <Link href='/curriculum'>
-                <ButtonNav>Sobre eu</ButtonNav>
-            </Link>
         </Nav>
     )
 }

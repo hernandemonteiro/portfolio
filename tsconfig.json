@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/index.jsx", "src/pages/artigo/[index].jsx"  ],
+, "src/pages/index.jsx", "src/pages/artigo/[index].jsx", "src/components/NavTemplate/index.jsx", "src/pages/_app.jsx", "src/pages/curriculum/index.jsx", "src/pages/portfolio/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
