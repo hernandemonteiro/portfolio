@@ -19,7 +19,6 @@ export default function Footer() {
                     <a href="/curriculum">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
-                                className={styles.Icon}
                                 icon={faUser}
                                 fixedWidth /> : Sobre Mim
                         </div>
@@ -27,7 +26,6 @@ export default function Footer() {
                     <a href="/portfolio">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
-                                className={styles.Icon}
                                 icon={faNewspaper}
                                 fixedWidth /> : Portfolio
                         </div>
@@ -35,7 +33,6 @@ export default function Footer() {
                     <a href="https://github.com/hernandemonteiro">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
-                                className={styles.Icon}
                                 icon={faGithub}
                                 fixedWidth /> : Github
                         </div>
@@ -43,7 +40,6 @@ export default function Footer() {
                     <a href="https://www.instagram.com/monteiro.ops/">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
-                                className={styles.Icon}
                                 icon={faInstagram}
                                 fixedWidth /> : Instagram
                         </div>
@@ -51,7 +47,8 @@ export default function Footer() {
                     <a href="https://www.instagram.com/monteiro.ops/">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
-                                icon={faLinkedin} fixedWidth /> : Linkedin
+                                icon={faLinkedin}
+                                fixedWidth /> : Linkedin
                         </div>
                     </a>
                 </div>
