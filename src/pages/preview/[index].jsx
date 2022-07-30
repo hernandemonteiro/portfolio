@@ -38,19 +38,11 @@ let query = `allPreviews(first: $limit) {
 export default function Artigo({subscription}) {
     
     const { data } = useQuerySubscription(subscription);
-
+    let preview = data.allPreviews[0];
     return (
 
-        <Template nav={<Nav data={data} />} >
-            {data.allPreviews.map((element, index) => {
-
-                if (query == index) {
-
-                    return parse(element.post)
-                }
-            })
-
-            }
+        <Template >
+            {parse(preview.post)}
         </Template>
     )
 }

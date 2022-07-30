@@ -1,5 +1,6 @@
 .footer {
     display: flex;
+    margin-top: 4%;
     padding: 2rem 0;
     border-top: 1px solid #eaeaea;
     justify-content:center;
@@ -18,7 +19,12 @@
   }
 
   .SocialIcons > a {
+    font-size: 0.75rem;
     margin: 4%;
+  }
+
+  .Icon {
+    font-size: 0.75rem
   }
 
   
