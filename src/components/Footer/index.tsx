@@ -17,19 +17,42 @@ export default function Footer() {
             >
                 <div className={styles.SocialIcons}>
                     <a href="/curriculum">
-                        <FontAwesomeIcon className={styles.Icon} icon={faUser} fixedWidth /> : Sobre Mim
+                        <div className={styles.Icon}>
+                            <FontAwesomeIcon
+                                className={styles.Icon}
+                                icon={faUser}
+                                fixedWidth /> : Sobre Mim
+                        </div>
                     </a>
                     <a href="/portfolio">
-                        <FontAwesomeIcon className={styles.Icon} icon={faNewspaper} fixedWidth /> : Portfolio
+                        <div className={styles.Icon}>
+                            <FontAwesomeIcon
+                                className={styles.Icon}
+                                icon={faNewspaper}
+                                fixedWidth /> : Portfolio
+                        </div>
                     </a>
                     <a href="https://github.com/hernandemonteiro">
-                        <FontAwesomeIcon className={styles.Icon} icon={faGithub} fixedWidth /> : Github
+                        <div className={styles.Icon}>
+                            <FontAwesomeIcon
+                                className={styles.Icon}
+                                icon={faGithub}
+                                fixedWidth /> : Github
+                        </div>
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
-                        <FontAwesomeIcon className={styles.Icon} icon={faInstagram} fixedWidth /> : Instagram
+                        <div className={styles.Icon}>
+                            <FontAwesomeIcon
+                                className={styles.Icon}
+                                icon={faInstagram}
+                                fixedWidth /> : Instagram
+                        </div>
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
-                        <FontAwesomeIcon className={styles.Icon} icon={faLinkedin} fixedWidth /> : Linkedin
+                        <div className={styles.Icon}>
+                            <FontAwesomeIcon
+                                icon={faLinkedin} fixedWidth /> : Linkedin
+                        </div>
                     </a>
                 </div>
                 <br />
