@@ -17,19 +17,19 @@ export default function Footer() {
             >
                 <div className={styles.SocialIcons}>
                     <a href="/curriculum">
-                        <FontAwesomeIcon icon={faUser} fixedWidth /> : Sobre Mim
+                        <FontAwesomeIcon icon={faUser} size='lg' /> : Sobre Mim
                     </a>
                     <a href="/portfolio">
-                        <FontAwesomeIcon icon={faNewspaper} fixedWidth /> : Portfolio
+                        <FontAwesomeIcon icon={faNewspaper} size='lg' /> : Portfolio
                     </a>
                     <a href="https://github.com/hernandemonteiro">
-                        <FontAwesomeIcon size='1x' icon={faGithub} fixedWidth /> : Github
+                        <FontAwesomeIcon icon={faGithub} size='lg' /> : Github
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
-                        <FontAwesomeIcon icon={faInstagram} fixedWidth /> : Instagram
+                        <FontAwesomeIcon icon={faInstagram} size='lg' /> : Instagram
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
-                        <FontAwesomeIcon icon={faLinkedin} fixedWidth /> : Linkedin
+                        <FontAwesomeIcon icon={faLinkedin} size='lg' /> : Linkedin
                     </a>
                 </div>
                 <br />

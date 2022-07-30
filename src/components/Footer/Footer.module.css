@@ -14,11 +14,10 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    flex-wrap: wrap;
   }
 
   .SocialIcons > a {
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin: 4%;
   }
 
