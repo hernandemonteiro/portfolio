@@ -3,7 +3,6 @@ import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import parse from 'html-react-parser';
 import Template from "../../components/Template";
-import Nav from "../../components/Nav";
 
 let query = `allPreviews(first: $limit) {
   title,

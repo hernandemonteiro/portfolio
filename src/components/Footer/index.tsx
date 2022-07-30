@@ -4,12 +4,17 @@ import styles from './Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import Link from "next/link";
 
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
-            <span>Created by <b>Hernande Monteiro</b><br /><br /></span>
+            <span>Created by
+                <a href='/'>
+                    <b> Hernande Monteiro</b>
+                </a>
+                <br /><br /></span>
             <a
                 href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
                 target="_blank"
@@ -17,29 +22,29 @@ export default function Footer() {
             >
                 <div className={styles.SocialIcons}>
                     <a href="/curriculum">
-                            <FontAwesomeIcon
-                                icon={faUser}
-                                fixedWidth />
+                        <FontAwesomeIcon
+                            icon={faUser}
+                            fixedWidth />
                     </a>
                     <a href="/portfolio">
-                            <FontAwesomeIcon
-                                icon={faNewspaper}
-                                fixedWidth />
+                        <FontAwesomeIcon
+                            icon={faNewspaper}
+                            fixedWidth />
                     </a>
                     <a href="https://github.com/hernandemonteiro">
-                            <FontAwesomeIcon
-                                icon={faGithub}
-                                fixedWidth />
+                        <FontAwesomeIcon
+                            icon={faGithub}
+                            fixedWidth />
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
-                            <FontAwesomeIcon
-                                icon={faInstagram}
-                                fixedWidth />
+                        <FontAwesomeIcon
+                            icon={faInstagram}
+                            fixedWidth />
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
-                            <FontAwesomeIcon
-                                icon={faLinkedin}
-                                fixedWidth />
+                        <FontAwesomeIcon
+                            icon={faLinkedin}
+                            fixedWidth />
                     </a>
                 </div>
                 <br />
