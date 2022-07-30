@@ -20,35 +20,35 @@ export default function Footer() {
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
                                 icon={faUser}
-                                fixedWidth /> : Sobre Mim
+                                fixedWidth />
                         </div>
                     </a>
                     <a href="/portfolio">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
                                 icon={faNewspaper}
-                                fixedWidth /> : Portfolio
+                                fixedWidth />
                         </div>
                     </a>
                     <a href="https://github.com/hernandemonteiro">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
                                 icon={faGithub}
-                                fixedWidth /> : Github
+                                fixedWidth />
                         </div>
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
                                 icon={faInstagram}
-                                fixedWidth /> : Instagram
+                                fixedWidth />
                         </div>
                     </a>
                     <a href="https://www.instagram.com/monteiro.ops/">
                         <div className={styles.Icon}>
                             <FontAwesomeIcon
                                 icon={faLinkedin}
-                                fixedWidth /> : Linkedin
+                                fixedWidth />
                         </div>
                     </a>
                 </div>
