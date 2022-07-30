@@ -15,15 +15,11 @@
     justify-content: center;
     font-size: 0.75rem;
     max-width: 100%;
+    flex-wrap: wrap;
   }
 
   .SocialIcons > a {
     font-size: 0.75rem;
     margin: 4%;
   }
-
-  .Icon {
-    font-size: 0.75rem
-  }
-
   
