@@ -45,7 +45,7 @@ export default function Artigo({subscription}) {
     return (
 
         <Template nav={<Nav data={data} />} >
-            {data.allPosts.map((element, index) => {
+            {data.allPreviews.map((element, index) => {
 
                 if (query == index) {
 
