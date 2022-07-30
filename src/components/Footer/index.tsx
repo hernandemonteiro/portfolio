@@ -2,7 +2,7 @@ import React from "react";
 import Image from 'next/image';
 import styles from './Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserLarge, faNewspaper } from '@fortawesome/free-solid-svg-icons'
+import { faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -17,7 +17,7 @@ export default function Footer() {
             >
                 <div className={styles.SocialIcons}>
                     <a href="/curriculum">
-                        <FontAwesomeIcon icon={faUserLarge} fixedWidth /> : Sobre Mim
+                        <FontAwesomeIcon icon={faUser} fixedWidth /> : Sobre Mim
                     </a>
                     <a href="/portfolio">
                         <FontAwesomeIcon icon={faNewspaper} fixedWidth /> : Portfolio
