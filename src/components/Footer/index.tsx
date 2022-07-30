@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserLarge, faNewspaper } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
 export default function Footer() {
@@ -25,8 +25,11 @@ export default function Footer() {
                     <a href="https://github.com/hernandemonteiro">
                         <FontAwesomeIcon icon={faGithub} /> : Github
                     </a>
-                    <a href="https://github.com/hernandemonteiro">
+                    <a href="https://www.instagram.com/monteiro.ops/">
                         <FontAwesomeIcon icon={faInstagram} /> : Instagram
+                    </a>
+                    <a href="https://www.instagram.com/monteiro.ops/">
+                        <FontAwesomeIcon icon={faLinkedin} /> : Linkedin
                     </a>
                 </div>
                 <br />

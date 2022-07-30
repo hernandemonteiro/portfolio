@@ -1,28 +1,43 @@
+import React from "react";
+import { useQuerySubscription } from "react-datocms";
 import Template from "../components/Template";
-import { request } from "../lib/datocms";
 import Nav from "../components/Nav";
+import { request } from "../lib/datocms";
 import CardArticle from "../components/CardArticle";
 
+let query = `allPosts(first: $limit) {
+  title,
+  shortdescription,
+  date,
+  category
+  }`;
 
-const QUERY = `query Home($limit: IntType) {
-  allPosts(first: $limit) {
-    title,
-    shortdescription,
-    date,
-    category
-    }
-}`;
-export async function getStaticProps() {
-    const data = await request({
-        query: QUERY,
-        variables: { limit: 5 }
-    });
-    return {
-        props: { data }
+  const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+    ${query}
+  }`;
+
+  export async function getStaticProps() {
+
+    const graphqlRequest = {
+      query: HOMEPAGE_QUERY,
+      variables: { limit: 5 },
     };
-}
+    
+    return {
+      props: {
+        subscription: {
+          ...graphqlRequest,
+          initialData: await request(graphqlRequest),
+          token: "59e2d095f8563442f2bb23b25ab172",
+        },
+      },
+    };
+  }
 
-export default function Home({ data }) {
+
+
+export default function Home({ subscription }) {
+  const { data } = useQuerySubscription(subscription);
   
   return (
     <Template nav={<Nav data={data} />} >

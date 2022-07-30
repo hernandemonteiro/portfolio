@@ -1,33 +1,49 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useRouter } from 'next/router';
+import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import parse from 'html-react-parser';
 import Template from "../../components/Template";
 import Nav from "../../components/Nav";
 
-const ARTIGO_QUERY = `query Artigo($limit: IntType) {
-    allPosts(first: $limit) {
-      category,
-      post
-      }
-  }`;
+let query = `allPosts(first: $limit) {
+    title,
+    shortdescription,
+    date,
+    category,
+    post
+    }`;
   
-  export async function getStaticProps() {
+    const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+      ${query}
+    }`;
+  
+    export async function getStaticProps() {
+  
+      const graphqlRequest = {
+        query: HOMEPAGE_QUERY,
+        variables: { limit: 5 },
+      };
+      
+      return {
+        props: {
+          subscription: {
+            ...graphqlRequest,
+            initialData: await request(graphqlRequest),
+            token: "59e2d095f8563442f2bb23b25ab172",
+          },
+        },
+      };
+    }
 
-    const data = await request({
-            query: ARTIGO_QUERY,
-            variables: { limit: 10 }
-        });
-    return {
-        props: {data}
-    };
+export default function Artigo({subscription}) {
     
-  }
+    const { data } = useQuerySubscription(subscription);
 
-export default function Artigo({data}) {
     let router = useRouter();
     const query = router.query.index;
     return (
+
         <Template nav={<Nav data={data} />} >
             {data.allPosts.map((element, index) => {
 

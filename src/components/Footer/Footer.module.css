@@ -12,10 +12,13 @@
   .SocialIcons {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
     flex-wrap: wrap;
   }
 
   .SocialIcons > a {
-    margin: 2%
+    font-size: 1rem;
+    margin: 4%;
   }
+  
