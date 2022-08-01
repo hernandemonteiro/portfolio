@@ -2,10 +2,10 @@ import React from "react";
 import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import parse from 'html-react-parser';
-import Button from "../../components/Buttons";
+// import Button from "../../components/Buttons";
 import styles from './curriculum.module.css';
 import Footer from "../../components/Footer";
-import Link from "next/Link";
+// import Link from "next/Link";
 
 let query = `allCurriculums(first: $limit) {
     softskills,
