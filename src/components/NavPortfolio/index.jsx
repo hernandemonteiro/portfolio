@@ -21,6 +21,11 @@ export default function NavHome({ data }) {
                         </ButtonNav>
                     </Link>)
             })}
+            <Link href={`/`}>
+                <ButtonNav>
+                    Blog
+                </ButtonNav>
+            </Link>
         </Nav>
     )
 }
