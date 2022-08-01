@@ -29,7 +29,7 @@ export default function Footer() {
                             <FontAwesomeIcon
                                 icon={faUser}
                                 fixedWidth
-                                flip='horizontal' />
+                                />
                         </a>
                     </div>
                     <div
@@ -40,7 +40,7 @@ export default function Footer() {
                             <FontAwesomeIcon
                                 icon={faNewspaper}
                                 fixedWidth
-                                flip='horizontal' />
+                                 />
                         </a>
                     </div>
                     <div
@@ -52,7 +52,7 @@ export default function Footer() {
                             <FontAwesomeIcon
                                 icon={faGithub}
                                 fixedWidth
-                                flip='horizontal' />
+                                 />
                         </a>
                     </div>
                     <div
@@ -64,7 +64,7 @@ export default function Footer() {
                             <FontAwesomeIcon
                                 icon={faInstagram}
                                 fixedWidth
-                                flip='horizontal' />
+                                />
                         </a>
                     </div>
                     <div

@@ -5,6 +5,9 @@ import parse from 'html-react-parser';
 // import Button from "../../components/Buttons";
 import styles from './curriculum.module.css';
 import Footer from "../../components/Footer";
+import Card from '@mui/material/Card';
+import { Avatar, Box, Stack, Divider } from '@mui/material';
+import Typography from '@mui/material/Typography';
 // import Link from "next/Link";
 
 let query = `allCurriculums(first: $limit) {
@@ -44,56 +47,125 @@ export default function Artigo({ subscription }) {
   let curriculum = data.allCurriculums[0];
   return (
     <div className={styles.Curriculum}>
-      <img className={styles.FotoPerfil} src='https://www.datocms-assets.com/76860/1659202565-download.png' />
-      <h1 style={{ textAlign: 'center', marginBottom: '3%' }}>
-        {parse(curriculum.name)}<br />
-        <span style={{ fontSize: '1rem' }}>Full-stack developer</span>
-      </h1>
-
-      <div className={styles.textE}>
-        <h4>Um pouco sobre mim:</h4>
-        <hr />
-        <br />
-        {parse(curriculum.resume)}
-        <br />
-      </div>
+      <title>Hernande Monteiro - aqui você sabe um pouco mais sobre mim!</title>
+      <Card>
+        <Box sx={{ p: 2, display: 'flex' }}>
+          <Avatar
+            alt="Hernande Monteiro"
+            src="https://www.datocms-assets.com/76860/1659202565-download.png"
+            sx={{ width: '20%', height: '20%' }} />
+          <Stack
+            margin={2}
+            spacing={1}>
+            <Typography fontWeight={700}>{parse(curriculum.name)}</Typography>
+            <Typography variant="body2" color="text.secondary">
+              Full Stack Developer
+            </Typography>
+          </Stack>
+        </Box>
+        <Divider />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ px: 2, py: 1, bgcolor: 'background.default' }}
+        >
+          {parse(curriculum.resume)}
+        </Stack>
+      </Card>
       <br />
-      <div className={styles.textE}>
-        <h4>Minha formação e meus cursos:</h4>
-        <hr />
-        <br />
-        {parse(curriculum.academy)}
-        
-      </div>
       <br />
-      <div className={styles.textE}>
-        <h4>Soft-skills:</h4>
-        <hr />
-        <br />
-        {parse(curriculum.softskills)}
-      </div>
+      <Card>
+        <Typography
+          fontWeight={700}
+          margin={2}
+        >
+          Minha formação e meus cursos:
+        </Typography>
+        <Divider />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{
+            px: 2,
+            py: 1,
+            bgcolor: 'background.default'
+          }}
+        >
+          {parse(curriculum.academy)}
+        </Stack>
+      </Card>
       <br />
-      <div className={styles.textE}>
-        <h4>Hard-Skills:</h4>
-        <hr />
-        <br />
-        {parse(curriculum.hardskills)}
-      </div>
       <br />
-      <div className={styles.textE}>
-        <h4>Experiência:</h4>
-        <hr />
-        <br />
-        {parse(curriculum.experience)}
-        
-      </div>
-      <br/>
-      {/* <Link href='/'>
-      <Button>Blog</Button>
-      </Link>
-      <Link href='/portfolio'>
-      <Button>Portfolio</Button>
-      </Link> */}
+      <Card>
+        <Typography
+          fontWeight={700}
+          margin={2}
+        >
+          Soft-skills:
+        </Typography>
+        <Divider />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{
+            px: 2,
+            py: 1,
+            bgcolor: 'background.default'
+          }}
+        >
+          {parse(curriculum.softskills)}
+        </Stack>
+      </Card>
+      <br />
+      <br />
+      <Card>
+        <Typography
+          fontWeight={700}
+          margin={2}
+        >
+          Hard-skills:
+        </Typography>
+        <Divider />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{
+            px: 2,
+            py: 1,
+            bgcolor: 'background.default'
+          }}
+        >
+          {parse(curriculum.hardskills)}
+        </Stack>
+      </Card>
+      <br />
+      <br />
+      <Card>
+        <Typography
+          fontWeight={700}
+          margin={2}
+        >
+          Experiência:
+        </Typography>
+        <Divider />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{
+            px: 2,
+            py: 1,
+            bgcolor: 'background.default'
+          }}
+        >
+          {parse(curriculum.experience)}
+        </Stack>
+      </Card>
+      <br />
       <Footer />
 
     </div>
