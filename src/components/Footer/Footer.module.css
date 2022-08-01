@@ -13,12 +13,13 @@
   .SocialIcons {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     font-size: 0.75rem;
     max-width: 100%;
     flex-wrap: wrap;
   }
 
   .SocialIcon {
-    width: 10%;
+    font-size: 1rem
   }
   
