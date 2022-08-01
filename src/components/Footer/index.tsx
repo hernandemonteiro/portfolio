@@ -21,49 +21,59 @@ export default function Footer() {
                 rel="noopener noreferrer"
             >
                 <div className={styles.SocialIcons}>
-                    <Link
-                        href="/curriculum"
-                        className={styles.SocialIcon}>
-                        <FontAwesomeIcon
-                            icon={faUser}
-                            size="3x"
-                            flip='horizontal' />
-                    </Link>
-                    <Link
-                        href="/portfolio"
-                        className={styles.SocialIcon}>
-                        <FontAwesomeIcon
-                            icon={faNewspaper}
-                            size="3x"
-                            flip='horizontal' />
-                    </Link>
-                    <Link
-                        href="https://github.com/hernandemonteiro"
-                        target='_blank'
-                        className={styles.SocialIcon}>
-                        <FontAwesomeIcon
-                            icon={faGithub}
-                            size="3x"
-                            flip='horizontal' />
-                    </Link>
-                    <Link
-                        href="https://www.instagram.com/monteiro.ops/"
-                        target='_blank'
-                        className={styles.SocialIcon}>
-                        <FontAwesomeIcon
-                            icon={faInstagram}
-                            size="3x"
-                            flip='horizontal' />
-                    </Link>
-                    <Link
-                        href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
-                        target='_blank'
-                        className={styles.SocialIcon}>
-                        <FontAwesomeIcon
-                            icon={faLinkedin}
-                            size="3x"
-                            flip='horizontal' />
-                    </Link>
+                    <div>
+                        <Link
+                            href="/curriculum"
+                            className={styles.SocialIcon}>
+                            <FontAwesomeIcon
+                                icon={faUser}
+                                size="3x"
+                                flip='horizontal' />
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            href="/portfolio"
+                            className={styles.SocialIcon}>
+                            <FontAwesomeIcon
+                                icon={faNewspaper}
+                                size="3x"
+                                flip='horizontal' />
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            href="https://github.com/hernandemonteiro"
+                            target='_blank'
+                            className={styles.SocialIcon}>
+                            <FontAwesomeIcon
+                                icon={faGithub}
+                                size="3x"
+                                flip='horizontal' />
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            href="https://www.instagram.com/monteiro.ops/"
+                            target='_blank'
+                            className={styles.SocialIcon}>
+                            <FontAwesomeIcon
+                                icon={faInstagram}
+                                size="3x"
+                                flip='horizontal' />
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
+                            target='_blank'
+                            className={styles.SocialIcon}>
+                            <FontAwesomeIcon
+                                icon={faLinkedin}
+                                size="3x"
+                                flip='horizontal' />
+                        </Link>
+                    </div>
                 </div>
                 <br />
                 Powered by{' '}
