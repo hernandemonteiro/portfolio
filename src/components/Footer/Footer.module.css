@@ -24,4 +24,10 @@
     width: 2.3vw;
     margin: 4%;
   }
+
+  @media (max-width: 600px) {
+    .SocialIcon {
+      width: 3.5vw;
+    }
+  }
   
