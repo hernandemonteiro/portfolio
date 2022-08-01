@@ -23,29 +23,29 @@ export default function Footer() {
                 <div className={styles.SocialIcons}>
                     <div
                         className={styles.SocialIcon}>
-                        <Link
+                        <a
                             href="/curriculum"
                         >
                             <FontAwesomeIcon
                                 icon={faUser}
                                 fixedWidth
                                 flip='horizontal' />
-                        </Link>
+                        </a>
                     </div>
                     <div
                         className={styles.SocialIcon}>
-                        <Link
+                        <a
                             href="/portfolio"
                             >
                             <FontAwesomeIcon
                                 icon={faNewspaper}
                                 fixedWidth
                                 flip='horizontal' />
-                        </Link>
+                        </a>
                     </div>
                     <div
                         className={styles.SocialIcon}>
-                        <Link
+                        <a
                             href="https://github.com/hernandemonteiro"
                             target='_blank'
                             >
@@ -53,11 +53,11 @@ export default function Footer() {
                                 icon={faGithub}
                                 fixedWidth
                                 flip='horizontal' />
-                        </Link>
+                        </a>
                     </div>
                     <div
                         className={styles.SocialIcon}>
-                        <Link
+                        <a
                             href="https://www.instagram.com/monteiro.ops/"
                             target='_blank'
                             >
@@ -65,11 +65,11 @@ export default function Footer() {
                                 icon={faInstagram}
                                 fixedWidth
                                 flip='horizontal' />
-                        </Link>
+                        </a>
                     </div>
                     <div
                         className={styles.SocialIcon}>
-                        <Link
+                        <a
                             href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
                             target='_blank'
                             >
@@ -77,7 +77,7 @@ export default function Footer() {
                                 icon={faLinkedin}
                                 fixedWidth
                                 flip='horizontal' />
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <br /><br />
