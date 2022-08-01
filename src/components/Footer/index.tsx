@@ -26,14 +26,16 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faUser}
-                            size="xs" />
+                            size="3x"
+                            flip='horizontal' />
                     </Link>
                     <Link
                         href="/portfolio"
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faNewspaper}
-                            size="xs" />
+                            size="3x"
+                            flip='horizontal' />
                     </Link>
                     <Link
                         href="https://github.com/hernandemonteiro"
@@ -41,7 +43,8 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faGithub}
-                            size="xs" />
+                            size="3x"
+                            flip='horizontal' />
                     </Link>
                     <Link
                         href="https://www.instagram.com/monteiro.ops/"
@@ -49,7 +52,8 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faInstagram}
-                            size="xs" />
+                            size="3x"
+                            flip='horizontal' />
                     </Link>
                     <Link
                         href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
@@ -57,7 +61,8 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faLinkedin}
-                            size="xs" />
+                            size="3x"
+                            flip='horizontal' />
                     </Link>
                 </div>
                 <br />
