@@ -20,8 +20,8 @@ export default function Template(props: TemplateProps) {
             </Head>
 
             <div className={styles.container}>
+                <Header />
                 <main className={styles.main}>
-                    <Header />
                     <div className={styles.BoxContent}>
                         <div className={styles.Content}>
                             {props.nav}
