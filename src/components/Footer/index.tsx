@@ -21,27 +21,40 @@ export default function Footer() {
                 rel="noopener noreferrer"
             >
                 <div className={styles.SocialIcons}>
-                    <Link href="/curriculum">
+                    <Link
+                        href="/curriculum"
+                        className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faUser}
                             fixedWidth />
                     </Link>
-                    <Link href="/portfolio">
+                    <Link
+                        href="/portfolio"
+                        className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faNewspaper}
                             fixedWidth />
                     </Link>
-                    <Link href="https://github.com/hernandemonteiro" target='_blank'>
+                    <Link
+                        href="https://github.com/hernandemonteiro"
+                        target='_blank'
+                        className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faGithub}
                             fixedWidth />
                     </Link>
-                    <Link href="https://www.instagram.com/monteiro.ops/"  target='_blank'>
+                    <Link
+                        href="https://www.instagram.com/monteiro.ops/"
+                        target='_blank'
+                        className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faInstagram}
                             fixedWidth />
                     </Link>
-                    <Link href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95" target='_blank'>
+                    <Link
+                        href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
+                        target='_blank'
+                        className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faLinkedin}
                             fixedWidth />

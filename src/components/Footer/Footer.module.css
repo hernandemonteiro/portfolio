@@ -18,9 +18,7 @@
     flex-wrap: wrap;
   }
 
-  .SocialIcons > a {
-    font-size: 1rem;
-    color: black;
-    margin: 4%;
+  .SocialIcon {
+    width: 10%;
   }
   
