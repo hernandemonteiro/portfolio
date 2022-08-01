@@ -30,11 +30,14 @@
   align-items: center;
   text-align: start;
   flex-direction: column;
-  width: 70%;
-  padding:1%;
+  width: 63%;
+  padding:4%;
   max-height: 100%;
-  min-height: 100vh;
+  margin: 2%;
   overflow: auto;
+  background-color: rgb(245, 241, 241);
+  border-radius: 25px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .ArticleBox img {

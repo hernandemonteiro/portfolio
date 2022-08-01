@@ -10,12 +10,15 @@
 .textE {
     width: 50%;
     text-align: left;
-    border: 1px solid black;
+    border: none;
     padding: 2%;
     border-radius: 25px;
+    background-color: rgb(245, 241, 241);
+
 }
 
 .FotoPerfil {
+    width: 20%;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -23,6 +26,10 @@
 @media (max-width: 600px) {
     .textE {
         width: 90%;
+    }
+
+    .FotoPerfil {
+        width: 80%;
     }
   
   }

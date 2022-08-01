@@ -2,9 +2,10 @@ import React from "react";
 import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import parse from 'html-react-parser';
-import Header from "../../components/Header";
+import Button from "../../components/Buttons";
 import styles from './curriculum.module.css';
 import Footer from "../../components/Footer";
+import Link from "next/Link";
 
 let query = `allCurriculums(first: $limit) {
     softskills,
@@ -84,7 +85,15 @@ export default function Artigo({ subscription }) {
         <hr />
         <br />
         {parse(curriculum.experience)}
+        
       </div>
+      <br/>
+      {/* <Link href='/'>
+      <Button>Blog</Button>
+      </Link>
+      <Link href='/portfolio'>
+      <Button>Portfolio</Button>
+      </Link> */}
       <Footer />
 
     </div>

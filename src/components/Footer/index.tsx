@@ -21,31 +21,31 @@ export default function Footer() {
                 rel="noopener noreferrer"
             >
                 <div className={styles.SocialIcons}>
-                    <a href="/curriculum">
+                    <Link href="/curriculum">
                         <FontAwesomeIcon
                             icon={faUser}
                             fixedWidth />
-                    </a>
-                    <a href="/portfolio">
+                    </Link>
+                    <Link href="/portfolio">
                         <FontAwesomeIcon
                             icon={faNewspaper}
                             fixedWidth />
-                    </a>
-                    <a href="https://github.com/hernandemonteiro">
+                    </Link>
+                    <Link href="https://github.com/hernandemonteiro" target='_blank'>
                         <FontAwesomeIcon
                             icon={faGithub}
                             fixedWidth />
-                    </a>
-                    <a href="https://www.instagram.com/monteiro.ops/">
+                    </Link>
+                    <Link href="https://www.instagram.com/monteiro.ops/"  target='_blank'>
                         <FontAwesomeIcon
                             icon={faInstagram}
                             fixedWidth />
-                    </a>
-                    <a href="https://www.instagram.com/monteiro.ops/">
+                    </Link>
+                    <Link href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95" target='_blank'>
                         <FontAwesomeIcon
                             icon={faLinkedin}
                             fixedWidth />
-                    </a>
+                    </Link>
                 </div>
                 <br />
                 Powered by{' '}
