@@ -8,6 +8,11 @@ export default function NavHome({ data }) {
     let newCategory = [...new Set(category)];
     return (
         <Nav>
+            <Link href={`/`}>
+                <ButtonNav>
+                    Inicio
+                </ButtonNav>
+            </Link>
             {newCategory.map(element => {
                 return (
                     <Link href={`/category/${element}`}>
