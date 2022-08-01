@@ -149,7 +149,7 @@ export default function Artigo({ subscription }) {
           fontWeight={700}
           margin={2}
         >
-          Experiência:
+          Experiências:
         </Typography>
         <Divider />
         <Stack
