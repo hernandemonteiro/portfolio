@@ -26,14 +26,14 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faUser}
-                            fixedWidth />
+                            size="xs" />
                     </Link>
                     <Link
                         href="/portfolio"
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faNewspaper}
-                            fixedWidth />
+                            size="xs" />
                     </Link>
                     <Link
                         href="https://github.com/hernandemonteiro"
@@ -41,7 +41,7 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faGithub}
-                            fixedWidth />
+                            size="xs" />
                     </Link>
                     <Link
                         href="https://www.instagram.com/monteiro.ops/"
@@ -49,7 +49,7 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faInstagram}
-                            fixedWidth />
+                            size="xs" />
                     </Link>
                     <Link
                         href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
@@ -57,7 +57,7 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <FontAwesomeIcon
                             icon={faLinkedin}
-                            fixedWidth />
+                            size="xs" />
                     </Link>
                 </div>
                 <br />
