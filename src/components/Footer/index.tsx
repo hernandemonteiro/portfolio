@@ -21,17 +21,20 @@ export default function Footer() {
                 rel="noopener noreferrer"
             >
                 <div className={styles.SocialIcons}>
-                    <div>
+                    <div
+                        className={styles.SocialIcon}>
                         <Link
+                            className={styles.SocialIcon}
                             href="/curriculum"
-                            className={styles.SocialIcon}>
+                        >
                             <FontAwesomeIcon
                                 icon={faUser}
                                 size="3x"
                                 flip='horizontal' />
                         </Link>
                     </div>
-                    <div>
+                    <div
+                        className={styles.SocialIcon}>
                         <Link
                             href="/portfolio"
                             className={styles.SocialIcon}>
@@ -41,7 +44,8 @@ export default function Footer() {
                                 flip='horizontal' />
                         </Link>
                     </div>
-                    <div>
+                    <div
+                        className={styles.SocialIcon}>
                         <Link
                             href="https://github.com/hernandemonteiro"
                             target='_blank'
@@ -52,7 +56,8 @@ export default function Footer() {
                                 flip='horizontal' />
                         </Link>
                     </div>
-                    <div>
+                    <div
+                        className={styles.SocialIcon}>
                         <Link
                             href="https://www.instagram.com/monteiro.ops/"
                             target='_blank'
@@ -63,7 +68,8 @@ export default function Footer() {
                                 flip='horizontal' />
                         </Link>
                     </div>
-                    <div>
+                    <div
+                        className={styles.SocialIcon}>
                         <Link
                             href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
                             target='_blank'
