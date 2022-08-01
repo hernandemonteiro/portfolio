@@ -24,12 +24,11 @@ export default function Footer() {
                     <div
                         className={styles.SocialIcon}>
                         <Link
-                            className={styles.SocialIcon}
                             href="/curriculum"
                         >
                             <FontAwesomeIcon
                                 icon={faUser}
-                                size="3x"
+                                fixedWidth
                                 flip='horizontal' />
                         </Link>
                     </div>
@@ -37,10 +36,10 @@ export default function Footer() {
                         className={styles.SocialIcon}>
                         <Link
                             href="/portfolio"
-                            className={styles.SocialIcon}>
+                            >
                             <FontAwesomeIcon
                                 icon={faNewspaper}
-                                size="3x"
+                                fixedWidth
                                 flip='horizontal' />
                         </Link>
                     </div>
@@ -49,10 +48,10 @@ export default function Footer() {
                         <Link
                             href="https://github.com/hernandemonteiro"
                             target='_blank'
-                            className={styles.SocialIcon}>
+                            >
                             <FontAwesomeIcon
                                 icon={faGithub}
-                                size="3x"
+                                fixedWidth
                                 flip='horizontal' />
                         </Link>
                     </div>
@@ -61,10 +60,10 @@ export default function Footer() {
                         <Link
                             href="https://www.instagram.com/monteiro.ops/"
                             target='_blank'
-                            className={styles.SocialIcon}>
+                            >
                             <FontAwesomeIcon
                                 icon={faInstagram}
-                                size="3x"
+                                fixedWidth
                                 flip='horizontal' />
                         </Link>
                     </div>
@@ -73,10 +72,10 @@ export default function Footer() {
                         <Link
                             href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
                             target='_blank'
-                            className={styles.SocialIcon}>
+                            >
                             <FontAwesomeIcon
                                 icon={faLinkedin}
-                                size="3x"
+                                fixedWidth
                                 flip='horizontal' />
                         </Link>
                     </div>
