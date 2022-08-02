@@ -6,7 +6,8 @@ import { request } from "../lib/datocms";
 import CardArticle from "../components/CardArticle";
 import usePagination from "../Hooks/usePagination";
 
-let query = `allPosts(first: $limit) {
+let query = `allPosts(first: $limit,
+  orderBy: [title_ASC]) {
   title,
   shortdescription,
   date,
