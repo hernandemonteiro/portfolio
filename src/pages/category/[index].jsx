@@ -4,6 +4,7 @@ import { request } from "../../lib/datocms";
 import Nav from "../../components/Nav";
 import CardArticle from "../../components/CardArticle";
 import { useRouter } from "next/router";
+import usePagination from "../../Hooks/usePagination";
 
 
 let query = `allPosts(first: $limit) {
@@ -21,7 +22,7 @@ let query = `allPosts(first: $limit) {
   
       const graphqlRequest = {
         query: HOMEPAGE_QUERY,
-        variables: { limit: 5 },
+        variables: { limit: 100 },
       };
       
       return {
@@ -36,17 +37,23 @@ let query = `allPosts(first: $limit) {
     }
 
 export default function Category({ subscription }) {
+
     const { data } = useQuerySubscription(subscription);
+    const {
+      pagination,
+      botaoMostrarMais
+    } = usePagination();
 
     var router = useRouter();
     var query = router.query.index;
+
         return (
             
             <Template nav={<Nav data={data} />}>
                 <>
                     <h2>{query}</h2>
                 </>
-                {data.allPosts.map((element, index) => {
+                {data.allPosts.slice(0, pagination).map((element, index) => {
 
                     if (element.category === query) {
                         return (
@@ -60,6 +67,7 @@ export default function Category({ subscription }) {
                     }
                 })
                 }
+                {botaoMostrarMais(data.allPosts.length)}
 
             </Template>
         )

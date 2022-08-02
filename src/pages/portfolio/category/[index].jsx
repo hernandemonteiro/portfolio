@@ -4,6 +4,7 @@ import { request } from "../../../lib/datocms";
 import NavPortfolio from "../../../components/NavPortfolio";
 import { useRouter } from "next/router";
 import CardPortfolio from "../../../components/CardPortfolio";
+import usePagination from "../../../Hooks/usePagination";
 
 
 
@@ -41,7 +42,11 @@ export async function getStaticProps() {
 
 export default function Category({ subscription }) {
     const { data } = useQuerySubscription(subscription);
-
+    const {
+        pagination,
+        botaoMostrarMais
+      } = usePagination();
+    
     var router = useRouter();
     var query = router.query.index;
     return (
@@ -50,7 +55,7 @@ export default function Category({ subscription }) {
             <>
                 <h2>{query}</h2>
             </>
-            {data.allPortfolios.map((element, index) => {
+            {data.allPortfolios.slice(0, pagination).map((element, index) => {
 
                 if (element.category === query) {
                     return (
@@ -65,7 +70,7 @@ export default function Category({ subscription }) {
                 }
             })
             }
-
+            {botaoMostrarMais(data.allPortfolios.length)}
         </Template>
     )
 }

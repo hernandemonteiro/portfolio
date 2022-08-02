@@ -4,6 +4,7 @@ import Template from "../../components/Template";
 import NavPortfolio from "../../components/NavPortfolio";
 import { request } from "../../lib/datocms";
 import CardPortfolio from "../../components/CardPortfolio";
+import usePagination from "../../Hooks/usePagination";
 
 let query = `allPortfolios(first: $limit) {
   title,
@@ -41,11 +42,15 @@ export async function getStaticProps() {
 
 export default function Home({ subscription }) {
   const { data } = useQuerySubscription(subscription);
+  const {
+    pagination,
+    botaoMostrarMais
+  } = usePagination();
 
   return (
     <Template nav={<NavPortfolio data={data}/>} >
       
-      {data.allPortfolios.map((element, index) => {
+      {data.allPortfolios.slice(0, pagination).map((element, index) => {
         return (
           <CardPortfolio
             image={element.image1.url}
@@ -58,6 +63,7 @@ export default function Home({ subscription }) {
         )
       })
       }
+      {botaoMostrarMais(data.allPortfolios.length)}
     </Template>
   )
 }
