@@ -11,7 +11,8 @@ let query = `allPosts(first: $limit,
   title,
   shortdescription,
   date,
-  category
+  category,
+  id
   }`;
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
@@ -47,15 +48,17 @@ export default function Home({ subscription }) {
 
   return (
     <Template nav={<Nav data={data} />} >
-      {data.allPosts.slice(0, pagination).map((element, index) => {
+      {data.allPosts.slice(0, pagination).map((element) => {
         return (
+          <>
           <CardArticle
-            index={index}
+            index={element.id}
             title={element.title}
             shortdescription={element.shortdescription}
             date={element.date}
             category={element.category}
-          />)
+          />
+          </>)
       })}
       {botaoMostrarMais(data.allPosts.length)}
     </Template>

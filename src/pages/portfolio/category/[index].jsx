@@ -15,7 +15,8 @@ let query = `allPortfolios(first: $limit) {
     category,
     image1{
       url
-    }
+    },
+    id
     }`;
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
@@ -55,7 +56,7 @@ export default function Category({ subscription }) {
             <>
                 <h2>{query}</h2>
             </>
-            {data.allPortfolios.slice(0, pagination).map((element, index) => {
+            {data.allPortfolios.slice(0, pagination).map((element) => {
 
                 if (element.category === query) {
                     return (
@@ -64,7 +65,7 @@ export default function Category({ subscription }) {
                             Title={element.title}
                             ShortDescription={element.shortdescription}
                             Category={element.category}
-                            id={index}
+                            id={element.id}
 
                         />)
                 }

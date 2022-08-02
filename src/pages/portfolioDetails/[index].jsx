@@ -8,7 +8,8 @@ import NavPortfolio from "../../components/NavPortfolio";
 
 let query = `allPortfolios(first: $limit) {
     description,
-    category
+    category,
+    id
     }`;
   
     const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
@@ -45,7 +46,7 @@ export default function Artigo({subscription}) {
 
             {data.allPortfolios.map((element, index) => {
 
-                if (query == index) {
+                if (query == element.id) {
 
                     return parse(element.description)
                 }

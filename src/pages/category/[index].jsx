@@ -25,11 +25,11 @@ export default function Category({ subscription }) {
       <>
         <h2>{category}</h2>
       </>
-      {data.allPosts.slice(0, pagination).map((element, index) => {
+      {data.allPosts.slice(0, pagination).map((element) => {
 
         return (
           <CardArticle
-            index={index}
+            index={element.id}
             title={element.title}
             shortdescription={element.shortdescription}
             date={element.date}
@@ -66,7 +66,8 @@ const QUERY = `query HomePage($limit: IntType) {
       title,
       shortdescription,
       date,
-      category
+      category,
+      id
       }
     }`;
 export async function getStaticProps() {

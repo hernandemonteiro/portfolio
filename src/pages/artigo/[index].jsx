@@ -11,7 +11,8 @@ let query = `allPosts(first: $limit) {
     shortdescription,
     date,
     category,
-    post
+    post,
+    id
     }`;
   
     const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
@@ -22,7 +23,7 @@ let query = `allPosts(first: $limit) {
   
       const graphqlRequest = {
         query: HOMEPAGE_QUERY,
-        variables: { limit: 5 },
+        variables: { limit: 100 },
       };
       
       return {
@@ -45,9 +46,9 @@ export default function Artigo({subscription}) {
     return (
 
         <Template nav={<Nav data={data} />} >
-            {data.allPosts.map((element, index) => {
-
-                if (query == index) {
+            {data.allPosts.map((element) => {
+              console.log(element.id)
+                if (query === element.id) {
 
                     return parse(element.post)
                 }

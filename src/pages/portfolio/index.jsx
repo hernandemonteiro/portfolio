@@ -13,7 +13,8 @@ let query = `allPortfolios(first: $limit) {
   category,
   image1{
     url
-  }
+  },
+  id
   }`;
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
@@ -50,14 +51,14 @@ export default function Home({ subscription }) {
   return (
     <Template nav={<NavPortfolio data={data}/>} >
       
-      {data.allPortfolios.slice(0, pagination).map((element, index) => {
+      {data.allPortfolios.slice(0, pagination).map((element) => {
         return (
           <CardPortfolio
             image={element.image1.url}
             Title={element.title}
             ShortDescription={element.shortdescription}
             Category={element.category}
-            id={index}
+            id={element.id}
 
           />
         )

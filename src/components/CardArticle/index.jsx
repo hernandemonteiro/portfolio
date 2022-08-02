@@ -6,17 +6,10 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import styles from './CardArticle.module.css';
 
-interface CardArticleProps {
-    index: number;
-    title: string;
-    shortdescription: string;
-    date: string;
-    category: string;
 
-
-}
-
-export default function CardArticle(props: CardArticleProps) {
+export default function CardArticle(props) {
+    let date = props.date.split('-');
+    date = `${date[2]}/${date[1]}/${date[0]}`;
     return (
         <Link href={`/artigo/${props.index}`}>
             <Card className={styles.CardArticle}
@@ -30,7 +23,7 @@ export default function CardArticle(props: CardArticleProps) {
                             {props.shortdescription}
                         </Typography><br />
                         <Typography variant="body2" color="text.secondary">
-                            {props.date}  {props.category}
+                            {date}  {props.category}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
