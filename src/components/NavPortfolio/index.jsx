@@ -15,7 +15,7 @@ export default function NavHome({ data }) {
             </Link>
             {newCategory.map(element => {
                 return (
-                    <Link href={`/categoryPortfolio/${element}`}>
+                    <Link href={`/portfolio/category/${element}`}>
                         <ButtonNav>
                             {element}
                         </ButtonNav>
