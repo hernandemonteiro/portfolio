@@ -19,7 +19,7 @@ export default function MediaCard(props) {
         textAlign: 'center',
         margin: '2%'
       }}
-    >
+    ><br/>
       <CardMedia
         component="img"
         height="200"
