@@ -5,7 +5,7 @@ import Nav from "../../components/Nav";
 // import Query from "../../querys/postsCategory";
 import CardArticle from "../../components/CardArticle";
 import usePagination from "../../Hooks/usePagination";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRouter } from "next/router";
 import useCategory from "../../Hooks/useCategory";
 
