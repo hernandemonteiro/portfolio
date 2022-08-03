@@ -21,7 +21,7 @@ export default function Nav(props) {
                 <button
                     onClick={() => (DropdownMenu())}
                     className={styles.MobileButtonMenu}>
-                    Categorias
+                    MENU
                 </button>
             </div>
             <nav

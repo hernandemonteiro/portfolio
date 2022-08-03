@@ -10,6 +10,7 @@ export default function usePagination() {
       return (
         <Button onClick={() => setPagination(pagination + 5)}>Mostrar Mais</Button>
       )
+    
     }
   }
 

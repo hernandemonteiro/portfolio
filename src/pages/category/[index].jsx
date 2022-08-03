@@ -5,71 +5,19 @@ import Nav from "../../components/Nav";
 import CardArticle from "../../components/CardArticle";
 import usePagination from "../../Hooks/usePagination";
 import React from 'react';
-import { useRouter, useContext } from "next/router";
+import { useRouter } from "next/router";
 
-
-
-
-export default function Category({ subscription }) {
-
-  const { data } = useQuerySubscription(subscription);
-  const {
-    pagination,
-    botaoMostrarMais
-  } = usePagination();
-  let category = useRouter().query.index;
-
- React.createContext(category)
-  return (
-    <Template nav={<Nav data={data} />}>
-      <>
-        <h2>{category}</h2>
-      </>
-      {data.allPosts.slice(0, pagination).map((element) => {
-
-        return (
-          <CardArticle
-            index={element.id}
-            title={element.title}
-            shortdescription={element.shortdescription}
-            date={element.date}
-            category={element.category}
-          />)
-
-      })
-      }
-      {botaoMostrarMais(data.allPosts.length)}
-
-    </Template>
-  )
-
-}
-
-// const QUERY = `query HomePage($limit: IntType) {
-//   allPosts (
-//     first: $limit,
-//     filter: {
-//       category: {
-//         eq: "${'Front-end'}"
-//       }}
-//   ){
-//       title,
-//       shortdescription,
-//       date,
-//       category
-//       }
-//     }`;
 
 const QUERY = `query HomePage($limit: IntType) {
-  allPosts (
-    first: $limit){
+  allPosts (first: $limit ){
       title,
       shortdescription,
       date,
       category,
       id
       }
-    }`;
+    }`
+
 export async function getStaticProps() {
 
   const graphqlRequest = {
@@ -87,6 +35,41 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default function Category({ subscription }) {
+  const { data } = useQuerySubscription(subscription);
+  const category = useRouter().query.index;
+
+  const {
+    pagination,
+    botaoMostrarMais
+  } = usePagination();
+
+  return (
+    <Template nav={<Nav data={data} />}>
+      <>
+        <h2>{category}</h2>
+      </>
+      {data.allPosts.slice(0, pagination).map((element) => {
+        if (element.category == category) {
+          return (
+            <CardArticle
+              index={element.id}
+              title={element.title}
+              shortdescription={element.shortdescription}
+              date={element.date}
+              category={element.category}
+            />)
+        }
+      })
+      }
+      {botaoMostrarMais(data.allPosts.length)}
+
+    </Template>
+  )
+
+}
+
 
 export async function getStaticPaths() {
   return {
