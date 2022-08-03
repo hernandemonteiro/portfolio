@@ -6,17 +6,15 @@ import parse from 'html-react-parser';
 import Template from "../../components/Template";
 import Nav from "../../components/Nav";
 
-let query = `allPosts(first: $limit) {
-    title,
-    shortdescription,
-    date,
-    category,
-    post,
-    id
-    }`;
-  
     const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-      ${query}
+      allPosts(first: $limit) {
+        title,
+        shortdescription,
+        date,
+        category,
+        post,
+        id
+        }
     }`;
   
     export async function getStaticProps() {
@@ -44,10 +42,8 @@ export default function Artigo({subscription}) {
     let router = useRouter();
     const query = router.query.index;
     return (
-
         <Template nav={<Nav data={data} />} >
             {data.allPosts.map((element) => {
-              console.log(element.id)
                 if (query === element.id) {
 
                     return parse(element.post)

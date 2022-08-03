@@ -1,28 +1,17 @@
 import React, { useState } from "react";
 import { useQuerySubscription } from "react-datocms";
 import Template from "../components/Template";
-import Nav from "../components/Nav";
 import { request } from "../lib/datocms";
+import Nav from "../components/Nav";
+import Query from "../querys/posts";
 import CardArticle from "../components/CardArticle";
 import usePagination from "../Hooks/usePagination";
 
-let query = `allPosts(first: $limit,
-  orderBy: [title_ASC]) {
-  title,
-  shortdescription,
-  date,
-  category,
-  id
-  }`;
-
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-    ${query}
-  }`;
 
 export async function getStaticProps() {
-
+  
   const graphqlRequest = {
-    query: HOMEPAGE_QUERY,
+    query: Query(),
     variables: { limit: 100 },
   };
 
@@ -36,8 +25,6 @@ export async function getStaticProps() {
     },
   };
 }
-
-
 
 export default function Home({ subscription }) {
   const {

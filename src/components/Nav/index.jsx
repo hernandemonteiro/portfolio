@@ -15,7 +15,7 @@ export default function NavHome({ data }) {
             </Link>
             {newCategory.map(element => {
                 return (
-                    <Link href={`/category/${element}?categoria=${element}`}>
+                    <Link href={`/category/${element}`}>
                         <ButtonNav>
                             {element}
                         </ButtonNav>

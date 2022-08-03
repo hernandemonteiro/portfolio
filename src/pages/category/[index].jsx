@@ -2,24 +2,29 @@ import Template from "../../components/Template";
 import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import Nav from "../../components/Nav";
+// import Query from "../../querys/postsCategory";
 import CardArticle from "../../components/CardArticle";
 import usePagination from "../../Hooks/usePagination";
-import React from 'react';
-import { useRouter, useContext } from "next/router";
-
-
+import React, { useEffect } from 'react';
+import { useRouter } from "next/router";
+import useCategory from "../../Hooks/useCategory";
 
 
 export default function Category({ subscription }) {
-
   const { data } = useQuerySubscription(subscription);
+  const query = useRouter().query.index;
+
   const {
     pagination,
     botaoMostrarMais
   } = usePagination();
-  let category = useRouter().query.index;
 
- React.createContext(category)
+
+  const {
+    category,
+    setCategory
+  } = useCategory(query);
+
   return (
     <Template nav={<Nav data={data} />}>
       <>
@@ -35,7 +40,6 @@ export default function Category({ subscription }) {
             date={element.date}
             category={element.category}
           />)
-
       })
       }
       {botaoMostrarMais(data.allPosts.length)}
@@ -45,31 +49,15 @@ export default function Category({ subscription }) {
 
 }
 
-// const QUERY = `query HomePage($limit: IntType) {
-//   allPosts (
-//     first: $limit,
-//     filter: {
-//       category: {
-//         eq: "${'Front-end'}"
-//       }}
-//   ){
-//       title,
-//       shortdescription,
-//       date,
-//       category
-//       }
-//     }`;
-
 const QUERY = `query HomePage($limit: IntType) {
-  allPosts (
-    first: $limit){
+  allPosts (first: $limit ){
       title,
       shortdescription,
       date,
-      category,
-      id
+      category
       }
-    }`;
+    }`
+
 export async function getStaticProps() {
 
   const graphqlRequest = {
