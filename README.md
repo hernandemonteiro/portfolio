@@ -16,7 +16,7 @@ In the portfolio page i can expose my projects and designs.
 I linked my social media in the footer;
 
 
-## Deployed
+## Deployed in:
 
 https://hernandemonteiro.vercel.app
 
