@@ -20,7 +20,7 @@ let query = `allPortfolios(first: $limit) {
   
       const graphqlRequest = {
         query: HOMEPAGE_QUERY,
-        variables: { limit: 5 },
+        variables: { limit: 100 },
       };
       
       return {

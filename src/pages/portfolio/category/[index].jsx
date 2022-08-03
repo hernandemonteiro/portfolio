@@ -8,26 +8,25 @@ import usePagination from "../../../Hooks/usePagination";
 
 
 
-let query = `allPortfolios(first: $limit) {
-    title,
-    shortdescription,
-    description,
-    category,
-    image1{
-      url
-    },
-    id
-    }`;
 
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-      ${query}
+    allPortfolios(first: $limit) {
+        title,
+        shortdescription,
+        description,
+        category,
+        image1{
+          url
+        },
+        id
+        }
     }`;
 
 export async function getStaticProps() {
 
     const graphqlRequest = {
         query: HOMEPAGE_QUERY,
-        variables: { limit: 5 },
+        variables: { limit: 100 },
     };
 
     return {
@@ -46,19 +45,18 @@ export default function Category({ subscription }) {
     const {
         pagination,
         botaoMostrarMais
-      } = usePagination();
-    
-    var router = useRouter();
-    var query = router.query.index;
+    } = usePagination();
+
+    let category = useRouter().query.index;
     return (
 
         <Template nav={<NavPortfolio data={data} />}>
             <>
-                <h2>{query}</h2>
+                <h2>{category}</h2>
             </>
             {data.allPortfolios.slice(0, pagination).map((element) => {
 
-                if (element.category === query) {
+                if (element.category === category) {
                     return (
                         <CardPortfolio
                             image={element.image1.url}

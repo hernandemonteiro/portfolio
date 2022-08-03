@@ -8,9 +8,9 @@ import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-
 export default function Footer() {
     return (
         <footer className={styles.footer}>
-            <span>Created by
-                <a href='/'>
-                    <b> Hernande Monteiro</b>
+            <span>Created by: 
+                <a href='/' className={styles.linkLogo}>
+                    <b> Hernande Monteiro </b>
                 </a>
                 <br /><br /></span>
             <a

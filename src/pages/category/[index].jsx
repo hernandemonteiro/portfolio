@@ -51,15 +51,16 @@ export default function Category({ subscription }) {
         <h2>{category}</h2>
       </>
       {data.allPosts.slice(0, pagination).map((element) => {
-
-        return (
-          <CardArticle
-            index={element.id}
-            title={element.title}
-            shortdescription={element.shortdescription}
-            date={element.date}
-            category={element.category}
-          />)
+        if (element.category == category) {
+          return (
+            <CardArticle
+              index={element.id}
+              title={element.title}
+              shortdescription={element.shortdescription}
+              date={element.date}
+              category={element.category}
+            />)
+        }
       })
       }
       {botaoMostrarMais(data.allPosts.length)}

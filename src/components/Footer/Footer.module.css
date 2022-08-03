@@ -25,6 +25,10 @@
     margin: 4%;
   }
 
+  .linkLogo {
+    text-decoration: underline;
+  }
+
   @media (max-width: 600px) {
     .SocialIcon {
       width: 3.5vw;
