@@ -2,28 +2,48 @@ import Template from "../../components/Template";
 import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import Nav from "../../components/Nav";
-// import Query from "../../querys/postsCategory";
 import CardArticle from "../../components/CardArticle";
 import usePagination from "../../Hooks/usePagination";
 import React from 'react';
 import { useRouter } from "next/router";
-import useCategory from "../../Hooks/useCategory";
 
+
+const QUERY = `query HomePage($limit: IntType) {
+  allPosts (first: $limit ){
+      title,
+      shortdescription,
+      date,
+      category,
+      id
+      }
+    }`
+
+export async function getStaticProps() {
+
+  const graphqlRequest = {
+    query: QUERY,
+    variables: { limit: 100 },
+  };
+
+  return {
+    props: {
+      subscription: {
+        ...graphqlRequest,
+        initialData: await request(graphqlRequest),
+        token: "59e2d095f8563442f2bb23b25ab172",
+      },
+    },
+  };
+}
 
 export default function Category({ subscription }) {
   const { data } = useQuerySubscription(subscription);
-  const query = useRouter().query.index;
+  const category = useRouter().query.index;
 
   const {
     pagination,
     botaoMostrarMais
   } = usePagination();
-
-
-  const {
-    category,
-    setCategory
-  } = useCategory(query);
 
   return (
     <Template nav={<Nav data={data} />}>
@@ -49,32 +69,6 @@ export default function Category({ subscription }) {
 
 }
 
-const QUERY = `query HomePage($limit: IntType) {
-  allPosts (first: $limit ){
-      title,
-      shortdescription,
-      date,
-      category
-      }
-    }`
-
-export async function getStaticProps() {
-
-  const graphqlRequest = {
-    query: QUERY,
-    variables: { limit: 100 },
-  };
-
-  return {
-    props: {
-      subscription: {
-        ...graphqlRequest,
-        initialData: await request(graphqlRequest),
-        token: "59e2d095f8563442f2bb23b25ab172",
-      },
-    },
-  };
-}
 
 export async function getStaticPaths() {
   return {
