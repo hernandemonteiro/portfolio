@@ -8,10 +8,12 @@ dependences:
 
 ## About the project:
 
-This project are made for evolve more people about development.
-I use articles to explain methods...
+This project are made for evolve more people about development.<br>
+I use articles to explain methods and...
 
 In the portfolio page i can expose my projects and designs.
+
+I linked my social media in the footer;
 
 
 ## Deployed
