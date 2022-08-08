@@ -69,7 +69,7 @@ export default function Category({ subscription }) {
                 }
             })
             }
-            {botaoMostrarMais(data.allPortfolios.length)}
+            {botaoMostrarMais(data.allPortfolios.filter(element => element.category == category).length)}
         </Template>
     )
 }
