@@ -63,7 +63,7 @@ export default function Category({ subscription }) {
         }
       })
       }
-      {botaoMostrarMais(data.allPosts.length)}
+      {botaoMostrarMais(data.allPosts.filter(element => element.category == category).length)}
 
     </Template>
   )
