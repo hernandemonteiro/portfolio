@@ -15,9 +15,6 @@ const QUERY = `query HomePage($limit: IntType) {
         shortdescription,
         description,
         category,
-        image1{
-          url
-        },
         id
         }
     }`;
@@ -58,7 +55,6 @@ export default function Category({ subscription }) {
                 .filter(element => element.category == category)
                 .slice(0, pagination)
                 .map((element) => <CardPortfolio
-                    image={element.image1.url}
                     Title={element.title}
                     ShortDescription={element.shortdescription}
                     Category={element.category}
