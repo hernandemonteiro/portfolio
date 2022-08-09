@@ -1,26 +1,24 @@
 import React from "react";
 import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
+import { Markup } from "react-render-markup";
 import parse from 'html-react-parser';
-// import Button from "../../components/Buttons";
 import styles from './curriculum.module.css';
 import Footer from "../../components/Footer";
 import Card from '@mui/material/Card';
 import { Avatar, Box, Stack, Divider } from '@mui/material';
 import Typography from '@mui/material/Typography';
-// import Link from "next/Link";
 
-let query = `allCurriculums(first: $limit) {
+
+const PREVIEW_QUERY = `query HomePage($limit: IntType) {
+  allCurriculums(first: $limit) {
     softskills,
     hardskills,
     experience,
     resume,
     academy,
     name
-  }`;
-
-const PREVIEW_QUERY = `query HomePage($limit: IntType) {
-      ${query}
+  }
     }`;
 
 export async function getStaticProps() {
@@ -57,7 +55,7 @@ export default function Artigo({ subscription }) {
           <Stack
             margin={2}
             spacing={1}>
-            <Typography fontWeight={700}>{parse(curriculum.name)}</Typography>
+            <Typography fontWeight={700}><Markup markup={curriculum.name} /></Typography>
             <Typography variant="body2" color="text.secondary">
               Full Stack Developer
             </Typography>
@@ -68,9 +66,8 @@ export default function Artigo({ subscription }) {
           direction="row"
           alignItems="center"
           justifyContent="space-between"
-          sx={{ px: 2, py: 1, bgcolor: 'background.default' }}
-        >
-          {parse(curriculum.resume)}
+          sx={{ px: 2, py: 1, bgcolor: 'background.default' }}>
+          <Markup markup={curriculum.resume} />
         </Stack>
       </Card>
       <br />
@@ -91,9 +88,8 @@ export default function Artigo({ subscription }) {
             px: 2,
             py: 1,
             bgcolor: 'background.default'
-          }}
-        >
-          {parse(curriculum.academy)}
+          }}>
+          <Markup markup={curriculum.academy} />
         </Stack>
       </Card>
       <br />
@@ -101,8 +97,7 @@ export default function Artigo({ subscription }) {
       <Card>
         <Typography
           fontWeight={700}
-          margin={2}
-        >
+          margin={2}>
           Soft-skills:
         </Typography>
         <Divider />
@@ -114,9 +109,8 @@ export default function Artigo({ subscription }) {
             px: 2,
             py: 1,
             bgcolor: 'background.default'
-          }}
-        >
-          {parse(curriculum.softskills)}
+          }}>
+          <Markup markup={curriculum.softskills} />
         </Stack>
       </Card>
       <br />
@@ -124,8 +118,7 @@ export default function Artigo({ subscription }) {
       <Card>
         <Typography
           fontWeight={700}
-          margin={2}
-        >
+          margin={2}>
           Hard-skills:
         </Typography>
         <Divider />
@@ -137,9 +130,8 @@ export default function Artigo({ subscription }) {
             px: 2,
             py: 1,
             bgcolor: 'background.default'
-          }}
-        >
-          {parse(curriculum.hardskills)}
+          }}>
+          <Markup markup={curriculum.hardskills} />
         </Stack>
       </Card>
       <br />
@@ -147,8 +139,7 @@ export default function Artigo({ subscription }) {
       <Card>
         <Typography
           fontWeight={700}
-          margin={2}
-        >
+          margin={2}>
           Experiências:
         </Typography>
         <Divider />
@@ -160,9 +151,8 @@ export default function Artigo({ subscription }) {
             px: 2,
             py: 1,
             bgcolor: 'background.default'
-          }}
-        >
-          {parse(curriculum.experience)}
+          }}>
+          <Markup markup={curriculum.experience} />
         </Stack>
       </Card>
       <br />
