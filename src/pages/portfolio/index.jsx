@@ -6,19 +6,14 @@ import { request } from "../../lib/datocms";
 import CardPortfolio from "../../components/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
 
-let query = `allPortfolios(first: $limit) {
-  title,
-  shortdescription,
-  description,
-  category,
-  image1{
-    url
-  },
-  id
-  }`;
-
 const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-    ${query}
+  allPortfolios(first: $limit) {
+    title,
+    shortdescription,
+    description,
+    category,
+    id
+    }
   }`;
 
 export async function getStaticProps() {
@@ -54,7 +49,6 @@ export default function Home({ subscription }) {
       {data.allPortfolios.slice(0, pagination).map((element) => {
         return (
           <CardPortfolio
-            image={element.image1.url}
             Title={element.title}
             ShortDescription={element.shortdescription}
             Category={element.category}
