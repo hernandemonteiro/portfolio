@@ -2,7 +2,6 @@ import React from "react";
 import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
 import { Markup } from "react-render-markup";
-import parse from 'html-react-parser';
 import styles from './curriculum.module.css';
 import Footer from "../../components/Footer";
 import Card from '@mui/material/Card';
