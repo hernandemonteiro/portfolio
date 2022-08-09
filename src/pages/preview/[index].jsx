@@ -14,7 +14,6 @@ import Template from "../../components/Template";
   
       const graphqlRequest = {
         query: QUERY,
-        variables: { limit: 5 },
       };
       
       return {
