@@ -4,16 +4,17 @@ import { request } from "../../lib/datocms";
 import { Markup } from "react-render-markup";
 import Template from "../../components/Template";
   
-    const QUERY = `query {
-      preview{
+    const QUERY = `query Preview($limit: IntType) {
+      allPreviews(first: $limit) {
         post
-      }
+        }
     }`;
   
     export async function getStaticProps() {
   
       const graphqlRequest = {
         query: QUERY,
+        variables: { limit: 5 },
       };
       
       return {
