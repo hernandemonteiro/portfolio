@@ -20,11 +20,6 @@ export default function MediaCard(props) {
         margin: '2%'
       }}
     ><br/>
-      <CardMedia
-        component="img"
-        height="200"
-        image={props.image}
-      />
       <CardContent>
 
         <Typography gutterBottom variant="h5" component="div">
