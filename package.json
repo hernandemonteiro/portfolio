@@ -1,6 +1,6 @@
 {
-  "name": "personal-blog",
-  "version": "0.1.0",
+  "name": "hernande-monteiro",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,12 +17,11 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.9.0",
     "graphql-request": "4.3.0",
-    "html-react-parser": "^3.0.1",
-    "jest": "^28.1.3",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-datocms": "^3.0.15",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-render-markup": "^3.5.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.4",

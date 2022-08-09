@@ -33,7 +33,7 @@ export async function getStaticProps() {
       subscription: {
         ...graphqlRequest,
         initialData: await request(graphqlRequest),
-        token: "59e2d095f8563442f2bb23b25ab172",
+        token: process.env.NEXT_PUBLIC_DATO_TOKEN,
       },
     },
   };
@@ -49,8 +49,8 @@ export default function Home({ subscription }) {
   } = usePagination();
 
   return (
-    <Template nav={<NavPortfolio data={data}/>} >
-      
+    <Template nav={<NavPortfolio data={data} />} >
+
       {data.allPortfolios.slice(0, pagination).map((element) => {
         return (
           <CardPortfolio
@@ -58,9 +58,7 @@ export default function Home({ subscription }) {
             Title={element.title}
             ShortDescription={element.shortdescription}
             Category={element.category}
-            id={element.id}
-
-          />
+            id={element.id} />
         )
       })
       }

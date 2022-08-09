@@ -9,7 +9,7 @@ import usePagination from "../../../Hooks/usePagination";
 
 
 
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+const QUERY = `query HomePage($limit: IntType) {
     allPortfolios(first: $limit) {
         title,
         shortdescription,
@@ -25,7 +25,7 @@ const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
 export async function getStaticProps() {
 
     const graphqlRequest = {
-        query: HOMEPAGE_QUERY,
+        query: QUERY,
         variables: { limit: 100 },
     };
 
@@ -34,7 +34,7 @@ export async function getStaticProps() {
             subscription: {
                 ...graphqlRequest,
                 initialData: await request(graphqlRequest),
-                token: "59e2d095f8563442f2bb23b25ab172",
+                token: process.env.NEXT_PUBLIC_DATO_TOKEN,
             },
         },
     };
@@ -47,28 +47,24 @@ export default function Category({ subscription }) {
         botaoMostrarMais
     } = usePagination();
 
-    let category = useRouter().query.index;
-    return (
+    const category = useRouter().query.index;
 
+    return (
         <Template nav={<NavPortfolio data={data} />}>
             <>
                 <h2>{category}</h2>
             </>
-            {data.allPortfolios.slice(0, pagination).map((element) => {
+            {data.allPortfolios
+                .filter(element => element.category == category)
+                .slice(0, pagination)
+                .map((element) => <CardPortfolio
+                    image={element.image1.url}
+                    Title={element.title}
+                    ShortDescription={element.shortdescription}
+                    Category={element.category}
+                    id={element.id}
 
-                if (element.category === category) {
-                    return (
-                        <CardPortfolio
-                            image={element.image1.url}
-                            Title={element.title}
-                            ShortDescription={element.shortdescription}
-                            Category={element.category}
-                            id={element.id}
-
-                        />)
-                }
-            })
-            }
+                />)}
             {botaoMostrarMais(data.allPortfolios.filter(element => element.category == category).length)}
         </Template>
     )

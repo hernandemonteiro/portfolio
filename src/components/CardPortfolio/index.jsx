@@ -38,7 +38,7 @@ export default function MediaCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link href={`/portfolioDetails/${props.id}`}>
+        <Link href={`portfolio/details/${props.id}`}>
           <Button size="small">Detalhes</Button>
         </Link>
       </CardActions>

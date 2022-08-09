@@ -30,7 +30,7 @@ export async function getStaticProps() {
       subscription: {
         ...graphqlRequest,
         initialData: await request(graphqlRequest),
-        token: "59e2d095f8563442f2bb23b25ab172",
+        token: process.env.NEXT_PUBLIC_DATO_TOKEN,
       },
     },
   };

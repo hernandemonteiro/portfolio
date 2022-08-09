@@ -1,25 +1,19 @@
 import React from "react";
 import { useQuerySubscription } from "react-datocms";
 import { request } from "../../lib/datocms";
-import parse from 'html-react-parser';
+import { Markup } from "react-render-markup";
 import Template from "../../components/Template";
-
-let query = `allPreviews(first: $limit) {
-  title,
-  shortdescription,
-  date,
-  category,
-  post
-  }`;
   
-    const PREVIEW_QUERY = `query HomePage($limit: IntType) {
-      ${query}
+    const QUERY = `query Preview($limit: IntType) {
+      allPreviews(first: $limit) {
+        post
+        }
     }`;
   
     export async function getStaticProps() {
   
       const graphqlRequest = {
-        query: PREVIEW_QUERY,
+        query: QUERY,
         variables: { limit: 5 },
       };
       
@@ -28,7 +22,7 @@ let query = `allPreviews(first: $limit) {
           subscription: {
             ...graphqlRequest,
             initialData: await request(graphqlRequest),
-            token: "59e2d095f8563442f2bb23b25ab172",
+            token: process.env.NEXT_PUBLIC_DATO_TOKEN,
           },
         },
       };
@@ -37,15 +31,13 @@ let query = `allPreviews(first: $limit) {
 export default function Artigo({subscription}) {
     
     const { data } = useQuerySubscription(subscription);
-    let preview = data.allPreviews[0];
+    const preview = data.allPreviews[0];
     return (
-
         <Template >
-            {parse(preview.post)}
+            <Markup markup={preview.post} />
         </Template>
     )
 }
-
 
 export async function getStaticPaths() {
     return {
