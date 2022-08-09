@@ -4,7 +4,7 @@ import { request } from "../../lib/datocms";
 import { Markup } from "react-render-markup";
 import Template from "../../components/Template";
   
-    const QUERY = `query Preview($limit: IntType) {
+    const QUERY = `query {
       preview{
         post
       }
