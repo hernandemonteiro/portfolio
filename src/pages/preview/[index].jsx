@@ -5,9 +5,9 @@ import { Markup } from "react-render-markup";
 import Template from "../../components/Template";
   
     const QUERY = `query Preview($limit: IntType) {
-      allPreviews(first: $limit) {
+      preview{
         post
-        }
+      }
     }`;
   
     export async function getStaticProps() {
