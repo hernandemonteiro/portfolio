@@ -3,7 +3,6 @@ import { useQuerySubscription } from "react-datocms";
 import Template from "../components/Template";
 import { request } from "../lib/datocms";
 import Nav from "../components/Nav";
-import Query from "../querys/posts";
 import CardArticle from "../components/CardArticle";
 import usePagination from "../Hooks/usePagination";
 
