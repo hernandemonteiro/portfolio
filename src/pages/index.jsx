@@ -7,11 +7,21 @@ import Query from "../querys/posts";
 import CardArticle from "../components/CardArticle";
 import usePagination from "../Hooks/usePagination";
 
+const QUERY = `query HomePage($limit: IntType) {
+  allPosts(first: $limit,
+    orderBy: [title_ASC]) {
+    title,
+    shortdescription,
+    date,
+    category,
+    id
+    }
+  }`;
 
 export async function getStaticProps() {
   
   const graphqlRequest = {
-    query: Query(),
+    query: QUERY,
     variables: { limit: 100 },
   };
 
