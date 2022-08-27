@@ -44,7 +44,7 @@ export default function Footer() {
                     </div>
                     <div className={styles.SocialIcon}>
                         <a
-                            href="https://br.linkedin.com/in/hernande-monteiro-bezerra-5a778b95"
+                            href="https://br.linkedin.com/in/hernande-monteiro"
                             target='_blank'>
                             <FontAwesomeIcon icon={faLinkedin} fixedWidth />
                         </a>
