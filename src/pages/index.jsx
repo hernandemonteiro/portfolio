@@ -5,7 +5,7 @@ import CardArticle from "../components/CardArticle";
 import usePagination from "../Hooks/usePagination";
 
 export async function getServerSideProps() {
-  const dataFetch = await fetch("http://localhost:3000/api/posts/posts");
+  const dataFetch = await fetch("http://localhost:3000/api/posts");
   const data = await dataFetch.json();
   return { props: { data } };
 }

@@ -6,7 +6,7 @@ import Nav from "../../components/Nav";
 
 export async function getServerSideProps(context) {
   const id = context.query.index;
-  const data = await fetch(`http://localhost:3000/api/posts/${id}`);
+  const data = await fetch(`http://localhost:3000/api/posts`);
   const posts = await data.json();
   return { props: { posts } };
 }

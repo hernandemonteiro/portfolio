@@ -1,4 +1,4 @@
-import { request } from "../../../lib/datocms";
+import { request } from "../../lib/datocms";
 
 export default async function posts(req, res) {
   const QUERY = `query HomePage($limit: IntType) {

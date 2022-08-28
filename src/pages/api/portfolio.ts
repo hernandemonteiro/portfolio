@@ -24,6 +24,6 @@ export default async function portfolio(req, res) {
   try {
     res.status(200).json(subscription.initialData.allPortfolios);
   } catch (error) {
-    res.status(400).send(error);
+    res.send(error);
   }
 }
