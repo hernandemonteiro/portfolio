@@ -6,7 +6,7 @@ import NavPortfolio from "../../../components/NavPortfolio";
 
 
 export async function getServerSideProps() {
-  const dataFetch = await fetch("http://localhost:3000/api/portfolio");
+  const dataFetch = await fetch(process.env.NEXT_PUBLIC_URL_API + "/api/portfolio");
   const data = await dataFetch.json();
   return { props: { data } };
 }
