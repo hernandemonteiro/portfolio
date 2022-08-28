@@ -4,7 +4,7 @@ import NavPortfolio from "../../components/NavPortfolio";
 import CardPortfolio from "../../components/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const dataFetch = await fetch("http://localhost:3000/api/portfolio");
   const data = await dataFetch.json();
   return { props: { data } };
