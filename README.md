@@ -9,8 +9,10 @@ Dependences:
 
     1 - Next.js
     2 - DatoCMS
-    4 - @mui/material
-    5 - react-render-markup
+    3 - fontawesome
+    4 - graphql-request
+    5 - @mui/material
+    6 - react-render-markup
 
 ## About the project:
 
@@ -32,7 +34,6 @@ Social media are linked in the footer.
 Modifications:
 
     1 - methods to get better graphql searches
-    2 - styled components
 
 ## Deployed in:
 

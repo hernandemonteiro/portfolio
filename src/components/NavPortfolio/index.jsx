@@ -4,7 +4,7 @@ import Nav from '../NavTemplate';
 import ButtonNav from '../Buttons';
 
 export default function NavHome({ data }) {
-    let category = data.allPortfolios.map(element => element.category);
+    let category = data.map(element => element.category);
     let newCategory = [...new Set(category)];
     return (
         <Nav>
