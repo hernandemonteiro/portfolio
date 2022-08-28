@@ -8,7 +8,7 @@ import React from "react";
 import { useRouter } from "next/router";
 
 export async function getServerSideProps() {
-  const dataFetch = await fetch(process.env.NEXT_PUBLIC_URL_API + "/api/posts");
+  const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
   const data = await dataFetch.json();
   return { props: { data } };
 }

@@ -5,7 +5,7 @@ import CardPortfolio from "../../components/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
 
 export async function getServerSideProps() {
-  const dataFetch = await fetch(process.env.NEXT_PUBLIC_URL_API + "/api/portfolio");
+  const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/portfolio`);
   const data = await dataFetch.json();
   return { props: { data } };
 }
