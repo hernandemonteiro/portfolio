@@ -1,43 +1,17 @@
 import React from "react";
-import { useQuerySubscription } from "react-datocms";
 import Template from "../../components/Template";
 import NavPortfolio from "../../components/NavPortfolio";
-import { request } from "../../lib/datocms";
 import CardPortfolio from "../../components/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
 
-const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
-  allPortfolios(first: $limit) {
-    title,
-    shortdescription,
-    description,
-    category,
-    id
-    }
-  }`;
-
-export async function getStaticProps() {
-
-  const graphqlRequest = {
-    query: HOMEPAGE_QUERY,
-    variables: { limit: 5 },
-  };
-
-  return {
-    props: {
-      subscription: {
-        ...graphqlRequest,
-        initialData: await request(graphqlRequest),
-        token: process.env.NEXT_PUBLIC_DATO_TOKEN,
-      },
-    },
-  };
+export async function getServerSideProps() {
+  const dataFetch = await fetch("http://localhost:3000/api/portfolio");
+  const data = await dataFetch.json();
+  return { props: { data } };
 }
 
 
-
-export default function Home({ subscription }) {
-  const { data } = useQuerySubscription(subscription);
+export default function portfolio({ data }) {
   const {
     pagination,
     botaoMostrarMais
@@ -46,7 +20,7 @@ export default function Home({ subscription }) {
   return (
     <Template nav={<NavPortfolio data={data} />} >
 
-      {data.allPortfolios.slice(0, pagination).map((element) => {
+      {data.slice(0, pagination).map((element) => {
         return (
           <CardPortfolio
             Title={element.title}
@@ -56,7 +30,7 @@ export default function Home({ subscription }) {
         )
       })
       }
-      {botaoMostrarMais(data.allPortfolios.length)}
+      {botaoMostrarMais(data.length)}
     </Template>
   )
 }

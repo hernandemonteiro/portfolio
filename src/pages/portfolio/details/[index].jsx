@@ -1,55 +1,25 @@
 import React from "react";
 import { useRouter } from 'next/router';
-import { useQuerySubscription } from "react-datocms";
-import { request } from "../../../lib/datocms";
 import { Markup } from "react-render-markup";
 import Template from "../../../components/Template";
 import NavPortfolio from "../../../components/NavPortfolio";
 
 
-const QUERY = `query Article($limit: IntType) {
-  allPortfolios(first: $limit) {
-    description,
-    category,
-    id}}`;
-
-export async function getStaticProps() {
-
-  const graphqlRequest = {
-    query: QUERY,
-    variables: { limit: 100 },
-  };
-
-  return {
-    props: {
-      subscription: {
-        ...graphqlRequest,
-        initialData: await request(graphqlRequest),
-        token: process.env.NEXT_PUBLIC_DATO_TOKEN,
-      },
-    },
-  };
+export async function getServerSideProps() {
+  const dataFetch = await fetch("http://localhost:3000/api/portfolio");
+  const data = await dataFetch.json();
+  return { props: { data } };
 }
 
-export default function Artigo({ subscription }) {
+export default function protfolioDetails({ data }) {
 
-  const { data } = useQuerySubscription(subscription);
   const query = useRouter().query.index;
 
   return (
     <Template nav={<NavPortfolio data={data} />} >
-      {data.allPortfolios
+      {data
         .filter(element => element.id == query)
         .map((element) => <Markup markup={element.description} />)}
     </Template>
   )
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { index: '0' } },
-    ],
-    fallback: 'blocking'
-  }
 }

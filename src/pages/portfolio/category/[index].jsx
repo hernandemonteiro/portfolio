@@ -1,6 +1,4 @@
 import Template from "../../../components/Template";
-import { useQuerySubscription } from "react-datocms";
-import { request } from "../../../lib/datocms";
 import NavPortfolio from "../../../components/NavPortfolio";
 import { useRouter } from "next/router";
 import CardPortfolio from "../../../components/CardPortfolio";
@@ -9,36 +7,13 @@ import usePagination from "../../../Hooks/usePagination";
 
 
 
-const QUERY = `query HomePage($limit: IntType) {
-    allPortfolios(first: $limit) {
-        title,
-        shortdescription,
-        description,
-        category,
-        id
-        }
-    }`;
+export async function getServerSideProps() {
+    const dataFetch = await fetch("http://localhost:3000/api/portfolio");
+    const data = await dataFetch.json();
+    return { props: { data } };
+  }
 
-export async function getStaticProps() {
-
-    const graphqlRequest = {
-        query: QUERY,
-        variables: { limit: 100 },
-    };
-
-    return {
-        props: {
-            subscription: {
-                ...graphqlRequest,
-                initialData: await request(graphqlRequest),
-                token: process.env.NEXT_PUBLIC_DATO_TOKEN,
-            },
-        },
-    };
-}
-
-export default function Category({ subscription }) {
-    const { data } = useQuerySubscription(subscription);
+export default function portfolioCategory({ data }) {
     const {
         pagination,
         botaoMostrarMais
@@ -51,7 +26,7 @@ export default function Category({ subscription }) {
             <>
                 <h2>{category}</h2>
             </>
-            {data.allPortfolios
+            {data
                 .filter(element => element.category == category)
                 .slice(0, pagination)
                 .map((element) => <CardPortfolio
@@ -61,17 +36,7 @@ export default function Category({ subscription }) {
                     id={element.id}
 
                 />)}
-            {botaoMostrarMais(data.allPortfolios.filter(element => element.category == category).length)}
+            {botaoMostrarMais(data.filter(element => element.category == category).length)}
         </Template>
     )
-}
-
-
-export async function getStaticPaths() {
-    return {
-        paths: [
-            { params: { index: 'WEB' } },
-        ],
-        fallback: 'blocking'
-    }
 }

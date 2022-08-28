@@ -1,49 +1,19 @@
 import React from "react";
-import { useQuerySubscription } from "react-datocms";
-import { request } from "../../lib/datocms";
 import { Markup } from "react-render-markup";
 import Template from "../../components/Template";
-  
-    const QUERY = `query Preview($limit: IntType) {
-      allPreviews(first: $limit) {
-        post
-        }
-    }`;
-  
-    export async function getStaticProps() {
-  
-      const graphqlRequest = {
-        query: QUERY,
-        variables: { limit: 5 },
-      };
-      
-      return {
-        props: {
-          subscription: {
-            ...graphqlRequest,
-            initialData: await request(graphqlRequest),
-            token: process.env.NEXT_PUBLIC_DATO_TOKEN,
-          },
-        },
-      };
-    }
 
-export default function Artigo({subscription}) {
-    
-    const { data } = useQuerySubscription(subscription);
-    const preview = data.allPreviews[0];
-    return (
-        <Template >
-            <Markup markup={preview.post} />
-        </Template>
-    )
+export async function getServerSideProps(context) {
+  const id = context.query.index;
+  const data = await fetch(`http://localhost:3000/api/posts/${id}`);
+  const preview = await data.json();
+  return { props: { preview } };
 }
 
-export async function getStaticPaths() {
-    return {
-        paths: [
-            { params: { index: '0' } },
-        ],
-        fallback: 'blocking'
-    }
+export default function Artigo({ preview }) {
+  const data = preview[0];
+  return (
+    <Template>
+      <Markup markup={data.post} />
+    </Template>
+  );
 }

@@ -4,53 +4,26 @@ import { request } from "../../lib/datocms";
 import Nav from "../../components/Nav";
 import CardArticle from "../../components/CardArticle";
 import usePagination from "../../Hooks/usePagination";
-import React from 'react';
+import React from "react";
 import { useRouter } from "next/router";
 
-
-const QUERY = `query HomePage($limit: IntType) {
-  allPosts (first: $limit ){
-      title,
-      shortdescription,
-      date,
-      category,
-      id
-      }
-    }`
-
-export async function getStaticProps() {
-
-  const graphqlRequest = {
-    query: QUERY,
-    variables: { limit: 100 },
-  };
-
-  return {
-    props: {
-      subscription: {
-        ...graphqlRequest,
-        initialData: await request(graphqlRequest),
-        token: process.env.NEXT_PUBLIC_DATO_TOKEN,
-      },
-    },
-  };
+export async function getServerSideProps() {
+  const dataFetch = await fetch("http://localhost:3000/api/posts/posts");
+  const data = await dataFetch.json();
+  return { props: { data } };
 }
 
-export default function Category({ subscription }) {
-  const { data } = useQuerySubscription(subscription);
+export default function Category({ data }) {
   const category = useRouter().query.index;
 
-  const {
-    pagination,
-    botaoMostrarMais
-  } = usePagination();
+  const { pagination, botaoMostrarMais } = usePagination();
 
   return (
     <Template nav={<Nav data={data} />}>
       <>
         <h2>{category}</h2>
       </>
-      {data.allPosts.slice(0, pagination).map((element) => {
+      {data.slice(0, pagination).map((element) => {
         if (element.category == category) {
           return (
             <CardArticle
@@ -59,23 +32,13 @@ export default function Category({ subscription }) {
               shortdescription={element.shortdescription}
               date={element.date}
               category={element.category}
-            />)
+            />
+          );
         }
-      })
-      }
-      {botaoMostrarMais(data.allPosts.filter(element => element.category == category).length)}
-
+      })}
+      {botaoMostrarMais(
+        data.filter((element) => element.category == category).length
+      )}
     </Template>
-  )
-
-}
-
-
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { index: 'Front-end' } },
-    ],
-    fallback: 'blocking'
-  }
+  );
 }

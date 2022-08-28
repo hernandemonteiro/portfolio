@@ -1,6 +1,4 @@
 import React from "react";
-import { useQuerySubscription } from "react-datocms";
-import { request } from "../../lib/datocms";
 import { Markup } from "react-render-markup";
 import styles from './curriculum.module.css';
 import Footer from "../../components/Footer";
@@ -9,39 +7,15 @@ import { Avatar, Box, Stack, Divider } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 
-const PREVIEW_QUERY = `query HomePage($limit: IntType) {
-  allCurriculums(first: $limit) {
-    softskills,
-    hardskills,
-    experience,
-    resume,
-    academy,
-    name
-  }
-    }`;
-
-export async function getStaticProps() {
-
-  const graphqlRequest = {
-    query: PREVIEW_QUERY,
-    variables: { limit: 5 },
-  };
-
-  return {
-    props: {
-      subscription: {
-        ...graphqlRequest,
-        initialData: await request(graphqlRequest),
-        token: process.env.NEXT_PUBLIC_DATO_TOKEN,
-      },
-    },
-  };
+export async function getServerSideProps() {
+  const dataFetch = await fetch("http://localhost:3000/api/curriculum");
+  const data = await dataFetch.json();
+  return { props: { data } };
 }
 
-export default function Artigo({ subscription }) {
+export default function Artigo({ data }) {
 
-  const { data } = useQuerySubscription(subscription);
-  let curriculum = data.allCurriculums[0];
+  let curriculum = data[0];
   return (
     <div className={styles.Curriculum}>
       <title>Hernande Monteiro - aqui você sabe um pouco mais sobre mim!</title>
