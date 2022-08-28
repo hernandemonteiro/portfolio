@@ -7,7 +7,7 @@ import { Avatar, Box, Stack, Divider } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataFetch = await fetch("http://localhost:3000/api/curriculum");
   const data = await dataFetch.json();
   return { props: { data } };

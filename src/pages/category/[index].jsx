@@ -7,7 +7,7 @@ import usePagination from "../../Hooks/usePagination";
 import React from "react";
 import { useRouter } from "next/router";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataFetch = await fetch("http://localhost:3000/api/posts");
   const data = await dataFetch.json();
   return { props: { data } };

@@ -4,7 +4,7 @@ import { Markup } from "react-render-markup";
 import Template from "../../components/Template";
 import Nav from "../../components/Nav";
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const id = context.query.index;
   const data = await fetch(`http://localhost:3000/api/posts`);
   const posts = await data.json();

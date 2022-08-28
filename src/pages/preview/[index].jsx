@@ -2,7 +2,7 @@ import React from "react";
 import { Markup } from "react-render-markup";
 import Template from "../../components/Template";
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const id = context.query.index;
   const data = await fetch(`http://localhost:3000/api/posts/${id}`);
   const preview = await data.json();
