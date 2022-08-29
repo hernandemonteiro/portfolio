@@ -1,11 +1,15 @@
 import React from "react";
 import { Markup } from "react-render-markup";
 import styles from "./curriculum.module.css";
-import Footer from "../../components/Footer";
 import Card from "@mui/material/Card";
 import { Avatar, Box, Stack, Divider, Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 export async function getServerSideProps() {
   const dataFetch = await fetch(
@@ -38,19 +42,24 @@ export default function Artigo({ data }) {
               <br />
               Email: monteiro1998@live.com
               <br />
-              <a href='/' target='_blank'>
-              <Button>Acess My Blog</Button>
+              <a href="/" target="_blank">
+                <Button>Acess My Blog</Button>
               </a>
-              <a href='/portfolio' target='_blank'>
-              <Button>Acess My Portfolio</Button>
-              
+              <a href="/portfolio" target="_blank">
+                <Button>Acess My Portfolio</Button>
               </a>
               <Divider />
-              <a href='https://github.com/hernandemonteiro' target='_blank'>
-              <Button>My Github</Button>
+              <a href="https://github.com/hernandemonteiro" target="_blank">
+                <FontAwesomeIcon icon={faGithub} fixedWidth />
               </a>
-              <a href='https://instagram.com/monteiro.ops' target='_blank'>
-              <Button>My Instagram</Button>
+              <a href="https://instagram.com/monteiro.ops" target="_blank">
+                <FontAwesomeIcon icon={faInstagram} fixedWidth />
+              </a>
+              <a
+                href="https://linkedin.com/in/hernande-monteiro"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faLinkedin} fixedWidth />
               </a>
             </Typography>
           </Stack>
@@ -145,8 +154,6 @@ export default function Artigo({ data }) {
           <Markup markup={curriculum.experience} />
         </Stack>
       </Card>
-      <br />
-      <Footer />
     </div>
   );
 }
