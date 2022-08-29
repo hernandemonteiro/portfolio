@@ -23,9 +23,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.link {
-    margin: 2%;
-}
+
 
 @media (max-width: 600px) {
     .textE {
