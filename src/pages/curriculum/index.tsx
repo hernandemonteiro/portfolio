@@ -49,17 +49,26 @@ export default function Artigo({ data }) {
                 <Button>Acess My Portfolio</Button>
               </a>
               <Divider />
-              <a href="https://github.com/hernandemonteiro" target="_blank">
-                <FontAwesomeIcon icon={faGithub} size='5x' />
+              <a
+                href="https://github.com/hernandemonteiro"
+                className={styles.link}
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faGithub} size="3x" />
               </a>
-              <a href="https://instagram.com/monteiro.ops" target="_blank">
-                <FontAwesomeIcon icon={faInstagram} size='5x' />
+              <a
+                href="https://instagram.com/monteiro.ops"
+                className={styles.link}
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="3x" />
               </a>
               <a
                 href="https://linkedin.com/in/hernande-monteiro"
                 target="_blank"
+                className={styles.link}
               >
-                <FontAwesomeIcon icon={faLinkedin} size='5x' />
+                <FontAwesomeIcon icon={faLinkedin} size="3x" />
               </a>
             </Typography>
           </Stack>
