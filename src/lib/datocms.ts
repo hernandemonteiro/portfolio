@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
 
-const token = '59e2d095f8563442f2bb23b25ab172';
+const token = process.env.NEXT_PUBLIC_DATO_TOKEN;
 
 export function request({ query, variables, includeDrafts, excludeInvalid }) {
   const headers = {
