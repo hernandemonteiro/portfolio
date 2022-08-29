@@ -1,36 +1,57 @@
 import React from "react";
 import { Markup } from "react-render-markup";
-import styles from './curriculum.module.css';
+import styles from "./curriculum.module.css";
 import Footer from "../../components/Footer";
-import Card from '@mui/material/Card';
-import { Avatar, Box, Stack, Divider } from '@mui/material';
-import Typography from '@mui/material/Typography';
-
+import Card from "@mui/material/Card";
+import { Avatar, Box, Stack, Divider, Button } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Link from "next/link";
 
 export async function getServerSideProps() {
-  const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/curriculum`);
+  const dataFetch = await fetch(
+    `${process.env.NEXT_PUBLIC_URL_API}/api/curriculum`
+  );
   const data = await dataFetch.json();
   return { props: { data } };
 }
 
 export default function Artigo({ data }) {
-
   let curriculum = data[0];
   return (
     <div className={styles.Curriculum}>
       <title>Hernande Monteiro - aqui você sabe um pouco mais sobre mim!</title>
       <Card>
-        <Box sx={{ p: 2, display: 'flex' }}>
+        <Box sx={{ p: 2, display: "flex" }}>
           <Avatar
             alt="Hernande Monteiro"
             src="https://www.datocms-assets.com/76860/1659202565-download.png"
-            sx={{ width: '20%', height: '20%' }} />
-          <Stack
-            margin={2}
-            spacing={1}>
-            <Typography fontWeight={700}><Markup markup={curriculum.name} /></Typography>
+            sx={{ width: "20%", height: "20%" }}
+          />
+          <Stack margin={2} spacing={1}>
+            <Typography fontWeight={700}>
+              <Markup markup={curriculum.name} />
+            </Typography>
             <Typography variant="body2" color="text.secondary">
               Full Stack Developer
+              <br />
+              Born in: 22/11/1998
+              <br />
+              Email: monteiro1998@live.com
+              <br />
+              <a href='/' target='_blank'>
+              <Button>Acess My Blog</Button>
+              </a>
+              <a href='/portfolio' target='_blank'>
+              <Button>Acess My Portfolio</Button>
+              
+              </a>
+              <Divider />
+              <a href='https://github.com/hernandemonteiro' target='_blank'>
+              <Button>My Github</Button>
+              </a>
+              <a href='https://instagram.com/monteiro.ops' target='_blank'>
+              <Button>My Instagram</Button>
+              </a>
             </Typography>
           </Stack>
         </Box>
@@ -39,17 +60,15 @@ export default function Artigo({ data }) {
           direction="row"
           alignItems="center"
           justifyContent="space-between"
-          sx={{ px: 2, py: 1, bgcolor: 'background.default' }}>
+          sx={{ px: 2, py: 1, bgcolor: "background.default" }}
+        >
           <Markup markup={curriculum.resume} />
         </Stack>
       </Card>
       <br />
       <br />
       <Card>
-        <Typography
-          fontWeight={700}
-          margin={2}
-        >
+        <Typography fontWeight={700} margin={2}>
           Minha formação e meus cursos:
         </Typography>
         <Divider />
@@ -60,17 +79,16 @@ export default function Artigo({ data }) {
           sx={{
             px: 2,
             py: 1,
-            bgcolor: 'background.default'
-          }}>
+            bgcolor: "background.default",
+          }}
+        >
           <Markup markup={curriculum.academy} />
         </Stack>
       </Card>
       <br />
       <br />
       <Card>
-        <Typography
-          fontWeight={700}
-          margin={2}>
+        <Typography fontWeight={700} margin={2}>
           Soft-skills:
         </Typography>
         <Divider />
@@ -81,17 +99,16 @@ export default function Artigo({ data }) {
           sx={{
             px: 2,
             py: 1,
-            bgcolor: 'background.default'
-          }}>
+            bgcolor: "background.default",
+          }}
+        >
           <Markup markup={curriculum.softskills} />
         </Stack>
       </Card>
       <br />
       <br />
       <Card>
-        <Typography
-          fontWeight={700}
-          margin={2}>
+        <Typography fontWeight={700} margin={2}>
           Hard-skills:
         </Typography>
         <Divider />
@@ -102,17 +119,16 @@ export default function Artigo({ data }) {
           sx={{
             px: 2,
             py: 1,
-            bgcolor: 'background.default'
-          }}>
+            bgcolor: "background.default",
+          }}
+        >
           <Markup markup={curriculum.hardskills} />
         </Stack>
       </Card>
       <br />
       <br />
       <Card>
-        <Typography
-          fontWeight={700}
-          margin={2}>
+        <Typography fontWeight={700} margin={2}>
           Experiências:
         </Typography>
         <Divider />
@@ -123,16 +139,14 @@ export default function Artigo({ data }) {
           sx={{
             px: 2,
             py: 1,
-            bgcolor: 'background.default'
-          }}>
+            bgcolor: "background.default",
+          }}
+        >
           <Markup markup={curriculum.experience} />
         </Stack>
       </Card>
       <br />
       <Footer />
-
     </div>
-
-
-  )
+  );
 }
