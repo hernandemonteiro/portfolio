@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "noEmitOnError": true,
     "lib": [
       "dom",
@@ -23,8 +23,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/pages/index.jsx", "src/pages/artigo/[index].jsx", "src/components/NavTemplate/index.jsx", "src/pages/_app.jsx", "src/pages/curriculum/index.jsx", "src/pages/portfolio/index.jsx", "src/components/CardArticle/index.jsx"  ],
+    "**/*.tsx"],
   "exclude": [
     "node_modules"
   ]

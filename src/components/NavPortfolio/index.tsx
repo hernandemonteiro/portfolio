@@ -5,7 +5,7 @@ import ButtonNav from '../Buttons';
 
 export default function NavHome({ data }) {
     let category = data.map(element => element.category);
-    let newCategory = [...new Set(category)];
+    let newCategory: any = [...new Set(category)];
     return (
         <Nav>
             <Link href={`/portfolio`}>

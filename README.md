@@ -1,6 +1,6 @@
 ## Hernande Monteiro - Personal Blog
 
-<img src="http://img.shields.io/static/v1?label=Version&message=0.2.0&color=&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=Version&message=2.0&color=&style=for-the-badge"/>
 
 <img src="http://img.shields.io/static/v1?label=Author&message=Hernande+Monteiro&color=&style=for-the-badge"/>
 <img src="http://img.shields.io/static/v1?label=Status&message=In-develompment&color=&style=for-the-badge"/>
@@ -29,11 +29,15 @@ Social media are linked in the footer.
 
 ## Next stages:
 
-<img src="http://img.shields.io/static/v1?label=nextVersion&message=0.2.5&color=&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=nextVersion&message=2.5&color=&style=for-the-badge"/>
 
 Modifications:
 
     1 - methods to get better graphql searches
+    2 - articles search function
+    3 - style with sass
+    4 - most better markdown package
+    5 - Refactor Nav
 
 ## Deployed in:
 
