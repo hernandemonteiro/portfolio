@@ -50,16 +50,16 @@ export default function Artigo({ data }) {
               </a>
               <Divider />
               <a href="https://github.com/hernandemonteiro" target="_blank">
-                <FontAwesomeIcon icon={faGithub} fixedWidth />
+                <FontAwesomeIcon icon={faGithub} size='5x' />
               </a>
               <a href="https://instagram.com/monteiro.ops" target="_blank">
-                <FontAwesomeIcon icon={faInstagram} fixedWidth />
+                <FontAwesomeIcon icon={faInstagram} size='5x' />
               </a>
               <a
                 href="https://linkedin.com/in/hernande-monteiro"
                 target="_blank"
               >
-                <FontAwesomeIcon icon={faLinkedin} fixedWidth />
+                <FontAwesomeIcon icon={faLinkedin} size='5x' />
               </a>
             </Typography>
           </Stack>
