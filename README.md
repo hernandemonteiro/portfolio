@@ -34,7 +34,7 @@ Social media are linked in the footer.
 Modifications:
 
     1 - methods to get better graphql searches
-    2 - articles search function
+    2 - articles search functionality
     3 - style with sass
     4 - most better markdown package
     5 - Refactor Nav
