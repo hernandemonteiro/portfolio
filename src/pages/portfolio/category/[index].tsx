@@ -23,6 +23,7 @@ export default function portfolioCategory({ data }) {
 
     return (
         <Template nav={<NavPortfolio data={data} />}>
+            
             <>
                 <h2>{category}</h2>
             </>

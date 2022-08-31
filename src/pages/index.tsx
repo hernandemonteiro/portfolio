@@ -14,6 +14,7 @@ export default function Home({ data }) {
   const { pagination, botaoMostrarMais } = usePagination();
   return (
     <Template nav={<Nav data={data} />}>
+      
       {data.slice(0, pagination).map((element) => {
         return (
           <>

@@ -20,6 +20,7 @@ export default function Category({ data }) {
 
   return (
     <Template nav={<Nav data={data} />}>
+      
       <>
         <h2>{category}</h2>
       </>
