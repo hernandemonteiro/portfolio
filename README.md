@@ -1,45 +1,39 @@
 ## Hernande Monteiro - Personal Blog
 
-<img src="http://img.shields.io/static/v1?label=Version&message=2.0&color=&style=for-the-badge"/>
+This project are made for evolve more people about software development.<br>
+In the blog i use articles to explain methods and practices...
 
-<img src="http://img.shields.io/static/v1?label=Author&message=Hernande+Monteiro&color=&style=for-the-badge"/>
-<img src="http://img.shields.io/static/v1?label=Status&message=In-develompment&color=&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=Author&message=Hernande+Monteiro&color=white&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=Status&message=In%20Production&color=purple&style=for-the-badge"/>
 
-Dependences:
+## Dependences:
 
-    1 - Next.js
-    2 - DatoCMS
-    3 - fontawesome
-    4 - graphql-request
-    5 - @mui/material
-    6 - react-render-markup
+    1 - DatoCMS
+    2 - fontawesome
+    3 - graphql-request
+    4 - @mui/material
+    5 - react-render-markup
+
+## Development languages and tests:
+
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
 ## About the project:
 
-This project are made for evolve more people about software development.<br>
-I use articles to explain methods and practices...
-<br><br>
-<img src='https://www.datocms-assets.com/76860/1659549736-hernandemonteiroindex.png'/>
-<br><br>
-In the portfolio page i can expose my projects and designs.
-
-My curriculum page describe soft-skills and hard-skills about me!
-
-Social media are linked in the footer.
-
-## Next stages:
-
-<img src="http://img.shields.io/static/v1?label=nextVersion&message=2.5&color=&style=for-the-badge"/>
-
-Modifications:
-
-    1 - methods to get better graphql searches
-    2 - articles search functionality
-    3 - style with sass
-    4 - most better markdown package
-    5 - Refactor Nav
-
+Home Page - list of articles:<br/><br/>
+<img width='50%' src='https://www.datocms-assets.com/76860/1659549736-hernandemonteiroindex.png'/>
+<br/><br/>
+Portfolio Page - Expose projects:<br/><br/>
+(building picture)
+<br/><br/>
+Curriculum Page - Describes my skills:<br/><br/>
+(building picture)
+<br/><br/>
+Other features you can see in the deployed project:<br/>
+<a href='https://hernandemonteiro.vercel.app' target="_blank">Click Here</a> to see!
 ## Deployed in:
 
-https://hernandemonteiro.vercel.app
+[![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://hernandemonteiro.vercel.app)
+
 
