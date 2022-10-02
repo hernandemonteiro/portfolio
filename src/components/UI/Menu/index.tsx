@@ -12,12 +12,12 @@ import styles from "./Menu.module.css";
 export default function Menu() {
   return (
     <div className={styles.Menu} style={{ color: "white" }}>
-      <Link href="/" style={{ color: "white", fontSize: '1rem'}}>
+      <Link href="/" style={{ color: "white", width: '1rem'}}>
         <FontAwesomeIcon
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faBlog}
-          size="2x"
+          fixedWidth
         />
       </Link>
       <Link href="/curriculum" style={{ color: "white" }}>
