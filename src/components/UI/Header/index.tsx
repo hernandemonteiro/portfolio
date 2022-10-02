@@ -7,17 +7,15 @@ export default function Header() {
     return (
         <div className={styles.Header}>
             <Typography
+            className={styles.Title}
                 sx={{
-                    fontWeight: 'bold',
-                    margin: '0.75rem',
-                    fontFamily: 'Cormorant SC',
+                   
                 }}
                 variant="h4">
-                <Link href='/'>
+                <Link href='/' className={styles.Title}>
                     Hernande Monteiro
                 </Link>
             </Typography>
-            <hr />
         </div>
     )
 }
