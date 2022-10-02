@@ -2,7 +2,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import { Markup } from "react-render-markup";
 import Template from "../../../components/Template";
-import NavPortfolio from "../../../components/NavPortfolio";
 
 export async function getServerSideProps() {
   const dataFetch = await fetch(
@@ -13,15 +12,16 @@ export async function getServerSideProps() {
 }
 
 export default function protfolioDetails({ data }) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const query = useRouter().query.index;
 
   return (
-    <Template nav={<NavPortfolio data={data} />}>
+    <Template>
       
       {data
         .filter((element) => element.id == query)
         .map((element) => (
-          <Markup markup={element.description} />
+          <Markup key={element.id} markup={element.description} />
         ))}
     </Template>
   );

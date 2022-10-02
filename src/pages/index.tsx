@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Template from "../components/Template";
-import Nav from "../components/Nav";
 import CardArticle from "../components/CardArticle";
 import usePagination from "../Hooks/usePagination";
 
@@ -13,7 +12,7 @@ export async function getServerSideProps() {
 export default function Home({ data }) {
   const { pagination, botaoMostrarMais } = usePagination();
   return (
-    <Template nav={<Nav data={data} />}>
+    <Template>
       
       {data.slice(0, pagination).map((element) => {
         return (

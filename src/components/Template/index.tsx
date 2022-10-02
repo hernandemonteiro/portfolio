@@ -7,7 +7,6 @@ import Header from '../Header';
 
 interface TemplateProps {
     children?: any;
-    nav?: any;
 }
 
 export default function Template(props: TemplateProps) {
@@ -24,7 +23,6 @@ export default function Template(props: TemplateProps) {
                 <main className={styles.main}>
                     <div className={styles.BoxContent}>
                         <div className={styles.Content}>
-                            {props.nav}
                             <div className={styles.ArticleBox}>
                                 {props.children}
                             </div>

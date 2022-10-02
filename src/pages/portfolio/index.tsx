@@ -1,6 +1,5 @@
 import React from "react";
 import Template from "../../components/Template";
-import NavPortfolio from "../../components/NavPortfolio";
 import CardPortfolio from "../../components/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
 
@@ -16,11 +15,11 @@ export default function portfolio({ data }) {
   const { pagination, botaoMostrarMais } = usePagination();
 
   return (
-    <Template nav={<NavPortfolio data={data} />}>
-      
+    <Template>
       {data.slice(0, pagination).map((element) => {
         return (
           <CardPortfolio
+            key={element.id}
             Title={element.title}
             ShortDescription={element.shortdescription}
             Category={element.category}
