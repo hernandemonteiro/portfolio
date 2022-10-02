@@ -1,7 +1,7 @@
 .Menu {
   display: flex;
   background-color: black;
-  padding: 0.5%;
+  padding: 2%;
   justify-content: space-between;
   position: fixed;
   z-index: 1;
