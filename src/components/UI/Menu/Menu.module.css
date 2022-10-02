@@ -1,7 +1,6 @@
 .Menu {
     display: flex;
     background-color: black;
-    color: aliceblue;
     padding: 2%;
     justify-content: space-between;
     position: fixed;
@@ -10,11 +9,6 @@
     border-radius: 10px 10px 10px 10px;
 }
 
-.SocialIcon, .SocialIcon > a {
-    color: white;
-    cursor: pointer;
-    z-index: 1;
-}
 @media (max-width: 700px){
     .Menu {
         width: 100%;

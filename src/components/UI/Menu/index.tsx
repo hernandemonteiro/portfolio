@@ -11,60 +11,70 @@ import styles from "./Menu.module.css";
 
 export default function Menu() {
   return (
-    <div className={styles.Menu}>
+    <div className={styles.Menu} style={{ color: "white" }}>
       <div className={styles.SocialIcon}>
-        <Link href="/">
+        <a href="/" style={{ color: "white" }}>
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faBlog}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="/curriculum">
+        <a href="/curriculum" style={{ color: "white" }}>
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faUser}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="/portfolio">
+        <a href="/portfolio" style={{ color: "white" }}>
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faNewspaper}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
-      <div className={styles.SocialIcon}>
-        <Link href="https://github.com/hernandemonteiro" target="_blank">
+      <div className={styles.SocialIcon} style={{ color: "white" }}>
+        <a
+          href="https://github.com/hernandemonteiro"
+          style={{ color: "white" }}
+          target="_blank"
+        >
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faGithub}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="https://www.instagram.com/monteiro.ops/">
+        <a
+          href="https://www.instagram.com/monteiro.ops/"
+          style={{ color: "white" }}
+        >
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faInstagram}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="https://br.linkedin.com/in/hernande-monteiro">
+        <a
+          href="https://br.linkedin.com/in/hernande-monteiro"
+          style={{ color: "white" }}
+        >
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faLinkedin}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
     </div>
   );
