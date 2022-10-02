@@ -1,22 +1,26 @@
 .Menu {
   display: flex;
-  background-color: black;
+  background-color: rgb(112, 109, 109);
+  box-shadow: black 0px 8px 34px;
   padding: 2%;
   justify-content: space-around;
   position: fixed;
   z-index: 1;
   bottom: 0;
-  width: 80%;
+  width: 84.5%;
 }
 
 .IconBox {
-    color: white;
-    width: 1.2rem;
-    font-size: 1.2rem;
+    width: 2rem;
+    font-size: 2rem;
 }
 .SocialIcon {
-  color: white;
   cursor: pointer;
+  color: white
+}
+
+.SocialIcon:hover {
+  color: greenyellow;
 }
 
 @media (max-width: 700px){

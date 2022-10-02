@@ -1,15 +1,7 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import { Avatar, Box, Stack, Divider, Button } from "@mui/material";
+import { Avatar, Box, Stack, Divider } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import styles from "./CardHeaderCurriculum.module.css";
-import Link from "next/link";
 
 interface CardHeaderCurriculumProps {
   name: string;
@@ -21,8 +13,10 @@ export default function CardHeaderCurriculum(props: CardHeaderCurriculumProps) {
       <Avatar
         alt={"Hernande Monteiro"}
         src="https://www.datocms-assets.com/76860/1659202565-download.png"
-        sx={{ width: "20%", height: "20%" }}
+        sx={{ width: "30%", height: "30%" }}
       />
+      <br />
+      <br />
       <Card>
         <Box sx={{ p: 2, display: "flex", textAlign: "center" }}>
           <Stack
@@ -33,8 +27,8 @@ export default function CardHeaderCurriculum(props: CardHeaderCurriculumProps) {
             }}
           >
             <Typography variant="body2" color="text.secondary">
-            <h1>{props.name}</h1>
-            <h3>Full Stack Developer</h3>
+              <h1>{props.name}</h1>
+              <h3>Full Stack Developer</h3>
               <br />
               22/11/1998
               <br />

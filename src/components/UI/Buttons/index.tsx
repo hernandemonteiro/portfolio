@@ -7,7 +7,7 @@ interface ButtonProps {
     onClick?: any;
     className?: any;
 }
-export default function ButtonNav(props: ButtonProps){
+export default function ButtonOne(props: ButtonProps){
     return (
 
         <Button onClick={props.onClick} sx={{
@@ -16,6 +16,8 @@ export default function ButtonNav(props: ButtonProps){
             padding: '2%',
             fontWeight: 'bold',
             fontFamily: 'Cormorant SC',
+            backgroundColor: "rgb(24, 24, 24)",
+            color: "white",
         }} variant="contained">{props.children}</Button>
     )
 }

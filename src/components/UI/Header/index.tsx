@@ -8,9 +8,6 @@ export default function Header() {
         <div className={styles.Header}>
             <Typography
             className={styles.Title}
-                sx={{
-                   
-                }}
                 variant="h4">
                 <Link href='/' className={styles.Title}>
                     Hernande Monteiro

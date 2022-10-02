@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@mui/material";
+import ButtonOne from "../components/UI/Buttons";
 /* @sumary Hook to define a control to paginate the querys
  */
 export default function usePagination() {
@@ -10,9 +10,9 @@ export default function usePagination() {
   function botaoMostrarMais(query) {
     if (query > 5 && pagination <= query) {
       return (
-        <Button onClick={() => setPagination(pagination + 5)}>
+        <ButtonOne onClick={() => setPagination(pagination + 5)}>
           Mostrar Mais
-        </Button>
+        </ButtonOne>
       );
     }
   }

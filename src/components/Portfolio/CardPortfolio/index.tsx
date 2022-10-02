@@ -10,9 +10,8 @@ import Link from 'next/link';
 export default function MediaCard(props) {
   return (
     <Card
-      sx={{ maxWidth: '345' }}
+      sx={{ maxWidth: '100%', minWidth: "95%" }}
       style={{
-        width: '80%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

@@ -16,7 +16,6 @@ export default function Menu() {
         <Link href="/">
           <FontAwesomeIcon
             className={styles.SocialIcon}
-            style={{ color: "white" }}
             icon={faBlog}
             fixedWidth
           />
@@ -26,7 +25,6 @@ export default function Menu() {
         <Link href="/curriculum">
           <FontAwesomeIcon
             className={styles.SocialIcon}
-            style={{ color: "white" }}
             icon={faUser}
             fixedWidth
           />
@@ -36,7 +34,6 @@ export default function Menu() {
         <Link href="/portfolio">
           <FontAwesomeIcon
             className={styles.SocialIcon}
-            style={{ color: "white" }}
             icon={faNewspaper}
             fixedWidth
           />
@@ -46,7 +43,6 @@ export default function Menu() {
         <Link href="https://github.com/hernandemonteiro" target="_blank">
           <FontAwesomeIcon
             className={styles.SocialIcon}
-            style={{ color: "white" }}
             icon={faGithub}
             fixedWidth
           />
@@ -56,7 +52,6 @@ export default function Menu() {
         <Link href="https://www.instagram.com/monteiro.ops/">
           <FontAwesomeIcon
             className={styles.SocialIcon}
-            style={{ color: "white" }}
             icon={faInstagram}
             fixedWidth
           />
@@ -66,7 +61,6 @@ export default function Menu() {
         <Link href="https://br.linkedin.com/in/hernande-monteiro">
           <FontAwesomeIcon
             className={styles.SocialIcon}
-            style={{ color: "white" }}
             icon={faLinkedin}
             fixedWidth
           />

@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap');
-
-
 .Header {
-    font-family:  'Cormorant SC', serif;
-    width: 100%;
-    padding: 2%;
-    text-align: center;
+  width: 100%;
+  padding: 2%;
+  text-align: center;
+  background-color: rgb(112, 109, 109);
+  box-shadow: black 0px 8px 34px;
+  color: white;
 }
 
-.Title {
-    font-weight: bold;
-    color: black;
-    margin: 0.7rem;
-    font-family: 'Cormorant SC', serif;
-  }
+.Title > a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin: 0.75rem;
+}
+
+.Title > a:hover {
+  color: greenyellow
+}
