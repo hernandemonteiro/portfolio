@@ -33,7 +33,7 @@ export default function Menu() {
         </a>
       </div>
       <div className={styles.SocialIcon}>
-        <arguments href="https://www.instagram.com/monteiro.ops/">
+        <a href="https://www.instagram.com/monteiro.ops/">
           <FontAwesomeIcon icon={faInstagram} fixedWidth />
         </a>
       </div>
