@@ -13,7 +13,11 @@ export default function Menu() {
   return (
     <div className={styles.Menu} style={{ color: "white" }}>
       <div className={styles.SocialIcon}>
+<<<<<<< Updated upstream
         <a href="/" style={{ color: "white" }}>
+=======
+        <Link href="/" style={{ color: "white" }}>
+>>>>>>> Stashed changes
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faBlog}
@@ -22,7 +26,11 @@ export default function Menu() {
         </a>
       </div>
       <div className={styles.SocialIcon}>
+<<<<<<< Updated upstream
         <a href="/curriculum" style={{ color: "white" }}>
+=======
+        <Link href="/curriculum" style={{ color: "white" }}>
+>>>>>>> Stashed changes
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faUser}
@@ -31,7 +39,11 @@ export default function Menu() {
         </a>
       </div>
       <div className={styles.SocialIcon}>
+<<<<<<< Updated upstream
         <a href="/portfolio" style={{ color: "white" }}>
+=======
+        <Link href="/portfolio" style={{ color: "white" }}>
+>>>>>>> Stashed changes
           <FontAwesomeIcon
             style={{ color: "white" }}
             icon={faNewspaper}
@@ -40,7 +52,11 @@ export default function Menu() {
         </a>
       </div>
       <div className={styles.SocialIcon} style={{ color: "white" }}>
+<<<<<<< Updated upstream
         <a
+=======
+        <Link
+>>>>>>> Stashed changes
           href="https://github.com/hernandemonteiro"
           style={{ color: "white" }}
           target="_blank"
@@ -53,7 +69,11 @@ export default function Menu() {
         </a>
       </div>
       <div className={styles.SocialIcon}>
+<<<<<<< Updated upstream
         <a
+=======
+        <Link
+>>>>>>> Stashed changes
           href="https://www.instagram.com/monteiro.ops/"
           style={{ color: "white" }}
         >
@@ -65,7 +85,11 @@ export default function Menu() {
         </a>
       </div>
       <div className={styles.SocialIcon}>
+<<<<<<< Updated upstream
         <a
+=======
+        <Link
+>>>>>>> Stashed changes
           href="https://br.linkedin.com/in/hernande-monteiro"
           style={{ color: "white" }}
         >
