@@ -12,8 +12,8 @@
 .SocialIcon {
   color: white;
   cursor: pointer;
-  font-size: 1rem;
-  margin: 2%;
+  font-size: 0.7rem;
+  margin: 3%;
 }
 @media (max-width: 700px) {
   .Menu {
