@@ -12,7 +12,7 @@ import styles from "./Menu.module.css";
 export default function Menu() {
   return (
     <div className={styles.Menu} style={{ color: "white" }}>
-      <div className="IconBox">
+      <div className={styles.IconBox}>
         <Link href="/">
           <FontAwesomeIcon
             className={styles.SocialIcon}
@@ -22,7 +22,7 @@ export default function Menu() {
           />
         </Link>
       </div>
-      <div className="IconBox">
+      <div className={styles.IconBox}>
         <Link href="/curriculum">
           <FontAwesomeIcon
             className={styles.SocialIcon}
@@ -32,7 +32,7 @@ export default function Menu() {
           />
         </Link>
       </div>
-      <div className="IconBox">
+      <div className={styles.IconBox}>
         <Link href="/portfolio">
           <FontAwesomeIcon
             className={styles.SocialIcon}
@@ -42,7 +42,7 @@ export default function Menu() {
           />
         </Link>
       </div>
-      <div className="IconBox">
+      <div className={styles.IconBox}>
         <Link href="https://github.com/hernandemonteiro" target="_blank">
           <FontAwesomeIcon
             className={styles.SocialIcon}
@@ -52,7 +52,7 @@ export default function Menu() {
           />
         </Link>
       </div>
-      <div className="IconBox">
+      <div className={styles.IconBox}>
         <Link href="https://www.instagram.com/monteiro.ops/">
           <FontAwesomeIcon
             className={styles.SocialIcon}
@@ -62,7 +62,7 @@ export default function Menu() {
           />
         </Link>
       </div>
-      <div className="IconBox">
+      <div className={styles.IconBox}>
         <Link href="https://br.linkedin.com/in/hernande-monteiro">
           <FontAwesomeIcon
             className={styles.SocialIcon}
