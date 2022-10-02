@@ -12,6 +12,7 @@ export async function getServerSideProps() {
 }
 
 export default function portfolio({ data }) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { pagination, botaoMostrarMais } = usePagination();
 
   return (

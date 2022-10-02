@@ -9,6 +9,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./CardHeaderCurriculum.module.css";
+import Link from "next/link";
 
 interface CardHeaderCurriculumProps {
   name: string;
@@ -33,32 +34,28 @@ export default function CardHeaderCurriculum(props: CardHeaderCurriculumProps) {
               <br />
               Email: monteiro1998@live.com
               <br />
-              <a href="/" target="_blank">
+              <Link href="/" target="_blank">
                 <Button>Acess My Blog</Button>
-              </a>
-              <a href="/portfolio" target="_blank">
+              </Link>
+              <Link href="/portfolio" target="_blank">
                 <Button>Acess My Portfolio</Button>
-              </a>
-              <br />
+              </Link>
               <Divider />
               <br />
               <a
                 href="https://github.com/hernandemonteiro"
                 className={styles.link}
-                target="_blank"
               >
                 <FontAwesomeIcon icon={faGithub} size="3x" />
               </a>
               <a
                 href="https://instagram.com/monteiro.ops"
                 className={styles.link}
-                target="_blank"
               >
                 <FontAwesomeIcon icon={faInstagram} size="3x" />
               </a>
               <a
                 href="https://linkedin.com/in/hernande-monteiro"
-                target="_blank"
                 className={styles.link}
               >
                 <FontAwesomeIcon icon={faLinkedin} size="3x" />

@@ -34,9 +34,7 @@
   flex-direction: column;
   width: 85%;
   padding:4%;
-  max-height: 100%;
   margin: 2%;
-  overflow: auto;
   background-color: rgb(245, 241, 241);
   border-radius: 25px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
