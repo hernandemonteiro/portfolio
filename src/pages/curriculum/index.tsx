@@ -1,8 +1,9 @@
 import React from "react";
 import { Markup } from "react-render-markup";
 import styles from "./curriculum.module.css";
-import CardCurriculum from "../../components/CardCurriculum";
-import CardHeaderCurriculum from "../../components/CardHeaderCurriculum";
+import CardCurriculum from "../../components/Curriculum/CardCurriculum";
+import CardHeaderCurriculum from "../../components/Curriculum/CardHeaderCurriculum";
+import Menu from "../../components/UI/Menu";
 
 export async function getServerSideProps() {
   const dataFetch = await fetch(
@@ -32,6 +33,7 @@ export default function Artigo({ data }) {
       <CardCurriculum title="Experiências:">
         <Markup markup={curriculum.experience} />
       </CardCurriculum>
+      <Menu/>
     </div>
   );
 }

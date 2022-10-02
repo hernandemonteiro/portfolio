@@ -1,6 +1,6 @@
 import React from "react";
-import Template from "../../components/Template";
-import CardPortfolio from "../../components/CardPortfolio";
+import Template from "../../components/UI/Template";
+import CardPortfolio from "../../components/Portfolio/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
 
 export async function getServerSideProps() {

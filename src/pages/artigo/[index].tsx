@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { Markup } from "react-render-markup";
-import Template from "../../components/Template";
+import Template from "../../components/UI/Template";
 
 export async function getServerSideProps() {
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);

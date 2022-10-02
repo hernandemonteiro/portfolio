@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap");
 
 .container {
   padding: 0 2rem;
@@ -6,11 +6,10 @@
 
 .main {
   min-height: 100vh;
-  padding:  0 4rem;
+  padding: 0 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .BoxContent {
@@ -18,7 +17,7 @@
   min-width: 80vw;
   min-height: 80vh;
   text-align: center;
-
+  margin-bottom: 15%;
 }
 
 .Content {
@@ -33,7 +32,8 @@
   text-align: start;
   flex-direction: column;
   width: 85%;
-  padding:4%;
+  padding: 4%;
+  padding-bottom: 18%;
   margin: 2%;
   background-color: rgb(245, 241, 241);
   border-radius: 25px;
@@ -48,6 +48,4 @@
   .ArticleBox {
     width: 100%;
   }
-
 }
-

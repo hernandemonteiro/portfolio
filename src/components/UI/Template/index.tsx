@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from './Template.module.css';
-import Footer from '../Footer';
 import Header from '../Header';
+import Menu from '../Menu';
 
 
 interface TemplateProps {
@@ -28,7 +28,7 @@ export default function Template(props: TemplateProps) {
                             </div>
                         </div>
                     </div>
-                    <Footer />
+                    <Menu/>
                 </main>
             </div>
         </>
