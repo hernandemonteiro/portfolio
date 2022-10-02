@@ -17,7 +17,7 @@
   min-width: 80vw;
   min-height: 80vh;
   text-align: center;
-  margin-bottom: 8%;
+  margin-bottom: 9%;
 }
 
 .Content {
@@ -33,7 +33,7 @@
   flex-direction: column;
   width: 85%;
   padding: 4%;
-  padding-bottom: 12%;
+  padding-bottom: 15%;
   margin: 2%;
   background-color: rgb(245, 241, 241);
   border-radius: 25px;
