@@ -56,7 +56,7 @@ export default function Menu() {
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faInstagram}
-          size="3x"
+          fixedWidth
         />
       </Link>
       <Link
@@ -67,7 +67,7 @@ export default function Menu() {
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faLinkedin}
-          size="3x"
+          fixedWidth
         />
       </Link>
     </div>
