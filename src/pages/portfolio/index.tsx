@@ -2,6 +2,7 @@ import React from "react";
 import Template from "../../components/UI/Template";
 import CardPortfolio from "../../components/Portfolio/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
+import Menu from "../../components/UI/Menu";
 
 export async function getServerSideProps() {
   const dataFetch = await fetch(
@@ -29,6 +30,7 @@ export default function portfolio({ data }) {
         );
       })}
       {botaoMostrarMais(data.length)}
+      <Menu />
     </Template>
   );
 }

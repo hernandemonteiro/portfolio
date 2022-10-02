@@ -1,5 +1,6 @@
 import React from "react";
 import { Markup } from "react-render-markup";
+import Menu from "../../components/UI/Menu";
 import Template from "../../components/UI/Template";
 
 export async function getServerSideProps() {
@@ -13,6 +14,7 @@ export default function Artigo({ preview }) {
   return (
     <Template>
       <Markup markup={data.post} />
+      <Menu />
     </Template>
   );
 }

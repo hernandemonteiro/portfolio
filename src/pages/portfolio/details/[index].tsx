@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { Markup } from "react-render-markup";
 import Template from "../../../components/UI/Template";
+import Menu from "../../../components/UI/Menu";
 
 export async function getServerSideProps() {
   const dataFetch = await fetch(
@@ -17,12 +18,12 @@ export default function protfolioDetails({ data }) {
 
   return (
     <Template>
-      
       {data
         .filter((element) => element.id == query)
         .map((element) => (
           <Markup key={element.id} markup={element.description} />
         ))}
+      <Menu />
     </Template>
   );
 }

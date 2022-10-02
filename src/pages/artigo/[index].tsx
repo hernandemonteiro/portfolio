@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { Markup } from "react-render-markup";
 import Template from "../../components/UI/Template";
+import Menu from "../../components/UI/Menu";
 
 export async function getServerSideProps() {
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
@@ -19,6 +20,7 @@ export default function Artigo({ posts }) {
         .map((element) => (
           <Markup key={element.id} markup={element.post} />
         ))}
+      <Menu />
     </Template>
   );
 }
