@@ -12,7 +12,7 @@ import styles from "./Menu.module.css";
 export default function Menu() {
   return (
     <div className={styles.Menu} style={{ color: "white" }}>
-      <Link href="/" style={{ color: "white", width: '1.5rem'}}>
+      <Link href="/" style={{ color: "white", width: '0.5rem'}}>
         <FontAwesomeIcon
           className={styles.SocialIcon}
           style={{ color: "white" }}
@@ -20,7 +20,7 @@ export default function Menu() {
           fixedWidth
         />
       </Link>
-      <Link href="/curriculum" style={{ color: "white", width: '1.5rem' }}>
+      <Link href="/curriculum" style={{ color: "white", width: '0.5rem' }}>
         <FontAwesomeIcon
           className={styles.SocialIcon}
           style={{ color: "white" }}
@@ -28,7 +28,7 @@ export default function Menu() {
           fixedWidth
         />
       </Link>
-      <Link href="/portfolio" style={{ color: "white", width: '1.5rem' }}>
+      <Link href="/portfolio" style={{ color: "white", width: '0.5rem' }}>
         <FontAwesomeIcon
           className={styles.SocialIcon}
           style={{ color: "white" }}
@@ -38,7 +38,7 @@ export default function Menu() {
       </Link>
       <Link
         href="https://github.com/hernandemonteiro"
-        style={{ color: "white", width: '1.5rem' }}
+        style={{ color: "white", width: '0.5rem' }}
         target="_blank"
       >
         <FontAwesomeIcon
@@ -50,7 +50,7 @@ export default function Menu() {
       </Link>
       <Link
         href="https://www.instagram.com/monteiro.ops/"
-        style={{ color: "white", width: '1.5rem' }}
+        style={{ color: "white", width: '0.5rem' }}
       >
         <FontAwesomeIcon
           className={styles.SocialIcon}
@@ -61,7 +61,7 @@ export default function Menu() {
       </Link>
       <Link
         href="https://br.linkedin.com/in/hernande-monteiro"
-        style={{ color: "white", width: '1.5rem' }}
+        style={{ color: "white", width: '0.5rem' }}
       >
         <FontAwesomeIcon
           className={styles.SocialIcon}
