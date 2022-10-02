@@ -12,14 +12,16 @@ import styles from "./Menu.module.css";
 export default function Menu() {
   return (
     <div className={styles.Menu} style={{ color: "white" }}>
-      <Link href="/">
-        <FontAwesomeIcon
-          className={styles.SocialIcon}
-          style={{ color: "white" }}
-          icon={faBlog}
-          size="sm"
-        />
-      </Link>
+      <div className="IconBox">
+        <Link href="/">
+          <FontAwesomeIcon
+            className={styles.SocialIcon}
+            style={{ color: "white" }}
+            icon={faBlog}
+            size="sm"
+          />
+        </Link>
+      </div>
       <div className="IconBox">
         <Link href="/curriculum">
           <FontAwesomeIcon
