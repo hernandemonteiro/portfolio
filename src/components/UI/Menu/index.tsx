@@ -12,64 +12,64 @@ import styles from "./Menu.module.css";
 export default function Menu() {
   return (
     <div className={styles.Menu} style={{ color: "white" }}>
-      <Link href="/" style={{ color: "white", width: '0.5rem', fontSize: '0.5rem'}}>
+      <Link href="/">
         <FontAwesomeIcon
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faBlog}
-          size="2x"
+          size="sm"
         />
       </Link>
-      <Link href="/curriculum" style={{ color: "white", width: '0.5rem', fontSize: '0.5rem' }}>
-        <FontAwesomeIcon
-          className={styles.SocialIcon}
-          style={{ color: "white" }}
-          icon={faUser}
-          size="2x"
-        />
-      </Link>
-      <Link href="/portfolio" style={{ color: "white", width: '0.5rem', fontSize: '0.5rem' }}>
-        <FontAwesomeIcon
-          className={styles.SocialIcon}
-          style={{ color: "white" }}
-          icon={faNewspaper}
-          size="2x"
-        />
-      </Link>
-      <Link
-        href="https://github.com/hernandemonteiro"
-        style={{ color: "white", width: '0.5rem', fontSize: '0.5rem' }}
-        target="_blank"
-      >
-        <FontAwesomeIcon
-          className={styles.SocialIcon}
-          style={{ color: "white" }}
-          icon={faGithub}
-          size="2x"
-        />
-      </Link>
-      <Link
-        href="https://www.instagram.com/monteiro.ops/"
-        style={{ color: "white", width: '0.5rem', fontSize: '0.5rem' }}
-      >
-        <FontAwesomeIcon
-          className={styles.SocialIcon}
-          style={{ color: "white" }}
-          icon={faInstagram}
-          size="2x"
-        />
-      </Link>
-      <Link
-        href="https://br.linkedin.com/in/hernande-monteiro"
-        style={{ color: "white", width: '0.5rem', fontSize: '0.5rem' }}
-      >
-        <FontAwesomeIcon
-          className={styles.SocialIcon}
-          style={{ color: "white" }}
-          icon={faLinkedin}
-          size="2x"
-        />
-      </Link>
+      <div className="IconBox">
+        <Link href="/curriculum">
+          <FontAwesomeIcon
+            className={styles.SocialIcon}
+            style={{ color: "white" }}
+            icon={faUser}
+            size="sm"
+          />
+        </Link>
+      </div>
+      <div className="IconBox">
+        <Link href="/portfolio">
+          <FontAwesomeIcon
+            className={styles.SocialIcon}
+            style={{ color: "white" }}
+            icon={faNewspaper}
+            size="sm"
+          />
+        </Link>
+      </div>
+      <div className="IconBox">
+        <Link href="https://github.com/hernandemonteiro" target="_blank">
+          <FontAwesomeIcon
+            className={styles.SocialIcon}
+            style={{ color: "white" }}
+            icon={faGithub}
+            size="sm"
+          />
+        </Link>
+      </div>
+      <div className="IconBox">
+        <Link href="https://www.instagram.com/monteiro.ops/">
+          <FontAwesomeIcon
+            className={styles.SocialIcon}
+            style={{ color: "white" }}
+            icon={faInstagram}
+            size="sm"
+          />
+        </Link>
+      </div>
+      <div className="IconBox">
+        <Link href="https://br.linkedin.com/in/hernande-monteiro">
+          <FontAwesomeIcon
+            className={styles.SocialIcon}
+            style={{ color: "white" }}
+            icon={faLinkedin}
+            size="sm"
+          />
+        </Link>
+      </div>
     </div>
   );
 }
