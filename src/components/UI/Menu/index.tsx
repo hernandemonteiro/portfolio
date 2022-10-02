@@ -5,7 +5,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faBlog, faNewspaper, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import React from "react";
 import styles from "./Menu.module.css";
 
@@ -14,34 +13,34 @@ export default function Menu() {
   return (
     <div className={styles.Menu}>
       <div className={styles.SocialIcon}>
-        <Link href="/">
+        <a href="/">
           <FontAwesomeIcon icon={faBlog} fixedWidth />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="/curriculum">
+        <a href="/curriculum">
           <FontAwesomeIcon icon={faUser} fixedWidth />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="/portfolio">
+        <a href="/portfolio">
           <FontAwesomeIcon icon={faNewspaper} fixedWidth />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="https://github.com/hernandemonteiro" target="_blank">
+        <a href="https://github.com/hernandemonteiro" target="_blank">
           <FontAwesomeIcon icon={faGithub} fixedWidth />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="https://www.instagram.com/monteiro.ops/">
+        <arguments href="https://www.instagram.com/monteiro.ops/">
           <FontAwesomeIcon icon={faInstagram} fixedWidth />
-        </Link>
+        </a>
       </div>
       <div className={styles.SocialIcon}>
-        <Link href="https://br.linkedin.com/in/hernande-monteiro">
+        <a href="https://br.linkedin.com/in/hernande-monteiro">
           <FontAwesomeIcon icon={faLinkedin} fixedWidth />
-        </Link>
+        </a>
       </div>
     </div>
   );
