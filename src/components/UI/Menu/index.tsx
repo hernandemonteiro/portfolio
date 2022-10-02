@@ -17,7 +17,7 @@ export default function Menu() {
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faBlog}
-          size="3x"
+          size="2x"
         />
       </Link>
       <Link href="/curriculum" style={{ color: "white" }}>
@@ -25,7 +25,7 @@ export default function Menu() {
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faUser}
-          size="3x"
+          size="2x"
         />
       </Link>
       <Link href="/portfolio" style={{ color: "white" }}>
@@ -33,7 +33,7 @@ export default function Menu() {
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faNewspaper}
-          size="3x"
+          size="2x"
         />
       </Link>
       <Link
@@ -45,7 +45,7 @@ export default function Menu() {
           className={styles.SocialIcon}
           style={{ color: "white" }}
           icon={faGithub}
-          size="3x"
+          size="2x"
         />
       </Link>
       <Link
