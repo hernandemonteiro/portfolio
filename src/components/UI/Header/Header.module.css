@@ -12,6 +12,7 @@
   color: white;
   text-decoration: none;
   margin: 0.75rem;
+  text-align: center
 }
 
 .Title > a:hover {
