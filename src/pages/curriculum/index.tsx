@@ -37,3 +37,14 @@ export default function Artigo({ data }) {
     </div>
   );
 }
+
+export async function getStaticPaths() {
+ 
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/curriculum`)
+
+  const posts = await res.json()
+
+  const ways = posts.map((post) => ({
+      params: { id: post.id },
+  }))
+}

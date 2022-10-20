@@ -34,3 +34,14 @@ export default function portfolio({ data }) {
     </Template>
   );
 }
+
+export async function getStaticPaths() {
+ 
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/portfolio`)
+
+  const posts = await res.json()
+
+  const ways = posts.map((post) => ({
+      params: { id: post.id },
+  }))
+}
