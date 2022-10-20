@@ -4,8 +4,9 @@ import styles from "./curriculum.module.css";
 import CardCurriculum from "../../components/Curriculum/CardCurriculum";
 import CardHeaderCurriculum from "../../components/Curriculum/CardHeaderCurriculum";
 import Menu from "../../components/UI/Menu";
+import Head from "next/head";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataFetch = await fetch(
     `${process.env.NEXT_PUBLIC_URL_API}/api/curriculum`
   );
@@ -17,7 +18,11 @@ export default function Artigo({ data }) {
   let curriculum = data[0];
   return (
     <div className={styles.Curriculum}>
-      <title>Hernande Monteiro - aqui você sabe um pouco mais sobre mim!</title>
+      <Head>
+        <title>
+          Hernande Monteiro - aqui você sabe um pouco mais sobre mim!
+        </title>
+      </Head>
       <CardHeaderCurriculum name="Hernande Monteiro">
         <Markup markup={curriculum.resume} />
       </CardHeaderCurriculum>
@@ -33,7 +38,7 @@ export default function Artigo({ data }) {
       <CardCurriculum title="Experiências:">
         <Markup markup={curriculum.experience} />
       </CardCurriculum>
-      <Menu/>
+      <Menu />
     </div>
   );
 }
