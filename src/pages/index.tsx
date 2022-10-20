@@ -32,10 +32,3 @@ export default function Home({ data }) {
     </Template>
   );
 }
-
-export async function getStaticPaths() {
-  return {
-    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
-    fallback: "blocking",
-  }
-}

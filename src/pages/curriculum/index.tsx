@@ -37,10 +37,3 @@ export default function Artigo({ data }) {
     </div>
   );
 }
-
-export async function getStaticPaths() {
-  return {
-    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
-    fallback: "blocking",
-  }
-}
