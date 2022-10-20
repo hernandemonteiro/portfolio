@@ -27,7 +27,7 @@ export default function Artigo({ posts }) {
 
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    paths: [{ params: { index: '1' } }, { params: { index: '2' } }],
     fallback: "blocking",
   }
 }
