@@ -5,7 +5,7 @@ import CardCurriculum from "../../components/Curriculum/CardCurriculum";
 import CardHeaderCurriculum from "../../components/Curriculum/CardHeaderCurriculum";
 import Menu from "../../components/UI/Menu";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const dataFetch = await fetch(
     `${process.env.NEXT_PUBLIC_URL_API}/api/curriculum`
   );

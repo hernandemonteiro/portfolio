@@ -4,7 +4,7 @@ import CardArticle from "../components/Blog/CardArticle";
 import usePagination from "../Hooks/usePagination";
 import Menu from "../components/UI/Menu";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
   const data = await dataFetch.json();
   return { props: { data } };

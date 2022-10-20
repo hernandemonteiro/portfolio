@@ -4,7 +4,7 @@ import { Markup } from "react-render-markup";
 import Template from "../../../components/UI/Template";
 import Menu from "../../../components/UI/Menu";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const dataFetch = await fetch(
     `${process.env.NEXT_PUBLIC_URL_API}/api/portfolio`
   );
