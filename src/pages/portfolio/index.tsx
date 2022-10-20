@@ -36,12 +36,8 @@ export default function portfolio({ data }) {
 }
 
 export async function getStaticPaths() {
- 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/portfolio`)
-
-  const posts = await res.json()
-
-  const ways = posts.map((post) => ({
-      params: { id: post.id },
-  }))
+  return {
+    paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
+    fallback: "blocking",
+  }
 }
