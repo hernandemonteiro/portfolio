@@ -4,7 +4,7 @@ import { Markup } from "react-render-markup";
 import Template from "../../components/UI/Template";
 import Menu from "../../components/UI/Menu";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
   const posts = await data.json();
   return { props: { posts } };
@@ -23,11 +23,4 @@ export default function Artigo({ posts }) {
       <Menu />
     </Template>
   );
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: [{ params: { index: '1' } }, { params: { index: '2' } }],
-    fallback: "blocking",
-  }
 }

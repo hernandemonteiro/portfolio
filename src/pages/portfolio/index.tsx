@@ -4,7 +4,7 @@ import CardPortfolio from "../../components/Portfolio/CardPortfolio";
 import usePagination from "../../Hooks/usePagination";
 import Menu from "../../components/UI/Menu";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataFetch = await fetch(
     `${process.env.NEXT_PUBLIC_URL_API}/api/portfolio`
   );

@@ -1,8 +1,10 @@
 .Header {
   width: 100%;
   padding: 2%;
+  z-index: 1;
   text-align: center;
-  background-color: rgb(112, 109, 109);
+  background-color: #706d6d;
+  position: fixed;
   box-shadow: black 0px 8px 34px;
   color: white;
 }

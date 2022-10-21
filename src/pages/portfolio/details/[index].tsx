@@ -4,7 +4,7 @@ import { Markup } from "react-render-markup";
 import Template from "../../../components/UI/Template";
 import Menu from "../../../components/UI/Menu";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataFetch = await fetch(
     `${process.env.NEXT_PUBLIC_URL_API}/api/portfolio`
   );
@@ -26,11 +26,4 @@ export default function protfolioDetails({ data }) {
       <Menu />
     </Template>
   );
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: [{ params: { index: '1' } }, { params: { index: '2' } }],
-    fallback: "blocking",
-  }
 }
