@@ -1,3 +1,7 @@
-.link {
-    margin: 2%;
+@media (max-width: 600px){
+    .avatarImg {
+        width: 45%;
+        height: 45%;
+        margin-top: 3%;
+    }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import { Avatar, Box, Stack, Divider } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import styles from "./CardHeaderCurriculum.module.css";
 
 interface CardHeaderCurriculumProps {
   name: string;
@@ -14,6 +15,7 @@ export default function CardHeaderCurriculum(props: CardHeaderCurriculumProps) {
         alt={"Hernande Monteiro"}
         src="https://www.datocms-assets.com/76860/1659202565-download.png"
         sx={{ width: "30%", height: "30%" }}
+        className={styles.avatarImg}
       />
       <br />
       <br />
