@@ -14,8 +14,12 @@ export default function CardHeaderCurriculum(props: CardHeaderCurriculumProps) {
       <Avatar
         alt={"Hernande Monteiro"}
         src="https://www.datocms-assets.com/76860/1659202565-download.png"
-        className={styles.avatarImg}        
+        className={styles.avatarImg}
+        sx={{ width: "30%", height: "30%" }}
+        
       />
+      <br />
+      <br />
       <Card>
         <Box sx={{ p: 2, display: "flex", textAlign: "center" }}>
           <Stack
