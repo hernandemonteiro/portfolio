@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Markup } from "react-render-markup";
 import styles from "./curriculum.module.css";
 import CardCurriculum from "../../components/Curriculum/CardCurriculum";
@@ -17,7 +17,6 @@ export async function getServerSideProps() {
 export default function Artigo({ data }) {
   let curriculum = data[0];
   return (
-    <Suspense fallback={"...Carregando"}>
       <div className={styles.Curriculum}>
         <Head>
           <title>
@@ -41,6 +40,5 @@ export default function Artigo({ data }) {
         </CardCurriculum>
         <Menu />
       </div>
-    </Suspense>
   );
 }
