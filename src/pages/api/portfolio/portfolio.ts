@@ -1,22 +1,21 @@
-import { request } from "../../lib/datocms";
+import { request } from "../../../lib/datocms";
 
-/* @sumary posts api route: /api/posts
+/* @sumary portfolio api route: /api/portfolio
  * @param [req] contain the request infos from the url request;
  * @param [res] contain the response infos from the status request;
  * @returns a graphql request with date in JSON format from DatoCMS;
  */
-export default async function posts(req, res) {
-  // GraphQl query description to All Posts infos;
+export default async function portfolio(req, res) {
+  // GraphQl query description to All Portfolio infos;
   const QUERY = `query HomePage($limit: IntType) {
-        allPosts(first: $limit,
-          orderBy: [title_ASC]) {
-          title,
-          shortdescription,
-          date,
-          category,
-          id,
-          post
-          }}`;
+    allPortfolios(first: $limit) {
+      title,
+      shortdescription,
+      description,
+      category,
+      id
+      }
+    }`;
 
   // limit for request for the graphql consult defined by DatoCMS;
   const graphqlRequest: any = {
@@ -33,8 +32,8 @@ export default async function posts(req, res) {
 
   // error handling;
   try {
-    res.status(200).json(subscription.initialData.allPosts);
+    res.status(200).json(subscription.initialData.allPortfolios);
   } catch (error) {
-    res.status(400).send(error);
+    res.send(error);
   }
 }

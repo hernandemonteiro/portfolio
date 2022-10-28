@@ -22,7 +22,7 @@ export default function Menu() {
         </Link>
       </div>
       <div className={styles.IconBox}>
-        <Link href="/curriculum">
+        <Link href="/about-me">
           <FontAwesomeIcon
             className={styles.SocialIcon}
             icon={faUser}

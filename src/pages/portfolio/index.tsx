@@ -1,7 +1,7 @@
 import React from "react";
 import Template from "../../components/UI/Template";
 import CardPortfolio from "../../components/Portfolio/CardPortfolio";
-import usePagination from "../../Hooks/usePagination";
+import usePagination from "../../hooks/usePagination";
 import Menu from "../../components/UI/Menu";
 
 export async function getServerSideProps() {

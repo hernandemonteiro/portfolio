@@ -1,9 +1,7 @@
 import React from "react";
-import "../styles/globals.css";
-import ReactGA from "react-ga";
+import "../styles/_app.scss";
 
 function MyApp({ Component, pageProps }) {
-  ReactGA.initialize(process.env.ID_ANALYTICS);
   return <Component {...pageProps} />;
 }
 
