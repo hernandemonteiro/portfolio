@@ -4,18 +4,19 @@ import CardCurriculum from "../../components/AboutMe/CardCurriculum";
 import CardHeaderCurriculum from "../../components/AboutMe/CardHeaderCurriculum";
 import TemplateCurriculum from "../../components/AboutMe/Template";
 
-export async function getServerSideProps() {
-  const dataFetch = await fetch(
-    `${process.env.NEXT_PUBLIC_URL_API}/api/about-me`
-  );
-  const aboutMe = await dataFetch.json();
-  return { props: { aboutMe } };
-}
+// export async function getServerSideProps() {
+//   // const dataFetch = await fetch(
+//   //   `${process.env.NEXT_PUBLIC_URL_API}/api/about-me`
+//   // );
+//   // const aboutMe = await dataFetch.json();
+//   // return { props: { aboutMe } };
+// }
 
-export default function Artigo({ aboutMe }) {
+// export default function Artigo({ aboutMe }) {
+  export default function Artigo() {
   return (
     <TemplateCurriculum>
-        <CardHeaderCurriculum name="Hernande Monteiro">
+        {/* <CardHeaderCurriculum name="Hernande Monteiro">
           <Markup markup={aboutMe.resume} />
         </CardHeaderCurriculum>
         <CardCurriculum title="Minha formação e meus cursos:">
@@ -29,7 +30,7 @@ export default function Artigo({ aboutMe }) {
         </CardCurriculum>
         <CardCurriculum title="Experiências:">
           <Markup markup={aboutMe.experience} />
-        </CardCurriculum>
+        </CardCurriculum> */}
       </TemplateCurriculum>
   );
 }

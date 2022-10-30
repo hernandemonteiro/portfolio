@@ -1,10 +1,5 @@
 import { request } from "../../../lib/datocms";
 
-/* @sumary posts api route: /api/posts
- * @param [req] contain the request infos from the url request;
- * @param [res] contain the response infos from the status request;
- * @returns a graphql request with date in JSON format from DatoCMS;
- */
 export default async function posts(req, res) {
   // GraphQl query description to All Posts infos;
   const QUERY = `query HomePage($limit: IntType) {
@@ -25,7 +20,7 @@ export default async function posts(req, res) {
   };
 
   // using the library Dato for fetch the infos;
-  let subscription = {
+  const subscription = {
     ...graphqlRequest,
     initialData: await request(graphqlRequest),
     token: process.env.NEXT_PUBLIC_DATO_TOKEN,

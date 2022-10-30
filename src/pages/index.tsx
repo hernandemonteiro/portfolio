@@ -4,17 +4,17 @@ import CardArticle from "../components/Blog/CardArticle";
 import usePagination from "../hooks/usePagination";
 import Menu from "../components/UI/Menu";
 
-// export async function getServerSideProps() {
-//   const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
-//   const data = await dataFetch.json();
-//   return { props: { data } };
-// }
+export async function getServerSideProps() {
+  const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
+  const posts = await dataFetch.json();
+  return { props: { posts } };
+}
 
-export default function Home({ data }) {
-  const { pagination, botaoMostrarMais } = usePagination();
+export default function Home({ posts }) {
+  const { pagination, botaoMostrarMais } = usePagination(5, 5);
   return (
     <Template>
-      {/* {data.slice(0, pagination).map((element) => {
+      {posts.slice(0, pagination).map((element) => {
         return (
           <>
             <CardArticle
@@ -27,7 +27,7 @@ export default function Home({ data }) {
           </>
         );
       })}
-      {botaoMostrarMais(data.length)} */}
+      {botaoMostrarMais(posts.length)}
       <Menu />
     </Template>
   );
