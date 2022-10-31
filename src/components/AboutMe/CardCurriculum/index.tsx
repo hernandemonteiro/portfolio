@@ -11,7 +11,7 @@ export default function CardCurriculum(props: CardCurriculumProps) {
   return (
     <Card
       sx={{
-        marginBottom: "4%",
+        marginBottom: "6%",
       }}
     >
       <Typography fontWeight={700} margin={2}>
