@@ -1,5 +1,5 @@
 export async function fetchAPI(route, method) {
-  return await fetch(`http://localhost:3000${route}`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_URL_API}${route}`, {
     method: method,
   }).then((res) => res.json());
 }

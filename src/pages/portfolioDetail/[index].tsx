@@ -1,11 +1,13 @@
 import React from "react";
 import { Markup } from "react-render-markup";
 import Template from "../../components/UI/Template";
+import { fetchAPI } from "../../helpers/fetchAPI";
 
 export async function getServerSideProps(context) {
-  const portfolio = await fetch(
-    `http://localhost:3000/api/portfolio/getByID/${context.query.index}`
-  ).then((res) => res.json());
+  const portfolio = await fetchAPI(
+    `/portfolio/getByID/${context.query.index}`,
+    "GET"
+  );
   return { props: { portfolio } };
 }
 
