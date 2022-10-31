@@ -6,7 +6,6 @@ import { fetchAPI } from "../helpers/fetchAPI";
 
 export async function getServerSideProps() {
   const posts = await fetchAPI(`/api/articles`, "GET");
-
   return { props: { posts } };
 }
 
