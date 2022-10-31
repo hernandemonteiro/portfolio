@@ -3,20 +3,14 @@ import React, { useEffect } from "react";
 import CardCurriculum from "../../components/AboutMe/CardCurriculum";
 import CardHeaderCurriculum from "../../components/AboutMe/CardHeaderCurriculum";
 import TemplateCurriculum from "../../components/AboutMe/Template";
+import { fetchAPI } from "../../helpers/fetchAPI";
 
 export async function getServerSideProps() {
-  const skills = await fetch(`http://localhost:3000/api/skills`).then((res) =>
-    res.json()
-  );
-  const experience = await fetch(`http://localhost:3000/api/experience`).then(
-    (res) => res.json()
-  );
-  const academy = await fetch(`http://localhost:3000/api/academy`).then((res) =>
-    res.json()
-  );
-  const ownerInfo = await fetch(`http://localhost:3000/api/ownerInfo`).then(
-    (res) => res.json()
-  );
+  const skills = await fetchAPI(`/api/skills`, "GET");
+
+  const experience = await fetchAPI(`/api/experience`, "GET");
+  const academy = await fetchAPI(`/api/academy`, "GET");
+  const ownerInfo = await fetchAPI(`/api/ownerInfo`, "GET");
   return { props: { skills, experience, academy, ownerInfo } };
 }
 
@@ -36,7 +30,7 @@ export default function Artigo({ skills, experience, academy, ownerInfo }) {
       ))}
 
       <CardCurriculum title="Formações e Idiomas:">
-        <div  style={{padding: "2%"}}>
+        <div style={{ padding: "2%" }}>
           {academy.map((element) => {
             return (
               <>
@@ -113,7 +107,7 @@ export default function Artigo({ skills, experience, academy, ownerInfo }) {
         </div>
       </CardCurriculum>
       <CardCurriculum title="Experiências:">
-        <div style={{padding: "2%"}}>
+        <div style={{ padding: "2%" }}>
           {experience.map((element) => {
             return (
               <>
