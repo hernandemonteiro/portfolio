@@ -1,5 +1,6 @@
 import NextNProgress from "nextjs-progressbar";
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./_app.scss";
 
 function MyApp({ Component, pageProps }) {
@@ -7,6 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <NextNProgress />
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
