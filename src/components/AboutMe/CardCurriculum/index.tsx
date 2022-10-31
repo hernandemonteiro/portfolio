@@ -9,27 +9,28 @@ interface CardCurriculumProps {
 
 export default function CardCurriculum(props: CardCurriculumProps) {
   return (
-    <>
-      <Card>
-        <Typography fontWeight={700} margin={2}>
-          {props.title}
-        </Typography>
-        <Divider />
-        <Stack
-          direction="row"
-          alignItems="center"
-          justifyContent="space-between"
-          sx={{
-            px: 2,
-            py: 1,
-            bgcolor: "background.default",
-          }}
-        >
-          {props.children}
-        </Stack>
-      </Card>
-      <br />
-      <br />
-    </>
+    <Card
+      sx={{
+        marginBottom: "4%",
+      }}
+    >
+      <Typography fontWeight={700} margin={2}>
+        {props.title}
+      </Typography>
+      <Divider />
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        width="80vw"
+        sx={{
+          px: 2,
+          py: 1,
+          bgcolor: "background.default",
+        }}
+      >
+        {props.children}
+      </Stack>
+    </Card>
   );
 }

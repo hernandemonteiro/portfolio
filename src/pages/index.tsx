@@ -1,12 +1,12 @@
 import React from "react";
 import Template from "../components/UI/Template";
-import CardArticle from "../components/Blog/CardArticle";
+import CardArticle from "../components/UI/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
-import Menu from "../components/UI/Menu";
 
 export async function getServerSideProps() {
-  const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
-  const posts = await dataFetch.json();
+  const posts = await fetch(`http://localhost:3000/api/articles`).then((res) =>
+    res.json()
+  );
   return { props: { posts } };
 }
 
@@ -16,19 +16,15 @@ export default function Home({ posts }) {
     <Template>
       {posts.slice(0, pagination).map((element) => {
         return (
-          <>
-            <CardArticle
-              index={element.id}
-              title={element.title}
-              shortdescription={element.shortdescription}
-              date={element.date}
-              category={element.category}
-            />
-          </>
+          <CardArticle
+            key={element._id}
+            route={"/article/" + element._id}
+            title={element.title}
+            shortdescription={element.resume}
+          />
         );
       })}
       {botaoMostrarMais(posts.length)}
-      <Menu />
     </Template>
   );
 }

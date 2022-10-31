@@ -1,5 +1,5 @@
 .Header {
-  width: 100%;
+  width: 85vw;
   padding: 2%;
   z-index: 1;
   text-align: center;
@@ -14,9 +14,15 @@
   color: white;
   text-decoration: none;
   margin: 0.75rem;
-  text-align: center
+  text-align: center;
 }
 
-.Title > a:hover {
-  color: greenyellow
+.Title:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 700px) {
+  .Header {
+    width: 100%;
+  }
 }

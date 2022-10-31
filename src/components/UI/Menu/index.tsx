@@ -30,7 +30,7 @@ export default function Menu() {
           />
         </Link>
       </div>
-      <div className={styles.IconBox}>
+      {/* <div className={styles.IconBox}>
         <Link href="/portfolio">
           <FontAwesomeIcon
             className={styles.SocialIcon}
@@ -38,33 +38,45 @@ export default function Menu() {
             fixedWidth
           />
         </Link>
-      </div>
+      </div> */}
       <div className={styles.IconBox}>
-        <Link href="https://github.com/hernandemonteiro" target="_blank">
+        <a
+          href="https://github.com/hernandemonteiro"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon
             className={styles.SocialIcon}
             icon={faGithub}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
       <div className={styles.IconBox}>
-        <Link href="https://www.instagram.com/monteiro.ops/">
+        <a
+          href="https://www.instagram.com/monteiro.ops/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon
             className={styles.SocialIcon}
             icon={faInstagram}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
       <div className={styles.IconBox}>
-        <Link href="https://br.linkedin.com/in/hernande-monteiro">
+        <a
+          href="https://br.linkedin.com/in/hernande-monteiro"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon
             className={styles.SocialIcon}
             icon={faLinkedin}
             fixedWidth
           />
-        </Link>
+        </a>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ export class PortfolioPostService implements iPortfolioPost {
     return await portfolioPostRepository.create({
       title: post.title,
       resume: post.resume,
-      post: post.content,
+      content: post.content,
     });
   }
 
@@ -22,7 +22,7 @@ export class PortfolioPostService implements iPortfolioPost {
     return await portfolioPostRepository.findByIdAndUpdate(post._id, {
         title: post.title,
         resume: post.resume,
-        post: post.content,
+        content: post.content,
       });
   }
 

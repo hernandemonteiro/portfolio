@@ -1,36 +1,134 @@
-import React from "react";
-import { Markup } from "react-render-markup";
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect } from "react";
 import CardCurriculum from "../../components/AboutMe/CardCurriculum";
 import CardHeaderCurriculum from "../../components/AboutMe/CardHeaderCurriculum";
 import TemplateCurriculum from "../../components/AboutMe/Template";
 
-// export async function getServerSideProps() {
-//   // const dataFetch = await fetch(
-//   //   `${process.env.NEXT_PUBLIC_URL_API}/api/about-me`
-//   // );
-//   // const aboutMe = await dataFetch.json();
-//   // return { props: { aboutMe } };
-// }
+export async function getServerSideProps() {
+  const skills = await fetch(`http://localhost:3000/api/skills`).then((res) =>
+    res.json()
+  );
+  const experience = await fetch(`http://localhost:3000/api/experience`).then(
+    (res) => res.json()
+  );
+  const academy = await fetch(`http://localhost:3000/api/academy`).then((res) =>
+    res.json()
+  );
+  const ownerInfo = await fetch(`http://localhost:3000/api/ownerInfo`).then(
+    (res) => res.json()
+  );
+  return { props: { skills, experience, academy, ownerInfo } };
+}
 
-// export default function Artigo({ aboutMe }) {
-  export default function Artigo() {
+export default function Artigo({ skills, experience, academy, ownerInfo }) {
   return (
     <TemplateCurriculum>
-        {/* <CardHeaderCurriculum name="Hernande Monteiro">
-          <Markup markup={aboutMe.resume} />
-        </CardHeaderCurriculum>
-        <CardCurriculum title="Minha formação e meus cursos:">
-          <Markup markup={aboutMe.academy} />
-        </CardCurriculum>
-        <CardCurriculum title="Soft-skills:">
-          <Markup markup={aboutMe.softskills} />
-        </CardCurriculum>
-        <CardCurriculum title="Hard-skills:">
-          <Markup markup={aboutMe.hardskills} />
-        </CardCurriculum>
-        <CardCurriculum title="Experiências:">
-          <Markup markup={aboutMe.experience} />
-        </CardCurriculum> */}
-      </TemplateCurriculum>
+      {ownerInfo.map((element) => (
+        <CardHeaderCurriculum
+          key={element._id}
+          name={element.name}
+          resume={element.resume}
+          title={element.title}
+          birthday={element.birthday}
+          email={element.email}
+          picture={element.picture}
+        />
+      ))}
+
+      <CardCurriculum title="Formações e Idiomas:">
+        <div  style={{padding: "2%"}}>
+          {academy.map((element) => {
+            return (
+              <>
+                <p>
+                  <b>{element.title}</b> - {element.foundation}
+                </p>
+                <img
+                  alt={element.title + " picture"}
+                  src={`http://img.shields.io/static/v1?label=${element.since}&message=${element.status}&color=&style=for-the-badge`}
+                />
+              </>
+            );
+          })}
+        </div>
+      </CardCurriculum>
+      <CardCurriculum title="Soft-skills:">
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          {skills.map((element) => {
+            if (element.type === "Soft-Skill") {
+              return (
+                <div
+                  style={{
+                    padding: "2%",
+                    margin: "1.5%",
+                    fontSize: "1.7em",
+                    backgroundColor: "rgb(24, 24, 24)",
+                    color: "white",
+                    borderRadius: "12px",
+                    textAlign: "center",
+                  }}
+                  key={element._id}
+                >
+                  {element.skill}
+                </div>
+              );
+            }
+          })}
+        </div>
+      </CardCurriculum>
+      <CardCurriculum title="Hard-skills:">
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          {skills.map((element) => {
+            if (element.type === "Hard-Skill") {
+              return (
+                <div
+                  style={{
+                    padding: "2%",
+                    margin: "1.5%",
+                    fontSize: "1.7em",
+                    backgroundColor: "rgb(24, 24, 24)",
+                    color: "white",
+                    borderRadius: "12px",
+                    textAlign: "center",
+                  }}
+                  key={element._id}
+                >
+                  {element.skill}
+                </div>
+              );
+            }
+          })}
+        </div>
+      </CardCurriculum>
+      <CardCurriculum title="Experiências:">
+        <div style={{padding: "2%"}}>
+          {experience.map((element) => {
+            return (
+              <>
+                <p>
+                  <b>{element.company}</b> - {element.title}
+                </p>
+                <img
+                  alt={element.title + " picture"}
+                  src={`http://img.shields.io/static/v1?label=${element.since}&message=${element.until}&color=&style=for-the-badge`}
+                />
+              </>
+            );
+          })}
+        </div>
+      </CardCurriculum>
+    </TemplateCurriculum>
   );
 }

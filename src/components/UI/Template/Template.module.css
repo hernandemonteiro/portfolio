@@ -17,7 +17,7 @@
   min-width: 80vw;
   min-height: 80vh;
   text-align: center;
-  margin-top: 7%;
+  margin-top: 9%;
 }
 
 .Content {
@@ -51,6 +51,6 @@
     padding-bottom: 23%;
   }
   .BoxContent {
-    margin-top: 20%;
+    margin-top: 25%;
   }
 }
