@@ -2,11 +2,10 @@ import React from "react";
 import Template from "../components/UI/Template";
 import CardArticle from "../components/UI/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
+import { fetchAPI } from "../helpers/fetchAPI";
 
 export async function getServerSideProps() {
-  const posts = await fetch(`http://localhost:3000/api/articles`).then((res) =>
-    res.json()
-  );
+  const posts =  await fetchAPI(`/api/articles`, "GET");
   return { props: { posts } };
 }
 
