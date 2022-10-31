@@ -1,0 +1,8 @@
+.CardArticle {
+  margin: 2%;
+  text-align: center;
+}
+.CardArticle:hover {
+  background-color: grey;
+  color: white;
+}

@@ -1,34 +1,30 @@
 import React from "react";
 import Template from "../components/UI/Template";
-import CardArticle from "../components/Blog/CardArticle";
-import usePagination from "../Hooks/usePagination";
-import Menu from "../components/UI/Menu";
+import CardArticle from "../components/UI/Cards/CardArticle";
+import usePagination from "../hooks/usePagination";
 
 export async function getServerSideProps() {
-  const dataFetch = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/api/posts`);
-  const data = await dataFetch.json();
-  return { props: { data } };
+  const posts = await fetch(`http://localhost:3000/api/articles`).then((res) =>
+    res.json()
+  );
+  return { props: { posts } };
 }
 
-export default function Home({ data }) {
-  const { pagination, botaoMostrarMais } = usePagination();
+export default function Home({ posts }) {
+  const { pagination, botaoMostrarMais } = usePagination(5, 5);
   return (
     <Template>
-      {data.slice(0, pagination).map((element) => {
+      {posts.slice(0, pagination).map((element) => {
         return (
-          <>
-            <CardArticle
-              index={element.id}
-              title={element.title}
-              shortdescription={element.shortdescription}
-              date={element.date}
-              category={element.category}
-            />
-          </>
+          <CardArticle
+            key={element._id}
+            route={"/article/" + element._id}
+            title={element.title}
+            shortdescription={element.resume}
+          />
         );
       })}
-      {botaoMostrarMais(data.length)}
-      <Menu />
+      {botaoMostrarMais(posts.length)}
     </Template>
   );
 }

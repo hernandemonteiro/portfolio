@@ -3,9 +3,9 @@ import Button from '@mui/material/Button';
 import styles from './Buttons.module.css';
 
 interface ButtonProps {
-    children: any;
-    onClick?: any;
-    className?: any;
+    children: React.ReactNode;
+    onClick?: () => void;
+    className?: string;
 }
 export default function ButtonOne(props: ButtonProps){
     return (
