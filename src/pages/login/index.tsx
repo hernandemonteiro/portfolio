@@ -1,5 +1,5 @@
 import React from "react";
-import Template from "../../components/UI/Template";
+import Template from "../../components/Blog/Template";
 import useAuth from "../../hooks/useAuth";
 
 export default function Home() {
