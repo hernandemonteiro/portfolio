@@ -19,7 +19,7 @@ export default function CardArticle(props) {
         <Typography
           gutterBottom
           variant="h5"
-          sx={{ textTransform: "uppercase", fontWeight: "bold" }}
+          sx={{ textTransform: "uppercase", fontWeight: "bold", fontFamily: "Cormorant" }}
           component="div"
         >
           {props.title}

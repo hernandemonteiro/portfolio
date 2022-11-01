@@ -1,4 +1,18 @@
-.buttonOne:hover {
-  background-color: white;
-  color: black;
+
+.buttonPagination {
+  width: 60vw;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.5%;
+  background: none;
+  color: white;
+  margin: 1%;
+  border: none;
+  font-weight: bold;
+  border-radius: 3px;
+  &:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
 }

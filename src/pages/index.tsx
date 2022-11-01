@@ -1,5 +1,5 @@
 import React from "react";
-import Template from "../components/UI/Template";
+import Template from "../components/Blog/Template";
 import CardArticle from "../components/UI/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
 import { fetchAPI } from "../helpers/fetchAPI";
