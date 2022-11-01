@@ -14,7 +14,7 @@ style="margin: 3% 0;padding: 2%; color: white; background: black; text-transform
 ## Summary:
 <ol>
     <li>Description</li>
-    <li>Project Description</li>
+    <li>Project Structure</li>
 </ol>
 
 <hr>
