@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./curriculum.module.css";
-import Menu from "../../UI/Menu";
+import Menu from "../../Blog/Menu";
 import Head from "next/head";
 
 export default function TemplateCurriculum(props) {
