@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
-import styles from "./CardArticle.module.css";
+import styles from "./CardArticle.module.scss";
 
 export default function CardArticle(props) {
   return (

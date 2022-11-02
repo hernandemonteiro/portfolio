@@ -3,6 +3,7 @@ import Template from "../components/Blog/Template";
 import CardArticle from "../components/UI/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
 import { fetchAPI } from "../helpers/fetchAPI";
+import Menu from "../components/Blog/Menu";
 
 export async function getServerSideProps() {
   const posts = await fetchAPI(`/api/articles`, "GET");
@@ -24,6 +25,7 @@ export default function Home({ posts }) {
         );
       })}
       {botaoMostrarMais(posts.length)}
+      <Menu/>
     </Template>
   );
 }

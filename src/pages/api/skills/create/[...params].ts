@@ -10,11 +10,11 @@ export default async function createSkills(req, res) {
     skill: query[1],
   };
   checkType(skill.type) &&
-  (await adminAccessApi(req.headers["x-admin-access"])) &&
+  (await adminAccessApi(req.headers["x-admin-access"])) 
   req.method === "POST" &&
   query.length === 2
     ? await SkillController.createSkill(skill, res)
-    : res.status(500).end("Need all correct informations!");
+    : res.status(500).end("A");
 }
 
 export function checkType(skill): boolean {
