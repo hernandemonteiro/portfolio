@@ -17,13 +17,12 @@ export default function useAuthAdmin() {
   }
 
   function confirmAdmin(email, password) {
-    let checkAdmin;
-    email === process.env.NEXT_PUBLIC_BLOG_EMAIL &&
-    password === process.env.NEXT_PUBLIC_PASSWORD_EMAIL
-      ? (checkAdmin = true)
-      : (checkAdmin = false);
-    return checkAdmin;
+    return email === process.env.NEXT_PUBLIC_BLOG_EMAIL &&
+      password === process.env.NEXT_PUBLIC_PASSWORD_EMAIL
+      ? true
+      : false;
   }
+
   async function setLocalUser(value) {
     const userString = JSON.stringify(value);
     const user = await Crypto.cryptoEncrypt(userString);
@@ -37,14 +36,14 @@ export default function useAuthAdmin() {
   }
 
   async function getAdminUserAndDecrypt() {
-    const user = await localStorage.getItem("user");
-    return JSON.parse((await Crypto.cryptoDecrypt(user || "")) || "[]");
+    const user = (await localStorage.getItem("user")) || "";
+    return JSON.parse((await Crypto.cryptoDecrypt(user)) || "[]");
   }
 
-  async function redirectLoginPageIfLogged(){
+  async function redirectLoginPageIfLogged() {
     const userDecrypted = await getAdminUserAndDecrypt();
     confirmAdmin(userDecrypted.email, userDecrypted.password) &&
-    Router.push("/admin");
+      Router.push("/admin");
   }
 
   async function isLoggedAdmin() {

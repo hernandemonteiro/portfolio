@@ -7,12 +7,14 @@ import MessageForm from "../../../UI/MessageForm";
 import HeaderTableForm from "../../../UI/HeaderTableForm";
 import BaseTableForm from "../../../UI/BaseTableForm";
 import styles from "./TableSkills.module.scss";
+import ContentTableForm from "../../../UI/BaseTableForm/ContentTableForm";
 
 interface TableSkillsProps {
   data: any;
   title?: string;
 }
 export default function TableSkills(props: TableSkillsProps) {
+  const { pagination, botaoMostrarMais } = usePagination(3, 3);
   const {
     setType,
     type,
@@ -27,43 +29,29 @@ export default function TableSkills(props: TableSkillsProps) {
     viewForm,
   } = useSkills();
 
-  const { pagination, botaoMostrarMais } = usePagination(3, 3);
-
   if (message) {
     return <MessageForm message={message} />;
   } else {
     if (!viewForm) {
       return (
         <>
-          <HeaderTableForm
-            title={props.title}
+          <BaseTableForm
+            title={"Skills"}
             onClickRegisterButton={() => setForm(true)}
-          />
-          <BaseTableForm>
-            {props.data.slice(0, pagination).map((element) => {
-              return (
-                <tr key={element._id}>
-                  <td>
-                    {element.skill} - {element.type}
-                  </td>
-                  <td className={styles.actions}>
-                    <HiPencilAlt
-                      onClick={() => {
-                        setType(element.type);
-                        setSkill(element.skill);
-                        setIdSkill(element._id);
-                        setForm(true);
-                      }}
-                      className={styles.actionIcon}
-                    />
-                    <HiOutlineTrash
-                      onClick={() => deleteSkill(element._id)}
-                      className={styles.actionIcon}
-                    />
-                  </td>
-                </tr>
-              );
-            })}
+          >
+            {props.data.slice(0, pagination).map((element) => (
+              <ContentTableForm
+                key={element._id}
+                description={element.skill + " - " + element.type}
+                onClickEdit={() => {
+                  setType(element.type);
+                  setSkill(element.skill);
+                  setIdSkill(element._id);
+                  setForm(true);
+                }}
+                onClickTrash={() => deleteSkill(element._id)}
+              />
+            ))}
           </BaseTableForm>
           {botaoMostrarMais(props.data.length)}
         </>
