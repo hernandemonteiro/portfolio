@@ -2,8 +2,8 @@
 import React from "react";
 import CardCurriculum from "../../components/AboutMe/CardCurriculum";
 import CardHeaderCurriculum from "../../components/AboutMe/CardHeaderCurriculum";
+import TemplateCurriculum from "../../components/AboutMe/Template";
 import MenuBlog from "../../components/Blog/Menu";
-import Template from "../../components/Blog/Template";
 import { fetchAPI } from "../../helpers/fetchAPI";
 
 export async function getServerSideProps() {
@@ -17,7 +17,7 @@ export async function getServerSideProps() {
 
 export default function Artigo({ skills, experience, academy, ownerInfo }) {
   return (
-    <Template>
+    <TemplateCurriculum>
       {ownerInfo.map((element) => (
         <CardHeaderCurriculum
           key={element._id}
@@ -31,7 +31,7 @@ export default function Artigo({ skills, experience, academy, ownerInfo }) {
       ))}
 
       <CardCurriculum title="Formações e Idiomas:">
-        <div style={{ padding: "2%" }}>
+        <div style={{ width: "100%", padding: "2%" }}>
           {academy.map((element) => {
             return (
               <>
@@ -90,7 +90,7 @@ export default function Artigo({ skills, experience, academy, ownerInfo }) {
               return (
                 <div
                   style={{
-                    padding: "10%",
+                    padding: "2%",
                     margin: "1.5%",
                     fontSize: "1.3em",
                     backgroundColor: "rgb(24, 24, 24)",
@@ -108,7 +108,7 @@ export default function Artigo({ skills, experience, academy, ownerInfo }) {
         </div>
       </CardCurriculum>
       <CardCurriculum title="Experiências:">
-        <div style={{ padding: "2%" }}>
+        <div style={{ width: "100%", padding: "2%" }}>
           {experience.map((element) => {
             return (
               <>
@@ -124,7 +124,7 @@ export default function Artigo({ skills, experience, academy, ownerInfo }) {
           })}
         </div>
       </CardCurriculum>
-      <MenuBlog/>
-    </Template>
+      <MenuBlog />
+    </TemplateCurriculum>
   );
 }
