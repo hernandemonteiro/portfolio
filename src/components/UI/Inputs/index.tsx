@@ -2,14 +2,16 @@ import React from "react";
 import styles from "./Inputs.module.scss";
 
 interface InputDefaultProps {
-  type: "text" | "password" | "email" | "number";
+  type: "text" | "password" | "email" | "number" | "date";
   onChange?: any;
   required?: boolean;
   width?: string;
   label?: string;
   hidden?: boolean;
   value?: string;
-  placeholder?: string
+  placeholder?: string;
+  min?: number;
+  minLength?: number
 }
 
 export default function InputDefault(props) {
@@ -24,6 +26,8 @@ export default function InputDefault(props) {
         type={props.type}
         value={props.value}
         name={props.label}
+        min={props.min}
+        minLength={props.minLength}
         placeholder={props.placeholder}
         autoComplete="off"
         onChange={props.onChange}

@@ -20,9 +20,6 @@ export default function MenuAdmin() {
       <MenuIconLink to="/admin">
         <HiOutlineChartSquareBar />
       </MenuIconLink>
-      <MenuIconLink to="/admin/infos">
-        <HiUser />
-      </MenuIconLink>
       <MenuIconLink to="/admin/skills">
         <HiColorSwatch />
       </MenuIconLink>

@@ -1,13 +1,11 @@
 import React from "react";
-import { HiPencilAlt, HiOutlineTrash } from "react-icons/hi";
 import usePagination from "../../../../hooks/usePagination";
 import useSkills from "../../../../hooks/useSkills";
 import FormSkill from "../FormSkill";
 import MessageForm from "../../../UI/MessageForm";
-import HeaderTableForm from "../../../UI/HeaderTableForm";
 import BaseTableForm from "../../../UI/BaseTableForm";
-import styles from "./TableSkills.module.scss";
 import ContentTableForm from "../../../UI/BaseTableForm/ContentTableForm";
+import TableOrMessageOrForm from "../../TableOrMessageOrForm";
 
 interface TableSkillsProps {
   data: any;
@@ -29,11 +27,10 @@ export default function TableSkills(props: TableSkillsProps) {
     viewForm,
   } = useSkills();
 
-  if (message) {
-    return <MessageForm message={message} />;
-  } else {
-    if (!viewForm) {
-      return (
+  return (
+    <TableOrMessageOrForm
+      view={viewForm}
+      table={
         <>
           <BaseTableForm
             title={"Skills"}
@@ -55,10 +52,10 @@ export default function TableSkills(props: TableSkillsProps) {
           </BaseTableForm>
           {botaoMostrarMais(props.data.length)}
         </>
-      );
-    } else {
-      return (
+      }
+      form={
         <FormSkill
+          titleSendButton={idSkill ? "SALVAR" : "CADASTRAR"}
           onChangeType={(e) => setType(e.target.value)}
           valueType={type}
           onChangeSkill={(e) => setSkill(e.target.value)}
@@ -73,7 +70,8 @@ export default function TableSkills(props: TableSkillsProps) {
             setIdSkill("");
           }}
         />
-      );
-    }
-  }
+      }
+      message={message}
+    />
+  );
 }

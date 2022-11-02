@@ -6,6 +6,9 @@ const nextConfig = {
 }
 
 module.exports = {
+  images: {
+    domains: ['img.shields.io'],
+  },
   eslint: {
     ignoreDuringBuilds: false,
   },
