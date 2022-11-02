@@ -4,7 +4,7 @@ export class Crypto {
   private secret;
   private readonly configObjAES;
   constructor() {
-    this.secret = process.env.CRYPTO_SECRET;
+    this.secret = process.env.NEXT_PUBLIC_CRYPTO_SECRET;
     this.configObjAES = {
       iv: this.secret,
       mode: CryptoJS.mode.CBC,

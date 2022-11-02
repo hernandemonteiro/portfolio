@@ -1,0 +1,12 @@
+.form {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 600px){
+    .form{
+        width: 100%;
+    }
+}

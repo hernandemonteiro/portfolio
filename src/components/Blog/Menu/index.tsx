@@ -3,81 +3,53 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faBlog, faNewspaper, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBlog, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import React from "react";
-import styles from "./Menu.module.css";
+import Menu from "../../UI/Menu";
+import MenuIconExternalLink from "../../UI/MenuIconExternalLink";
+import MenuIconLink from "../../UI/MenuIconLink";
 
-export default function Menu() {
+export default function MenuBlog() {
   return (
-    <div className={styles.Menu} style={{ color: "white" }}>
-      <div className={styles.IconBox}>
-        <Link href="/">
-          <FontAwesomeIcon
-            className={styles.SocialIcon}
-            icon={faBlog}
-            fixedWidth
-          />
-        </Link>
-      </div>
-      <div className={styles.IconBox}>
-        <Link href="/about-me">
-          <FontAwesomeIcon
-            className={styles.SocialIcon}
-            icon={faUser}
-            fixedWidth
-          />
-        </Link>
-      </div>
-      {/* <div className={styles.IconBox}>
-        <Link href="/portfolio">
-          <FontAwesomeIcon
-            className={styles.SocialIcon}
-            icon={faNewspaper}
-            fixedWidth
-          />
-        </Link>
-      </div> */}
-      <div className={styles.IconBox}>
-        <a
-          href="https://github.com/hernandemonteiro"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon
-            className={styles.SocialIcon}
-            icon={faGithub}
-            fixedWidth
-          />
-        </a>
-      </div>
-      <div className={styles.IconBox}>
-        <a
-          href="https://www.instagram.com/monteiro.ops/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon
-            className={styles.SocialIcon}
-            icon={faInstagram}
-            fixedWidth
-          />
-        </a>
-      </div>
-      <div className={styles.IconBox}>
-        <a
-          href="https://br.linkedin.com/in/hernande-monteiro"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon
-            className={styles.SocialIcon}
-            icon={faLinkedin}
-            fixedWidth
-          />
-        </a>
-      </div>
-    </div>
+    <Menu>
+      <MenuIconLink to="/">
+        <FontAwesomeIcon
+          icon={faBlog}
+          fixedWidth
+        />
+      </MenuIconLink>
+
+      <MenuIconLink to="/about-me">
+        <FontAwesomeIcon
+          icon={faUser}
+          fixedWidth
+        />
+      </MenuIconLink>
+      {/* <MenuIconLink to="/portfolio">
+        <FontAwesomeIcon
+          icon={faNewspaper}
+          fixedWidth
+        />
+      </MenuIconLink> */}
+      <MenuIconExternalLink to={"https://github.com/hernandemonteiro"}>
+        <FontAwesomeIcon
+          icon={faGithub}
+          fixedWidth
+        />
+      </MenuIconExternalLink>
+      <MenuIconExternalLink to="https://www.instagram.com/monteiro.ops/">
+        <FontAwesomeIcon
+          icon={faInstagram}
+          fixedWidth
+        />
+      </MenuIconExternalLink>
+      <MenuIconExternalLink to="https://br.linkedin.com/in/hernande-monteiro">
+        <FontAwesomeIcon
+          icon={faLinkedin}
+          fixedWidth
+        />
+      </MenuIconExternalLink>
+    </Menu>
   );
 }

@@ -18,6 +18,6 @@
     "jsx": "preserve",
     "types": ["jest", "cypress"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.cy.js", "src/pages/api/user/get/index.js", "jest.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.cy.js", "jest.config.js"],
   "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx"]
 }

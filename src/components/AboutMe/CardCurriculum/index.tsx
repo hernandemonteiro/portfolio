@@ -21,7 +21,7 @@ export default function CardCurriculum(props: CardCurriculumProps) {
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="space-around"
         width="80vw"
         sx={{
           px: 2,

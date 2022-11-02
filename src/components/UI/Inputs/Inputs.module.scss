@@ -1,0 +1,21 @@
+.input {
+  width: 100%;
+  margin-bottom: 4%;
+  label {
+    font-size: 1.3em;
+  }
+  input {
+    margin-top: 1.5%;
+    width: 100%;
+    padding: 4%;
+  }
+}
+
+@media (max-width: 600px) {
+  .input {
+    margin-bottom: 7%;
+    label {
+      font-size: 0.9em;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import "./base.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: $Cormorant;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $blackBackground;
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grayDefault;
+    border-radius: 20px;
+    border: 2px solid $blackBackground;
+  }
+}
+
+a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+hr {
+  margin: 2%;
+  color: black;
+}

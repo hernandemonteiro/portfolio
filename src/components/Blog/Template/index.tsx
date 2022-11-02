@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Head from "next/head";
 import styles from "./Template.module.css";
 import Header from "../Header";
-import Menu from "../Menu";
 
 interface TemplateProps {
   children?: any;
@@ -26,10 +25,7 @@ export default function Template(props: TemplateProps) {
         <Header />
         <div className={styles.BoxContent}>
           <div className={styles.Content}>
-            <div className={styles.ArticleBox}>
-              {props.children}
-              <Menu />
-            </div>
+            <div className={styles.ArticleBox}>{props.children}</div>
           </div>
         </div>
       </main>
