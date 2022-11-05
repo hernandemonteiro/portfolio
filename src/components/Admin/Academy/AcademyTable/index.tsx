@@ -1,5 +1,6 @@
 import React from "react";
 import useAcademy from "../../../../hooks/useAcademy";
+import usePagination from "../../../../hooks/usePagination";
 import BaseTableForm from "../../../UI/BaseTableForm";
 import ContentTableForm from "../../../UI/BaseTableForm/ContentTableForm";
 import TableOrMessageOrForm from "../../TableOrMessageOrForm";
@@ -10,6 +11,7 @@ interface AcademyTableProps {
 }
 
 export default function AcademyTable(props: AcademyTableProps) {
+  const {pagination, botaoMostrarMais} = usePagination(5, 5);
   const {
     setViewForm,
     viewForm,
@@ -31,11 +33,12 @@ export default function AcademyTable(props: AcademyTableProps) {
     <TableOrMessageOrForm
       view={viewForm}
       table={
+        <>
         <BaseTableForm
           title={"Academy"}
           onClickRegisterButton={() => setViewForm(true)}
         >
-          {props.academy.map((element) => (
+          {props.academy.slice(0, pagination).map((element) => (
             <ContentTableForm
               key={element._id}
               description={`${element.title} - ${element.since} - 
@@ -52,6 +55,8 @@ export default function AcademyTable(props: AcademyTableProps) {
             />
           ))}
         </BaseTableForm>
+        {botaoMostrarMais(props.academy.length)}
+        </>
       }
       form={
         <AcademyForm

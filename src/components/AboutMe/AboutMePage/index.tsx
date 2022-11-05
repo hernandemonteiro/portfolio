@@ -1,13 +1,7 @@
 import Image from "next/image";
 import CardCurriculum from "../CardCurriculum";
 import CardHeaderCurriculum from "../CardHeaderCurriculum";
-
-interface AboutMePageProps {
-  ownerInfo: any;
-  academy: any;
-  skills: any;
-  experience: any;
-}
+import { AboutMePageProps } from "./interface";
 
 export default function AboutMePage(props: AboutMePageProps) {
   return (
@@ -33,10 +27,13 @@ export default function AboutMePage(props: AboutMePageProps) {
                   <b>{element.title}</b> - {element.foundation}
                 </p>
                 <Image
-                width={100}
-                height={25}
+                  width={100}
+                  height={25}
                   alt={element.title + " picture"}
-                  src={`http://img.shields.io/static/v1?label=${element.since.substr(0, 4)}&message=${element.status}&color=&style=for-the-badge`}
+                  src={`http://img.shields.io/static/v1?label=${element.since.substr(
+                    0,
+                    4
+                  )}&message=${element.status}&color=&style=for-the-badge`}
                 />
               </>
             );
@@ -115,7 +112,13 @@ export default function AboutMePage(props: AboutMePageProps) {
                   width={100}
                   height={25}
                   alt={element.title + " picture"}
-                  src={`http://img.shields.io/static/v1?label=${element.since.substr(0, 4)}&message=${element.until.substr(0, 4)}&color=&style=for-the-badge`}
+                  src={`http://img.shields.io/static/v1?label=${element.since.substr(
+                    0,
+                    4
+                  )}&message=${element.until.substr(
+                    0,
+                    4
+                  )}&color=&style=for-the-badge`}
                 />
               </>
             );

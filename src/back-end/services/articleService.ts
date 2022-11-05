@@ -6,7 +6,7 @@ export class ArticleService implements iArticle {
     return await articleRepository.find({});
   }
 
-  async getByID(_id: any) {
+  async getByID(_id) {
     return await articleRepository.findById(_id);
   }
 
