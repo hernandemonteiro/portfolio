@@ -32,12 +32,9 @@
 
   Cypress Platform configuration to run end-to-end tests.
 
-- #### `/docs/front-end:`
+- #### `/docs:`
 
   Stories for storybook framework create a front-end documentation.
-
-- #### `/docs/back-end:`
-  Docusaurus configuration to create a back-end documentation.
 - #### `/src:`
   Initial source of app
 - #### `/src/__tests__:`
@@ -66,7 +63,9 @@
 - #### `/src/pages:`
 
   Initial source of app
+- #### `/src/stories:`
 
+  Initial source of app
 - #### `/src/styles:`
 
   Initial source of app
