@@ -34,7 +34,8 @@
     "react-icons": "^4.6.0",
     "react-render-markup": "^3.5.0",
     "sass": "^1.55.0",
-    "sinon": "^14.0.1"
+    "sinon": "^14.0.1",
+    "storybook": "^6.5.13"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.13",
