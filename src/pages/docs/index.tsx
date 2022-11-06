@@ -1,3 +1,3 @@
 export default function DocsHomePage(){
-    <h1>Implementando!</h1>
+    return <h1 color="white">Implementando!</h1>
 }
