@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React, { useEffect } from "react";
-import Template from "../../../components/Blog/Template";
-import LoginForm from "../../../components/System/LoginForm";
-import LoginPage from "../../../components/System/LoginPage";
+import Template from "../../../components/blog/Template";
+import LoginForm from "../../../components/system/LoginForm";
+import LoginPage from "../../../components/system/LoginPage";
 import useAuth from "../../../hooks/useAuthAdmin";
 
 export default function Home() {

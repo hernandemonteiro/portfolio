@@ -1,6 +1,6 @@
 import React from "react";
-import ExperienceTable from "../../../components/Admin/Experience/ExperienceTable";
-import TemplateAdmin from "../../../components/Admin/TemplateAdmin";
+import ExperienceTable from "../../../components/admin/Experience/ExperienceTable";
+import TemplateAdmin from "../../../components/admin/TemplateAdmin";
 import { fetchAPI } from "../../../helpers/fetchAPI";
 
 export async function getServerSideProps() {

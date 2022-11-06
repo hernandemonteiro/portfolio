@@ -1,7 +1,7 @@
 import React from "react";
-import Template from "../../components/Blog/Template";
+import Template from "../../components/blog/Template";
 import usePagination from "../../hooks/usePagination";
-import CardArticle from "../../components/UI/Cards/CardArticle";
+import CardArticle from "../../components/ui/Cards/CardArticle";
 import { fetchAPI } from "../../helpers/fetchAPI";
 
 export async function getServerSideProps() {

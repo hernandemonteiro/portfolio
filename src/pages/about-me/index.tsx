@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import AboutMePage from "../../components/AboutMe/AboutMePage";
-import CardCurriculum from "../../components/AboutMe/CardCurriculum";
-import CardHeaderCurriculum from "../../components/AboutMe/CardHeaderCurriculum";
-import TemplateCurriculum from "../../components/AboutMe/Template";
-import MenuBlog from "../../components/Blog/Menu";
+import AboutMePage from "../../components/about-me/AboutMePage";
+import CardCurriculum from "../../components/about-me/CardCurriculum";
+import CardHeaderCurriculum from "../../components/about-me/CardHeaderCurriculum";
+import TemplateCurriculum from "../../components/about-me/Template";
+import MenuBlog from "../../components/blog/Menu";
 import { fetchAPI } from "../../helpers/fetchAPI";
 
 export async function getServerSideProps() {

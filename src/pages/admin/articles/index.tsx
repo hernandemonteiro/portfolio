@@ -1,5 +1,5 @@
 import React from "react";
-import TemplateAdmin from "../../../components/Admin/TemplateAdmin";
+import TemplateAdmin from "../../../components/admin/TemplateAdmin";
 
 export default function ArticlesPage() {
   return (

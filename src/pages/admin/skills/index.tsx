@@ -1,6 +1,6 @@
 import React from "react";
-import TableSkills from "../../../components/Admin/Skill/TableSkills";
-import TemplateAdmin from "../../../components/Admin/TemplateAdmin";
+import TableSkills from "../../../components/admin/Skill/TableSkills";
+import TemplateAdmin from "../../../components/admin/TemplateAdmin";
 import { fetchAPI } from "../../../helpers/fetchAPI";
 
 export async function getServerSideProps() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ButtonDefault from "../components/UI/Buttons";
+import { Button } from "../components/ui/Buttons";
 
 export default function usePagination(quantityViews: number, addViews: number) {
   const [pagination, setPagination] = useState(quantityViews);
@@ -7,9 +7,9 @@ export default function usePagination(quantityViews: number, addViews: number) {
   function botaoMostrarMais(query) {
     if (query > 5 && pagination <= query) {
       return (
-        <ButtonDefault onClick={() => setPagination(pagination + addViews)}>
+        <Button onClick={() => setPagination(pagination + addViews)}>
           Mostrar Mais
-        </ButtonDefault>
+        </Button>
       );
     }
   }

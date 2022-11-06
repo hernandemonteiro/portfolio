@@ -1,9 +1,9 @@
 import React from "react";
-import Template from "../components/Blog/Template";
-import CardArticle from "../components/UI/Cards/CardArticle";
+import Template from "../components/blog/Template";
+import CardArticle from "../components/ui/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
 import { fetchAPI } from "../helpers/fetchAPI";
-import Menu from "../components/Blog/Menu";
+import Menu from "../components/blog/Menu";
 
 export async function getServerSideProps() {
   const posts = await fetchAPI(`/api/articles`, "GET");

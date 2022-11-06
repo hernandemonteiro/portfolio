@@ -42,7 +42,6 @@
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
     "cypress": "^10.11.0",
-    "enzyme-to-json": "^3.6.2",
     "eslint-config-next": "^13.0.1",
     "eslint-plugin-react": "^7.31.10",
     "jest-environment-jsdom": "^29.2.2",

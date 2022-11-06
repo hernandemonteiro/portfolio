@@ -1,6 +1,6 @@
 import React from "react";
-import AcademyTable from "../../../components/Admin/Academy/AcademyTable";
-import TemplateAdmin from "../../../components/Admin/TemplateAdmin";
+import AcademyTable from "../../../components/admin/Academy/AcademyTable";
+import TemplateAdmin from "../../../components/admin/TemplateAdmin";
 import { fetchAPI } from "../../../helpers/fetchAPI";
 
 export async function getServerSideProps(){
