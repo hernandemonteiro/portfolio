@@ -1,3 +1,3 @@
 export default function DocsHomePage(){
-    return <h1 color="white">Implementando!</h1>
+    return <h1 style={{color:"white"}}>Implementando!</h1>
 }
