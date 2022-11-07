@@ -3,14 +3,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
-
-module.exports = {
   images: {
-    domains: ['img.shields.io'],
+    domains: ["img.shields.io"],
   },
+  fs: "empty",
   eslint: {
     ignoreDuringBuilds: false,
   },
-  nextConfig
-}
+};
+
+module.exports = nextConfig;

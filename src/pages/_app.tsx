@@ -3,10 +3,14 @@ import React from "react";
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/_app.scss";
 import Head from "next/head";
+import { ComponentOrDocs, readDirs, readNavDir } from "../../nextDocsPackage/dir";
 
-function MyApp({ Component, pageProps }) {
+
+function MyApp(props) {
   return (
     <>
+      <NextNProgress />
+      <Analytics />
       <Head>
         <title>Hernande Monteiro - seu blog tech quentinho e atual!</title>
         <meta
@@ -15,11 +19,17 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="shortcut icon" href="./favicon.png" />
       </Head>
-      <NextNProgress />
-      <Component {...pageProps} />
-      <Analytics />
+      {ComponentOrDocs(props)}
     </>
   );
 }
+
+MyApp.getInitialProps = ({ Component, ctx }) => {
+  const dirs = readDirs("./src/pages/docs/");
+  const navDir = readNavDir("./src/pages/docs");
+  let pageProps = { dirs: dirs, navDir: navDir };
+
+  return pageProps;
+};
 
 export default MyApp;

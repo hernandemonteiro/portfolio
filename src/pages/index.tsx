@@ -12,6 +12,7 @@ export async function getServerSideProps() {
 
 export default function Home({ posts }) {
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
+
   return (
     <Template>
       {posts.slice(0, pagination).map((element) => {
@@ -25,7 +26,7 @@ export default function Home({ posts }) {
         );
       })}
       {botaoMostrarMais(posts.length)}
-      <Menu/>
+      <Menu />
     </Template>
   );
 }
