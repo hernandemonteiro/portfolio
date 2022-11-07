@@ -1,0 +1,13 @@
+{
+  "name": "nextdocs",
+  "version": "1.0.0",
+  "description": "lib for use nextjs to create intern software documentation",
+  "main": "dir.tsx",
+  "author": "Hernande Monteiro",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "next": "^13.0.2",
+    "react": "^18.2.0"
+  }
+}

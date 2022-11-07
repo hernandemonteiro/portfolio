@@ -1,8 +1,8 @@
 import React from "react";
 import TemplateReactDocs from "./components/Template";
+import { useRouter } from "next/router";
 
 import fs from "fs";
-import { useRouter } from "next/router";
 export function readNavDir(dir) {
   let structSubDirs = {};
   fs.readdirSync(dir)
@@ -42,13 +42,6 @@ export function readDirs(dir) {
         struct[file] = readDirs(dir + "/" + file);
       }
     });
-
-  // const arrayDirs = [];
-  // for (const dir in struct) {
-  //   !dir.match(".tsx" || ".ts" || ".js" || ".jsx" || ".md" || ".mdx") &&
-  //     arrayDirs.push(dir);
-  // }
-  // return arrayDirs.reverse();
   return struct;
 }
 
