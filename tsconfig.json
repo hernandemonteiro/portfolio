@@ -25,5 +25,5 @@
     "*.cy.js",
     "jest.config.js"
 , "nextDocs/components/Footer/index.tsx"  ],
-  "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx"]
+  "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx", "nextDocs"]
 }
