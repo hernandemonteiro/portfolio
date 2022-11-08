@@ -9,6 +9,7 @@
     "compile": "tsc"
   },
   "dependencies": {
+    "@types/highlight.js": "^10.1.0",
     "fs": "^0.0.1-security",
     "highlight.js": "^11.6.0",
     "next": "^13.0.2",
