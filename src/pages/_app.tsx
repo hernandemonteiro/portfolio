@@ -3,8 +3,8 @@ import React from "react";
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/_app.scss";
 import Head from "next/head";
-import { ComponentOrDocs, readDirs, readNavDir } from "../../nextDocsPackage/dir";
-
+import ComponentOrDocs from "../../nextDocs/dist";
+import { initialProps } from "../../nextDocs/dist/core/initialProps";
 
 function MyApp(props) {
   return (
@@ -19,17 +19,17 @@ function MyApp(props) {
         />
         <link rel="shortcut icon" href="./favicon.png" />
       </Head>
-      {ComponentOrDocs(props)}
+      <ComponentOrDocs
+        properties={props}
+        projectLogo={"Hernande Monteiro - Personal Blog"}
+        github="https://github.com/hernandemonteiro/personal_blog"
+        website="https://hernandemonteiro.vercel.app"
+        instagram="https://instagram.com/monteiro.ops"
+      />
     </>
   );
 }
 
-MyApp.getInitialProps = ({ Component, ctx }) => {
-  const dirs = readDirs("./src/pages/docs/");
-  const navDir = readNavDir("./src/pages/docs");
-  let pageProps = { dirs: dirs, navDir: navDir };
-
-  return pageProps;
-};
+initialProps(MyApp);
 
 export default MyApp;

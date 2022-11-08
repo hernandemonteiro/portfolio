@@ -18,6 +18,12 @@
     "jsx": "preserve",
     "types": ["jest", "cypress"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.cy.js", "jest.config.js", "src/stories/components/UI/Button.stories.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "*.cy.js",
+    "jest.config.js"
+, "nextDocs/components/Footer/index.tsx"  ],
   "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx"]
 }

@@ -1,10 +1,6 @@
-import React from "react";
-import TemplateReactDocs from "./components/Template";
-import { useRouter } from "next/router";
-
 import fs from "fs";
-export function readNavDir(dir) {
-  let structSubDirs = {};
+export function readNavDir(dir: any) {
+  let structSubDirs: any = {};
   fs.readdirSync(dir)
     .sort(
       (a, b) =>
@@ -26,8 +22,8 @@ export function readNavDir(dir) {
   return arrayDirs.reverse();
 }
 
-export function readDirs(dir) {
-  let struct = {};
+export function readDirs(dir: string) {
+  let struct: any = {};
 
   fs.readdirSync(dir)
     .sort(
@@ -43,24 +39,4 @@ export function readDirs(dir) {
       }
     });
   return struct;
-}
-
-export function ComponentOrDocs(props) {
-  const route = useRouter();
-  return (
-    <>
-      {route.asPath.match("/docs") ? (
-        <TemplateReactDocs
-          dirs={props.navDir}
-          subDirs={props.dirs}
-          backgroundColorDefined="black"
-          projectName={"Hernande Monteiro - Personal Blog"}
-        >
-          <props.Component {...props.pageProps} />
-        </TemplateReactDocs>
-      ) : (
-        <props.Component {...props.pageProps} />
-      )}
-    </>
-  );
 }
