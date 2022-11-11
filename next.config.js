@@ -6,7 +6,6 @@ const nextConfig = {
   images: {
     domains: ["img.shields.io"],
   },
-  fs: "empty",
   eslint: {
     ignoreDuringBuilds: false,
   },
