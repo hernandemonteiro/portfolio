@@ -8,7 +8,7 @@ const nextConfig = {
   },
   fs: "empty",
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 };
 
