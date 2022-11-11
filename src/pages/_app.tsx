@@ -3,8 +3,8 @@ import React from "react";
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/_app.scss";
 import Head from "next/head";
-import ComponentOrDocs from "nextDocs/dist";
-import { initialProps } from "nextDocs/dist/core/initialProps";
+import ComponentOrDocs from "nextDocs";
+import { initialProps } from "nextDocs/core/initialProps";
 
 function MyApp(props) {
   return (
