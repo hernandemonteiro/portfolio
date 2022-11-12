@@ -3,6 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  rootDir: "./src"
 };
 
 module.exports = {
