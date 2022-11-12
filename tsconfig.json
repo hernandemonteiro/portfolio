@@ -24,9 +24,6 @@
     "**/*.ts",
     "**/*.tsx",
     "*.cy.js",
-    "jest.config.js",
-    "nextDocs/**.ts",
-    "nextDocs/**.tsx"
-, "nextDocs/index.jsx", "nextDocs/core/readDir.js", "nextDocs/core/index.js"  ],
-  "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx"]
+    "jest.config.js"  ],
+  "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx", "nextDocs"]
 }
