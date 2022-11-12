@@ -1,5 +1,5 @@
 import React from "react";
-import Code from "nextDocs/components/Docs/Code";
+import Code from "../../../nextDocs/components/Docs/Code";
 import { Button } from "../../components/ui/Buttons";
 
 export default function DocsHomePage() {
@@ -75,7 +75,7 @@ export default function DocsHomePage() {
         </div>
       </div>
       <Code
-        language={"js"}
+        language={"javascript"}
         code={function sum(a, b) {
           return a + b;
         }}
