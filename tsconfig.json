@@ -6,7 +6,6 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
-    "rootDir": "./src",
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "noEmit": true,
