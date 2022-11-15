@@ -41,9 +41,9 @@ export default function MyApp(props) {
             /><h3 style={{marginLeft: "2%"}}>Hernande Monteiro</h3>
           </div>
         }
-        // github="https://github.com/hernandemonteiro/personal_blog"
-        // website="https://hernandemonteiro.vercel.app"
-        // instagram="https://instagram.com/monteiro.ops"
+        github="https://github.com/hernandemonteiro/personal_blog"
+        website="https://hernandemonteiro.vercel.app"
+        instagram="https://instagram.com/monteiro.ops"
       />
     </>
   );
