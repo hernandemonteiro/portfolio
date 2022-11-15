@@ -1,5 +1,5 @@
 import React from "react";
-import Code from "../../../nextDocs/components/Docs/Code";
+import Code from "doc_docs/dist/components/Docs/Code";
 import { Button } from "../../components/ui/Buttons";
 
 export default function DocsHomePage() {

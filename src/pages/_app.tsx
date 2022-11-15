@@ -3,10 +3,13 @@ import React from "react";
 import { Analytics } from "@vercel/analytics/react";
 import "../styles/_app.scss";
 import Head from "next/head";
-import { initialProps } from "../../nextDocs/core";
-import ComponentOrDocs from "../../nextDocs";
+import Image from "next/image";
+import { initialProps } from "doc_docs/dist/core";
+import ComponentOrDocs from "doc_docs/dist";
+import logo from "../../public/favicon.png";
 
 function MyApp(props) {
+  console.log(props.subDirs);
   return (
     <>
       <NextNProgress />
@@ -20,11 +23,25 @@ function MyApp(props) {
         <link rel="shortcut icon" href="./favicon.png" />
       </Head>
       <ComponentOrDocs
-        properties={props}
-        projectLogo={"Hernande Monteiro - Personal Blog"}
-        github="https://github.com/hernandemonteiro/personal_blog"
-        website="https://hernandemonteiro.vercel.app"
-        instagram="https://instagram.com/monteiro.ops"
+        route={props.router.route}
+        dirs={props.dirs}
+        subDirs={props.subDirs}
+        Component={props.Component}
+        pageProps={props.pageProps}
+        
+        projectLogo={
+          <div style={{display: "flex", alignItems: "center"}}>
+            <Image
+              width={50}
+              height={50}
+              src={logo}
+              alt={"logotipo"}
+            /><h3 style={{marginLeft: "2%"}}>Hernande Monteiro</h3>
+          </div>
+        }
+        // github="https://github.com/hernandemonteiro/personal_blog"
+        // website="https://hernandemonteiro.vercel.app"
+        // instagram="https://instagram.com/monteiro.ops"
       />
     </>
   );
