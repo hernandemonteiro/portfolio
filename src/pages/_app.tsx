@@ -8,8 +8,10 @@ import { initialProps } from "doc_docs/dist/core";
 import ComponentOrDocs from "doc_docs/dist";
 import logo from "../../public/favicon.png";
 
-function MyApp(props) {
-  console.log(props.subDirs);
+initialProps(MyApp);
+
+export default function MyApp(props) {
+
   return (
     <>
       <NextNProgress />
@@ -46,7 +48,3 @@ function MyApp(props) {
     </>
   );
 }
-
-initialProps(MyApp);
-
-export default MyApp;

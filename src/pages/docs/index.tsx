@@ -31,7 +31,9 @@ export default function DocsHomePage() {
             padding: "2%",
           }}
         >
-          <Button>Button default</Button>
+          <Button onClick={() => alert("button default click")}>
+            Button default
+          </Button>
         </div>
         <div
           className="descriptionDocs"
@@ -42,32 +44,36 @@ export default function DocsHomePage() {
             borderRight: "0.5px solid gray",
           }}
         >
-          {/* <table style={{ width: "100%", textAlign: "center", padding: "2%" }}>
+          <table style={{ width: "100%", textAlign: "center", padding: "2%" }}>
             <thead>
               <th style={{ border: "1px solid black", padding: "1%" }}>Prop</th>
               <th style={{ border: "1px solid black", padding: "1%" }}>
-                default
+                Default
               </th>
               <th style={{ border: "1px solid black", padding: "1%" }}>
                 Accept
               </th>
             </thead>
             <tbody>
-              <td
-                style={{
-                  border: "1px solid black",
-                  padding: "1%",
-                  fontWeight: "bold",
-                }}
-              >
-                onClick
-              </td>
-              <td style={{ border: "1px solid black", padding: "1%" }}>none</td>
-              <td style={{ border: "1px solid black", padding: "1%" }}>
-                {"() => void"}
-              </td>
+              <tr>
+                <td
+                  style={{
+                    border: "1px solid black",
+                    padding: "1%",
+                    fontWeight: "bold",
+                  }}
+                >
+                  onClick
+                </td>
+                <td style={{ border: "1px solid black", padding: "1%" }}>
+                  none
+                </td>
+                <td style={{ border: "1px solid black", padding: "1%" }}>
+                  <p>{"() => void"}</p>
+                </td>
+              </tr>
             </tbody>
-          </table> */}
+          </table>
           <p style={{ padding: "2%" }}>
             aqui é onde nos organizamos para conseguir ter uma ótima experiência
             de codigo

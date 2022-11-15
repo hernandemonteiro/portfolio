@@ -1,12 +1,6 @@
 {
   "name": "hernande-monteiro",
   "version": "1.0.0",
-  "private": true,
-  "browser": {
-    "fs": false,
-    "path": false,
-    "os": false
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,7 +9,6 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@babel/core": "^7.19.6",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",

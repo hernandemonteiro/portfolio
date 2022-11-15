@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "noEmitOnError": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
+    // "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
+    // "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
@@ -16,13 +16,28 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": ["jest", "cypress"]
+    "types": [
+      "jest",
+      "cypress"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "skipLibCheck": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "*.cy.js",
-    "jest.config.js"  ],
-  "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx"]
+    "jest.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "cypress",
+    "*.test.ts",
+    "*.test.tsx"
+  ]
 }
