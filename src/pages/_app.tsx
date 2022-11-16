@@ -8,7 +8,7 @@ import { initialProps } from "doc_docs/core";
 import ComponentOrDocs from "doc_docs";
 import logo from "../../public/favicon.png";
 
-const configDocs = initialProps();
+// const configDocs = initialProps();
 
 export default function MyApp({ Component, pageProps, router }) {
   return (
