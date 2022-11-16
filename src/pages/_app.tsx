@@ -23,22 +23,26 @@ export default function MyApp({ Component, pageProps, router }) {
         />
         <link rel="shortcut icon" href="./favicon.png" />
       </Head>
-      <ComponentOrDocs
-        route={router.route}
-        dirs={configDocs.dirs}
-        subDirs={configDocs.subDirs}
-        Component={Component}
-        pageProps={pageProps}
-        projectLogo={
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Image width={50} height={50} src={logo} alt={"logotipo"} />
-            <h3 style={{ marginLeft: "2%" }}>Hernande Monteiro</h3>
-          </div>
-        }
-        github="https://github.com/hernandemonteiro/personal_blog"
-        website="https://hernandemonteiro.vercel.app"
-        instagram="https://instagram.com/monteiro.ops"
-      />
+      {router.route.match("/docs") ? (
+        <ComponentOrDocs
+          route={router.route}
+          dirs={configDocs.dirs}
+          subDirs={configDocs.subDirs}
+          Component={Component}
+          pageProps={pageProps}
+          projectLogo={
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Image width={50} height={50} src={logo} alt={"logotipo"} />
+              <h3 style={{ marginLeft: "2%" }}>Hernande Monteiro</h3>
+            </div>
+          }
+          github="https://github.com/hernandemonteiro/personal_blog"
+          website="https://hernandemonteiro.vercel.app"
+          instagram="https://instagram.com/monteiro.ops"
+        />
+      ) : (
+        <Component {...pageProps} />
+      )}
     </>
   );
 }
