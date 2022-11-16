@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import CardCurriculum from "../CardCurriculum";
 import CardHeaderCurriculum from "../CardHeaderCurriculum";
 import { AboutMePageProps } from "./interface";
@@ -26,7 +26,7 @@ export default function AboutMePage(props: AboutMePageProps) {
                 <p>
                   <b>{element.title}</b> - {element.foundation}
                 </p>
-                <Image
+                <img
                   width={100}
                   height={25}
                   alt={element.title + " picture"}
@@ -108,7 +108,7 @@ export default function AboutMePage(props: AboutMePageProps) {
                 <p>
                   <b>{element.company}</b> - {element.title}
                 </p>
-                <Image
+                <img
                   width={100}
                   height={25}
                   alt={element.title + " picture"}
