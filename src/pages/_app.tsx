@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps, router }) {
         />
         <link rel="shortcut icon" href="./favicon.png" />
       </Head>
-      <ComponentOrDocs
+      {/* <ComponentOrDocs
         route={router.route}
         dirs={configDocs.dirs}
         subDirs={configDocs.subDirs}
@@ -38,7 +38,8 @@ export default function MyApp({ Component, pageProps, router }) {
         github="https://github.com/hernandemonteiro/personal_blog"
         website="https://hernandemonteiro.vercel.app"
         instagram="https://instagram.com/monteiro.ops"
-      />
+      /> */}
+      <Component {...pageProps} />
     </>
   );
 }
