@@ -13,7 +13,7 @@ export default function useAuthAdmin() {
     confirmAdmin(email, password)
       ? setLocalUser({ email, password })
       : setMessage("Email ou senha incorretos!");
-    Router.push("/admin/login");
+    Router.push("/login");
   }
 
   function confirmAdmin(email, password) {
@@ -32,7 +32,7 @@ export default function useAuthAdmin() {
 
   function logout() {
     localStorage.removeItem("user");
-    Router.push("/admin/login");
+    Router.push("/login");
   }
 
   async function getAdminUserAndDecrypt() {
@@ -51,7 +51,7 @@ export default function useAuthAdmin() {
     confirmAdmin(userDecrypted.email, userDecrypted.password) &&
     (await localStorage.getItem("user"))
       ? setLoading(false)
-      : Router.push("/admin/login");
+      : Router.push("/login");
   }
   return {
     login,
