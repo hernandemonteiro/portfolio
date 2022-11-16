@@ -1,26 +1,16 @@
 import React from "react";
-import Code from "doc_docs/dist/components/Docs/Code";
+import { Code, TitleDoc, DescriptionDoc } from "doc_docs/components";
 import { Button } from "../../components/ui/Buttons";
 
 export default function DocsHomePage() {
   return (
     <>
-      <div className="titleDocs">
-        <h1 style={{ marginLeft: "2%" }}>Bem vindos a nossa documentação!</h1>
-        <hr />
-      </div>
-      <div
-        className="descriptionDocs"
-        style={{
-          margin: "1%",
-          borderRadius: "5px",
-          border: "0.5px solid gray",
-          padding: "3%",
-        }}
-      >
-        aqui é onde nos organizamos para conseguir ter uma ótima experiência de
-        codigo
-      </div>
+      <TitleDoc title="Bem vindos a nossa documentação!" />
+      <DescriptionDoc
+        description="aqui é onde nos organizamos para conseguir ter uma ótima experiência de
+        codigo"
+      />
+
       <div className="elementDescription" style={{ margin: "1%" }}>
         <div
           style={{
