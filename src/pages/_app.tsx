@@ -7,13 +7,7 @@ import Image from "next/image";
 import ComponentOrDocs, { initialProps } from "doc_docs";
 import logo from "../../public/favicon.png";
 
-MyApp.getInitialProps = async () => {
-  const dirs = await initialProps();
-  return {
-    dirs,
-  };
-};
-export default function MyApp({ Component, pageProps, router, dirs }) {
+function MyApp({ Component, pageProps, router, dirs }) {
   return (
     <>
       <NextNProgress />
@@ -46,3 +40,10 @@ export default function MyApp({ Component, pageProps, router, dirs }) {
     </>
   );
 }
+MyApp.getInitialProps = async () => {
+  const dirs = await initialProps();
+  return {
+    dirs,
+  };
+};
+export default MyApp;
