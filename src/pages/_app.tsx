@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps, router, dirs }) {
       </Head>
       <ComponentOrDocs
         route={router}
-        configDirs={dirs}
+        configDirs={{ dirs: [], subDirs: {} }}
         Component={Component}
         pageProps={pageProps}
         // layout configs:
@@ -41,10 +41,10 @@ function MyApp({ Component, pageProps, router, dirs }) {
     </>
   );
 }
-MyApp.getInitialProps = () => {
-  const dirs = initialProps();
-  return {
-    dirs,
-  };
-};
+// MyApp.getInitialProps = () => {
+//   const dirs = initialProps();
+//   return {
+//     dirs,
+//   };
+// };
 export default MyApp;
