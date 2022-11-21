@@ -6,7 +6,8 @@ import { fetchAPI } from "../helpers/fetchAPI";
 import Menu from "../components/blog/Menu";
 
 export async function getServerSideProps(context) {
-  const posts = await fetchAPI(`/api/articles`, "GET");
+  const { search } = context.params;
+  const posts = await fetchAPI(`/api/articles/search/${search}`, "GET");
   return { props: { posts } };
 }
 

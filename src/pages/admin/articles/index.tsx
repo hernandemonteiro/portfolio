@@ -1,10 +1,11 @@
 import React from "react";
+import ArticleTable from "../../../components/admin/Articles/ArticleTable";
 import TemplateAdmin from "../../../components/admin/TemplateAdmin";
 
 export default function ArticlesPage() {
   return (
     <TemplateAdmin>
-      <h1 style={{ color: "white" }}>Articles</h1>
+      <ArticleTable />
     </TemplateAdmin>
   );
 }

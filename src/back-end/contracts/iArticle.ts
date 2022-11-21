@@ -4,4 +4,5 @@ export interface iArticle {
   createArticle(article: object);
   updateArticle(article: object);
   deleteArticle(_id: string);
+  getPerSearch(search: string)
 }

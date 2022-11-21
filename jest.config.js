@@ -13,8 +13,11 @@ module.exports = {
       },
       transformIgnorePatterns: [
         "/node_modules/",
-        "^.+\\.module\\.(css|sass|scss)$",
       ],
+      "moduleNameMapper": {
+        "^.+\\.(css|less|scss)$": "identity-obj-proxy",
+        "^.+\\.module\\.(css|less|scss|sass)$": "identity-obj-proxy"
+      }
     },
     {
       preset: "ts-jest",

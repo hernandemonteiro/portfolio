@@ -17,6 +17,15 @@ export class ArticleController {
       res.status(500).json(error);
     }
   }
+  async getPerSearch(req, res) {
+    try {
+      const article = await ArticleService.getPerSearch(req);
+      res.status(200).json(article);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
+
   async createArticle(req, res) {
     try {
       const article = {

@@ -1,5 +1,4 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 

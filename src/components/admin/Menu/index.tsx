@@ -5,7 +5,7 @@ import {
   HiColorSwatch,
   HiOutlineLogout,
   HiOutlineDocumentText,
-  HiUser
+  HiUser,
 } from "react-icons/hi";
 import React from "react";
 import useAuthAdmin from "../../../hooks/useAuthAdmin";
@@ -18,7 +18,9 @@ export default function MenuAdmin() {
   return (
     <Menu>
       <MenuIconLink to="/admin">
-        <HiOutlineChartSquareBar />
+        <abbr title="Dashboard">
+          <HiOutlineChartSquareBar />
+        </abbr>
       </MenuIconLink>
       <MenuIconLink to="/admin/skills">
         <HiColorSwatch />

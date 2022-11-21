@@ -2,8 +2,9 @@ import React from "react";
 import styles from "./Inputs.module.scss";
 
 interface InputDefaultProps {
-  type: "text" | "password" | "email" | "number" | "date";
+  type: "text" | "password" | "email" | "number" | "date" | "button";
   onChange?: any;
+  onClick?: () => void;
   required?: boolean;
   width?: string;
   label?: string;
@@ -11,7 +12,8 @@ interface InputDefaultProps {
   value?: string;
   placeholder?: string;
   min?: number;
-  minLength?: number
+  minLength?: number;
+  autoFocus?: boolean;
 }
 
 export default function InputDefault(props) {
@@ -23,6 +25,7 @@ export default function InputDefault(props) {
         required={props.required}
         aria-label={props.label}
         aria-required={props.required}
+        autoFocus={props.autoFocus}
         type={props.type}
         value={props.value}
         name={props.label}
@@ -31,6 +34,7 @@ export default function InputDefault(props) {
         placeholder={props.placeholder}
         autoComplete="off"
         onChange={props.onChange}
+        onClick={props.onClick}
       />
     </div>
   );

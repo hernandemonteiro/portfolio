@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import { Avatar, Box, Stack, Divider } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import styles from "./CardHeaderCurriculum.module.css";
+import styles from "./CardHeaderCurriculum.module.scss";
 import { Markup } from "react-render-markup";
 
 interface CardHeaderCurriculumProps {

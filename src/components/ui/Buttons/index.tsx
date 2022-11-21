@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Buttons.module.scss";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -11,9 +12,9 @@ export function Button(props: ButtonProps) {
   return (
     <button
       type={props.type}
-      className={"buttonDefault " + props.className}
+      className={styles.buttonDefault + " " + props.className}
       onClick={props.onClick}
-      style={{width: props.width}}
+      style={{ width: props.width }}
     >
       {props.children}
     </button>

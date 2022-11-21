@@ -5,3 +5,8 @@ Disallow: /login
 # Allow all crawlers
 User-agent: *
 Allow: /
+
+
+# Allow all crawlers
+User-agent: *
+Allow: /*
