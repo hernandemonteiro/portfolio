@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps, router, dirs }) {
         />
         <link rel="shortcut icon" href="./favicon.png" />
       </Head>
-      {/* <ComponentOrDocs
+      <ComponentOrDocs
         route={router}
         configDirs={dirs}
         Component={Component}
@@ -34,8 +34,8 @@ function MyApp({ Component, pageProps, router, dirs }) {
         github="https://github.com/hernandemonteiro/personal_blog"
         website="https://hernandemonteiro.vercel.app"
         instagram="https://instagram.com/monteiro.ops"
-      /> */}
-      <Component {...pageProps}/>
+      />
+      {/* <Component {...pageProps}/> */}
       <NextNProgress />
       <Analytics />
     </>
