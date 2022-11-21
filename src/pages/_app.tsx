@@ -35,16 +35,18 @@ function MyApp({ Component, pageProps, router, dirs }) {
         website="https://hernandemonteiro.vercel.app"
         instagram="https://instagram.com/monteiro.ops"
       />
-      {/* <Component {...pageProps}/> */}
       <NextNProgress />
       <Analytics />
     </>
   );
 }
-// MyApp.getInitialProps = () => {
-//   const dirs = initialProps();
-//   return {
-//     dirs,
-//   };
-// };
+MyApp.getInitialProps = async (ctx) => {
+  if (ctx.pathname.match("/docs")) {
+    const dirs = await initialProps();
+    return {
+      dirs,
+    };
+  }
+  return {};
+};
 export default MyApp;
