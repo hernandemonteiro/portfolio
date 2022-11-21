@@ -41,8 +41,8 @@ function MyApp({ Component, pageProps, router, dirs }) {
     </>
   );
 }
-MyApp.getInitialProps = async () => {
-  const dirs = await initialProps();
+MyApp.getInitialProps = () => {
+  const dirs = initialProps();
   return {
     dirs,
   };
