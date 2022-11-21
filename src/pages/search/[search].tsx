@@ -1,9 +1,9 @@
 import React from "react";
-import Template from "../components/blog/Template";
-import CardArticle from "../components/ui/Cards/CardArticle";
-import usePagination from "../hooks/usePagination";
-import { fetchAPI } from "../helpers/fetchAPI";
-import Menu from "../components/blog/Menu";
+import Template from "../../components/blog/Template";
+import CardArticle from "../../components/ui/Cards/CardArticle";
+import usePagination from "../../hooks/usePagination";
+import { fetchAPI } from "../../helpers/fetchAPI";
+import Menu from "../../components/blog/Menu";
 
 export async function getServerSideProps(context) {
   const { search } = context.params;

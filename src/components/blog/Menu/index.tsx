@@ -19,7 +19,7 @@ export default function MenuBlog() {
   const [search, setSearch] = useState("");
   function handleSearch(e) {
     e.preventDefault();
-    Router.push(`/${search}`);
+    Router.push(`/search/${search}`);
   }
   return (
     <Menu>
