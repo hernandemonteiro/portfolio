@@ -23,7 +23,23 @@ export default function ArticleTable() {
           />
         </BaseTableForm>
       }
-      form={<ArticleForm onClickButtonCloseForm={() => setViewForm(false)} />}
+      form={
+        <ArticleForm
+          onClickButtonCloseForm={() => setViewForm(false)}
+          onChangeTitle={function (e: any): void {
+            throw new Error("Function not implemented.");
+          }}
+          title={""}
+          onChangeResume={function (e: any): void {
+            throw new Error("Function not implemented.");
+          }}
+          resume={""}
+          onChangeContent={function (e: any): void {
+            throw new Error("Function not implemented.");
+          }}
+          content={undefined}
+        />
+      }
       message={message}
     />
   );

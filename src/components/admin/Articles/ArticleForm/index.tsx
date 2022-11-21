@@ -4,7 +4,6 @@ import BaseForm from "../../BaseForm";
 import ArticlePreview from "../ArticlePreview";
 
 interface ArticleFormProps {
-  onClickButtonCloseForm: () => void;
   onChangeTitle: (e) => void;
   title: string;
   onChangeResume: (e) => void;
@@ -12,6 +11,7 @@ interface ArticleFormProps {
   onChangeContent: (e) => void;
   content: any;
   idArticle?: string;
+  onClickButtonCloseForm: () => void;
 }
 
 export default function ArticleForm(props: ArticleFormProps) {
