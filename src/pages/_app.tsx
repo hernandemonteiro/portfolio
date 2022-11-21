@@ -40,13 +40,10 @@ function MyApp({ Component, pageProps, router, dirs }) {
     </>
   );
 }
-MyApp.getInitialProps = async (ctx) => {
-  if (ctx.pathname.match("/docs")) {
-    const dirs = await initialProps();
-    return {
-      dirs,
-    };
-  }
-  return {};
-};
+// MyApp.getInitialProps = async (ctx) => {
+//   const dirs = await initialProps();
+//   return {
+//     dirs,
+//   };
+// };
 export default MyApp;
