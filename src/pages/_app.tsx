@@ -6,7 +6,7 @@ import Head from "next/head";
 import Image from "next/image";
 import ComponentOrDocs, { initialProps } from "doc_docs";
 import logo from "../../public/favicon.png";
-const dirs = initialProps();
+
 function MyApp({ Component, pageProps, router }) {
   return (
     <>
