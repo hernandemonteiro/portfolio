@@ -7,7 +7,7 @@ import Image from "next/image";
 import ComponentOrDocs, { initialProps } from "doc_docs";
 import logo from "../../public/favicon.png";
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps, router, dirs }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps, router }) {
       </Head>
       <ComponentOrDocs
         route={router}
-        configDirs={{ dirs: ["components", "api", "env"], subDirs: {} }}
+        configDirs={dirs}
         Component={Component}
         pageProps={pageProps}
         // layout configs:
@@ -40,10 +40,10 @@ function MyApp({ Component, pageProps, router }) {
     </>
   );
 }
-// MyApp.getInitialProps = async (ctx) => {
-//   const dirs = await initialProps();
-//   return {
-//     dirs,
-//   };
-// };
+MyApp.getInitialProps = async () => {
+  const dirs = await initialProps();
+  return {
+    dirs,
+  };
+};
 export default MyApp;
