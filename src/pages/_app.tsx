@@ -6,8 +6,8 @@ import Head from "next/head";
 import Image from "next/image";
 import ComponentOrDocs, { initialProps } from "doc_docs";
 import logo from "../../public/favicon.png";
-
-function MyApp({ Component, pageProps, router, dirs }) {
+const dirs = initialProps();
+function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps, router, dirs }) {
       </Head>
       <ComponentOrDocs
         route={router}
-        configDirs={{ dirs: [], subDirs: {} }}
+        configDirs={dirs}
         Component={Component}
         pageProps={pageProps}
         // layout configs:
