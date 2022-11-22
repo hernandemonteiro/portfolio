@@ -35,7 +35,7 @@ export default function Home({ posts }) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           <h1>
