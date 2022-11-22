@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps, router }) {
       </Head>
       <ComponentOrDocs
         route={router}
-        configDirs={{ dirs: [], subDirs: {} }}
+        configDirs={{ dirs: ["components", "api", "env"], subDirs: {} }}
         Component={Component}
         pageProps={pageProps}
         // layout configs:
