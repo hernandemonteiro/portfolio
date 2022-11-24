@@ -20,8 +20,6 @@ export default function FormSkill(props: FormSkillProps) {
       onSubmit={props.onSubmit}
       titleHeadForm={"Cadastrar skill"}
       titleButtonSubmit={props.titleSendButton}
-      titleButtonCloseForm={"FECHAR FORMULÁRIO"}
-      onClickButtonCloseForm={props.viewForm}
     >
       <InputDefault
         type="text"

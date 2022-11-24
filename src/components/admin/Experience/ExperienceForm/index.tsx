@@ -3,7 +3,6 @@ import InputDefault from "../../../ui/Inputs";
 import BaseForm from "../../BaseForm";
 
 interface ExperienceFormProps {
-  onClickButtonCloseForm: () => void;
   onSubmit: (e) => void;
   onChangeOccupation: (e) => void;
   OccupationValue: string;
@@ -24,8 +23,6 @@ export default function ExperienceForm(props: ExperienceFormProps) {
       onSubmit={props.onSubmit}
       titleHeadForm={"Cadastrar Experience!"}
       titleButtonSubmit={props.titleSendButton}
-      titleButtonCloseForm={"FECHAR FORMULARIO"}
-      onClickButtonCloseForm={props.onClickButtonCloseForm}
     >
       <InputDefault
         hidden={true}

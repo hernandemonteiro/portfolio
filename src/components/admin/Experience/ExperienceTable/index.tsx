@@ -56,13 +56,6 @@ export default function ExperienceTable(props: ExperienceTableProps) {
       form={
         <ExperienceForm
           titleSendButton={idExperience ? "SALVAR" : "CADASTRAR"}
-          onClickButtonCloseForm={() => {
-            setIdExperience(false);
-            setOccupation("");
-            setCompany("");
-            setSinceYear(0);
-            setUntilYear(0);
-          }}
           onSubmit={handleExperienceForm}
           onChangeOccupation={(e) => setOccupation(e.target.value)}
           OccupationValue={occupation}
