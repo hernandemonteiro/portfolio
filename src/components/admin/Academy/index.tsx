@@ -12,7 +12,7 @@ interface AcademyProps {
 }
 
 export default function Academy(props: AcademyProps) {
-  const { view, setView } = useContext(ViewContext);
+  const { setView } = useContext(ViewContext);
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
     message,

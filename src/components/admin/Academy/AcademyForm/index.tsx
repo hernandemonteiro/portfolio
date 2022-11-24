@@ -20,7 +20,7 @@ export default function AcademyForm(props: AcademyFormProps) {
   return (
     <BaseForm
       onSubmit={props.onSubmit}
-      titleHeadForm={"Cadastrar Academy!"}
+      titleHeadForm={"Cadastrar Experiência Acadêmica!"}
       titleButtonSubmit={props.titleButtonSend}
     >
       <InputDefault
