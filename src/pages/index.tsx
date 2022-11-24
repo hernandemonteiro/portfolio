@@ -4,18 +4,15 @@ import CardArticle from "../components/ui/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
 import { fetchAPI } from "../hooks/helpers/fetchAPI";
 import Menu from "../components/blog/Menu";
+import useArticles from "../hooks/useArticles";
 
-export async function getServerSideProps(context) {
-  const posts = await fetchAPI(`/api/articles/1`, "GET");
-  return { props: { posts } };
-}
-
-export default function Home({ posts }) {
+export default function Home() {
+  const { articlesList } = useArticles();
   const { pagination, botaoMostrarMais } = usePagination(3, 3);
 
   return (
     <Template>
-      {posts.slice(0, pagination).map((element) => {
+      {articlesList.slice(0, pagination).map((element) => {
         return (
           <CardArticle
             key={element._id}
@@ -25,7 +22,7 @@ export default function Home({ posts }) {
           />
         );
       })}
-      {botaoMostrarMais(posts.length)}
+      {botaoMostrarMais(articlesList.length)}
       <Menu />
     </Template>
   );

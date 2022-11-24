@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchAdminAPI, fetchAPI, tokenAPI } from "./helpers/fetchAPI";
 
 export default function useArticles() {
-  const [articlesList, setArticlesList] = useState([]);
+  const [articlesList, setArticlesList] = useState<[any]>([{}]);
   const [message, setMessage] = useState("");
   const [idArticle, setIdArticle] = useState<boolean | string>(false);
   const [title, setTitle] = useState("");
