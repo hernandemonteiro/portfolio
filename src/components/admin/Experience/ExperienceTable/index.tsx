@@ -3,7 +3,7 @@ import useExperience from "../../../../hooks/useExperience";
 import usePagination from "../../../../hooks/usePagination";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
-import TableOrMessageOrForm from "../../TableOrMessageOrForm";
+import ElementOrForm from "../../../ui/ElementOrForm";
 import ExperienceForm from "../ExperienceForm";
 
 interface ExperienceTableProps {
@@ -13,8 +13,6 @@ interface ExperienceTableProps {
 export default function ExperienceTable(props: ExperienceTableProps) {
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
-    viewForm,
-    setViewForm,
     message,
     handleExperienceForm,
     setIdExperience,
@@ -30,14 +28,10 @@ export default function ExperienceTable(props: ExperienceTableProps) {
     deleteExperience,
   } = useExperience();
   return (
-    <TableOrMessageOrForm
-      view={viewForm}
-      table={
+    <ElementOrForm
+      element={
         <>
-          <BaseTableForm
-            title={"Experiences"}
-            onClickRegisterButton={() => setViewForm(true)}
-          >
+          <BaseTableForm title={"Experiences"}>
             {props.experience.slice(0, pagination).map((element) => (
               <ContentTableForm
                 key={element._id}
@@ -51,7 +45,6 @@ export default function ExperienceTable(props: ExperienceTableProps) {
                   setCompany(element.company);
                   setSinceYear(element.since);
                   setUntilYear(element.until);
-                  setViewForm(true);
                 }}
                 onClickTrash={() => deleteExperience(element._id)}
               />
@@ -69,7 +62,6 @@ export default function ExperienceTable(props: ExperienceTableProps) {
             setCompany("");
             setSinceYear(0);
             setUntilYear(0);
-            setViewForm(false);
           }}
           onSubmit={handleExperienceForm}
           onChangeOccupation={(e) => setOccupation(e.target.value)}

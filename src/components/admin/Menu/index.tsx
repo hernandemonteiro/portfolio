@@ -23,19 +23,29 @@ export default function MenuAdmin() {
         </abbr>
       </MenuIconLink>
       <MenuIconLink to="/admin/skills">
-        <HiColorSwatch />
+        <abbr title="Skills">
+          <HiColorSwatch />
+        </abbr>
       </MenuIconLink>
       <MenuIconLink to="/admin/articles">
-        <HiOutlineDocumentText />
+        <abbr title="Articles">
+          <HiOutlineDocumentText />
+        </abbr>
       </MenuIconLink>
       <MenuIconLink to="/admin/academy">
-        <HiAcademicCap />
+        <abbr title="Academy">
+          <HiAcademicCap />
+        </abbr>
       </MenuIconLink>
       <MenuIconLink to="/admin/experience">
-        <HiBeaker />
+        <abbr title="Expeience">
+          <HiBeaker />
+        </abbr>
       </MenuIconLink>
       <MenuIcon>
-        <HiOutlineLogout onClick={logout} />
+        <abbr title="logout">
+          <HiOutlineLogout onClick={logout} />
+        </abbr>
       </MenuIcon>
     </Menu>
   );

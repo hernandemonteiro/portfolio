@@ -1,45 +1,70 @@
-import React, { useState } from "react";
+import React from "react";
+import useArticles from "../../../../hooks/useArticles";
+import usePagination from "../../../../hooks/usePagination";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
-import BaseForm from "../../BaseForm";
-import TableOrMessageOrForm from "../../TableOrMessageOrForm";
+import ElementOrForm from "../../../ui/ElementOrForm";
 import ArticleForm from "../ArticleForm";
 
-export default function ArticleTable() {
-  const [viewForm, setViewForm] = useState(false);
-  const [message, setMessage] = useState("");
+interface ArticleTableProps {
+  articles: any;
+}
+
+export default function ArticleTable(props: ArticleTableProps) {
+  const { pagination, botaoMostrarMais } = usePagination(5, 5);
+  const {
+    message,
+    setIdArticle,
+    idArticle,
+    setTitle,
+    title,
+    setResume,
+    resume,
+    setContent,
+    content,
+    handleArticleSubmitForm,
+    deleteArticle,
+    unsetForm,
+  } = useArticles();
+
   return (
-    <TableOrMessageOrForm
-      view={viewForm}
-      table={
-        <BaseTableForm
-          title={"Articles"}
-          onClickRegisterButton={() => setViewForm(true)}
-        >
-          <ContentTableForm
-            description={"nennda"}
-            onClickEdit={() => alert("implements edit method")}
-            onClickTrash={() => alert("implements delete method")}
-          />
-        </BaseTableForm>
+    <ElementOrForm
+      element={
+        <>
+          <BaseTableForm title={"Articles"}>
+            {props.articles.slice(0, pagination).map((element) => {
+              return (
+                <ContentTableForm
+                  key={element._id}
+                  description={element.title}
+                  onClickEdit={() => {
+                    setIdArticle(element._id);
+                    setTitle(element.title);
+                    setResume(element.resume);
+                    setContent(element.content);
+                  }}
+                  onClickTrash={() => deleteArticle(element._id)}
+                />
+              );
+            })}
+          </BaseTableForm>
+          {botaoMostrarMais(props.articles.length)}
+        </>
       }
       form={
         <ArticleForm
-          onClickButtonCloseForm={() => setViewForm(false)}
-          onChangeTitle={function (e: any): void {
-            throw new Error("Function not implemented.");
-          }}
-          title={""}
-          onChangeResume={function (e: any): void {
-            throw new Error("Function not implemented.");
-          }}
-          resume={""}
-          onChangeContent={function (e: any): void {
-            throw new Error("Function not implemented.");
-          }}
-          content={undefined}
+          onSubmit={handleArticleSubmitForm}
+          onChangeIdArticle={(e) => setIdArticle(e.target.value)}
+          idArticle={idArticle}
+          onChangeTitle={(e) => setTitle(e.target.value)}
+          title={title}
+          onChangeResume={(e) => setResume(e.target.value)}
+          resume={resume}
+          onChangeContent={(e) => setContent(e.target.value)}
+          content={content}
         />
       }
+      changeViewFunctions={() => unsetForm()}
       message={message}
     />
   );

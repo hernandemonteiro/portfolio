@@ -6,14 +6,17 @@ export async function fetchAPI(route, method) {
 }
 
 export async function fetchAdminAPI(route, method) {
-  const token = await process.env.NEXT_PUBLIC_CRYPTO_SECRET;
-  const acessToken = await Crypto.cryptoEncrypt(token);
   return await fetch(`${process.env.NEXT_PUBLIC_URL_API}${route}`, {
     method: method,
     headers: {
-      "x-admin-access": acessToken,
+      "x-admin-access": await tokenAPI(),
     },
   })
-    .then(async (res) => res.json())
+    .then((res) => res.json())
     .catch((e) => console.log("error: " + e));
+}
+
+export async function tokenAPI() {
+  const token = process.env.NEXT_PUBLIC_CRYPTO_SECRET;
+  return await Crypto.cryptoEncrypt(token);
 }

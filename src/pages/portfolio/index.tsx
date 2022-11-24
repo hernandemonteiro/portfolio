@@ -2,7 +2,7 @@ import React from "react";
 import Template from "../../components/blog/Template";
 import usePagination from "../../hooks/usePagination";
 import CardArticle from "../../components/ui/Cards/CardArticle";
-import { fetchAPI } from "../../helpers/fetchAPI";
+import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps() {
   const portfolio = await fetchAPI("/api/portfolio", "GET");

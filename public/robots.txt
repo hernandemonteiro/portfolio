@@ -9,4 +9,4 @@ Allow: /
 
 # Allow all crawlers
 User-agent: *
-Allow: /*
+Allow: /article/*

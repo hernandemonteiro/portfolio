@@ -1,13 +1,11 @@
 import Router from "next/router";
-import { useState } from "react";
-import { fetchAdminAPI } from "../helpers/fetchAPI";
+import React, { useEffect, useState } from "react";
+import { fetchAdminAPI, fetchAPI } from "./helpers/fetchAPI";
 
 export default function useExperience() {
-  const [viewForm, setViewForm] = useState(false);
+  const [experienceList, setExperienceList] = useState([]);
   const [message, setMessage] = useState("");
-
   const [idExperience, setIdExperience] = useState<string | boolean>(false);
-
   const [occupation, setOccupation] = useState("");
   const [company, setCompany] = useState("");
   const [sinceYear, setSinceYear] = useState(0);
@@ -17,6 +15,9 @@ export default function useExperience() {
     e.preventDefault();
     !idExperience ? createExperience() : updateExperience();
   }
+  useEffect(() => {
+    fetchAPI("/api/experience", "GET").then((res) => setExperienceList(res));
+  }, []);
   async function createExperience() {
     await fetchAdminAPI(
       `/api/experience/create/${occupation}/${company}/${sinceYear}/${untilYear}`,
@@ -29,8 +30,6 @@ export default function useExperience() {
           setCompany("");
           setSinceYear(0);
           setUntilYear(0);
-          setViewForm(false);
-          Router.push("/admin/experience");
         }
       })
       .finally(finallyExperienceFetch);
@@ -48,8 +47,6 @@ export default function useExperience() {
           setCompany("");
           setSinceYear(0);
           setUntilYear(0);
-          setViewForm(false);
-          Router.push("/admin/experience");
         }
       })
       .finally(finallyExperienceFetch);
@@ -60,16 +57,14 @@ export default function useExperience() {
       .then((res) => {
         if (res._id === _id) {
           setMessage("Deletado com sucesso!");
-          Router.push("/admin/experience");
         }
       })
       .finally(finallyExperienceFetch);
   }
 
-  const finallyExperienceFetch = () => setTimeout(() => setMessage(""), 2000);
+  const finallyExperienceFetch = () => setTimeout(() => Router.reload(), 2000);
   return {
-    setViewForm,
-    viewForm,
+    experienceList,
     message,
     handleExperienceForm,
     setIdExperience,
@@ -82,6 +77,6 @@ export default function useExperience() {
     sinceYear,
     setUntilYear,
     untilYear,
-    deleteExperience
+    deleteExperience,
   };
 }

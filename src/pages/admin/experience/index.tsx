@@ -1,20 +1,13 @@
 import React from "react";
 import ExperienceTable from "../../../components/admin/Experience/ExperienceTable";
 import TemplateAdmin from "../../../components/admin/TemplateAdmin";
-import { fetchAPI } from "../../../helpers/fetchAPI";
+import useExperience from "../../../hooks/useExperience";
 
-export async function getServerSideProps() {
-  const experiences = await fetchAPI("/api/experience", "GET");
-  return {
-    props: {
-      experiences,
-    },
-  };
-}
-export default function ExperincePage({ experiences }) {
+export default function ExperincePage() {
+  const { experienceList } = useExperience();
   return (
     <TemplateAdmin>
-      <ExperienceTable experience={experiences} />
+      <ExperienceTable experience={experienceList} />
     </TemplateAdmin>
   );
 }

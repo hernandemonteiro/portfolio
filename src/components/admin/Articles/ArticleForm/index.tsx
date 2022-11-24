@@ -9,9 +9,10 @@ interface ArticleFormProps {
   onChangeResume: (e) => void;
   resume: string;
   onChangeContent: (e) => void;
-  content: any;
-  idArticle?: string;
-  onClickButtonCloseForm: () => void;
+  content: string;
+  onChangeIdArticle?: (e) => void;
+  idArticle?: string | boolean;
+  onSubmit: (e) => void;
 }
 
 export default function ArticleForm(props: ArticleFormProps) {
@@ -26,22 +27,37 @@ export default function ArticleForm(props: ArticleFormProps) {
         />
       ) : (
         <BaseForm
-          onSubmit={function (e: any): void {
-            throw new Error("Function not implemented.");
-          }}
+          onSubmit={props.onSubmit}
           titleHeadForm={"cadastrar artigo"}
           titleButtonSubmit={props.idArticle ? "SALVAR" : "CADASTRAR"}
-          titleButtonCloseForm={"FECHAR FORMULÁRIO"}
-          onClickButtonCloseForm={props.onClickButtonCloseForm}
         >
-          <InputDefault type="text" hidden={true} />
-          <InputDefault type="text" required={true} label="TITLE" />
-          <InputDefault type="text" required={true} label="RESUME" />
+          <InputDefault
+            type="text"
+            onChange={props.onChangeIdArticle}
+            value={props.idArticle}
+            hidden={true}
+          />
+          <InputDefault
+            type="text"
+            onChange={props.onChangeTitle}
+            value={props.title}
+            required={true}
+            label="TITLE"
+          />
+          <InputDefault
+            type="text"
+            onChange={props.onChangeResume}
+            value={props.resume}
+            required={true}
+            label="RESUME"
+          />
           <label>
             <h2>ARTICLE</h2>
           </label>
           <textarea
             required
+            spellCheck={false}
+            onChange={props.onChangeContent}
             value={props.content}
             style={{
               width: "100%",

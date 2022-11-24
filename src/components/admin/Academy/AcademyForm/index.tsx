@@ -3,7 +3,6 @@ import BaseForm from "../../BaseForm";
 
 interface AcademyFormProps {
   onSubmit: (e) => void;
-  onClickButtonCloseForm: () => void;
   titleButtonSend: string;
   onChangeIdAcademy: (e) => void;
   idAcademyValue: string | boolean;
@@ -23,8 +22,6 @@ export default function AcademyForm(props: AcademyFormProps) {
       onSubmit={props.onSubmit}
       titleHeadForm={"Cadastrar Academy!"}
       titleButtonSubmit={props.titleButtonSend}
-      titleButtonCloseForm={"FECHAR FORMULÁRIO"}
-      onClickButtonCloseForm={props.onClickButtonCloseForm}
     >
       <InputDefault
         type="text"

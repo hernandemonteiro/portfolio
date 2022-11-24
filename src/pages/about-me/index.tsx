@@ -5,7 +5,7 @@ import CardCurriculum from "../../components/about-me/CardCurriculum";
 import CardHeaderCurriculum from "../../components/about-me/CardHeaderCurriculum";
 import TemplateCurriculum from "../../components/about-me/Template";
 import MenuBlog from "../../components/blog/Menu";
-import { fetchAPI } from "../../helpers/fetchAPI";
+import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps() {
   const skills = await fetchAPI(`/api/skills`, "GET");

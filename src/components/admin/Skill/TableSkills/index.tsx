@@ -5,7 +5,7 @@ import FormSkill from "../FormSkill";
 import MessageForm from "../../../ui/MessageForm";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
-import TableOrMessageOrForm from "../../TableOrMessageOrForm";
+import ElementOrForm from "../../../ui/ElementOrForm";
 
 interface TableSkillsProps {
   data: any;
@@ -23,19 +23,13 @@ export default function TableSkills(props: TableSkillsProps) {
     deleteSkill,
     handleSkillForm,
     message,
-    setForm,
-    viewForm,
   } = useSkills();
 
   return (
-    <TableOrMessageOrForm
-      view={viewForm}
-      table={
+    <ElementOrForm
+      element={
         <>
-          <BaseTableForm
-            title={"Skills"}
-            onClickRegisterButton={() => setForm(true)}
-          >
+          <BaseTableForm title={"Skills"}>
             {props.data.slice(0, pagination).map((element) => (
               <ContentTableForm
                 key={element._id}
@@ -44,7 +38,6 @@ export default function TableSkills(props: TableSkillsProps) {
                   setType(element.type);
                   setSkill(element.skill);
                   setIdSkill(element._id);
-                  setForm(true);
                 }}
                 onClickTrash={() => deleteSkill(element._id)}
               />
@@ -64,7 +57,6 @@ export default function TableSkills(props: TableSkillsProps) {
           valueIdSkill={idSkill}
           onSubmit={(e) => handleSkillForm(e)}
           viewForm={() => {
-            setForm(false);
             setType("");
             setSkill("");
             setIdSkill("");

@@ -1,25 +1,19 @@
 import React, { useEffect } from "react";
 import useAuthAdmin from "../../../hooks/useAuthAdmin";
+import LoaderAdmin from "../../ui/Loading";
 
 interface ProtectedAdminProps {
   children: any;
 }
 export default function ProtectedAdmin(props: ProtectedAdminProps) {
   const { isLoggedAdmin, loading } = useAuthAdmin();
-  isLoggedAdmin();
+  useEffect(() => {
+    isLoggedAdmin();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   if (loading) {
-    return (
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <h1 style={{ color: "white" }}>Loading...</h1>
-      </div>
-    );
+    return <LoaderAdmin />;
   } else {
     return props.children;
   }

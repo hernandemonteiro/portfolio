@@ -5,8 +5,10 @@ import { ArticlePreviewProps } from "./interface";
 
 export default function ArticlePreview(props: ArticlePreviewProps) {
   return (
-    <div>
+    <div style={{ marginTop: "2%", textAlign: "center" }}>
       <Markup markup={props.content} />
+      <br />
+      <br />
       <Button onClick={props.onClick}>FECHAR PREVIEW</Button>
     </div>
   );

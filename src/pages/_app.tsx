@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "../styles/_app.scss";
 import Head from "next/head";
 import Image from "next/image";
-import ComponentOrDocs, { initialProps } from "doc_docs";
+import ComponentOrDocs from "doc_docs";
 import logo from "../../public/favicon.png";
 
 function MyApp({ Component, pageProps, router }) {
@@ -20,10 +20,14 @@ function MyApp({ Component, pageProps, router }) {
       </Head>
       <ComponentOrDocs
         route={router}
-        configDirs={{ dirs: ["components", "api", "env"], subDirs: {} }}
         Component={Component}
         pageProps={pageProps}
-        // layout configs:
+        // menu:
+        configDirs={{
+          dirs: ["components", "api", "env"],
+          subDirs: { components: "about-me" },
+        }}
+        // logo:
         projectLogo={
           <div style={{ display: "flex", alignItems: "center" }}>
             <Image width={50} height={50} src={logo} alt={"logotipo"} />
@@ -40,10 +44,5 @@ function MyApp({ Component, pageProps, router }) {
     </>
   );
 }
-// MyApp.getInitialProps = async () => {
-//   const dirs = await initialProps();
-//   return {
-//     dirs,
-//   };
-// };
+
 export default MyApp;

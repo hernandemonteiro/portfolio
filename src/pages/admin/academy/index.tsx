@@ -1,20 +1,13 @@
 import React from "react";
-import AcademyTable from "../../../components/admin/Academy/AcademyTable";
+import Academy from "../../../components/admin/Academy";
 import TemplateAdmin from "../../../components/admin/TemplateAdmin";
-import { fetchAPI } from "../../../helpers/fetchAPI";
+import useAcademy from "../../../hooks/useAcademy";
 
-export async function getServerSideProps(){
-  const academys = await fetchAPI("/api/academy", "GET");
-  return {
-    props: {
-      academys
-    }
-  }
-}
-export default function AcademyPage({academys}) {
+export default function AcademyPage() {
+  const { academyList } = useAcademy();
   return (
     <TemplateAdmin>
-      <AcademyTable academy={academys}/>
+      <Academy academy={academyList} />
     </TemplateAdmin>
   );
 }

@@ -1,17 +1,19 @@
 import Router from "next/router";
-import { useState } from "react";
-import { fetchAdminAPI } from "../helpers/fetchAPI";
+import { useEffect, useState } from "react";
+import { fetchAdminAPI, fetchAPI } from "./helpers/fetchAPI";
 
 export default function useAcademy() {
-  const [viewForm, setViewForm] = useState(false);
+  const [academyList, setAcademyList] = useState([]);
   const [message, setMessage] = useState("");
-
   const [idExperience, setIdExperience] = useState<string | boolean>(false);
-
   const [course, setCourse] = useState("");
   const [foundation, setFoundation] = useState("");
   const [since, setSince] = useState("");
   const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    fetchAPI("/api/academy", "GET").then((res) => setAcademyList(res));
+  }, []);
 
   function handleAcademyForm(e) {
     e.preventDefault();
@@ -31,8 +33,6 @@ export default function useAcademy() {
           setFoundation("");
           setSince("");
           setStatus("");
-          setViewForm(false);
-          Router.push("/admin/academy");
         }
       })
       .finally(finallyAcademy);
@@ -51,8 +51,6 @@ export default function useAcademy() {
           setFoundation("");
           setSince("");
           setStatus("");
-          setViewForm(false);
-          Router.push("/admin/academy");
         }
       })
       .finally(finallyAcademy);
@@ -62,14 +60,13 @@ export default function useAcademy() {
     await fetchAdminAPI(`/api/academy/delete/${_id}`, "DELETE")
       .then((res) => {
         res._id === _id && setMessage("Deletado com sucesso!");
-        Router.push("/admin/academy");
       })
       .finally(finallyAcademy);
   }
-  const finallyAcademy = () => setTimeout(() => setMessage(""), 2000);
+
+  const finallyAcademy = () => setTimeout(() => Router.reload(), 2000);
+
   return {
-    setViewForm,
-    viewForm,
     message,
     handleAcademyForm,
     deleteAcademy,
@@ -83,5 +80,6 @@ export default function useAcademy() {
     since,
     setStatus,
     status,
+    academyList,
   };
 }

@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Template from "../components/blog/Template";
 import CardArticle from "../components/ui/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
-import { fetchAPI } from "../helpers/fetchAPI";
+import { fetchAPI } from "../hooks/helpers/fetchAPI";
 import Menu from "../components/blog/Menu";
 
 export async function getServerSideProps(context) {
-  const posts = await fetchAPI(`/api/articles`, "GET");
+  const posts = await fetchAPI(`/api/articles/1`, "GET");
   return { props: { posts } };
 }
 
 export default function Home({ posts }) {
-  const { pagination, botaoMostrarMais } = usePagination(5, 5);
+  const { pagination, botaoMostrarMais } = usePagination(3, 3);
 
   return (
     <Template>
