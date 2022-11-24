@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import ViewContext from "../../../providers/viewContext";
+import ViewProvider from "../../../providers/ViewProvider";
 import { Button } from "../Buttons";
 import MessageForm from "../MessageForm";
 
@@ -9,9 +11,8 @@ interface ElementOrFormProps {
   message: string;
 }
 
-
 export default function ElementOrForm(props: ElementOrFormProps) {
-  const [view, setView] = useState(false);
+  const { view, setView } = useContext(ViewContext);
   function tableOrFormView() {
     return !view ? (
       <>

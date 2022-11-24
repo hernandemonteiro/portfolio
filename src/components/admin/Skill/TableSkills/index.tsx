@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import usePagination from "../../../../hooks/usePagination";
 import useSkills from "../../../../hooks/useSkills";
 import FormSkill from "../FormSkill";
@@ -6,12 +6,14 @@ import MessageForm from "../../../ui/MessageForm";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
+import ViewContext from "../../../../providers/viewContext";
 
 interface TableSkillsProps {
   data: any;
   title?: string;
 }
 export default function TableSkills(props: TableSkillsProps) {
+  const { view, setView } = useContext(ViewContext);
   const { pagination, botaoMostrarMais } = usePagination(3, 3);
   const {
     setType,
@@ -38,6 +40,7 @@ export default function TableSkills(props: TableSkillsProps) {
                   setType(element.type);
                   setSkill(element.skill);
                   setIdSkill(element._id);
+                  setView(true)
                 }}
                 onClickTrash={() => deleteSkill(element._id)}
               />

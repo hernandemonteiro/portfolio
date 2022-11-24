@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import useExperience from "../../../../hooks/useExperience";
 import usePagination from "../../../../hooks/usePagination";
+import ViewContext from "../../../../providers/viewContext";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
@@ -11,6 +12,7 @@ interface ExperienceTableProps {
 }
 
 export default function ExperienceTable(props: ExperienceTableProps) {
+  const { view, setView } = useContext(ViewContext);
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
     message,
@@ -45,6 +47,7 @@ export default function ExperienceTable(props: ExperienceTableProps) {
                   setCompany(element.company);
                   setSinceYear(element.since);
                   setUntilYear(element.until);
+                  setView(true);
                 }}
                 onClickTrash={() => deleteExperience(element._id)}
               />

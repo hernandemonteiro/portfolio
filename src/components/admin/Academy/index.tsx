@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import useAcademy from "../../../hooks/useAcademy";
 import usePagination from "../../../hooks/usePagination";
+import ViewContext from "../../../providers/viewContext";
 import BaseTableForm from "../../ui/BaseTableForm";
 import ContentTableForm from "../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../ui/ElementOrForm";
@@ -11,6 +12,7 @@ interface AcademyProps {
 }
 
 export default function Academy(props: AcademyProps) {
+  const { view, setView } = useContext(ViewContext);
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
     message,
@@ -44,6 +46,7 @@ export default function Academy(props: AcademyProps) {
                   setFoundation(element.foundation);
                   setSince(element.since);
                   setStatus(element.status);
+                  setView(true);
                 }}
                 onClickTrash={() => deleteAcademy(element._id)}
               />

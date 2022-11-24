@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import useArticles from "../../../../hooks/useArticles";
 import usePagination from "../../../../hooks/usePagination";
+import ViewContext from "../../../../providers/viewContext";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
@@ -12,6 +13,7 @@ interface ArticleTableProps {
 
 export default function ArticleTable(props: ArticleTableProps) {
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
+  const { view, setView } = useContext(ViewContext);
   const {
     message,
     setIdArticle,
@@ -42,6 +44,7 @@ export default function ArticleTable(props: ArticleTableProps) {
                     setTitle(element.title);
                     setResume(element.resume);
                     setContent(element.content);
+                    setView(true);
                   }}
                   onClickTrash={() => deleteArticle(element._id)}
                 />
