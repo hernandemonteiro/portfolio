@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps, router }) {
         // menu:
         configDirs={{
           dirs: ["components", "api", "env"],
-          subDirs: { components: "about-me" },
+          subDirs: { api: ["index.tsx", "Owner_info"] },
         }}
         // logo:
         projectLogo={
