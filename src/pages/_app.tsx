@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps, router }) {
         projectLogo={
           <div style={{ display: "flex", alignItems: "center" }}>
             <Image width={50} height={50} src={logo} alt={"logotipo"} />
-            <h3 style={{ marginLeft: "2%" }}>Hernande Monteiro</h3>
+            <h3>Hernande Monteiro</h3>
           </div>
         }
         // socials:
