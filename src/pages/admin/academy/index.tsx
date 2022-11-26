@@ -1,10 +1,13 @@
 import React from "react";
-import TemplateAdmin from "../../../components/Admin/TemplateAdmin";
+import Academy from "../../../components/admin/Academy";
+import TemplateAdmin from "../../../components/admin/TemplateAdmin";
+import useAcademy from "../../../hooks/useAcademy";
 
 export default function AcademyPage() {
+  const { academyList } = useAcademy();
   return (
     <TemplateAdmin>
-      <h1 style={{ color: "white" }}>Academy</h1>
+      <Academy academy={academyList} />
     </TemplateAdmin>
   );
 }

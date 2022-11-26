@@ -9,11 +9,11 @@ export default async function createExperience(req, res) {
     _id: query[0],
     title: query[1],
     resume: query[2],
-    content: query[3],
+    content: req.body,
   };
   (await adminAccessApi(req.headers["x-admin-access"])) &&
   req.method === "POST" &&
-  query.length === 4
+  query.length === 3
     ? await ArticleController.updateArticle(article, res)
     : res.status(500).end("Need all correct informations!");
 }

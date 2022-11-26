@@ -6,8 +6,18 @@ export class ArticleService implements iArticle {
     return await articleRepository.find({});
   }
 
-  async getByID(_id: any) {
+  async getByID(_id) {
     return await articleRepository.findById(_id);
+  }
+
+  async getPerSearch(search: string) {
+    return await articleRepository.find({
+      $or: [
+        { title: { $regex: search, $options: "i" } },
+        { resume: { $regex: search, $options: "i" } },
+        { content: { $regex: search, $options: "i" } },
+      ],
+    });
   }
 
   async createArticle(article) {

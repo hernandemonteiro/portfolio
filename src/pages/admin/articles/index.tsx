@@ -1,10 +1,13 @@
 import React from "react";
-import TemplateAdmin from "../../../components/Admin/TemplateAdmin";
+import ArticleTable from "../../../components/admin/Articles/ArticleTable";
+import TemplateAdmin from "../../../components/admin/TemplateAdmin";
+import useArticles from "../../../hooks/useArticles";
 
 export default function ArticlesPage() {
+  const { articlesList } = useArticles();
   return (
     <TemplateAdmin>
-      <h1 style={{ color: "white" }}>Articles</h1>
+      <ArticleTable articles={articlesList} />
     </TemplateAdmin>
   );
 }

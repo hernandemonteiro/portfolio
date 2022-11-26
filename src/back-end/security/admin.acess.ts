@@ -1,4 +1,4 @@
-import Crypto from "../../helpers/crypto";
+import Crypto from "../../hooks/helpers/crypto";
 
 export async function adminAccessApi(token): Promise<boolean> {
   let access;

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Router from "next/router";
-import Crypto from "../helpers/crypto";
+import Crypto from "./helpers/crypto";
+import nookies, { setCookie, parseCookies, destroyCookie } from "nookies";
 
 export default function useAuthAdmin() {
+  const cookies = parseCookies();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -13,47 +16,56 @@ export default function useAuthAdmin() {
     confirmAdmin(email, password)
       ? setLocalUser({ email, password })
       : setMessage("Email ou senha incorretos!");
-    Router.push("/admin/login");
+    Router.push("/login");
   }
 
   function confirmAdmin(email, password) {
-    let checkAdmin;
-    email === process.env.NEXT_PUBLIC_BLOG_EMAIL &&
-    password === process.env.NEXT_PUBLIC_PASSWORD_EMAIL
-      ? (checkAdmin = true)
-      : (checkAdmin = false);
-    return checkAdmin;
+    return email === process.env.NEXT_PUBLIC_BLOG_EMAIL &&
+      password === process.env.NEXT_PUBLIC_PASSWORD_EMAIL
+      ? true
+      : false;
   }
+
   async function setLocalUser(value) {
+    setLoading(true);
     const userString = JSON.stringify(value);
     const user = await Crypto.cryptoEncrypt(userString);
-    localStorage.setItem("user", user);
+    setCookie(null, "user", user, {
+      SameSite: "Lax",
+    });
     Router.push("/admin");
   }
 
   function logout() {
-    localStorage.removeItem("user");
-    Router.push("/admin/login");
-  }
-
-  async function getAdminUserAndDecrypt() {
-    const user = await localStorage.getItem("user");
-    return JSON.parse((await Crypto.cryptoDecrypt(user || "")) || "[]");
-  }
-
-  async function redirectLoginPageIfLogged(){
-    const userDecrypted = await getAdminUserAndDecrypt();
-    confirmAdmin(userDecrypted.email, userDecrypted.password) &&
-    Router.push("/admin");
+    destroyCookie(null, "user");
+    redirectUserAndCloseLoading("/login");
   }
 
   async function isLoggedAdmin() {
     const userDecrypted = await getAdminUserAndDecrypt();
-    confirmAdmin(userDecrypted.email, userDecrypted.password) &&
-    (await localStorage.getItem("user"))
+    (await confirmAdmin(userDecrypted.email, userDecrypted.password))
       ? setLoading(false)
-      : Router.push("/admin/login");
+      : redirectUserAndCloseLoading("/login");
   }
+
+  async function redirectLoginPageIfLogged() {
+    const userDecrypted = await getAdminUserAndDecrypt();
+    confirmAdmin(userDecrypted.email, userDecrypted.password)
+      ? redirectUserAndCloseLoading("/admin")
+      : setLoading(false);
+  }
+
+  async function getAdminUserAndDecrypt() {
+    return JSON.parse(
+      (await Crypto.cryptoDecrypt((await cookies.user) || "")) || "[]"
+    );
+  }
+
+  function redirectUserAndCloseLoading(route) {
+    Router.push(route);
+    setTimeout(() => setLoading(false), 1000);
+  }
+
   return {
     login,
     logout,

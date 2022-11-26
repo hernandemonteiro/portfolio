@@ -1,0 +1,18 @@
+import React from "react";
+import styles from "./curriculum.module.css";
+import Menu from "../../blog/MenuBlog";
+import Head from "next/head";
+
+export default function TemplateAboutMe(props) {
+  return (
+    <div className={styles.Curriculum}>
+      <Head>
+        <title>
+          Hernande Monteiro - aqui você sabe um pouco mais sobre mim!
+        </title>
+      </Head>
+      {props.children}
+      <Menu />
+    </div>
+  );
+}

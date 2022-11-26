@@ -1,10 +1,14 @@
 import React from "react";
-import TemplateAdmin from "../../components/Admin/TemplateAdmin";
+import Dashoard from "../../components/admin/Dashboard";
+import TemplateAdmin from "../../components/admin/TemplateAdmin";
+import useOwnerInfos from "../../hooks/useOwnerInfos";
 
-export default function AdminPage() {
+export default function InfosPage() {
+  const { ownerInfoList } = useOwnerInfos();
+
   return (
-      <TemplateAdmin>
-        <h1 style={{ color: "white" }}>dashboard</h1>
-      </TemplateAdmin>
+    <TemplateAdmin>
+      <Dashoard list={ownerInfoList} />
+    </TemplateAdmin>
   );
 }

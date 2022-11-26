@@ -1,9 +1,9 @@
 import Router from "next/router";
-import { useState } from "react";
-import { fetchAdminAPI } from "../helpers/fetchAPI";
+import React, { useEffect, useState } from "react";
+import { fetchAdminAPI, fetchAPI } from "./helpers/fetchAPI";
 
 export default function useSkills() {
-  const [viewForm, setForm] = useState(false);
+  const [skillsList, setSkillsList] = useState([]);
   const [idSkill, setIdSkill] = useState<boolean | string>(false);
   const [skill, setSkill] = useState("");
   const [type, setType] = useState("");
@@ -13,12 +13,14 @@ export default function useSkills() {
     e.preventDefault();
     !idSkill ? createSkill() : updateSkills();
   }
+  useEffect(() => {
+    fetchAPI(`/api/skills`, "GET").then((res) => setSkillsList(res));
+  }, []);
 
   async function createSkill() {
     await fetchAdminAPI(`/api/skills/create/${type}/${skill}`, "POST")
       .then((res) => {
         if (res.skill === skill) {
-          Router.push("/admin/skills");
           setMessage("cadastrado com sucesso!");
           setSkill("");
           setType("");
@@ -39,7 +41,6 @@ export default function useSkills() {
           setSkill("");
           setType("");
           setIdSkill(false);
-          Router.push("/admin/skills");
         }
       })
       .finally(finallyFetch);
@@ -47,20 +48,17 @@ export default function useSkills() {
   async function deleteSkill(_id) {
     await fetchAdminAPI(`/api/skills/delete/${_id}`, "DELETE")
       .then((res) => {
-        if (res._id === _id) {
-          setMessage("Deletado com sucesso!");
-          Router.push("/admin/skills");
-        }
+        res._id === _id && setMessage("Deletado com sucesso!");
       })
       .finally(finallyFetch);
   }
 
   function finallyFetch() {
-    setTimeout(() => setMessage(""), 2000);
-    setForm(false);
+    setTimeout(() => Router.reload(), 2000);
   }
 
   return {
+    skillsList,
     setIdSkill,
     idSkill,
     setSkill,
@@ -70,7 +68,5 @@ export default function useSkills() {
     deleteSkill,
     handleSkillForm,
     message,
-    viewForm,
-    setForm,
   };
 }

@@ -1,10 +1,13 @@
 import React from "react";
-import TemplateAdmin from "../../../components/Admin/TemplateAdmin";
+import ExperienceTable from "../../../components/admin/Experience/ExperienceTable";
+import TemplateAdmin from "../../../components/admin/TemplateAdmin";
+import useExperience from "../../../hooks/useExperience";
 
 export default function ExperincePage() {
+  const { experienceList } = useExperience();
   return (
     <TemplateAdmin>
-      <h1 style={{ color: "white" }}>Experince</h1>
+      <ExperienceTable experience={experienceList} />
     </TemplateAdmin>
   );
 }

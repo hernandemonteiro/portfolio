@@ -1,0 +1,12 @@
+.avatarImg {
+  width: 15%;
+  height: 5%;
+  margin: 4%;
+}
+@media (max-width: 600px) {
+  .avatarImg {
+    width: 55%;
+    height: 55%;
+    margin-top: 3%;
+  }
+}

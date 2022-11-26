@@ -1,20 +1,18 @@
-import React from "react";
-import Template from "../components/Blog/Template";
-import CardArticle from "../components/UI/Cards/CardArticle";
+import React, { useEffect, useState } from "react";
+import Template from "../components/blog/TemplateBlog";
+import CardArticle from "../components/ui/Cards/CardArticle";
 import usePagination from "../hooks/usePagination";
-import { fetchAPI } from "../helpers/fetchAPI";
-import Menu from "../components/Blog/Menu";
+import { fetchAPI } from "../hooks/helpers/fetchAPI";
+import Menu from "../components/blog/MenuBlog";
+import useArticles from "../hooks/useArticles";
 
-export async function getServerSideProps() {
-  const posts = await fetchAPI(`/api/articles`, "GET");
-  return { props: { posts } };
-}
+export default function Home() {
+  const { articlesList } = useArticles();
+  const { pagination, botaoMostrarMais } = usePagination(3, 3);
 
-export default function Home({ posts }) {
-  const { pagination, botaoMostrarMais } = usePagination(5, 5);
   return (
     <Template>
-      {posts.slice(0, pagination).map((element) => {
+      {articlesList.slice(0, pagination).map((element) => {
         return (
           <CardArticle
             key={element._id}
@@ -24,8 +22,8 @@ export default function Home({ posts }) {
           />
         );
       })}
-      {botaoMostrarMais(posts.length)}
-      <Menu/>
+      {botaoMostrarMais(articlesList.length)}
+      <Menu />
     </Template>
   );
 }

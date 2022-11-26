@@ -1,7 +1,7 @@
 import React from "react";
 import { Markup } from "react-render-markup";
-import Template from "../../components/Blog/Template";
-import { fetchAPI } from "../../helpers/fetchAPI";
+import Template from "../../components/blog/TemplateBlog";
+import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps(context) {
   const portfolio = await fetchAPI(
