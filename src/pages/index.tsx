@@ -8,7 +8,7 @@ import useArticles from "../hooks/useArticles";
 
 export default function Home() {
   const { articlesList } = useArticles();
-  const { pagination, botaoMostrarMais } = usePagination(3, 3);
+  const { pagination, botaoMostrarMais } = usePagination(5, 5);
 
   return (
     <Template>
