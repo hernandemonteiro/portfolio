@@ -32,9 +32,6 @@
 
   Cypress Platform configuration to run end-to-end tests.
 
-- #### `/docs:`
-
-  Stories for storybook framework create a front-end documentation.
 - #### `/src:`
   Initial source of app
 - #### `/src/__tests__:`
@@ -46,30 +43,27 @@
 
 - #### `/src/back-end:`
 
-  Initial source of app
+  back-end configuration
 
 - #### `/src/components:`
 
-  Initial source of app
-
-- #### `/src/helpers:`
-
-  Initial source of app
+  Components used in the project
 
 - #### `/src/hooks:`
 
-  Initial source of app
+  Custom hooks, contain the app logic
+
+  - `/src/hooks/helpers:`
+    Contain code helpers to hooks
 
 - #### `/src/pages:`
 
-  Initial source of app
-- #### `/src/stories:`
+  File Routing system of NextJs.
 
-  Initial source of app
-- #### `/src/styles:`
+- #### `/src/pages/docs:`
 
-  Initial source of app
+  documentation of code using doc_docs package;
 
-<div id="contributting"></div>
+<!-- <div id="contributting"></div>
 
-## Contributting:
+## Contributting: -->
