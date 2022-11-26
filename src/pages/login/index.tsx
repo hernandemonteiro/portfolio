@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Template from "../../components/blog/Template";
-import LoginForm from "../../components/system/LoginForm";
+import Template from "../../components/blog/TemplateBlog";
+import LoginForm from "../../components/system/Login/LoginForm";
 import LoginPage from "../../components/system/LoginPage";
 import LoaderAdmin from "../../components/ui/Loading";
 import useAuthAdmin from "../../hooks/useAuthAdmin";

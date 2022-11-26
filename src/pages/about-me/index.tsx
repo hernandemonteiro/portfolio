@@ -3,8 +3,8 @@ import React from "react";
 import AboutMePage from "../../components/about-me/AboutMePage";
 import CardCurriculum from "../../components/about-me/CardCurriculum";
 import CardHeaderCurriculum from "../../components/about-me/CardHeaderCurriculum";
-import TemplateCurriculum from "../../components/about-me/Template";
-import MenuBlog from "../../components/blog/Menu";
+import TemplateAboutMe from "../../components/about-me/TemplateAboutMe";
+import MenuBlog from "../../components/blog/MenuBlog";
 import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps() {
@@ -18,7 +18,7 @@ export async function getServerSideProps() {
 
 export default function Artigo({ skills, experience, academy, ownerInfo }) {
   return (
-    <TemplateCurriculum>
+    <TemplateAboutMe>
       <AboutMePage
         ownerInfo={ownerInfo}
         academy={academy}
@@ -26,6 +26,6 @@ export default function Artigo({ skills, experience, academy, ownerInfo }) {
         experience={experience}
       />
       <MenuBlog />
-    </TemplateCurriculum>
+    </TemplateAboutMe>
   );
 }

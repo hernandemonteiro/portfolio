@@ -5,8 +5,7 @@ import { Button } from "../../../../../components/ui/Buttons";
 describe("UI Buttons Test", () => {
   it("<Button/>", async () => {
     render(<Button>Button Default</Button>);
-    const button = await screen.findByText("Button Default");
-    expect(button).toMatchSnapshot();
+    await screen.findByText("Button Default");
   });
 
   it("<Button/> with onClick", async () => {
@@ -14,7 +13,6 @@ describe("UI Buttons Test", () => {
     render(<Button onClick={() => onClick()}>Button OnClick</Button>);
     const button = await screen.findByText("Button OnClick");
     await button.click();
-    expect(button).toMatchSnapshot();
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

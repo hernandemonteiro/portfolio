@@ -1,6 +1,6 @@
 import { props } from "cypress/types/bluebird";
 import ViewProvider from "../../../providers/ViewProvider";
-import Template from "../../blog/Template";
+import Template from "../../blog/TemplateBlog";
 import MenuAdmin from "../Menu";
 import ProtectedAdmin from "../ProtectedAdmin";
 

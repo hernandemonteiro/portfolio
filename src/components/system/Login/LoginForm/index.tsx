@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "../../ui/Buttons";
-import InputDefault from "../../ui/Inputs";
+import { Button } from "../../../ui/Buttons";
+import InputDefault from "../../../ui/Inputs";
 import styles from "./LoginForm.module.scss";
 
 interface LoginFormProps {
@@ -19,12 +19,14 @@ export default function LoginForm(props: LoginFormProps) {
         required={true}
         type="email"
         onChange={props.onChangeEmail}
+        placeholder="Email..."
       />
       <InputDefault
         label="Password"
         required={true}
         type="password"
         onChange={props.onChangePassword}
+        placeholder="Senha..."
       />
       <Button width="40%" type="submit">
         Entrar

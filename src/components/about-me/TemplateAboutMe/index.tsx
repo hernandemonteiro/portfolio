@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./curriculum.module.css";
-import Menu from "../../blog/Menu";
+import Menu from "../../blog/MenuBlog";
 import Head from "next/head";
 
-export default function TemplateCurriculum(props) {
+export default function TemplateAboutMe(props) {
   return (
     <div className={styles.Curriculum}>
       <Head>

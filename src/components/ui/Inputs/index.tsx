@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Inputs.module.scss";
 
 interface InputDefaultProps {
-  type: "text" | "password" | "email" | "number" | "date" | "button";
+  type?: "text" | "password" | "email" | "number" | "date" | "button";
   onChange?: any;
   onClick?: () => void;
   required?: boolean;
@@ -26,7 +26,7 @@ export default function InputDefault(props) {
         aria-label={props.label}
         aria-required={props.required}
         autoFocus={props.autoFocus}
-        type={props.type}
+        type={props.type || "text"}
         value={props.value}
         name={props.label}
         min={props.min}

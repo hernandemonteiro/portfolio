@@ -1,4 +1,4 @@
-export interface AboutMePageProps {
+export interface iAboutMePage {
   ownerInfo: [
     {
       _id: string;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Markup } from "react-render-markup";
-import MenuBlog from "../../components/blog/Menu";
-import Template from "../../components/blog/Template";
+import MenuBlog from "../../components/blog/MenuBlog";
+import Template from "../../components/blog/TemplateBlog";
 import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps(context) {

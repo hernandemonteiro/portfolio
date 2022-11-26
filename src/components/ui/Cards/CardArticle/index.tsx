@@ -4,7 +4,12 @@ import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import styles from "./CardArticle.module.scss";
 
-export default function CardArticle(props) {
+interface CardArticleProps {
+  route: string;
+  title: string;
+  shortdescription: string;
+}
+export default function CardArticle(props: CardArticleProps) {
   return (
     <Link href={`${props.route}`}>
       <Card
@@ -19,7 +24,11 @@ export default function CardArticle(props) {
         <Typography
           gutterBottom
           variant="h5"
-          sx={{ textTransform: "uppercase", fontWeight: "bold", fontFamily: "Cormorant" }}
+          sx={{
+            textTransform: "uppercase",
+            fontWeight: "bold",
+            fontFamily: "Cormorant",
+          }}
           component="div"
         >
           {props.title}

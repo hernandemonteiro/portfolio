@@ -103,7 +103,10 @@ export default function MenuBlog() {
           </MenuIconExternalLink>
           <MenuIcon>
             <abbr title="Buscar Artigo*">
-              <MdOutlineSearch onClick={() => setSearchBar(true)} />
+              <MdOutlineSearch
+                className="searchBarButton"
+                onClick={() => setSearchBar(true)}
+              />
             </abbr>
           </MenuIcon>
         </>

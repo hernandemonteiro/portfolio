@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import CardCurriculum from "../CardCurriculum";
 import CardHeaderCurriculum from "../CardHeaderCurriculum";
-import { AboutMePageProps } from "./interface";
+import { iAboutMePage } from "./iAboutMePage";
 
-export default function AboutMePage(props: AboutMePageProps) {
+export default function AboutMePage(props: iAboutMePage) {
   return (
     <>
       {props.ownerInfo.map((element) => (

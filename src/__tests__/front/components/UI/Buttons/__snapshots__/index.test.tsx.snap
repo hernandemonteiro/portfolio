@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`UI Buttons Test <Button/> with onClick 1`] = `
-<button
-  class="buttonDefault undefined"
->
-  Button OnClick
-</button>
-`;

@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderTableForm from "../HeaderTableForm";
+import HeaderTableForm from "./HeaderTableForm";
 import styles from "./BaseTableForm.module.scss";
 
 interface BaseTableFormProps {

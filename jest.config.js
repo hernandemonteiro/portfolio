@@ -1,4 +1,5 @@
 module.exports = {
+  setupFilesAfterEnv: ["<rootDir>/src/__tests__/front/jest-setup.js"],
   projects: [
     {
       preset: "ts-jest",
@@ -11,13 +12,11 @@ module.exports = {
         // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
         "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
       },
-      transformIgnorePatterns: [
-        "/node_modules/",
-      ],
-      "moduleNameMapper": {
+      transformIgnorePatterns: ["/node_modules/"],
+      moduleNameMapper: {
         "^.+\\.(css|less|scss)$": "identity-obj-proxy",
-        "^.+\\.module\\.(css|less|scss|sass)$": "identity-obj-proxy"
-      }
+        "^.+\\.module\\.(css|less|scss|sass)$": "identity-obj-proxy",
+      },
     },
     {
       preset: "ts-jest",
