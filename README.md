@@ -1,4 +1,4 @@
-<div style='text-align: center'>
+<center>
 
 # Hernande Monteiro
 
@@ -20,4 +20,4 @@ This project is an personal blog to evolve more people about software developmen
 <!-- [GO TO FULL DOCUMENTATION!](https://hernandemonteiro.vercel.app/docs) -->
 
 <!-- <hr> -->
-</div>
+</center>
