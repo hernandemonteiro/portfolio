@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps, router }) {
         <title>Hernande Monteiro - seu blog tech quentinho e atual!</title>
         <meta
           name="description"
-          content="Criado para inspirar o mundo do desenvolvimento!"
+          content="Blog sobre tecnologia e programação! /n Criado para inspirar o mundo do desenvolvimento!"
         />
         <link rel="shortcut icon" href="./favicon.png" />
       </Head>
@@ -25,7 +25,10 @@ function MyApp({ Component, pageProps, router }) {
         // menu:
         configDirs={{
           dirs: ["components", "api", "env"],
-          subDirs: { api: ["index.tsx", "Owner_info"] },
+          subDirs: {
+            api: ["index.tsx"],
+            components: ["index.tsx", "about-me"],
+          },
         }}
         // logo:
         projectLogo={

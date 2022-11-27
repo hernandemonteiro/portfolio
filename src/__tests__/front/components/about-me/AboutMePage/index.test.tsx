@@ -26,7 +26,7 @@ describe("<AboutMePage/> test", () => {
           },
         ]}
         skills={[
-          { _id: "_id_skill", type: "Hard-skill", skill: "skill description" },
+          { _id: "_id_skill", type: "Hard-Skill", skill: "skill description" },
         ]}
         experience={[
           {
@@ -41,5 +41,6 @@ describe("<AboutMePage/> test", () => {
 
     await screen.findByText("business");
     await screen.findByText("name of blog owner");
+    await screen.findByText("Soft-skills:");
   });
 });

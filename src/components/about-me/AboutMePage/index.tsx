@@ -23,12 +23,12 @@ export default function AboutMePage(props: iAboutMePage) {
           {props.academy.map((element) => {
             return (
               <>
-                <p>
+                <p key={element.title}>
                   <b>{element.title}</b> - {element.foundation}
                 </p>
                 <img
                   width={100}
-                  height={25}
+                  height={20}
                   alt={element.title + " picture"}
                   src={`http://img.shields.io/static/v1?label=${element.since.substr(
                     0,
@@ -48,9 +48,9 @@ export default function AboutMePage(props: iAboutMePage) {
             justifyContent: "center",
           }}
         >
-          {props.skills.map((element) => {
-            if (element.type === "Soft-Skill") {
-              return (
+          {props.skills.map(
+            (element) =>
+              element.type === "Soft-Skill" && (
                 <div
                   style={{
                     padding: "2%",
@@ -65,9 +65,8 @@ export default function AboutMePage(props: iAboutMePage) {
                 >
                   {element.skill}
                 </div>
-              );
-            }
-          })}
+              )
+          )}
         </div>
       </CardCurriculum>
       <CardCurriculum title="Hard-skills:">
@@ -78,9 +77,9 @@ export default function AboutMePage(props: iAboutMePage) {
             justifyContent: "center",
           }}
         >
-          {props.skills.map((element) => {
-            if (element.type === "Hard-Skill") {
-              return (
+          {props.skills.map(
+            (element) =>
+              element.type === "Hard-Skill" && (
                 <div
                   style={{
                     padding: "2%",
@@ -95,9 +94,8 @@ export default function AboutMePage(props: iAboutMePage) {
                 >
                   {element.skill}
                 </div>
-              );
-            }
-          })}
+              )
+          )}
         </div>
       </CardCurriculum>
       <CardCurriculum title="Experiências:">
@@ -105,7 +103,7 @@ export default function AboutMePage(props: iAboutMePage) {
           {props.experience.map((element) => {
             return (
               <>
-                <p>
+                <p key={element.title}>
                   <b>{element.company}</b> - {element.title}
                 </p>
                 <img

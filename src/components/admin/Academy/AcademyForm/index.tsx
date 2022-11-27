@@ -1,22 +1,8 @@
 import InputDefault from "../../../ui/Inputs";
 import BaseForm from "../../BaseForm";
+import { iAcademyForm } from "./iAcademyForm";
 
-interface AcademyFormProps {
-  onSubmit: (e) => void;
-  titleButtonSend: string;
-  onChangeIdAcademy: (e) => void;
-  idAcademyValue: string | boolean;
-  onChangeCourse: (e) => void;
-  courseValue: string;
-  onChangeFoundation: (e) => void;
-  foundationValue: string;
-  onChangeSinceCourse: (e) => void;
-  sinceCourseValue: string;
-  onChangeStatusCourse: (e) => void;
-  statusCourseValue: string;
-}
-
-export default function AcademyForm(props: AcademyFormProps) {
+export default function AcademyForm(props: iAcademyForm) {
   return (
     <BaseForm
       onSubmit={props.onSubmit}
