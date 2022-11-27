@@ -71,7 +71,7 @@ export default function MenuBlog() {
       ) : (
         <>
           <MenuIconLink to="/">
-            <abbr title="Sobre Mim">
+            <abbr title="Artigos">
               <FontAwesomeIcon icon={faBlog} fixedWidth />
             </abbr>
           </MenuIconLink>
