@@ -67,7 +67,7 @@ export default function ArticleTable(props: ArticleTableProps) {
           content={content}
         />
       }
-      changeViewFunctions={() => unsetForm()}
+      changeViewFunction={() => unsetForm()}
       message={message}
     />
   );

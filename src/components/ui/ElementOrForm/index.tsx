@@ -1,18 +1,17 @@
-import React, { useContext } from "react";
-import ViewContext from "../../../providers/viewContext";
-import ViewProvider from "../../../providers/ViewProvider";
+import React from "react";
+import useView from "../../../providers/useView";
 import { Button } from "../Buttons";
 import MessageForm from "../MessageForm";
 
 interface ElementOrFormProps {
   element: any;
-  changeViewFunctions?: () => void;
+  changeViewFunction?: () => void;
   form: any;
   message: string;
 }
 
 export default function ElementOrForm(props: ElementOrFormProps) {
-  const { view, setView } = useContext(ViewContext);
+  const { view, setView } = useView();
   function tableOrFormView() {
     return !view ? (
       <>
@@ -20,7 +19,7 @@ export default function ElementOrForm(props: ElementOrFormProps) {
           <Button
             onClick={() => {
               setView(true);
-              props.changeViewFunctions;
+              props.changeViewFunction && props.changeViewFunction();
             }}
           >
             CADASTRAR
@@ -33,7 +32,7 @@ export default function ElementOrForm(props: ElementOrFormProps) {
         <Button
           onClick={() => {
             setView(false);
-            props.changeViewFunctions && props.changeViewFunctions();
+            props.changeViewFunction && props.changeViewFunction();
           }}
         >
           FECHAR FORMULÁRIO

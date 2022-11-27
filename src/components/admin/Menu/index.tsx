@@ -5,7 +5,6 @@ import {
   HiColorSwatch,
   HiOutlineLogout,
   HiOutlineDocumentText,
-  HiUser,
 } from "react-icons/hi";
 import React from "react";
 import useAuthAdmin from "../../../hooks/useAuthAdmin";
