@@ -5,7 +5,7 @@ import { ArticlePreviewProps } from "./interface";
 
 export default function ArticlePreview(props: ArticlePreviewProps) {
   return (
-    <div style={{ marginTop: "2%", textAlign: "center" }}>
+    <div style={{ width: "70vw", wordWrap: "break-word" }}>
       <Markup markup={props.content} />
       <br />
       <br />

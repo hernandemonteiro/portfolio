@@ -22,7 +22,7 @@ export default function CardHeaderCurriculum(props: CardHeaderCurriculumProps) {
         className={styles.avatarImg}
         sx={{ width: "30%", height: "30%", margin: "3%" }}
       />
-      <Card sx={{ width: "80vw", marginBottom: "3%"}}>
+      <Card sx={{ width: "80vw", marginBottom: "3%" }}>
         <Box sx={{ p: 2, display: "flex", textAlign: "center" }}>
           <Stack
             sx={{

@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
 export default function Artigo({ post }) {
   return (
     <Template>
-      <div style={{textAlign: "center"}}>
+      <div style={{ width: "70vw", wordWrap: "break-word" }}>
         <Markup markup={post.content} />
       </div>
       <MenuBlog />
