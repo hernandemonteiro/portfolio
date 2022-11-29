@@ -19,13 +19,15 @@ export async function getServerSideProps() {
 export default function Artigo({ skills, experience, academy, ownerInfo }) {
   return (
     <TemplateAboutMe>
-      <AboutMePage
-        ownerInfo={ownerInfo}
-        academy={academy}
-        skills={skills}
-        experience={experience}
-      />
-      <MenuBlog />
+      <>
+        <AboutMePage
+          ownerInfo={ownerInfo}
+          academy={academy}
+          skills={skills}
+          experience={experience}
+        />
+        <MenuBlog />
+      </>
     </TemplateAboutMe>
   );
 }
