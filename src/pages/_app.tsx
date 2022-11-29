@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps, router }) {
         pageProps={pageProps}
         // menu:
         configDirs={{
-          dirs: ["components", "api", "env"],
+          dirs: ["components", "env"],
           subDirs: {
             api: ["index.tsx"],
             components: ["index.tsx", "about-me"],

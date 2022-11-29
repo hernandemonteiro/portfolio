@@ -3,7 +3,11 @@ import styles from "./curriculum.module.css";
 import Menu from "../../blog/MenuBlog";
 import Head from "next/head";
 
-export default function TemplateAboutMe(props) {
+interface iTemplateAboutMe {
+  children: JSX.Element;
+}
+
+export default function TemplateAboutMe(props: iTemplateAboutMe) {
   return (
     <div className={styles.Curriculum}>
       <Head>
