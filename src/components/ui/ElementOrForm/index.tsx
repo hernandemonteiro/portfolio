@@ -1,5 +1,5 @@
 import React from "react";
-import useView from "../../../providers/useView";
+import useView from "../../../providers/view/view";
 import { Button } from "../Buttons";
 import MessageForm from "../MessageForm";
 

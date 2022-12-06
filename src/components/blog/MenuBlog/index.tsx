@@ -7,7 +7,7 @@ import { MdOutlineSearch } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { faBlog, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Menu from "../../ui/Menu";
 import MenuIcon from "../../ui/MenuIcon";
 import MenuIconExternalLink from "../../ui/MenuIconExternalLink";
@@ -17,6 +17,11 @@ import Router from "next/router";
 export default function MenuBlog() {
   const [searchBar, setSearchBar] = useState(false);
   const [search, setSearch] = useState("");
+  const inputSearch = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputSearch.current && inputSearch.current.focus();
+  });
   function handleSearch(e) {
     e.preventDefault();
     Router.push(`/search/${search}`);
@@ -49,6 +54,7 @@ export default function MenuBlog() {
               style={{ padding: "2%", width: "98%" }}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search Article..."
+              ref={inputSearch}
               type="text"
             />
             <button
@@ -105,7 +111,9 @@ export default function MenuBlog() {
             <abbr title="Buscar Artigo*">
               <MdOutlineSearch
                 className="searchBarButton"
-                onClick={() => setSearchBar(true)}
+                onClick={() => {
+                  setSearchBar(true);
+                }}
               />
             </abbr>
           </MenuIcon>

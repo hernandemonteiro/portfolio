@@ -37,7 +37,7 @@ export default function MenuAdmin() {
         </abbr>
       </MenuIconLink>
       <MenuIconLink to="/admin/experience">
-        <abbr title="Expeience">
+        <abbr title="Experience">
           <HiBeaker />
         </abbr>
       </MenuIconLink>

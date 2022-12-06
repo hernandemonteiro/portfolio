@@ -1,0 +1,16 @@
+import { body, validationResult } from "express-validator";
+import initMiddleware from "../../patterns/middlewares/init-middleware";
+import validateMiddleware from "../../patterns/middlewares/validate";
+import { adminApiAccessVerify } from "../../patterns/middlewares/security/admin.acess";
+
+export const articleDeleteValidate = initMiddleware(
+  validateMiddleware(
+    [
+      body("_id")
+        .isString()
+        .withMessage("Obrigatório fornecer _id para deletar."),
+      adminApiAccessVerify(),
+    ],
+    validationResult
+  )
+);

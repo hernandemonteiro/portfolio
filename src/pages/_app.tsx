@@ -1,7 +1,7 @@
 import NextNProgress from "nextjs-progressbar";
 import React from "react";
 import { Analytics } from "@vercel/analytics/react";
-import "../styles/_app.scss";
+import "./_app.scss";
 import Head from "next/head";
 import Image from "next/image";
 import ComponentOrDocs from "doc_docs";
@@ -9,7 +9,7 @@ import logo from "../../public/favicon.png";
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <>
+    <React.StrictMode>
       <Head>
         <title>Hernande Monteiro - seu blog tech quentinho e atual!</title>
         <meta
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps, router }) {
       />
       <NextNProgress />
       <Analytics />
-    </>
+    </React.StrictMode>
   );
 }
 

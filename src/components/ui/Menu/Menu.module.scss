@@ -1,4 +1,4 @@
-@import "../../../styles/base.scss";
+@import "../../../pages/base.scss";
 .Menu {
   display: flex;
   background-color: $grayDefault;
@@ -9,6 +9,7 @@
   z-index: 1;
   bottom: 0;
   width: 84.5%;
+  color: white;
 }
 
 @media (max-width: 700px) {

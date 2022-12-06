@@ -7,7 +7,6 @@
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "noEmit": true,
-    // "noImplicitAny": true,
     "incremental": true,
     "esModuleInterop": true,
     "module": "CommonJS",
@@ -16,15 +15,8 @@
     "noImplicitAny": false,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": [
-      "jest",
-      "cypress"
-    ],
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "types": ["jest", "cypress"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true
   },
   "include": [
@@ -34,10 +26,5 @@
     "*.cy.js",
     "jest.config.js"
   ],
-  "exclude": [
-    "node_modules",
-    "cypress",
-    "*.test.ts",
-    "*.test.tsx"
-  ]
+  "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx"]
 }

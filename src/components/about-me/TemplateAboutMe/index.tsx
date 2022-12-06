@@ -16,6 +16,8 @@ export default function TemplateAboutMe(props: iTemplateAboutMe) {
         </title>
       </Head>
       {props.children}
+      <br />
+      <br />
       <Menu />
     </div>
   );

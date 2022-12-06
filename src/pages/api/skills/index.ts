@@ -1,9 +1,9 @@
-import Database from "../../../back-end/infra/db";
-import SkillController from "../../../back-end/controllers/skills";
+import SkillsController from "../../../controllers/SkillsController";
+import { responseAPI } from "../../../patterns/api/apiCall";
 
 export default async function getSkills(req, res) {
-  Database.dbConnect();
-  req.method === "GET"
-    ? await SkillController.getAll(req, res)
-    : res.status(500).end("Need all correct informations!");
+  await responseAPI(
+    { method: "GET", requestedMethod: req.method, response: res },
+    SkillsController.getSkills(req, res)
+  );
 }
