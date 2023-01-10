@@ -113,10 +113,7 @@ export default function AboutMePage(props: iAboutMePage) {
                   src={`http://img.shields.io/static/v1?label=${element.since.substr(
                     0,
                     4
-                  )}&message=${element.until.substr(
-                    0,
-                    4
-                  )}&color=&style=for-the-badge`}
+                  )}&message=${element.until}&color=&style=for-the-badge`}
                 />
               </>
             );
