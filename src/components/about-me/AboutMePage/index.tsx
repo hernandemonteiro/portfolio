@@ -28,12 +28,9 @@ export default function AboutMePage(props: iAboutMePage) {
                 </p>
                 <img
                   width={100}
-                  height={20}
+                  height={23}
                   alt={element.title + " picture"}
-                  src={`http://img.shields.io/static/v1?label=${element.since.substr(
-                    0,
-                    4
-                  )}&message=${element.status}&color=&style=for-the-badge`}
+                  src={`http://img.shields.io/static/v1?label=${element.since}&message=${element.status}&color=&style=for-the-badge`}
                 />
               </>
             );
@@ -108,7 +105,7 @@ export default function AboutMePage(props: iAboutMePage) {
                 </p>
                 <img
                   width={100}
-                  height={25}
+                  height={23}
                   alt={element.title + " picture"}
                   src={`http://img.shields.io/static/v1?label=${element.since.substr(
                     0,
