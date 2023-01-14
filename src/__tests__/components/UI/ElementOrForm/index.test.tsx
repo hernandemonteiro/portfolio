@@ -2,7 +2,7 @@ import React from "react";
 import { describe, it, jest } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import ElementOrForm from "../../../../components/ui/ElementOrForm";
-import ViewProvider from "../../../../providers/ViewProvider";
+import { ViewProvider } from "../../../../providers/view/viewContext";
 
 describe("<ElementOrForm/> test", () => {
   it("<ElementOrForm/>", async () => {
@@ -13,7 +13,7 @@ describe("<ElementOrForm/> test", () => {
         message={""}
       />
     );
-    await screen.findByText("aqui vai o elemento");
+    await screen.findByText("Aqui vai o form ou outro elemento");
   });
 
   it("<ElementOrForm/> with message", async () => {
