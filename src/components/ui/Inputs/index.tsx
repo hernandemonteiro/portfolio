@@ -9,7 +9,7 @@ interface InputDefaultProps {
   width?: string;
   label?: string;
   hidden?: boolean;
-  value?: string;
+  value?: any;
   placeholder?: string;
   min?: number;
   minLength?: number;

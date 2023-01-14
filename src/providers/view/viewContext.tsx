@@ -1,6 +1,15 @@
+import { any } from "cypress/types/bluebird";
 import React, { createContext, useContext, useState } from "react";
 
-export const ViewContext = createContext<object>({});
+export const ViewContext = createContext<{
+  view: boolean;
+  setView: (e) => void;
+}>({
+  view: true,
+  setView: function (e) {
+    console.log("view context: ", e);
+  },
+});
 
 interface iViewProvider {
   children: React.ReactNode;
