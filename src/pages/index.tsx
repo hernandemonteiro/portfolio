@@ -36,7 +36,7 @@ export default function Home() {
           <h1>Loading...</h1>
         </div>
       )}
-      <Menu />
+      {/* <Menu /> */}
     </TemplateBlog>
   );
 }
