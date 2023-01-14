@@ -1,3 +1,4 @@
+import React from "react";
 import { ViewProvider } from "../../../providers/view/viewContext";
 import Template from "../../blog/TemplateBlog";
 import MenuAdmin from "../Menu";

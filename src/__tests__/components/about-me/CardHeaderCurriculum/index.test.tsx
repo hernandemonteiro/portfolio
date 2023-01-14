@@ -1,3 +1,4 @@
+import React from "react";
 import { describe, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import CardHeaderCurriculum from "../../../../components/about-me/CardHeaderCurriculum";

@@ -1,12 +1,11 @@
+import React from "react";
 import {
   TitleDoc,
   DescriptionDoc,
   ComponentDoc,
-  Code,
 } from "doc_docs/components";
 import CardCurriculum from "../../../../components/about-me/CardCurriculum";
 import CardHeaderCurriculum from "../../../../components/about-me/CardHeaderCurriculum";
-import TemplateAboutMe from "../../../../components/about-me/TemplateAboutMe";
 
 export default function AboutMeComponentDocs() {
   return (

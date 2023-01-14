@@ -1,5 +1,4 @@
 import OwnerInfoController from "../../../controllers/OwnerInfoController";
-import Database from "../../../infra/db";
 import { responseAPI } from "../../../patterns/api/apiCall";
 
 export default async function getOwnerInfo(req, res) {

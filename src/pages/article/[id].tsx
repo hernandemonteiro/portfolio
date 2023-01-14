@@ -13,11 +13,17 @@ export async function getServerSideProps(context) {
   return { props: { post } };
 }
 
-export default function Artigo({ post }) {
+interface iArtigo {
+  post: {
+    content: string;
+  };
+}
+
+export default function Artigo(props: iArtigo) {
   return (
     <Template>
       <div style={{ width: "70vw", wordWrap: "break-word" }}>
-        <Markup markup={post.content} />
+        <Markup markup={props.post.content} />
       </div>
       <MenuBlog />
     </Template>

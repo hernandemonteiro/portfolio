@@ -1,3 +1,4 @@
+import React, { FormEvent } from "react";
 import { describe, it, jest, expect } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -5,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 import LoginForm from "../../../../../components/system/Login/LoginForm";
 
 describe("<LoginForm /> test", () => {
-  const functOnChange = (e) => jest.fn();
+  const functOnChange = (e: FormEvent) => jest.fn();
 
   it("<LoginForm/> email input", async () => {
     render(

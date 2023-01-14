@@ -14,15 +14,20 @@ export async function getServerSideProps() {
   return { props: { skills, experience, academy, ownerInfo } };
 }
 
-export default function Artigo({ skills, experience, academy, ownerInfo }) {
+export default function Artigo(props: {
+  ownerInfo: any;
+  academy: any;
+  skills: any;
+  experience: any;
+}) {
   return (
     <TemplateAboutMe>
       <>
         <AboutMePage
-          ownerInfo={ownerInfo}
-          academy={academy}
-          skills={skills}
-          experience={experience}
+          ownerInfo={props.ownerInfo}
+          academy={props.academy}
+          skills={props.skills}
+          experience={props.experience}
         />
         <MenuBlog />
       </>

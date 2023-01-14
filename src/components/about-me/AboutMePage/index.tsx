@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import CardCurriculum from "../CardCurriculum";
 import CardHeaderCurriculum from "../CardHeaderCurriculum";
 import { iAboutMePage } from "./iAboutMePage";

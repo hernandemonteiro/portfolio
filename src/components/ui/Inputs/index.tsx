@@ -16,7 +16,7 @@ interface InputDefaultProps {
   autoFocus?: boolean;
 }
 
-export default function InputDefault(props) {
+export default function InputDefault(props: InputDefaultProps) {
   return (
     <div className={styles.input} style={{ width: props.width }}>
       <label className={styles.label}>{props.label}</label>

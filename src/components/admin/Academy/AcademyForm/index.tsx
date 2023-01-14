@@ -1,3 +1,4 @@
+import React from "react";
 import InputDefault from "../../../ui/Inputs";
 import BaseForm from "../../BaseForm";
 import { iAcademyForm } from "./iAcademyForm";

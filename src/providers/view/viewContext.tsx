@@ -1,12 +1,16 @@
 import React, { createContext, useContext, useState } from "react";
 
-export const ViewContext = createContext<any>({});
+export const ViewContext = createContext<object>({});
 
-export function ViewProvider({ children }) {
+interface iViewProvider {
+  children: React.ReactNode;
+}
+
+export function ViewProvider(props: iViewProvider) {
   const [view, setView] = useState(false);
   return (
     <ViewContext.Provider value={{ view, setView }}>
-      {children}
+      {props.children}
     </ViewContext.Provider>
   );
 }

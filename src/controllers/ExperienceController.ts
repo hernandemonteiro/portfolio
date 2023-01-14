@@ -1,6 +1,5 @@
 import { ExperienceRepository } from "../models/experience";
 import { responseController } from "../patterns/controllers/responseController";
-import { Result } from "../infra/Result";
 
 export class ExperienceController {
   async getExperiences(req, res) {

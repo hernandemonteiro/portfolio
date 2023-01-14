@@ -8,11 +8,15 @@ import ElementOrForm from "../../../ui/ElementOrForm";
 import useView from "../../../../providers/view/viewContext";
 
 interface TableSkillsProps {
-  data: any;
+  data: Array<{
+    _id: string;
+    skill: string;
+    type: string;
+  }>;
   title?: string;
 }
 export default function TableSkills(props: TableSkillsProps) {
-  const { view, setView } = useView();
+  const { setView } = useView();
   const { pagination, botaoMostrarMais } = usePagination(3, 3);
   const {
     setType,

@@ -1,4 +1,3 @@
-import { escapeRegExp } from "cypress/types/lodash";
 import { ArticleRepository } from "../models/article";
 import { responseController } from "../patterns/controllers/responseController";
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchAPI } from "./helpers/fetchAPI";
 
 export default function useOwnerInfos() {

@@ -8,11 +8,17 @@ import ExperienceForm from "../ExperienceForm";
 import useView from "../../../../providers/view/viewContext";
 
 interface ExperienceTableProps {
-  experience: any;
+  experience: Array<{
+    _id: string;
+    title: string;
+    since: number;
+    until: number;
+    company: string;
+  }>;
 }
 
 export default function ExperienceTable(props: ExperienceTableProps) {
-  const { view, setView } = useView();
+  const { setView } = useView();
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
     message,
@@ -37,10 +43,7 @@ export default function ExperienceTable(props: ExperienceTableProps) {
             {props.experience.slice(0, pagination).map((element) => (
               <ContentTableForm
                 key={element._id}
-                description={`${element.title} - ${element.since.substr(
-                  0,
-                  4
-                )} - ${element.until.substr(0, 4)}- ${element.company}`}
+                description={`${element.title} - ${element.since} - ${element.until} - ${element.company}`}
                 onClickEdit={() => {
                   setIdExperience(element._id);
                   setOccupation(element.title);

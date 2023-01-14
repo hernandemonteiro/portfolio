@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import Template from "../../components/blog/TemplateBlog";
 import CardArticle from "../../components/ui/Cards/CardArticle";

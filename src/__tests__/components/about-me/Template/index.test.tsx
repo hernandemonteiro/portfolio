@@ -1,3 +1,4 @@
+import React from "react";
 import { describe, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import TemplateAboutMe from "../../../../components/about-me/TemplateAboutMe";
