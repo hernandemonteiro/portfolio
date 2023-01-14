@@ -13,7 +13,7 @@ interface ArticleTableProps {
 
 export default function ArticleTable(props: ArticleTableProps) {
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
-  const { view, setView } = useView();
+  const { setView } = useView();
   const {
     message,
     setIdArticle,
