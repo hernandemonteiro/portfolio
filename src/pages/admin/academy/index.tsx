@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import Academy from "../../../components/admin/Academy";
 import TemplateAdmin from "../../../components/admin/TemplateAdmin";
 import ContentTableForm from "../../../components/ui/BaseTableForm/ContentTableForm";
 import useAcademy from "../../../hooks/useAcademy";
 import usePagination from "../../../hooks/usePagination";
-import ViewContext from "../../../providers/viewContext";
+import useView from "../../../providers/view/viewContext";
 
 export default function AcademyPage() {
-  const { setView } = useContext(ViewContext);
+  const { setView } = useView();
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
     message,

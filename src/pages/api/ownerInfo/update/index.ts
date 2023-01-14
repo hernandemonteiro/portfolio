@@ -1,6 +1,6 @@
-import OwnerInfoController from "../../../../back-end/controllers/ownerInfo";
 import { apiCallPatternFormat } from "../../../../patterns/api/apiCall";
 import { ownerInfoUpdateValidate } from "../../../../middlewares/ownerInfo/updateValidate";
+import OwnerInfoController from "../../../../controllers/OwnerInfoController";
 
 export default async function updateOwnerInfo(req, res) {
   await apiCallPatternFormat(req, res, {
@@ -8,4 +8,5 @@ export default async function updateOwnerInfo(req, res) {
     controller: OwnerInfoController.updateOwnerInfo,
     method: "POST",
   });
+
 }

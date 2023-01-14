@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import useArticles from "../../../../hooks/useArticles";
 import usePagination from "../../../../hooks/usePagination";
-import ViewContext from "../../../../providers/viewContext";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
 import ArticleForm from "../ArticleForm";
+import useView from "../../../../providers/view/viewContext";
 
 interface ArticleTableProps {
   articles: any;
@@ -13,7 +13,7 @@ interface ArticleTableProps {
 
 export default function ArticleTable(props: ArticleTableProps) {
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
-  const { view, setView } = useContext(ViewContext);
+  const { view, setView } = useView();
   const {
     message,
     setIdArticle,

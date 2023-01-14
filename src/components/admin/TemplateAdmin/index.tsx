@@ -1,4 +1,4 @@
-import ViewProvider from "../../../providers/ViewProvider";
+import { ViewProvider } from "../../../providers/view/viewContext";
 import Template from "../../blog/TemplateBlog";
 import MenuAdmin from "../Menu";
 import ProtectedAdmin from "../ProtectedAdmin";

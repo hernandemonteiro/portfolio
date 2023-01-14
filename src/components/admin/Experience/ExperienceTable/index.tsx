@@ -1,18 +1,18 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import useExperience from "../../../../hooks/useExperience";
 import usePagination from "../../../../hooks/usePagination";
-import ViewContext from "../../../../providers/viewContext";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
 import ExperienceForm from "../ExperienceForm";
+import useView from "../../../../providers/view/viewContext";
 
 interface ExperienceTableProps {
   experience: any;
 }
 
 export default function ExperienceTable(props: ExperienceTableProps) {
-  const { view, setView } = useContext(ViewContext);
+  const { view, setView } = useView();
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
     message,
