@@ -49,11 +49,11 @@ export default function MenuBlog(props: { children: React.ReactElement }) {
             </MenuIconLink>
             <hr style={{ width: "100%" }} />
 
-            <hr style={{ width: "100%" }} />
+            {/* <hr style={{ width: "100%" }} />
             <MenuIconLink to="/portfolio">
               <FontAwesomeIcon icon={faNewspaper} fixedWidth /> | Portfolio
             </MenuIconLink>
-            <hr style={{ width: "100%" }} />
+            <hr style={{ width: "100%" }} /> */}
 
             <h2>Social Networks</h2>
             <hr style={{ width: "100%" }} />
