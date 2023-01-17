@@ -24,7 +24,6 @@ function MyApp({
           name="description"
           content="Blog sobre tecnologia e programação! /n Criado para inspirar o mundo do desenvolvimento!"
         />
-        <link rel="shortcut icon" href="./favicon.png" />
       </Head>
       <ComponentOrDocs
         route={router}
