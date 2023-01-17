@@ -5,11 +5,11 @@ import Template from "../../components/blog/TemplateBlog";
 import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps(context) {
+  const articleID = await context.query.id;
   const post = await fetchAPI(
-    `/api/articles/getByID/${context.query.id}`,
+    "/api/articles/getByID/" + articleID,
     "GET"
   );
-
   return { props: { post } };
 }
 
