@@ -7,8 +7,9 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { faUser, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import MenuIconExternalLink from "../../ui/MenuIconExternalLink";
 import MenuIconLink from "../../ui/MenuIconLink";
+import styles from "./MenuBlog.module.scss";
+import ExternalLinkMenuBlog from "./ExternalLinkMenuBLog";
 
 export default function MenuBlog(props: { children: React.ReactElement }) {
   const [menuView, setMenuView] = useState(false);
@@ -16,65 +17,44 @@ export default function MenuBlog(props: { children: React.ReactElement }) {
   return (
     <>
       {menuView ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            top: "0",
-            width: "100%",
-            backgroundColor: "rgb(24, 24, 24)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              minHeight: "100vh",
-              flexDirection: "column",
-              width: "70vw",
-              textAlign: "center",
-              color: "white",
-            }}
-          >
-            <hr style={{ width: "100%" }} />
+        <nav className={styles.MenuBlog}>
+          <div className={styles.MenuBlogContainer}>
+            <hr />
             <MenuIconLink to="/">
               <FontAwesomeIcon icon={faNewspaper} fixedWidth /> | Artigos
             </MenuIconLink>
-            <hr style={{ width: "100%" }} />
+            <hr />
 
-            <hr style={{ width: "100%" }} />
+            <hr />
             <MenuIconLink to="/about-me">
               <FontAwesomeIcon icon={faUser} fixedWidth /> | Sobre Mim
             </MenuIconLink>
-            <hr style={{ width: "100%" }} />
+            <hr />
 
-            {/* <hr style={{ width: "100%" }} />
+            {/* <hr/>
             <MenuIconLink to="/portfolio">
               <FontAwesomeIcon icon={faNewspaper} fixedWidth /> | Portfolio
             </MenuIconLink>
-            <hr style={{ width: "100%" }} /> */}
+            <hr/> */}
 
             <h2>Social Networks</h2>
-            <hr style={{ width: "100%" }} />
-            <MenuIconExternalLink to={"https://github.com/hernandemonteiro"}>
-              <FontAwesomeIcon icon={faGithub} fixedWidth /> | Github
-            </MenuIconExternalLink>
-            <hr style={{ width: "100%" }} />
-
-            <hr style={{ width: "100%" }} />
-            <MenuIconExternalLink to="https://www.instagram.com/monteiro.ops/">
-              <FontAwesomeIcon icon={faInstagram} fixedWidth /> | Instagram
-            </MenuIconExternalLink>
-            <hr style={{ width: "100%" }} />
-
-            <hr style={{ width: "100%" }} />
-            <MenuIconExternalLink to="https://br.linkedin.com/in/hernande-monteiro">
-              <FontAwesomeIcon icon={faLinkedin} fixedWidth /> | Linkedin
-            </MenuIconExternalLink>
-            <hr style={{ width: "100%" }} />
+            <ExternalLinkMenuBlog
+              icon={<FontAwesomeIcon icon={faGithub} fixedWidth />}
+              name={"Github"}
+              link={"https://github.com/hernandemonteiro"}
+            />
+            <ExternalLinkMenuBlog
+              icon={<FontAwesomeIcon icon={faInstagram} fixedWidth />}
+              name={"Instagram"}
+              link={"https://www.instagram.com/monteiro.ops/"}
+            />
+            <ExternalLinkMenuBlog
+              icon={<FontAwesomeIcon icon={faLinkedin} fixedWidth />}
+              name={"Linkedin"}
+              link={"https://br.linkedin.com/in/hernande-monteiro"}
+            />
           </div>
-        </div>
+        </nav>
       ) : (
         <>{props.children}</>
       )}
@@ -82,20 +62,7 @@ export default function MenuBlog(props: { children: React.ReactElement }) {
         onClick={() => {
           menuView ? setMenuView(false) : setMenuView(true);
         }}
-        style={{
-          display: "flex",
-          padding: "1.5%",
-          borderRadius: "50%",
-          position: "fixed",
-          bottom: "25px",
-          right: "25px",
-          zIndex: "1000",
-          fontSize: "2em",
-          cursor: "pointer",
-          color: "white",
-          backgroundColor: "gray",
-          border: "none",
-        }}
+        className={styles.openCloseMenuBlog}
       >
         {menuView ? <AiOutlineClose /> : <AiOutlineMenu />}
       </button>

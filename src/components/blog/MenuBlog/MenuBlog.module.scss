@@ -1,0 +1,39 @@
+@import "../../../pages/base.scss";
+
+.MenuBlog {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  background-color: $blackBackground;
+
+  hr {
+    width: 100%;
+  }
+
+  .MenuBlogContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 70vw;
+    text-align: center;
+    color: white;
+  }
+}
+
+.openCloseMenuBlog {
+  display: flex;
+  padding: 1.5%;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+  background-color: gray;
+  border: none;
+}

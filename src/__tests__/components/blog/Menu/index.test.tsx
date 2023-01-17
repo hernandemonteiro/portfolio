@@ -5,8 +5,12 @@ import MenuBlog from "../../../../components/blog/MenuBlog";
 
 describe("<MenuBlog /> test", () => {
   it("<MenuBlog />", async () => {
-    const { container } = render(<MenuBlog />);
-    const buttonSearch = container.getElementsByClassName("searchBarButton");
+    const { container } = render(
+      <MenuBlog>
+        <>Page is inside</>
+      </MenuBlog>
+    );
+    const buttonSearch = container.getElementsByClassName("openCloseMenuBlog");
     expect(buttonSearch.length).toBe(1);
   });
 });
