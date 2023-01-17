@@ -2,7 +2,7 @@
 import React from "react";
 import AboutMePage from "../../components/about-me/AboutMePage";
 import TemplateAboutMe from "../../components/about-me/TemplateAboutMe";
-import MenuBlog from "../../components/blog/MenuBlog";
+import Menu from "../../components/blog/MenuBlog";
 import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps() {
@@ -21,16 +21,15 @@ export default function Artigo(props: {
   experience: any;
 }) {
   return (
-    <TemplateAboutMe>
-      <>
+    <Menu>
+      <TemplateAboutMe>
         <AboutMePage
           ownerInfo={props.ownerInfo}
           academy={props.academy}
           skills={props.skills}
           experience={props.experience}
         />
-        <MenuBlog />
-      </>
-    </TemplateAboutMe>
+      </TemplateAboutMe>
+    </Menu>
   );
 }

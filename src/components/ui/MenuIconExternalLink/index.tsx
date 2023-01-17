@@ -2,14 +2,14 @@ import React from "react";
 import MenuIcon from "../MenuIcon";
 
 interface MenuIconLinkProps {
-  children: any;
+  children: React.ReactNode | string;
   to: string;
 }
 export default function MenuIconExternalLink(props: MenuIconLinkProps) {
   return (
     <MenuIcon>
       <a href={props.to} target="_blank" rel="noreferrer">
-        {props.children}{" "}
+        {props.children}
       </a>
     </MenuIcon>
   );

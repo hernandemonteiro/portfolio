@@ -19,11 +19,12 @@ interface iArtigo {
   };
 }
 
-export default function Artigo(props: iArtigo) {
+export default function Artigo({ post }: iArtigo) {
+
   return (
     <Template>
       <div style={{ width: "70vw", wordWrap: "break-word" }}>
-        <Markup markup={props.post.content} />
+        <Markup markup={post.content} />
       </div>
       <MenuBlog />
     </Template>

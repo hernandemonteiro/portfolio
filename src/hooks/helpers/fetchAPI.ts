@@ -1,7 +1,7 @@
 import Crypto from "./crypto";
 export async function fetchAPI(route, method, body?) {
   return await fetch(
-    `${route}`,
+    `${process.env.NEXT_PUBLIC_URL_API}${route}`,
     body
       ? {
           method: method,
@@ -18,7 +18,7 @@ export async function fetchAPI(route, method, body?) {
 
 export async function fetchAdminAPI(route, method, body?) {
   return await fetch(
-    `${route}`,
+    `${process.env.NEXT_PUBLIC_URL_API}${route}`,
     body
       ? {
           method: method,
