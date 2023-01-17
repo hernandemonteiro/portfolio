@@ -1,6 +1,6 @@
 import React from "react";
 import { Markup } from "react-render-markup";
-import MenuBlog from "../../components/blog/MenuBlog";
+import Menu from "../../components/blog/MenuBlog";
 import Template from "../../components/blog/TemplateBlog";
 import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
@@ -20,13 +20,13 @@ interface iArtigo {
 }
 
 export default function Artigo({ post }: iArtigo) {
-
   return (
-    <Template>
-      <div style={{ width: "70vw", wordWrap: "break-word" }}>
-        <Markup markup={post.content} />
-      </div>
-      <MenuBlog />
-    </Template>
+    <Menu>
+      <Template>
+        <div style={{ width: "70vw", wordWrap: "break-word" }}>
+          <Markup markup={post.content} />
+        </div>
+      </Template>
+    </Menu>
   );
 }

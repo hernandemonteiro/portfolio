@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./curriculum.module.css";
-import Menu from "../../blog/MenuBlog";
 import Head from "next/head";
 
 interface iTemplateAboutMe {
@@ -16,9 +15,6 @@ export default function TemplateAboutMe(props: iTemplateAboutMe) {
         </title>
       </Head>
       {props.children}
-      <br />
-      <br />
-      <Menu />
     </div>
   );
 }
