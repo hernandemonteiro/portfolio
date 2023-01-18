@@ -6,14 +6,17 @@ import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps(context) {
   const articleID = await context.query.id;
-  const post = await fetchAPI("/api/articles/getByID/" + articleID, "GET");
+  const post = await fetchAPI(`/api/articles/getByID/${articleID}`, "GET");
 
   return { props: { post } };
 }
 
 interface iArtigo {
   post: {
+    _id: string,
     content: string;
+    title: string;
+    resume: string;
   };
 }
 
