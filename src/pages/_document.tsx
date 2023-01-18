@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="pt-BR">
       <Head>
         <meta lang="pt-BR" charSet="utf-8"/>
+        <link rel="shortcut icon" href="../favicon.png" />
       </Head>
       <body>
         <Main />

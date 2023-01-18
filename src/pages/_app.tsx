@@ -1,22 +1,29 @@
 import NextNProgress from "nextjs-progressbar";
 import React from "react";
 import { Analytics } from "@vercel/analytics/react";
-import "../styles/_app.scss";
+import "./_app.scss";
 import Head from "next/head";
 import Image from "next/image";
 import ComponentOrDocs from "doc_docs";
 import logo from "../../public/favicon.png";
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({
+  Component,
+  pageProps,
+  router,
+}: {
+  Component: any;
+  pageProps: any;
+  router: any;
+}) {
   return (
-    <>
+    <React.StrictMode>
       <Head>
         <title>Hernande Monteiro - seu blog tech quentinho e atual!</title>
         <meta
           name="description"
           content="Blog sobre tecnologia e programação! /n Criado para inspirar o mundo do desenvolvimento!"
         />
-        <link rel="shortcut icon" href="./favicon.png" />
       </Head>
       <ComponentOrDocs
         route={router}
@@ -44,7 +51,7 @@ function MyApp({ Component, pageProps, router }) {
       />
       <NextNProgress />
       <Analytics />
-    </>
+    </React.StrictMode>
   );
 }
 

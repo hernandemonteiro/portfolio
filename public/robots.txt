@@ -10,3 +10,8 @@ Allow: /
 # Allow all crawlers
 User-agent: *
 Allow: /article/*
+
+# Allow all crawlers
+User-agent: *
+Allow: /about-me
+

@@ -1,3 +1,4 @@
+import React from "react";
 import { DescriptionDoc, TitleDoc } from "doc_docs/components";
 
 export default function EnvDocs() {

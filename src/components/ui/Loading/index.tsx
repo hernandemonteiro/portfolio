@@ -14,3 +14,18 @@ export default function LoaderAdmin() {
     </div>
   );
 }
+
+export function LoaderBlog() {
+  return (
+    <div
+      style={{
+        height: "65vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <h1>Loading...</h1>
+    </div>
+  );
+}

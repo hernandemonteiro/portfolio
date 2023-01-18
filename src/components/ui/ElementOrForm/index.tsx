@@ -1,7 +1,7 @@
 import React from "react";
-import useView from "../../../providers/useView";
 import { Button } from "../Buttons";
 import MessageForm from "../MessageForm";
+import useView from "../../../providers/view/viewContext";
 
 interface ElementOrFormProps {
   element: any;
@@ -12,6 +12,7 @@ interface ElementOrFormProps {
 
 export default function ElementOrForm(props: ElementOrFormProps) {
   const { view, setView } = useView();
+
   function tableOrFormView() {
     return !view ? (
       <>

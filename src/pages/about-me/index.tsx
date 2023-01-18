@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import AboutMePage from "../../components/about-me/AboutMePage";
-import CardCurriculum from "../../components/about-me/CardCurriculum";
-import CardHeaderCurriculum from "../../components/about-me/CardHeaderCurriculum";
 import TemplateAboutMe from "../../components/about-me/TemplateAboutMe";
-import MenuBlog from "../../components/blog/MenuBlog";
+import Menu from "../../components/blog/MenuBlog";
 import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 
 export async function getServerSideProps() {
@@ -16,18 +14,22 @@ export async function getServerSideProps() {
   return { props: { skills, experience, academy, ownerInfo } };
 }
 
-export default function Artigo({ skills, experience, academy, ownerInfo }) {
+export default function Artigo(props: {
+  ownerInfo: any;
+  academy: any;
+  skills: any;
+  experience: any;
+}) {
   return (
-    <TemplateAboutMe>
-      <>
+    <Menu>
+      <TemplateAboutMe>
         <AboutMePage
-          ownerInfo={ownerInfo}
-          academy={academy}
-          skills={skills}
-          experience={experience}
+          ownerInfo={props.ownerInfo}
+          academy={props.academy}
+          skills={props.skills}
+          experience={props.experience}
         />
-        <MenuBlog />
-      </>
-    </TemplateAboutMe>
+      </TemplateAboutMe>
+    </Menu>
   );
 }

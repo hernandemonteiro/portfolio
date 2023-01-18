@@ -1,19 +1,36 @@
 import Crypto from "./crypto";
-export async function fetchAPI(route, method) {
-  return await fetch(`${process.env.NEXT_PUBLIC_URL_API}${route}`, {
-    method: method,
-  }).then((res) => res.json());
+export async function fetchAPI(route, method, body?) {
+  return await fetch(
+    `${process.env.NEXT_PUBLIC_URL_API}${route}`,
+    body
+      ? {
+          method: method,
+          headers: {
+            "x-admin-access": await tokenAPI(),
+          },
+          body: JSON.stringify(body),
+        }
+      : {
+          method: method,
+        }
+  ).then((res) => res.json());
 }
 
-export async function fetchAdminAPI(route, method) {
-  return await fetch(`${process.env.NEXT_PUBLIC_URL_API}${route}`, {
-    method: method,
-    headers: {
-      "x-admin-access": await tokenAPI(),
-    },
-  })
-    .then((res) => res.json())
-    .catch((e) => console.log("error: " + e));
+export async function fetchAdminAPI(route, method, body?) {
+  return await fetch(
+    `${process.env.NEXT_PUBLIC_URL_API}${route}`,
+    body
+      ? {
+          method: method,
+          headers: {
+            "x-admin-access": await tokenAPI(),
+          },
+          body: JSON.stringify(body),
+        }
+      : {
+          method: method,
+        }
+  ).then((res) => res.json());
 }
 
 export async function tokenAPI() {

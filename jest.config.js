@@ -1,5 +1,4 @@
 module.exports = {
-  setupFilesAfterEnv: ["<rootDir>/src/__tests__/front/jest-setup.js"],
   projects: [
     {
       preset: "ts-jest",
@@ -8,8 +7,6 @@ module.exports = {
       testMatch: ["**/__tests__/**/*.test.tsx"],
       verbose: true,
       transform: {
-        // Use babel-jest to transpile tests with the next/babel preset
-        // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
         "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
       },
       transformIgnorePatterns: ["/node_modules/"],

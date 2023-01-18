@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { Stack, Divider } from "@mui/material";
@@ -11,7 +12,8 @@ export default function CardCurriculum(props: CardCurriculumProps) {
   return (
     <Card
       sx={{
-        marginBottom: "6%",
+        margin: "2%",
+        width: "100%",
       }}
     >
       <Typography fontWeight={700} margin={2}>
@@ -22,11 +24,8 @@ export default function CardCurriculum(props: CardCurriculumProps) {
         direction="row"
         alignItems="center"
         justifyContent="space-around"
-        width="80vw"
         sx={{
-          px: 2,
-          py: 1,
-          bgcolor: "background.default",
+          p: 2,
         }}
       >
         {props.children}

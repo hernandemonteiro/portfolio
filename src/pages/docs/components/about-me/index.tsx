@@ -1,8 +1,8 @@
+import React from "react";
 import {
   TitleDoc,
   DescriptionDoc,
   ComponentDoc,
-  Code,
 } from "doc_docs/components";
 import CardCurriculum from "../../../../components/about-me/CardCurriculum";
 import CardHeaderCurriculum from "../../../../components/about-me/CardHeaderCurriculum";
@@ -16,6 +16,7 @@ export default function AboutMeComponentDocs() {
           <p>Componentes utilizados na construção da página {'"/about-me"'}</p>
         }
       />
+
       <TitleDoc title="<TemplateAboutMe/>" />
       <DescriptionDoc
         description={
@@ -37,6 +38,7 @@ export default function AboutMeComponentDocs() {
           </p>
         }
       />
+
       <TitleDoc title="<CardCurriculum/>" />
       <ComponentDoc
         element={
@@ -61,16 +63,26 @@ export default function AboutMeComponentDocs() {
       <TitleDoc title="<CardHeaderCurriculum/>" />
       <ComponentDoc
         element={
-          <CardHeaderCurriculum
-            name={"Nome da pessoa a apresentar"}
-            resume={`<div style="padding:2%">
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+              paddingBottom: "11%",
+            }}
+          >
+            <CardHeaderCurriculum
+              name={"Nome da pessoa a apresentar"}
+              resume={`<div style="padding:2%">
                 Resumo sobre a pessoa apresentada
               </div>`}
-            title={"Profissão"}
-            birthday={"22/11/1998"}
-            email={"email@email.com"}
-            picture={"https://hernandemonteiro.vercel.app/favicon.png"}
-          />
+              title={"Profissão"}
+              birthday={"22/11/1998"}
+              email={"email@email.com"}
+              picture={"https://hernandemonteiro.vercel.app/favicon.png"}
+            />
+          </div>
         }
         options={[
           { prop: "name", default: "required", accept: "string" },

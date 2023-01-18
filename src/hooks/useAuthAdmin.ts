@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Router from "next/router";
 import Crypto from "./helpers/crypto";
-import nookies, { setCookie, parseCookies, destroyCookie } from "nookies";
+import { setCookie, parseCookies, destroyCookie } from "nookies";
 
 export default function useAuthAdmin() {
   const cookies = parseCookies();

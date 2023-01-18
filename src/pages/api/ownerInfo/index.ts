@@ -1,9 +1,9 @@
-import OwnerInfoController from "../../../back-end/controllers/ownerInfo";
-import Database from "../../../back-end/infra/db";
+import OwnerInfoController from "../../../controllers/OwnerInfoController";
+import { responseAPI } from "../../../patterns/api/apiCall";
 
 export default async function getOwnerInfo(req, res) {
-  Database.dbConnect();
-  req.method === "GET"
-    ? await OwnerInfoController.getOwnerInfo(req, res)
-    : res.status(500).end("Need all correct informations!");
+  await responseAPI(
+    { method: "GET", requestedMethod: req.method, response: res },
+    OwnerInfoController.getOwnerInfo(req, res)
+  );
 }

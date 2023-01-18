@@ -5,6 +5,7 @@ import logo from "../../../public/favicon.png";
 import styles from "./docs.module.scss";
 
 export default function DocsHomePage() {
+  // alert(process.env.NODE_ENV)
   return (
     <>
       <DescriptionDoc

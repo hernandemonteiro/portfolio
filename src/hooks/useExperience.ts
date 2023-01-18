@@ -1,6 +1,6 @@
 import Router from "next/router";
-import React, { useEffect, useState } from "react";
-import { fetchAdminAPI, fetchAPI } from "./helpers/fetchAPI";
+import { useEffect, useState } from "react";
+import { fetchAPI } from "./helpers/fetchAPI";
 
 export default function useExperience() {
   const [experienceList, setExperienceList] = useState([]);
@@ -11,58 +11,69 @@ export default function useExperience() {
   const [sinceYear, setSinceYear] = useState(0);
   const [untilYear, setUntilYear] = useState(0);
 
+  useEffect(() => getExperience(), []);
+
+  function getExperience() {
+    fetchAPI("/api/experience", "GET").then((res) => setExperienceList(res));
+  }
+
   function handleExperienceForm(e) {
     e.preventDefault();
     !idExperience ? createExperience() : updateExperience();
   }
-  useEffect(() => {
-    fetchAPI("/api/experience", "GET").then((res) => setExperienceList(res));
-  }, []);
+
   async function createExperience() {
-    await fetchAdminAPI(
-      `/api/experience/create/${occupation}/${company}/${sinceYear}/${untilYear}`,
-      "POST"
-    )
-      .then((res) => {
-        if (res.title === occupation) {
-          setMessage("Cadastrado com sucesso!");
-          setOccupation("");
-          setCompany("");
-          setSinceYear(0);
-          setUntilYear(0);
-        }
-      })
-      .finally(finallyExperienceFetch);
+    await fetchAPI(`/api/experience/create`, "POST", {
+      title: occupation,
+      company: company,
+      since: sinceYear,
+      until: untilYear,
+    }).then((res) => {
+      if (res._id) {
+        setMessage("Cadastrado com sucesso!");
+        setOccupation("");
+        setCompany("");
+        setSinceYear(0);
+        setUntilYear(0);
+        afterFetch();
+      }
+      if (res.errors) {
+        console.log(res.errors);
+      }
+    });
   }
 
   async function updateExperience() {
-    await fetchAdminAPI(
-      `/api/experience/update/${idExperience}/${occupation}/${company}/${sinceYear}/${untilYear}`,
-      "POST"
-    )
-      .then((res) => {
-        if (res.title === occupation) {
-          setMessage("Modificado com sucesso!");
-          setOccupation("");
-          setCompany("");
-          setSinceYear(0);
-          setUntilYear(0);
-        }
-      })
-      .finally(finallyExperienceFetch);
+    await fetchAPI(`/api/experience/update`, "POST", {
+      _id: idExperience,
+      title: occupation,
+      company: company,
+      since: sinceYear,
+      until: untilYear,
+    }).then((res) => {
+      if (res._id) {
+        setMessage("Modificado com sucesso!");
+        setOccupation("");
+        setCompany("");
+        setSinceYear(0);
+        setUntilYear(0);
+        afterFetch();
+      }
+    });
   }
 
   async function deleteExperience(_id) {
-    await fetchAdminAPI(`/api/experience/delete/${_id}`, "DELETE")
-      .then((res) => {
-        if (res._id === _id) {
-          setMessage("Deletado com sucesso!");
-        }
-      })
-      .finally(finallyExperienceFetch);
+    await fetchAPI(`/api/experience/delete`, "DELETE", {
+      _id: _id,
+    }).then((res) => {
+      if (res._id === _id) {
+        setMessage("Deletado com sucesso!");
+        afterFetch();
+      }
+    });
   }
 
-  const finallyExperienceFetch = () => setTimeout(() => Router.reload(), 2000);
+  const afterFetch = () => setTimeout(() => Router.reload(), 2000);
   return {
     experienceList,
     message,

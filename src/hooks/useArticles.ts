@@ -22,6 +22,7 @@ export default function useArticles() {
   function fetchArticle() {
     fetchAPI(`/api/articles`, "GET").then((res) => setArticlesList(res));
   }
+  
   function unsetForm() {
     setTitle("");
     setResume("");

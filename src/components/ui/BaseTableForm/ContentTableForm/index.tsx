@@ -1,3 +1,4 @@
+import React from "react";
 import { HiOutlineTrash, HiPencilAlt } from "react-icons/hi";
 import styles from "../BaseTableForm.module.scss";
 

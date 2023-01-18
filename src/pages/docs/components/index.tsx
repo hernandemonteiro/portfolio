@@ -1,4 +1,5 @@
-import { TitleDoc, DescriptionDoc } from "doc_docs/components";
+import React from "react";
+import { DescriptionDoc } from "doc_docs/components";
 
 export default function componentWelcomeDocs() {
   return (

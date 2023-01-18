@@ -1,9 +1,9 @@
-import AcademyController from "../../../back-end/controllers/academy";
-import Database from "../../../back-end/infra/db";
+import AcademyController from "../../../controllers/AcademyController";
+import { responseAPI } from "../../../patterns/api/apiCall";
 
 export default async function getAll(req, res) {
-  Database.dbConnect();
-  req.method === "GET"
-    ? await AcademyController.getAll(req, res)
-    : res.status(500).end("Need all correct informations!");
+  await responseAPI(
+    { method: "GET", requestedMethod: req.method, response: res },
+    AcademyController.getAcademyExperiences(req, res)
+  );
 }

@@ -3,114 +3,69 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { MdOutlineSearch } from "react-icons/md";
-import { AiFillCloseCircle } from "react-icons/ai";
-import { faBlog, faUser } from "@fortawesome/free-solid-svg-icons";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { faUser, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import Menu from "../../ui/Menu";
-import MenuIcon from "../../ui/MenuIcon";
-import MenuIconExternalLink from "../../ui/MenuIconExternalLink";
 import MenuIconLink from "../../ui/MenuIconLink";
-import Router from "next/router";
+import styles from "./MenuBlog.module.scss";
+import ExternalLinkMenuBlog from "./ExternalLinkMenuBLog";
 
-export default function MenuBlog() {
-  const [searchBar, setSearchBar] = useState(false);
-  const [search, setSearch] = useState("");
-  function handleSearch(e) {
-    e.preventDefault();
-    Router.push(`/search/${search}`);
-  }
+export default function MenuBlog(props: { children: React.ReactElement }) {
+  const [menuView, setMenuView] = useState(false);
+
   return (
-    <Menu>
-      {searchBar ? (
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <form
-            onSubmit={handleSearch}
-            style={{
-              width: "93%",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <input
-              required
-              name="search"
-              style={{ padding: "2%", width: "98%" }}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search Article..."
-              type="text"
+    <>
+      {menuView ? (
+        <nav className={styles.MenuBlog}>
+          <div className={styles.MenuBlogContainer}>
+            <hr />
+            <MenuIconLink to="/">
+              <FontAwesomeIcon icon={faNewspaper} fixedWidth /> | Artigos
+            </MenuIconLink>
+            <hr />
+
+            <hr />
+            <MenuIconLink to="/about-me">
+              <FontAwesomeIcon icon={faUser} fixedWidth /> | Sobre Mim
+            </MenuIconLink>
+            <hr />
+
+            {/* <hr/>
+            <MenuIconLink to="/portfolio">
+              <FontAwesomeIcon icon={faNewspaper} fixedWidth /> | Portfolio
+            </MenuIconLink>
+            <hr/> */}
+
+            <h2>Social Networks</h2>
+            <ExternalLinkMenuBlog
+              icon={<FontAwesomeIcon icon={faGithub} fixedWidth />}
+              name={"Github"}
+              link={"https://github.com/hernandemonteiro"}
             />
-            <button
-              style={{ background: "none", border: "none", paddingLeft: "2%" }}
-              type="submit"
-            >
-              <MdOutlineSearch
-                style={{
-                  fontSize: "2rem",
-                  cursor: "pointer",
-                  color: "white",
-                }}
-              />
-            </button>
-          </form>
-          <MenuIcon>
-            <AiFillCloseCircle onClick={() => setSearchBar(false)} />
-          </MenuIcon>
-        </div>
+            <ExternalLinkMenuBlog
+              icon={<FontAwesomeIcon icon={faInstagram} fixedWidth />}
+              name={"Instagram"}
+              link={"https://www.instagram.com/monteiro.ops/"}
+            />
+            <ExternalLinkMenuBlog
+              icon={<FontAwesomeIcon icon={faLinkedin} fixedWidth />}
+              name={"Linkedin"}
+              link={"https://br.linkedin.com/in/hernande-monteiro"}
+            />
+          </div>
+        </nav>
       ) : (
-        <>
-          <MenuIconLink to="/">
-            <abbr title="Artigos">
-              <FontAwesomeIcon icon={faBlog} fixedWidth />
-            </abbr>
-          </MenuIconLink>
-          <MenuIconLink to="/about-me">
-            <abbr title="Sobre Mim">
-              <FontAwesomeIcon icon={faUser} fixedWidth />
-            </abbr>
-          </MenuIconLink>
-          {/* <MenuIconLink to="/portfolio">
-        <FontAwesomeIcon
-          icon={faNewspaper}
-          fixedWidth
-        />
-      </MenuIconLink> */}
-          <MenuIconExternalLink to={"https://github.com/hernandemonteiro"}>
-            <abbr title="Meu GitHub*">
-              <FontAwesomeIcon icon={faGithub} fixedWidth />
-            </abbr>
-          </MenuIconExternalLink>
-          <MenuIconExternalLink to="https://www.instagram.com/monteiro.ops/">
-            <abbr title="Meu Instagram*">
-              <FontAwesomeIcon icon={faInstagram} fixedWidth />
-            </abbr>
-          </MenuIconExternalLink>
-          <MenuIconExternalLink to="https://br.linkedin.com/in/hernande-monteiro">
-            <abbr title="Meu Linkedin*">
-              <FontAwesomeIcon icon={faLinkedin} fixedWidth />
-            </abbr>
-          </MenuIconExternalLink>
-          <MenuIcon>
-            <abbr title="Buscar Artigo*">
-              <MdOutlineSearch
-                className="searchBarButton"
-                onClick={() => setSearchBar(true)}
-              />
-            </abbr>
-          </MenuIcon>
-        </>
+        <>{props.children}</>
       )}
-    </Menu>
+      <button
+        onClick={() => {
+          menuView ? setMenuView(false) : setMenuView(true);
+        }}
+        className={styles.openCloseMenuBlog}
+      >
+        {menuView ? <AiOutlineClose /> : <AiOutlineMenu />}
+      </button>
+    </>
   );
 }
