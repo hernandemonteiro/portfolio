@@ -29,8 +29,9 @@ export interface iSkills {
 }
 
 export interface iExperience {
+  _id: string;
   title: string;
   company: string;
-  since: string;
-  until: string;
+  since: number;
+  until: number;
 }

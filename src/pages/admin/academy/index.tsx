@@ -32,7 +32,7 @@ export default function AcademyPage() {
         message={message}
         academy={academyList}
         pagination={pagination}
-        buttonPagination={botaoMostrarMais(academyList.length)}
+        buttonPagination={botaoMostrarMais(academyList && academyList.length)}
         TableContent={(element) => (
           <ContentTableForm
             key={element._id}
