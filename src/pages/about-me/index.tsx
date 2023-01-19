@@ -1,33 +1,26 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import AboutMePage from "../../components/about-me/AboutMePage";
 import TemplateAboutMe from "../../components/about-me/TemplateAboutMe";
 import Menu from "../../components/blog/MenuBlog";
-import { fetchAPI } from "../../hooks/helpers/fetchAPI";
+import useOwnerInfos from "../../hooks/useOwnerInfos";
+import useAcademy from "../../hooks/useAcademy";
+import useSkills from "../../hooks/useSkills";
+import useExperience from "../../hooks/useExperience";
 
-export async function getServerSideProps() {
-  const skills = await fetchAPI(`/api/skills`, "GET");
+export default function Artigo() {
+  const { ownerInfoList } = useOwnerInfos();
+  const { academyList } = useAcademy();
+  const { skillsList } = useSkills();
+  const { experienceList } = useExperience();
 
-  const experience = await fetchAPI(`/api/experience`, "GET");
-  const academy = await fetchAPI(`/api/academy`, "GET");
-  const ownerInfo = await fetchAPI(`/api/ownerInfo`, "GET");
-  return { props: { skills, experience, academy, ownerInfo } };
-}
-
-export default function Artigo(props: {
-  ownerInfo: any;
-  academy: any;
-  skills: any;
-  experience: any;
-}) {
   return (
     <Menu>
       <TemplateAboutMe>
         <AboutMePage
-          ownerInfo={props.ownerInfo}
-          academy={props.academy}
-          skills={props.skills}
-          experience={props.experience}
+          ownerInfo={ownerInfoList}
+          academy={academyList}
+          skills={skillsList}
+          experience={experienceList}
         />
       </TemplateAboutMe>
     </Menu>

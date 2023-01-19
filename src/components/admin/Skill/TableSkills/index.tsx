@@ -6,13 +6,10 @@ import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
 import useView from "../../../../providers/view/viewContext";
+import { iSkills } from "../../../about-me/AboutMePage/iAboutMePage";
 
 interface TableSkillsProps {
-  data: Array<{
-    _id: string;
-    skill: string;
-    type: string;
-  }>;
+  data: Array<iSkills> | undefined;
   title?: string;
 }
 export default function TableSkills(props: TableSkillsProps) {
@@ -35,21 +32,22 @@ export default function TableSkills(props: TableSkillsProps) {
       element={
         <>
           <BaseTableForm title={"Skills"}>
-            {props.data.slice(0, pagination).map((element) => (
-              <ContentTableForm
-                key={element._id}
-                description={element.skill + " - " + element.type}
-                onClickEdit={() => {
-                  setType(element.type);
-                  setSkill(element.skill);
-                  setIdSkill(element._id);
-                  setView(true);
-                }}
-                onClickTrash={() => deleteSkill(element._id)}
-              />
-            ))}
+            {props.data &&
+              props.data.slice(0, pagination).map((element) => (
+                <ContentTableForm
+                  key={element._id}
+                  description={element.skill + " - " + element.type}
+                  onClickEdit={() => {
+                    setType(element.type);
+                    setSkill(element.skill);
+                    setIdSkill(element._id);
+                    setView(true);
+                  }}
+                  onClickTrash={() => deleteSkill(element._id)}
+                />
+              ))}
           </BaseTableForm>
-          {botaoMostrarMais(props.data.length)}
+          {botaoMostrarMais(props.data && props.data.length)}
         </>
       }
       form={

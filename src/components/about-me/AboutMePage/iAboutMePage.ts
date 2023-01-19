@@ -1,36 +1,37 @@
 export interface iAboutMePage {
-  ownerInfo: [
-    {
-      _id: string;
-      name: string;
-      resume: string;
-      title: string;
-      birthday: string;
-      email: string;
-      picture: string;
-    }
-  ];
-  academy: [
-    {
-      title: string;
-      foundation: string;
-      since: string;
-      status: string;
-    }
-  ];
-  skills: [
-    {
-      _id: string;
-      type: string;
-      skill: string;
-    }
-  ];
-  experience: [
-    {
-      title: string;
-      company: string;
-      since: string;
-      until: string;
-    }
-  ];
+  ownerInfo: [iOwnerInfo] | undefined;
+  academy: [iAcademy] | undefined;
+  skills: [iSkills] | undefined;
+  experience: [iExperience] | undefined;
+}
+
+export interface iOwnerInfo {
+  _id: string;
+  name: string;
+  resume: string;
+  title: string;
+  birthday: string;
+  email: string;
+  picture: string;
+}
+
+export interface iAcademy {
+  title: string;
+  foundation: string;
+  since: string;
+  status: string;
+}
+
+export interface iSkills {
+  _id: string;
+  type: string;
+  skill: string;
+}
+
+export interface iExperience {
+  _id: string;
+  title: string;
+  company: string;
+  since: number;
+  until: number;
 }

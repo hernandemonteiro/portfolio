@@ -6,18 +6,11 @@ import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
 import ExperienceForm from "../ExperienceForm";
 import useView from "../../../../providers/view/viewContext";
+import { iExperience } from "../../../about-me/AboutMePage/iAboutMePage";
 
-interface ExperienceTableProps {
-  experience: Array<{
-    _id: string;
-    title: string;
-    since: number;
-    until: number;
-    company: string;
-  }>;
-}
-
-export default function ExperienceTable(props: ExperienceTableProps) {
+export default function ExperienceTable(props: {
+  experience: [iExperience] | undefined;
+}) {
   const { setView } = useView();
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {
@@ -40,23 +33,24 @@ export default function ExperienceTable(props: ExperienceTableProps) {
       element={
         <>
           <BaseTableForm title={"Experiences"}>
-            {props.experience.slice(0, pagination).map((element) => (
-              <ContentTableForm
-                key={element._id}
-                description={`${element.title} - ${element.since} - ${element.until} - ${element.company}`}
-                onClickEdit={() => {
-                  setIdExperience(element._id);
-                  setOccupation(element.title);
-                  setCompany(element.company);
-                  setSinceYear(element.since);
-                  setUntilYear(element.until);
-                  setView(true);
-                }}
-                onClickTrash={() => deleteExperience(element._id)}
-              />
-            ))}
+            {props.experience &&
+              props.experience.slice(0, pagination).map((element) => (
+                <ContentTableForm
+                  key={element._id}
+                  description={`${element.title} - ${element.since} - ${element.until} - ${element.company}`}
+                  onClickEdit={() => {
+                    setIdExperience(element._id);
+                    setOccupation(element.title);
+                    setCompany(element.company);
+                    setSinceYear(element.since);
+                    setUntilYear(element.until);
+                    setView(true);
+                  }}
+                  onClickTrash={() => deleteExperience(element._id)}
+                />
+              ))}
           </BaseTableForm>
-          {botaoMostrarMais(props.experience.length)}
+          {botaoMostrarMais(props.experience && props.experience.length)}
         </>
       }
       form={
