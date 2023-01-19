@@ -1,9 +1,10 @@
 import Router from "next/router";
 import { useEffect, useState } from "react";
 import { fetchAdminAPI, fetchAPI } from "./helpers/fetchAPI";
+import { iSkills } from "../components/about-me/AboutMePage/iAboutMePage";
 
 export default function useSkills() {
-  const [skillsList, setSkillsList] = useState([]);
+  const [skillsList, setSkillsList] = useState<[iSkills]>();
   const [idSkill, setIdSkill] = useState<boolean | string>(false);
   const [skill, setSkill] = useState("");
   const [type, setType] = useState("");
