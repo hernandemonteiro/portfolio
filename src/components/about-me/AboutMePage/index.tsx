@@ -121,6 +121,7 @@ export default function AboutMePage(props: iAboutMePage) {
                 </>
               );
             })}
+
         </div>
       </CardCurriculum>
     </>

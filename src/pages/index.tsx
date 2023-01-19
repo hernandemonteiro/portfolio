@@ -9,6 +9,7 @@ import { LoaderBlog } from "../components/ui/Loading";
 export default function Home() {
   const { articlesList } = useArticles();
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
+  
   return (
     <Menu>
       <TemplateBlog>
