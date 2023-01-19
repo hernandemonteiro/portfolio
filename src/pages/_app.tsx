@@ -22,7 +22,7 @@ function MyApp({
         <title>Hernande Monteiro - seu blog tech quentinho e atual!</title>
         <meta
           name="description"
-          content="Blog sobre tecnologia e programação! /n Criado para inspirar o mundo do desenvolvimento!"
+          content="Blog sobre tecnologia e programação! /n Criado para inspirar e te atualizar sobre o mundo do desenvolvimento!"
         />
       </Head>
       <ComponentOrDocs
