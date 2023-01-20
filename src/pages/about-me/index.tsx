@@ -7,6 +7,7 @@ import useAcademy from "../../hooks/useAcademy";
 import useSkills from "../../hooks/useSkills";
 import useExperience from "../../hooks/useExperience";
 import Head from "next/head";
+import LoaderAdmin from "../../components/ui/Loading";
 
 export default function Artigo() {
   const { ownerInfoList } = useOwnerInfos();
@@ -14,25 +15,33 @@ export default function Artigo() {
   const { skillsList } = useSkills();
   const { experienceList } = useExperience();
 
+  const loading = ownerInfoList && academyList && skillsList && experienceList;
+
   return (
-    <Menu>
-      <TemplateAboutMe>
-        <Head>
-          <title>
-            Hernande Monteiro - aqui você sabe um pouco mais sobre mim!
-          </title>
-          <meta
-            name="description"
-            content="Página de informações sobre o desenvolvedor Full-Stack, Hernande Monteiro. suas habilidades técnicas, experiências e skills."
-          />
-        </Head>
-        <AboutMePage
-          ownerInfo={ownerInfoList}
-          academy={academyList}
-          skills={skillsList}
-          experience={experienceList}
-        />
-      </TemplateAboutMe>
-    </Menu>
+    <>
+      {!loading && <LoaderAdmin />}
+      {loading && (
+        <Menu>
+          <TemplateAboutMe>
+            <Head>
+              <title>
+                Hernande Monteiro - aqui você sabe um pouco mais sobre mim!
+              </title>
+              <meta
+                name="description"
+                content="Página de informações sobre o desenvolvedor Full-Stack, Hernande Monteiro. suas habilidades técnicas, experiências e skills."
+              />
+            </Head>
+
+            <AboutMePage
+              ownerInfo={ownerInfoList}
+              academy={academyList}
+              skills={skillsList}
+              experience={experienceList}
+            />
+          </TemplateAboutMe>
+        </Menu>
+      )}
+    </>
   );
 }

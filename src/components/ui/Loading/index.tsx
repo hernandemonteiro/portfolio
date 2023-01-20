@@ -1,4 +1,6 @@
 import React from "react";
+import Lottie from "lottie-react";
+import loadingAnimation from "../../../animation/loading.json";
 
 export default function LoaderAdmin() {
   return (
@@ -10,7 +12,8 @@ export default function LoaderAdmin() {
         justifyContent: "center",
       }}
     >
-      <h1 style={{ color: "white" }}>Loading...</h1>
+      {/* <h1 style={{ color: "white" }}>Loading...</h1> */}
+      <Lottie animationData={loadingAnimation} />
     </div>
   );
 }
@@ -25,7 +28,7 @@ export function LoaderBlog() {
         alignItems: "center",
       }}
     >
-      <h1>Loading...</h1>
+      <h1 style={{ color: "white" }}>Loading...</h1>
     </div>
   );
 }
