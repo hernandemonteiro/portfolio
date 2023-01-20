@@ -3,8 +3,8 @@ import React from "react";
 import Template from "../../components/blog/TemplateBlog";
 import CardArticle from "../../components/ui/Cards/CardArticle";
 import usePagination from "../../hooks/usePagination";
-import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 import Menu from "../../components/blog/MenuBlog";
+import { fetchAPI } from "../../patterns/api/fetchAPI";
 
 export async function getServerSideProps(context) {
   const { param } = context.params;

@@ -2,8 +2,9 @@ import React from "react";
 import { Markup } from "react-render-markup";
 import Menu from "../../components/blog/MenuBlog";
 import Template from "../../components/blog/TemplateBlog";
-import { fetchAPI } from "../../hooks/helpers/fetchAPI";
 import Head from "next/head";
+import { fetchAPI } from "../../patterns/api/fetchAPI";
+import { iArticlePage } from "../../interfaces/iArticlePage";
 
 export async function getServerSideProps(context) {
   const articleID = await context.query.id;
@@ -12,16 +13,7 @@ export async function getServerSideProps(context) {
   return { props: { post } };
 }
 
-interface iArtigo {
-  post: {
-    _id: string;
-    content: string;
-    title: string;
-    resume: string;
-  };
-}
-
-export default function Artigo({ post }: iArtigo) {
+export default function Artigo({ post }: iArticlePage) {
   return (
     <Menu>
       <Template>

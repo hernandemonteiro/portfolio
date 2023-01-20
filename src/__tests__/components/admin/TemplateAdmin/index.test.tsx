@@ -5,7 +5,7 @@ import TemplateAdmin from "../../../../components/admin/TemplateAdmin";
 import useAuthAdmin from "../../../../hooks/useAuthAdmin";
 import sinon from "sinon";
 import crypto from "../../../../patterns/api/crypto";
-jest.mock("../../../../hooks/helpers/crypto");
+jest.mock("../../../../patterns/api/crypto");
 
 describe("<TemplateAdmin/> test", () => {
   it("<TemplateAdmin/> unLogged", async () => {
