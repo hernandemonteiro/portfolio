@@ -1,4 +1,4 @@
-import Crypto from "../../../hooks/helpers/crypto";
+import Crypto from "../../api/crypto";
 import { header } from "express-validator";
 
 export function adminApiAccessVerify() {

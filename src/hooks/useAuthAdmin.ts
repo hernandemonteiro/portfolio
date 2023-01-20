@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Router from "next/router";
-import Crypto from "./helpers/crypto";
+import Crypto from "../patterns/api/crypto";
 import { setCookie, parseCookies, destroyCookie } from "nookies";
 
 export default function useAuthAdmin() {

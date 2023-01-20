@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 import TemplateAdmin from "../../../../components/admin/TemplateAdmin";
 import useAuthAdmin from "../../../../hooks/useAuthAdmin";
 import sinon from "sinon";
-import crypto from "../../../../hooks/helpers/crypto";
+import crypto from "../../../../patterns/api/crypto";
 jest.mock("../../../../hooks/helpers/crypto");
 
 describe("<TemplateAdmin/> test", () => {
