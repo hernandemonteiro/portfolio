@@ -3,7 +3,7 @@ import { Button } from "../../ui/Buttons";
 
 interface BaseFormProps {
   onSubmit: (e) => void;
-  children: any;
+  children: React.ReactNode;
   titleHeadForm: string;
   titleButtonSubmit: string;
 }

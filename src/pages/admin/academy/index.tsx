@@ -4,7 +4,7 @@ import TemplateAdmin from "../../../components/admin/TemplateAdmin";
 import ContentTableForm from "../../../components/ui/BaseTableForm/ContentTableForm";
 import useAcademy from "../../../hooks/useAcademy";
 import usePagination from "../../../hooks/usePagination";
-import useView from "../../../providers/view/viewContext";
+import {useView} from "../../../providers/viewContext";
 
 export default function AcademyPage() {
   const { setView } = useView();

@@ -6,6 +6,7 @@ import Academy from "../../../../components/admin/Academy";
 describe("<Academy/>", () => {
   it("<Academy />", async () => {
     const functionMock = (e) => {
+      e.preventDefault();
       jest.fn();
     };
     render(
@@ -13,7 +14,7 @@ describe("<Academy/>", () => {
         academy={[{}]}
         pagination={5}
         buttonPagination={undefined}
-        TableContent={(element) => <h1>Elemento para imprimir</h1>}
+        TableContent={(element) => <h1>Elemento para imprimir: {element}</h1>}
         message={""}
         onSubmitForm={functionMock}
         setIdExperience={functionMock}

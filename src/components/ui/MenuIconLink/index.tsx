@@ -3,7 +3,7 @@ import React from "react";
 import MenuIcon from "../MenuIcon";
 
 interface MenuIconLinkProps {
-  children: any;
+  children: React.ReactNode;
   to: string;
 }
 export default function MenuIconLink(props: MenuIconLinkProps) {

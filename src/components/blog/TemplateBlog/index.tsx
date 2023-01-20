@@ -3,7 +3,7 @@ import styles from "./Template.module.css";
 import Header from "../Header";
 
 interface TemplateBlogProps {
-  children?: any;
+  children?: React.ReactNode;
 }
 
 export default function TemplateBlog(props: TemplateBlogProps) {

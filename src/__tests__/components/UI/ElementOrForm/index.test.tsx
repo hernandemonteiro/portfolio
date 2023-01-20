@@ -2,7 +2,7 @@ import React from "react";
 import { describe, it, jest } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import ElementOrForm from "../../../../components/ui/ElementOrForm";
-import { ViewProvider } from "../../../../providers/view/viewContext";
+import { ViewProvider } from "../../../../providers/viewContext";
 
 describe("<ElementOrForm/> test", () => {
   it("<ElementOrForm/>", async () => {

@@ -5,6 +5,7 @@ import AcademyForm from "../../../../../components/admin/Academy/AcademyForm";
 
 describe("<AcademyForm/> test", () => {
   const functionMock = (e) => {
+    e.preventDefault();
     jest.fn();
   };
   it("<AcademyForm/>", async () => {

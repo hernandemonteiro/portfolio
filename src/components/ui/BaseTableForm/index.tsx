@@ -3,15 +3,13 @@ import HeaderTableForm from "./HeaderTableForm";
 import styles from "./BaseTableForm.module.scss";
 
 interface BaseTableFormProps {
-  children: any;
+  children: React.ReactNode;
   title: string;
 }
 export default function BaseTableForm(props: BaseTableFormProps) {
   return (
     <>
-      <HeaderTableForm
-        title={props.title}
-      />
+      <HeaderTableForm title={props.title} />
       <table className={styles.table}>
         <thead>
           <tr>

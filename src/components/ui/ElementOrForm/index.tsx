@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "../Buttons";
 import MessageForm from "../MessageForm";
-import useView from "../../../providers/view/viewContext";
+import {useView} from "../../../providers/viewContext";
 
 interface ElementOrFormProps {
-  element: any;
+  element: JSX.Element;
   changeViewFunction?: () => void;
-  form: any;
+  form: JSX.Element;
   message: string;
 }
 

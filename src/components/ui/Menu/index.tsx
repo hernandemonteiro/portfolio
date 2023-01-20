@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react";
 import styles from "./Menu.module.scss";
 
 interface MenuProps {
-  children: any;
+  children: React.ReactNode;
   MenuStyle?: CSSProperties;
 }
 export default function Menu(props: MenuProps) {

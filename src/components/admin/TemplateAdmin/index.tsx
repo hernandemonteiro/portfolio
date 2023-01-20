@@ -1,11 +1,11 @@
 import React from "react";
-import { ViewProvider } from "../../../providers/view/viewContext";
+import { ViewProvider } from "../../../providers/viewContext";
 import Template from "../../blog/TemplateBlog";
 import MenuAdmin from "../Menu";
 import ProtectedAdmin from "../ProtectedAdmin";
 
 interface TemplateAdminProps {
-  children?: any;
+  children?: React.ReactNode;
 }
 export default function TemplateAdmin(props: TemplateAdminProps) {
   return (

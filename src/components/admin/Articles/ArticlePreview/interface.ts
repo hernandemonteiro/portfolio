@@ -1,4 +1,4 @@
 export interface ArticlePreviewProps {
-  content: any;
+  content: string;
   onClick: () => void;
 }

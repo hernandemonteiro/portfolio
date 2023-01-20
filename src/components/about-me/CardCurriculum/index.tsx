@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Stack, Divider } from "@mui/material";
 
 interface CardCurriculumProps {
-  children: any;
+  children: React.ReactNode;
   title: string;
 }
 

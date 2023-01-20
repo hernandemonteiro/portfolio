@@ -5,7 +5,7 @@ import FormSkill from "../FormSkill";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
-import useView from "../../../../providers/view/viewContext";
+import {useView} from "../../../../providers/viewContext";
 import { iSkills } from "../../../about-me/AboutMePage/iAboutMePage";
 
 interface TableSkillsProps {

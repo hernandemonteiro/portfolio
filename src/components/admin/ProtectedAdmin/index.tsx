@@ -3,7 +3,7 @@ import useAuthAdmin from "../../../hooks/useAuthAdmin";
 import LoaderAdmin from "../../ui/Loading";
 
 interface ProtectedAdminProps {
-  children: any;
+  children: React.ReactNode;
 }
 export default function ProtectedAdmin(props: ProtectedAdminProps) {
   const { isLoggedAdmin, loading } = useAuthAdmin();
@@ -11,10 +11,10 @@ export default function ProtectedAdmin(props: ProtectedAdminProps) {
     isLoggedAdmin();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  if (loading) {
-    return <LoaderAdmin />;
-  } else {
-    return props.children;
-  }
+  return (
+    <>
+      {loading && <LoaderAdmin />}
+      {!loading && props.children}
+    </>
+  );
 }

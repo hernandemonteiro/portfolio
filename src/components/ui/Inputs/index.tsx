@@ -3,7 +3,7 @@ import styles from "./Inputs.module.scss";
 
 interface InputDefaultProps {
   type?: "text" | "password" | "email" | "number" | "date" | "button";
-  onChange?: any;
+  onChange?: (e) => void;
   onClick?: () => void;
   required?: boolean;
   width?: string;
