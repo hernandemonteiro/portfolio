@@ -1,1 +1,20 @@
-// to review About Me Page
+.containerBox {
+  width: 100%;
+  padding: 2%;
+}
+
+.skillsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skillElement {
+  padding: 2%;
+  margin: 1.5%;
+  font-size: 1.3em;
+  background-color: rgb(2, 2, 24);
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}

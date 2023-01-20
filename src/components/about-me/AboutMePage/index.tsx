@@ -2,6 +2,7 @@
 import React from "react";
 import CardCurriculum from "../CardCurriculum";
 import CardHeaderCurriculum from "../CardHeaderCurriculum";
+import styles from "./AboutMePage.module.scss";
 import { iAboutMePage } from "../../../interfaces/iAboutMePage";
 
 export default function AboutMePage(props: iAboutMePage) {
@@ -21,7 +22,7 @@ export default function AboutMePage(props: iAboutMePage) {
         ))}
 
       <CardCurriculum title="Formações e Idiomas:">
-        <div style={{ width: "100%", padding: "2%" }}>
+        <div className={styles.containerBox}>
           {props.academy &&
             props.academy.map((element) => {
               return (
@@ -44,67 +45,31 @@ export default function AboutMePage(props: iAboutMePage) {
         </div>
       </CardCurriculum>
       <CardCurriculum title="Soft-skills:">
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
+        <div className={styles.skillsBox}>
           {props.skills &&
-            props.skills.map(
-              (element) =>
-                element.type === "Soft-Skill" && (
-                  <div
-                    style={{
-                      padding: "2%",
-                      margin: "1.5%",
-                      fontSize: "1.3em",
-                      backgroundColor: "rgb(24, 24, 24)",
-                      color: "white",
-                      borderRadius: "5px",
-                      textAlign: "center",
-                    }}
-                    key={element._id}
-                  >
-                    {element.skill}
-                  </div>
-                )
-            )}
+            props.skills
+              .filter(({ type }) => type === "Soft-Skill")
+              .map((element) => (
+                <div className={styles.skillElement} key={element._id}>
+                  {element.skill}
+                </div>
+              ))}
         </div>
       </CardCurriculum>
       <CardCurriculum title="Hard-skills:">
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
+        <div className={styles.skillsBox}>
           {props.skills &&
-            props.skills.map(
-              (element) =>
-                element.type === "Hard-Skill" && (
-                  <div
-                    style={{
-                      padding: "2%",
-                      margin: "1.5%",
-                      fontSize: "1.3em",
-                      backgroundColor: "rgb(24, 24, 24)",
-                      color: "white",
-                      borderRadius: "5px",
-                      textAlign: "center",
-                    }}
-                    key={element._id}
-                  >
-                    {element.skill}
-                  </div>
-                )
-            )}
+            props.skills
+              .filter(({ type }) => type === "Hard-Skill")
+              .map((element) => (
+                <div className={styles.skillElement} key={element._id}>
+                  {element.skill}
+                </div>
+              ))}
         </div>
       </CardCurriculum>
       <CardCurriculum title="Experiências:">
-        <div style={{ width: "100%", padding: "2%" }}>
+        <div className={styles.containerBox}>
           {props.experience &&
             props.experience.map((element) => {
               return (
@@ -121,7 +86,6 @@ export default function AboutMePage(props: iAboutMePage) {
                 </>
               );
             })}
-
         </div>
       </CardCurriculum>
     </>
