@@ -1,6 +1,6 @@
 import Router from "next/router";
 import { useEffect, useState } from "react";
-import { fetchAdminAPI, fetchAPI } from "./helpers/fetchAPI";
+import { fetchAdminAPI, fetchAPI } from "../patterns/api/fetchAPI";
 import { iSkills } from "../interfaces/iAboutMePage";
 
 export default function useSkills() {

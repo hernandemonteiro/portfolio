@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchAPI } from "./helpers/fetchAPI";
+import { fetchAPI } from "../patterns/api/fetchAPI";
 import { iOwnerInfo } from "../interfaces/iAboutMePage";
 
 export default function useOwnerInfos() {

@@ -1,7 +1,7 @@
 import Router from "next/router";
 import { useEffect, useState } from "react";
-import { fetchAdminAPI, fetchAPI } from "./helpers/fetchAPI";
 import { iAcademy } from "../interfaces/iAboutMePage";
+import { fetchAPI, fetchAdminAPI } from "../patterns/api/fetchAPI";
 
 export default function useAcademy() {
   const [academyList, setAcademyList] = useState<[iAcademy]>();
