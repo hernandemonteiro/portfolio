@@ -5,20 +5,10 @@ import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
 import ArticleForm from "../ArticleForm";
-import {useView} from "../../../../providers/viewContext";
+import { useView } from "../../../../providers/viewContext";
+import { iArticleTable } from "../../../../interfaces/iArticleTable";
 
-interface ArticleTableProps {
-  articles: [
-    {
-      _id: string;
-      title: string;
-      resume: string;
-      content: string;
-    }
-  ];
-}
-
-export default function ArticleTable(props: ArticleTableProps) {
+export default function ArticleTable(props: iArticleTable) {
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const { setView } = useView();
   const {

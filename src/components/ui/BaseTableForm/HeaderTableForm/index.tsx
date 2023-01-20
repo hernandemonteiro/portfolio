@@ -1,10 +1,7 @@
 import React from "react";
+import { iHeaderTableForm } from "../../../../interfaces/iHeaderTableForm";
 
-interface HeaderTableFormProps {
-  title: string;
-}
-
-export default function HeaderTableForm(props: HeaderTableFormProps) {
+export default function HeaderTableForm(props: iHeaderTableForm) {
   return (
     <div
       style={{

@@ -5,14 +5,10 @@ import FormSkill from "../FormSkill";
 import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
-import {useView} from "../../../../providers/viewContext";
-import { iSkills } from "../../../about-me/AboutMePage/iAboutMePage";
+import { useView } from "../../../../providers/viewContext";
+import { iTableSkills } from "../../../../interfaces/iTableSkills";
 
-interface TableSkillsProps {
-  data: Array<iSkills> | undefined;
-  title?: string;
-}
-export default function TableSkills(props: TableSkillsProps) {
+export default function TableSkills(props: iTableSkills) {
   const { setView } = useView();
   const { pagination, botaoMostrarMais } = usePagination(3, 3);
   const {

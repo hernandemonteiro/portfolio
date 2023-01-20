@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./LoginPage.module.scss";
-interface LoginPageProps {
-  children: React.ReactNode;
-}
+import { iLoginPage } from "../../../../interfaces/iLoginPage";
 
-export default function LoginPage(props: LoginPageProps) {
+export default function LoginPage(props: iLoginPage) {
   return <div className={styles.LoginPage}>{props.children}</div>;
 }

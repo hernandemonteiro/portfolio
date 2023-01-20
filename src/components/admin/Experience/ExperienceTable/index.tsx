@@ -5,12 +5,10 @@ import BaseTableForm from "../../../ui/BaseTableForm";
 import ContentTableForm from "../../../ui/BaseTableForm/ContentTableForm";
 import ElementOrForm from "../../../ui/ElementOrForm";
 import ExperienceForm from "../ExperienceForm";
-import {useView} from "../../../../providers/viewContext";
-import { iExperience } from "../../../about-me/AboutMePage/iAboutMePage";
+import { useView } from "../../../../providers/viewContext";
+import { iExperienceTable } from "../../../../interfaces/iExperienceTable";
 
-export default function ExperienceTable(props: {
-  experience: [iExperience] | undefined;
-}) {
+export default function ExperienceTable(props: iExperienceTable) {
   const { setView } = useView();
   const { pagination, botaoMostrarMais } = usePagination(5, 5);
   const {

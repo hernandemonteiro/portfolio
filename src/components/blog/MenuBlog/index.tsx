@@ -14,6 +14,10 @@ import ExternalLinkMenuBlog from "./ExternalLinkMenuBLog";
 export default function MenuBlog(props: { children: React.ReactElement }) {
   const [menuView, setMenuView] = useState(false);
 
+  function showHideMenu() {
+    menuView ? setMenuView(false) : setMenuView(true);
+  }
+
   return (
     <>
       {menuView ? (
@@ -58,12 +62,7 @@ export default function MenuBlog(props: { children: React.ReactElement }) {
       ) : (
         <>{props.children}</>
       )}
-      <button
-        onClick={() => {
-          menuView ? setMenuView(false) : setMenuView(true);
-        }}
-        className={styles.openCloseMenuBlog}
-      >
+      <button onClick={showHideMenu} className={styles.openCloseMenuBlog}>
         {menuView ? <AiOutlineClose /> : <AiOutlineMenu />}
       </button>
     </>

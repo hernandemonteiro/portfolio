@@ -2,7 +2,7 @@
 import React from "react";
 import CardCurriculum from "../CardCurriculum";
 import CardHeaderCurriculum from "../CardHeaderCurriculum";
-import { iAboutMePage } from "./iAboutMePage";
+import { iAboutMePage } from "../../../interfaces/iAboutMePage";
 
 export default function AboutMePage(props: iAboutMePage) {
   return (

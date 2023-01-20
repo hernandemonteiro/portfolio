@@ -1,12 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import MenuIcon from "../MenuIcon";
+import { iMenuIconLink } from "../../../interfaces/iMenuIconLink";
 
-interface MenuIconLinkProps {
-  children: React.ReactNode;
-  to: string;
-}
-export default function MenuIconLink(props: MenuIconLinkProps) {
+export default function MenuIconLink(props: iMenuIconLink) {
   return (
     <MenuIcon>
       <Link href={props.to}>{props.children}</Link>

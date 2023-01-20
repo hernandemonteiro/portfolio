@@ -2,20 +2,9 @@ import React, { useState } from "react";
 import InputDefault from "../../../ui/Inputs";
 import BaseForm from "../../BaseForm";
 import ArticlePreview from "../ArticlePreview";
+import { iArticleForm } from "../../../../interfaces/iArticleForm";
 
-interface ArticleFormProps {
-  onChangeTitle: (e) => void;
-  title: string;
-  onChangeResume: (e) => void;
-  resume: string;
-  onChangeContent: (e) => void;
-  content: string;
-  onChangeIdArticle?: (e) => void;
-  idArticle?: string | boolean;
-  onSubmit: (e) => void;
-}
-
-export default function ArticleForm(props: ArticleFormProps) {
+export default function ArticleForm(props: iArticleForm) {
   const [preview, setPreview] = useState(false);
 
   return (

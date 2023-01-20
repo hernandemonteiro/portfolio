@@ -3,13 +3,9 @@ import React from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import styles from "./CardArticle.module.scss";
+import { iCardArticle } from "../../../../interfaces/iCardArticle";
 
-interface CardArticleProps {
-  route: string;
-  title: string;
-  shortdescription: string;
-}
-export default function CardArticle(props: CardArticleProps) {
+export default function CardArticle(props: iCardArticle) {
   return (
     <Link href={`${props.route}`}>
       <Card

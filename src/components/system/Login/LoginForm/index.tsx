@@ -2,15 +2,9 @@ import React from "react";
 import { Button } from "../../../ui/Buttons";
 import InputDefault from "../../../ui/Inputs";
 import styles from "./LoginForm.module.scss";
+import { iLoginForm } from "../../../../interfaces/iLoginForm";
 
-interface LoginFormProps {
-  onSubmit: (e) => void;
-  onChangeEmail: (e) => void;
-  onChangePassword: (e) => void;
-  message?: string;
-}
-
-export default function LoginForm(props: LoginFormProps) {
+export default function LoginForm(props: iLoginForm) {
   return (
     <form onSubmit={props.onSubmit} className={styles.form}>
       {props.message}

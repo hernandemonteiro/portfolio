@@ -1,19 +1,10 @@
 import React from "react";
-interface MessageFormProps {
-  message: string;
-}
-export default function MessageForm(props: MessageFormProps) {
+import styles from "MessageForm.module.scss";
+import { iMessageForm } from "../../../interfaces/iMessageForm";
+
+export default function MessageForm(props: iMessageForm) {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "70vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        textTransform: "uppercase",
-      }}
-    >
+    <div className={styles.MessageForm}>
       <h2>{props.message}</h2>
     </div>
   );

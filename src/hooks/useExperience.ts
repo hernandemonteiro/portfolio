@@ -1,7 +1,7 @@
 import Router from "next/router";
 import { useEffect, useState } from "react";
 import { fetchAPI } from "./helpers/fetchAPI";
-import { iExperience } from "../components/about-me/AboutMePage/iAboutMePage";
+import { iExperience } from "../interfaces/iAboutMePage";
 
 export default function useExperience() {
   const [experienceList, setExperienceList] = useState<[iExperience]>();
