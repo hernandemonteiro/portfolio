@@ -10,7 +10,12 @@ export default function LoaderAdmin() {
         justifyContent: "center",
       }}
     >
-      <h1 style={{ color: "white" }}>Loading...</h1>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={"/loading.svg"}
+        className="loadingAnimation"
+        alt="loading image"
+      />
     </div>
   );
 }
