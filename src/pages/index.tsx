@@ -5,6 +5,8 @@ import usePagination from "../hooks/usePagination";
 import Menu from "../components/blog/MenuBlog";
 import useArticles from "../hooks/useArticles";
 import LoaderAdmin from "../components/ui/Loading";
+import Container from "../components/Container";
+import Header from "../components/blog/Header";
 
 export default function Home() {
   const { articlesList } = useArticles();
@@ -14,7 +16,7 @@ export default function Home() {
     <>
       {Object.keys(articlesList[0]).length > 0 ? (
         <Menu>
-          <TemplateBlog>
+          <Container Header={<Header />}>
             <>
               {articlesList.slice(0, pagination).map((element) => {
                 return (
@@ -28,7 +30,7 @@ export default function Home() {
               })}
               {botaoMostrarMais(articlesList.length)}
             </>
-          </TemplateBlog>
+          </Container>
         </Menu>
       ) : (
         <LoaderAdmin />
