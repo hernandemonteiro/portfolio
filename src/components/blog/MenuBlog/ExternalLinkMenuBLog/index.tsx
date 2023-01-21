@@ -1,11 +1,8 @@
 import React from "react";
 import MenuIconExternalLink from "../../../ui/MenuIconExternalLink";
+import { iExternalLinkMenuBlog } from "../../../../interfaces/iExternalLinkMenuBlog";
 
-function ExternalLinkMenuBlog(props: {
-  icon: React.ReactNode;
-  name: string;
-  link: string;
-}) {
+function ExternalLinkMenuBlog(props: iExternalLinkMenuBlog) {
   return (
     <>
       <hr />

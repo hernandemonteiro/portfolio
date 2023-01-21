@@ -1,16 +1,10 @@
 import React from "react";
 import { Button } from "../Buttons";
 import MessageForm from "../MessageForm";
-import useView from "../../../providers/view/viewContext";
+import { useView } from "../../../providers/viewContext";
+import { iElementOrForm } from "../../../interfaces/iElementOrForm";
 
-interface ElementOrFormProps {
-  element: any;
-  changeViewFunction?: () => void;
-  form: any;
-  message: string;
-}
-
-export default function ElementOrForm(props: ElementOrFormProps) {
+export default function ElementOrForm(props: iElementOrForm) {
   const { view, setView } = useView();
 
   function tableOrFormView() {

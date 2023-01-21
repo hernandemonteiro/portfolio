@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchAPI } from "./helpers/fetchAPI";
-import { iOwnerInfo } from "../components/about-me/AboutMePage/iAboutMePage";
+import { fetchAPI } from "../patterns/api/fetchAPI";
+import { iOwnerInfo } from "../interfaces/iAboutMePage";
 
 export default function useOwnerInfos() {
   const [ownerInfoList, setOwnerInfoList] = useState<[iOwnerInfo]>();

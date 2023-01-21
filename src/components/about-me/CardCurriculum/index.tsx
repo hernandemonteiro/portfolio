@@ -2,13 +2,9 @@ import React from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { Stack, Divider } from "@mui/material";
+import { iCardCurriculum } from "../../../interfaces/iCardCurriculum";
 
-interface CardCurriculumProps {
-  children: any;
-  title: string;
-}
-
-export default function CardCurriculum(props: CardCurriculumProps) {
+export default function CardCurriculum(props: iCardCurriculum) {
   return (
     <Card
       sx={{

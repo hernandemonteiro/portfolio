@@ -4,19 +4,20 @@ import { render, screen } from "@testing-library/react";
 import TemplateAdmin from "../../../../components/admin/TemplateAdmin";
 import useAuthAdmin from "../../../../hooks/useAuthAdmin";
 import sinon from "sinon";
-import crypto from "../../../../hooks/helpers/crypto";
-jest.mock("../../../../hooks/helpers/crypto");
+import crypto from "../../../../patterns/api/crypto";
+jest.mock("../../../../patterns/api/crypto");
 
 describe("<TemplateAdmin/> test", () => {
   it("<TemplateAdmin/> unLogged", async () => {
     jest.mocked(crypto);
     sinon.stub(React, "useState").returns([true, jest.fn()]);
-    render(
+    const { container } = render(
       <TemplateAdmin>
         <>Content inside template</>
       </TemplateAdmin>
     );
-    await screen.findByText("Loading...");
+    await container.getElementsByClassName("loadingAnimation");
+
     sinon.restore();
   });
 

@@ -1,11 +1,8 @@
 import React from "react";
 import MenuIcon from "../MenuIcon";
+import { iMenuIconLink } from "../../../interfaces/iMenuIconLink";
 
-interface MenuIconLinkProps {
-  children: React.ReactNode | string;
-  to: string;
-}
-export default function MenuIconExternalLink(props: MenuIconLinkProps) {
+export default function MenuIconExternalLink(props: iMenuIconLink) {
   return (
     <MenuIcon>
       <a href={props.to} target="_blank" rel="noreferrer">

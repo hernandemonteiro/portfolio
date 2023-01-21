@@ -1,5 +1,5 @@
 import React from "react";
-import { iAcademy } from "./iAcademy";
+import { iAcademy } from "../../../interfaces/iAcademy";
 import BaseTableForm from "../../ui/BaseTableForm";
 import ElementOrForm from "../../ui/ElementOrForm";
 import AcademyForm from "./AcademyForm";

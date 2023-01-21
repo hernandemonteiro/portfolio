@@ -1,14 +1,8 @@
 import React from "react";
 import styles from "./Buttons.module.scss";
+import { iButton } from "../../../interfaces/iButton";
 
-interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
-  type?: "submit" | "button" | "reset";
-  width?: string;
-}
-export function Button(props: ButtonProps) {
+export function Button(props: iButton) {
   return (
     <button
       type={props.type}

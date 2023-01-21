@@ -1,6 +1,6 @@
 import Router from "next/router";
 import { useEffect, useState } from "react";
-import { fetchAdminAPI, fetchAPI, tokenAPI } from "./helpers/fetchAPI";
+import { fetchAdminAPI, fetchAPI, tokenAPI } from "../patterns/api/fetchAPI";
 
 export default function useArticles() {
   const [articlesList, setArticlesList] = useState<[any]>([{}]);

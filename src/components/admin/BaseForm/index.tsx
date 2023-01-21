@@ -1,14 +1,8 @@
 import React from "react";
 import { Button } from "../../ui/Buttons";
+import { iBaseForm } from "../../../interfaces/iBaseForm";
 
-interface BaseFormProps {
-  onSubmit: (e) => void;
-  children: any;
-  titleHeadForm: string;
-  titleButtonSubmit: string;
-}
-
-export default function BaseForm(props: BaseFormProps) {
+export default function BaseForm(props: iBaseForm) {
   return (
     <div
       style={{

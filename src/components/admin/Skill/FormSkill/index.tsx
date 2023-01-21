@@ -1,20 +1,9 @@
 import React from "react";
 import InputDefault from "../../../ui/Inputs";
 import BaseForm from "../../BaseForm";
+import { iFormSkill } from "../../../../interfaces/iFormSkill";
 
-interface FormSkillProps {
-  onChangeIdSkill: (e) => void;
-  valueIdSkill: string | boolean;
-  onChangeType: (e) => void;
-  valueType: string;
-  onChangeSkill: (e) => void;
-  valueSkill: string;
-  onSubmit: (e) => void;
-  viewForm: () => void;
-  titleSendButton: string;
-}
-
-export default function FormSkill(props: FormSkillProps) {
+export default function FormSkill(props: iFormSkill) {
   return (
     <BaseForm
       onSubmit={props.onSubmit}

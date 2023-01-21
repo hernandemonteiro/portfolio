@@ -1,12 +1,9 @@
 import React from "react";
 import styles from "./Template.module.css";
 import Header from "../Header";
+import { iTemplateBlog } from "../../../interfaces/iTemplateBlog";
 
-interface TemplateBlogProps {
-  children?: any;
-}
-
-export default function TemplateBlog(props: TemplateBlogProps) {
+export default function TemplateBlog(props: iTemplateBlog) {
   return (
     <div className={styles.container}>
       <main className={styles.main}>

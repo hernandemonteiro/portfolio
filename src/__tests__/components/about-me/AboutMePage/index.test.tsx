@@ -31,10 +31,11 @@ describe("<AboutMePage/> test", () => {
         ]}
         experience={[
           {
+            _id: "_idFake",
             title: "title of profession",
             company: "business",
-            since: "since the job",
-            until: "until",
+            since: 2020,
+            until: 2022,
           },
         ]}
       />

@@ -1,7 +1,7 @@
 import React from "react";
 import InputDefault from "../../../ui/Inputs";
 import BaseForm from "../../BaseForm";
-import { iAcademyForm } from "./iAcademyForm";
+import { iAcademyForm } from "../../../../interfaces/iAcademyForm";
 
 export default function AcademyForm(props: iAcademyForm) {
   return (

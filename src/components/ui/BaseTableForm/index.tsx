@@ -1,17 +1,12 @@
 import React from "react";
 import HeaderTableForm from "./HeaderTableForm";
 import styles from "./BaseTableForm.module.scss";
+import { iBaseTableForm } from "../../../interfaces/iBaseTableForm";
 
-interface BaseTableFormProps {
-  children: any;
-  title: string;
-}
-export default function BaseTableForm(props: BaseTableFormProps) {
+export default function BaseTableForm(props: iBaseTableForm) {
   return (
     <>
-      <HeaderTableForm
-        title={props.title}
-      />
+      <HeaderTableForm title={props.title} />
       <table className={styles.table}>
         <thead>
           <tr>

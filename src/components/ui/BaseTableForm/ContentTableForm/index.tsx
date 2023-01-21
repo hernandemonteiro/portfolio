@@ -1,14 +1,9 @@
 import React from "react";
 import { HiOutlineTrash, HiPencilAlt } from "react-icons/hi";
 import styles from "../BaseTableForm.module.scss";
+import { iContentTableForm } from "../../../../interfaces/iContentTableForm";
 
-interface ContentTableFormProps {
-  description: string;
-  onClickEdit: () => void;
-  onClickTrash: () => void;
-}
-
-export default function ContentTableForm(props: ContentTableFormProps) {
+export default function ContentTableForm(props: iContentTableForm) {
   return (
     <tr>
       <td>{props.description}</td>

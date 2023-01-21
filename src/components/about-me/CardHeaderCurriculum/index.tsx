@@ -4,16 +4,9 @@ import { Avatar, Box, Stack, Divider } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import styles from "./CardHeaderCurriculum.module.scss";
 import { Markup } from "react-render-markup";
+import { iCardHeaderCurriculum } from "../../../interfaces/iCardHeaderCurriculum";
 
-interface CardHeaderCurriculumProps {
-  name: string;
-  resume: string;
-  title: string;
-  birthday: string;
-  email: string;
-  picture: string;
-}
-export default function CardHeaderCurriculum(props: CardHeaderCurriculumProps) {
+export default function CardHeaderCurriculum(props: iCardHeaderCurriculum) {
   return (
     <>
       <Avatar

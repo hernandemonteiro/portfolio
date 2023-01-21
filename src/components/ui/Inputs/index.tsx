@@ -1,22 +1,8 @@
 import React from "react";
 import styles from "./Inputs.module.scss";
+import { iInputDefault } from "../../../interfaces/iInputDefault";
 
-interface InputDefaultProps {
-  type?: "text" | "password" | "email" | "number" | "date" | "button";
-  onChange?: any;
-  onClick?: () => void;
-  required?: boolean;
-  width?: string;
-  label?: string;
-  hidden?: boolean;
-  value?: any;
-  placeholder?: string;
-  min?: number;
-  minLength?: number;
-  autoFocus?: boolean;
-}
-
-export default function InputDefault(props: InputDefaultProps) {
+export default function InputDefault(props: iInputDefault) {
   return (
     <div className={styles.input} style={{ width: props.width }}>
       <label className={styles.label}>{props.label}</label>

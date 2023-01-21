@@ -6,16 +6,9 @@ import Head from "next/head";
 import Image from "next/image";
 import ComponentOrDocs from "doc_docs";
 import logo from "../../public/favicon.png";
+import { AppProps } from "next/app";
 
-function MyApp({
-  Component,
-  pageProps,
-  router,
-}: {
-  Component: any;
-  pageProps: any;
-  router: any;
-}) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <React.StrictMode>
       <Head>
