@@ -11,12 +11,12 @@ describe("<TemplateAdmin/> test", () => {
   it("<TemplateAdmin/> unLogged", async () => {
     jest.mocked(crypto);
     sinon.stub(React, "useState").returns([true, jest.fn()]);
-    const { container } = render(
+    render(
       <TemplateAdmin>
         <>Content inside template</>
       </TemplateAdmin>
     );
-    await container.getElementsByClassName("lottie");
+    await screen.findByText("Loading...");
     sinon.restore();
   });
 

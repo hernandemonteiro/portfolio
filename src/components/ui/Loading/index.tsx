@@ -1,6 +1,4 @@
 import React from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
-import loadingAnimation from "../../../animation/loading.json";
 
 export default function LoaderAdmin() {
   return (
@@ -12,7 +10,7 @@ export default function LoaderAdmin() {
         justifyContent: "center",
       }}
     >
-      <Player src={loadingAnimation} className="lottie" loop autoplay />
+      <h1 style={{ color: "white" }}>Loading...</h1>
     </div>
   );
 }
