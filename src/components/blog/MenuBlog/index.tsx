@@ -1,11 +1,11 @@
 import {
-  faGithub,
-  faInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { faUser, faNewspaper } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  AiOutlineClose,
+  AiOutlineMenu,
+  AiOutlineGithub,
+  AiFillInstagram,
+  AiFillLinkedin,
+} from "react-icons/ai";
+import { FaUserCircle, FaNewspaper } from "react-icons/fa";
 import React, { useState } from "react";
 import MenuIconLink from "../../ui/MenuIconLink";
 import styles from "./MenuBlog.module.scss";
@@ -25,13 +25,13 @@ export default function MenuBlog(props: { children: React.ReactElement }) {
           <div className={styles.MenuBlogContainer}>
             <hr />
             <MenuIconLink to="/">
-              <FontAwesomeIcon icon={faNewspaper} fixedWidth /> | Artigos
+              <FaNewspaper /> | Artigos
             </MenuIconLink>
             <hr />
 
             <hr />
             <MenuIconLink to="/about-me">
-              <FontAwesomeIcon icon={faUser} fixedWidth /> | Sobre Mim
+              <FaUserCircle fontSize={30} /> | Sobre Mim
             </MenuIconLink>
             <hr />
 
@@ -42,18 +42,19 @@ export default function MenuBlog(props: { children: React.ReactElement }) {
             <hr/> */}
 
             <h2>Social Networks</h2>
+
             <ExternalLinkMenuBlog
-              icon={<FontAwesomeIcon icon={faGithub} fixedWidth />}
+              icon={<AiOutlineGithub />}
               name={"Github"}
               link={"https://github.com/hernandemonteiro"}
             />
             <ExternalLinkMenuBlog
-              icon={<FontAwesomeIcon icon={faInstagram} fixedWidth />}
+              icon={<AiFillInstagram />}
               name={"Instagram"}
               link={"https://www.instagram.com/monteiro.ops/"}
             />
             <ExternalLinkMenuBlog
-              icon={<FontAwesomeIcon icon={faLinkedin} fixedWidth />}
+              icon={<AiFillLinkedin />}
               name={"Linkedin"}
               link={"https://br.linkedin.com/in/hernande-monteiro"}
             />
