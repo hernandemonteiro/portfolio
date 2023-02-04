@@ -17,7 +17,3 @@
 <p align= "center"><a href="https://hernandemonteiro.vercel.app" target="_blank">GO TO PROJECT!</a></p>
 
 <hr>
-
-<!-- <p align= "center"><a href="https://hernandemonteiro.vercel.app/docs" target="_blank">FULL DOCUMENTATION!</a>
-
-<hr> -->

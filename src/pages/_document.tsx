@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="pt-BR">
       <Head>
-        <meta lang="pt-BR" charSet="utf-8"/>
+        <meta lang="pt-BR" charSet="utf-8" />
         <link rel="shortcut icon" href="../favicon.png" />
       </Head>
       <body>

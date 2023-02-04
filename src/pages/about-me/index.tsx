@@ -31,6 +31,7 @@ export default function Artigo() {
                 name="description"
                 content="Página de informações sobre o desenvolvedor Full-Stack, Hernande Monteiro. suas habilidades técnicas, experiências e skills."
               />
+              <meta name="robots" content="index, nofollow" />
             </Head>
 
             <AboutMePage

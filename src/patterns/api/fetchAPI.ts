@@ -7,6 +7,7 @@ export async function fetchAPI(route, method, body?) {
           method: method,
           headers: {
             "x-admin-access": await tokenAPI(),
+            "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify(body),
         }
@@ -24,6 +25,7 @@ export async function fetchAdminAPI(route, method, body?) {
           method: method,
           headers: {
             "x-admin-access": await tokenAPI(),
+            "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify(body),
         }

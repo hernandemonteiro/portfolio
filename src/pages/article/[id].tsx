@@ -20,6 +20,7 @@ export default function Artigo({ post }: iArticlePage) {
         <Head>
           <title>{post.title}</title>
           <meta name="description" content={post.resume} />
+          <meta name="robots" content="index, nofollow" />
         </Head>
         <div style={{ width: "70vw", wordWrap: "break-word" }}>
           <Markup markup={post.content} />
