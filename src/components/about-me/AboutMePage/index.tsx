@@ -1,93 +1,198 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import CardCurriculum from "../CardCurriculum";
-import CardHeaderCurriculum from "../CardHeaderCurriculum";
 import styles from "./AboutMePage.module.scss";
-import { iAboutMePage } from "../../../interfaces/iAboutMePage";
+import {
+  SiAmazonaws,
+  SiCss3,
+  SiCypress,
+  SiDocker,
+  SiGit,
+  SiGithub,
+  SiGithubactions,
+  SiHtml5,
+  SiJavascript,
+  SiJest,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiReact,
+  SiSass,
+  SiTypescript,
+} from "react-icons/si";
+import SoftSkillElement from "./SoftSkillElement";
+import CardProject from "./CardProject";
 
-export default function AboutMePage(props: iAboutMePage) {
+export default function AboutMePage() {
   return (
     <>
-      {props.ownerInfo &&
-        props.ownerInfo.map((element) => (
-          <CardHeaderCurriculum
-            key={element._id}
-            name={element.name}
-            resume={element.resume}
-            title={element.title}
-            birthday={element.birthday}
-            email={element.email}
-            picture={element.picture}
-          />
-        ))}
+      <div className={styles.presentation}>
+        <div className={styles.avatarImg} />
 
-      <CardCurriculum title="Formações e Idiomas:">
-        <div className={styles.containerBox}>
-          {props.academy &&
-            props.academy.map((element) => {
-              return (
-                <>
-                  <p key={element.title}>
-                    <b>{element.title}</b> - {element.foundation}
-                  </p>
-                  <img
-                    width={100}
-                    height={20}
-                    alt={element.title + " picture"}
-                    src={`http://img.shields.io/static/v1?label=${element.since.substr(
-                      0,
-                      4
-                    )}&message=${element.status}&color=&style=for-the-badge`}
-                  />
-                </>
-              );
-            })}
+        <div className={"text-center"}>
+          <h1 className="text-white">Hernande Monteiro</h1>
+          <h4 className="text-white">Full-Stack Developer</h4>
+          <div style={{ marginTop: "10%" }}>
+            <p className="text-white">
+              Apaixonado por tecnologia e inovação! 😍💻📱
+              <br />
+              Desde de 2019 descobrindo novas maneiras de transformar o mundo
+              com a programação.
+              <br />
+            </p>
+            <h4 className="text-white" style={{ marginTop: "10%" }}>
+              CONTATOS
+              <br />
+              <br />
+              monteiro1998@live.com
+              <br />
+              <br />
+              41 99917-5718
+            </h4>
+          </div>
         </div>
-      </CardCurriculum>
-      <CardCurriculum title="Soft-skills:">
-        <div className={styles.skillsBox}>
-          {props.skills &&
-            props.skills
-              .filter(({ type }) => type === "Soft-Skill")
-              .map((element) => (
-                <div className={styles.skillElement} key={element._id}>
-                  {element.skill}
-                </div>
-              ))}
-        </div>
-      </CardCurriculum>
-      <CardCurriculum title="Hard-skills:">
-        <div className={styles.skillsBox}>
-          {props.skills &&
-            props.skills
-              .filter(({ type }) => type === "Hard-Skill")
-              .map((element) => (
-                <div className={styles.skillElement} key={element._id}>
-                  {element.skill}
-                </div>
-              ))}
-        </div>
-      </CardCurriculum>
-      <CardCurriculum title="Experiências:">
-        <div className={styles.containerBox}>
-          {props.experience &&
-            props.experience.map((element) => {
-              return (
-                <>
-                  <p key={element.title}>
-                    <b>{element.company}</b> - {element.title}
-                  </p>
-                  <img
-                    width={100}
-                    height={25}
-                    alt={element.title + " picture"}
-                    src={`http://img.shields.io/static/v1?label=${element.since}&message=${element.until}&color=&style=for-the-badge`}
-                  />
-                </>
-              );
-            })}
-        </div>
-      </CardCurriculum>
+      </div>
+
+      <div className="page-height-full">
+        <CardCurriculum className={styles.skillsBox} title="Hard-skills">
+          <SiHtml5 className="languages-icon" color="orange" />
+          <SiCss3 className="languages-icon" color="aqua" />
+          <SiJavascript className="languages-icon" color="yellow" />
+          <SiTypescript className="languages-icon" color="aqua" />
+          <SiNodedotjs className="languages-icon" color="greenyellow" />
+          <SiReact className="languages-icon" color="aqua" />
+          <SiNextdotjs className="languages-icon" color="white" />
+          <SiDocker className="languages-icon" color="aqua" />
+          <SiSass className="languages-icon" color="pink" />
+          <SiCypress className="languages-icon" color="greenyellow" />
+          <SiJest className="languages-icon" color="orangered" />
+          <SiGithub className="languages-icon" color="white" />
+          <SiGit className="languages-icon" color="orangered" />
+          <SiMysql className="languages-icon" color="aqua" />
+          <SiMongodb className="languages-icon" color="greenyellow" />
+          <SiAmazonaws className="languages-icon" color="yellow" />
+          <SiGithubactions className="languages-icon" color="orange" />
+        </CardCurriculum>
+      </div>
+      <div className="page-height-full">
+        <CardCurriculum className={styles.skillsBox} title="Soft-skills">
+          <SoftSkillElement skill={"Inteligência Emocional"} />
+          <SoftSkillElement skill={"Criatividade"} />
+          <SoftSkillElement skill={"Autodidata"} />
+          <SoftSkillElement skill={"Empatia"} />
+          <SoftSkillElement skill={"Trabalho em Equipe"} />
+          <SoftSkillElement skill={"Dicotômico"} />
+          <SoftSkillElement skill={"Liderança"} />
+        </CardCurriculum>
+      </div>
+      <div className="page-height-full">
+        <CardCurriculum className={styles.containerBox} title="Formações">
+          <table>
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Tipo</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ensino Médio</td>
+                <td>Formação</td>
+                <td>Concluido</td>
+              </tr>
+              <tr>
+                <td>Eng. da Computação</td>
+                <td>Graduação</td>
+                <td>Trancado</td>
+              </tr>
+            </tbody>
+          </table>
+        </CardCurriculum>
+      </div>
+
+      <div className="page-height-full">
+        <CardCurriculum className={styles.containerBox} title="Idiomas">
+          <table>
+            <thead>
+              <tr>
+                <th>Idioma</th>
+                <th>Nivel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Portugês - Brasil</td>
+                <td>Fluente</td>
+              </tr>
+              <tr>
+                <td>Inglês</td>
+                <td>Intermediário</td>
+              </tr>
+              <tr>
+                <td>Espanhol</td>
+                <td>Básico</td>
+              </tr>
+            </tbody>
+          </table>
+        </CardCurriculum>
+      </div>
+      <div className="page-height-full">
+        <CardCurriculum className={styles.containerBox} title="Experiências">
+          <table>
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Inicio</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody className={styles.tbody}>
+              <tr>
+                <td>Bellinati Perez - Estágio</td>
+                <td>2017</td>
+                <td>2017</td>
+              </tr>
+              <tr>
+                <td>Espaço Gourmet</td>
+                <td>2018</td>
+                <td>2018</td>
+              </tr>
+              <tr>
+                <td>
+                  HM Solutions {"("}Freelancer{")"}
+                </td>
+                <td>2019</td>
+                <td>ATUALMENTE</td>
+              </tr>
+            </tbody>
+          </table>
+        </CardCurriculum>
+      </div>
+      <div className="page-height-full">
+        <CardCurriculum className={styles.projectBox} title="Projetos">
+          <CardProject
+            title={"Jobel Embalagens"}
+            className={styles.imgProjectJobel}
+            to="https://jobel-hernandemonteiro.vercel.app/"
+          />
+          <CardProject
+            title={"UI-Card"}
+            className={styles.imgProjectQR}
+            to="https://hernandemonteiro.github.io/qrcode-mentor/"
+          />
+        </CardCurriculum>
+      </div>
+      {/* <div className={styles.contactBox + " page-height-full"}>
+        <label>
+          Email
+          <p>monteiro1998@live.com</p>
+        </label>
+        <label>
+          Telefone
+          <p>monteiro1998@live.com</p>
+        </label>
+      </div> */}
     </>
   );
 }

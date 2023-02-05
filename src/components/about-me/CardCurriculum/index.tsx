@@ -1,31 +1,16 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import Typography from "@mui/material/Typography";
-import { Stack, Divider } from "@mui/material";
+import styles from "./CardCurriculum.module.scss";
 import { iCardCurriculum } from "../../../interfaces/iCardCurriculum";
 
 export default function CardCurriculum(props: iCardCurriculum) {
   return (
-    <Card
-      sx={{
-        margin: "2%",
-        width: "100%",
-      }}
-    >
-      <Typography fontWeight={700} margin={2}>
-        {props.title}
-      </Typography>
-      <Divider />
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="space-around"
-        sx={{
-          p: 2,
-        }}
-      >
+    <div className={styles.CardCurriculum}>
+      <div className={styles.TitleCard}>
+        <h1 className="text-white">{props.title}</h1>
+      </div>
+      <div className={styles.CardContent + " " + props.className}>
         {props.children}
-      </Stack>
-    </Card>
+      </div>
+    </div>
   );
 }
