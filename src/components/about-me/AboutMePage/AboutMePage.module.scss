@@ -1,20 +1,86 @@
 .containerBox {
   width: 100%;
-  padding: 2%;
 }
 
 .skillsBox {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 2%;
 }
 
-.skillElement {
-  padding: 2%;
-  margin: 1.5%;
-  font-size: 1.3em;
-  background-color: rgb(2, 2, 24);
+.avatarImg {
+  width: 17vw;
+  height: 17vw;
+  border-radius: 50%;
+  background-image: url("https://www.datocms-assets.com/76860/1659202565-download.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+@media (max-width: 600px) {
+  .avatarImg {
+    width: 35vw;
+    height: 35vw;
+  }
+}
+
+.ImageGithubStats {
+  width: 45%;
+  margin: 2%;
+}
+
+.presentation {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.projectBox {
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 7%;
+  flex-wrap: wrap;
+}
+
+.contactBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   color: white;
-  border-radius: 5px;
   text-align: center;
+  label {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    p {
+      text-transform: lowercase;
+    }
+  }
+}
+
+// images project
+
+.baseProjectImg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-position: 100%;
+}
+
+.imgProjectQR {
+  @extend .baseProjectImg;
+  background-image: url("../../../../public/images/projects/projectQR.png");
+}
+
+.imgProjectJobel {
+  @extend .baseProjectImg;
+  background-image: url("../../../../public/images/projects/jobel1.png");
 }

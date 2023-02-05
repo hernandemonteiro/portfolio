@@ -1,4 +1,5 @@
 export interface iCardCurriculum {
-  children: React.ReactNode;
   title: string;
+  className?: string;
+  children: React.ReactNode;
 }

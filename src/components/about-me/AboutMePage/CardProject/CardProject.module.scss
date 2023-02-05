@@ -1,0 +1,31 @@
+.card {
+  width: 400px;
+  margin: 1%;
+  &:hover {
+    transform: scale(1.05);
+    .titleProject {
+      color: greenyellow;
+    }
+  }
+}
+
+.cardProject {
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  border-radius: 7px;
+}
+
+.titleProject {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+@media (max-width: 400px) {
+  .card {
+    margin: 4%;
+  }
+}

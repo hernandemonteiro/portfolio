@@ -37,3 +37,61 @@ hr {
   margin: 2%;
   color: black;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+.languages-icon {
+  font-size: 4em;
+  margin: 3%;
+}
+
+.page-height-full {
+  margin-bottom: 10%;
+}
+
+.page-height-semi-full {
+  height: 90vh;
+}
+
+.Container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 8em;
+}
+
+@media (max-width: 800px) {
+  .Container {
+    padding: 0 0.4em;
+  }
+
+  .page-height-full {
+    margin-bottom: 30%;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+}
+
+table {
+  margin-top: 7%;
+  width: 85vw;
+  color: white;
+  text-align: center;
+
+  td,
+  th {
+    border-top: 1px solid #fafafa;
+    user-select: none;
+    border-bottom: 1px solid #fafafa;
+    padding: 2%;
+  }
+}
