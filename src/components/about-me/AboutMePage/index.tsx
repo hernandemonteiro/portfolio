@@ -16,12 +16,15 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
+  SiPostgresql,
+  SiPrisma,
   SiReact,
   SiSass,
+  SiSequelize,
   SiTypescript,
 } from "react-icons/si";
-import SoftSkillElement from "./SoftSkillElement";
-import CardProject from "./CardProject";
+import SoftSkillElement from "../SoftSkillElement";
+import CardProject from "../CardProject";
 
 export default function AboutMePage() {
   return (
@@ -69,9 +72,12 @@ export default function AboutMePage() {
           <SiGithub className="languages-icon" color="white" />
           <SiGit className="languages-icon" color="orangered" />
           <SiMysql className="languages-icon" color="aqua" />
+          <SiPostgresql className="languages-icon" color="white" />
           <SiMongodb className="languages-icon" color="greenyellow" />
           <SiAmazonaws className="languages-icon" color="yellow" />
           <SiGithubactions className="languages-icon" color="orange" />
+          <SiSequelize className="languages-icon" color="aqua" />
+          <SiPrisma className="languages-icon" color="white" />
         </CardCurriculum>
       </div>
       <div className="page-height-full">
@@ -183,16 +189,6 @@ export default function AboutMePage() {
           />
         </CardCurriculum>
       </div>
-      {/* <div className={styles.contactBox + " page-height-full"}>
-        <label>
-          Email
-          <p>monteiro1998@live.com</p>
-        </label>
-        <label>
-          Telefone
-          <p>monteiro1998@live.com</p>
-        </label>
-      </div> */}
     </>
   );
 }

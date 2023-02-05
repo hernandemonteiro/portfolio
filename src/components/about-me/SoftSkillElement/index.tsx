@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SoftSkillElement.module.scss";
-import { iSoftSkillElement } from "../../../../interfaces/iSoftSkillElement";
+import { iSoftSkillElement } from "../../../interfaces/iSoftSkillElement";
 
 function SoftSkillElement(props: iSoftSkillElement) {
   return (
