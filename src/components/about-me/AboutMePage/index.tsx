@@ -23,8 +23,8 @@ import {
   SiSequelize,
   SiTypescript,
 } from "react-icons/si";
-import SoftSkillElement from "./SoftSkillElement";
-import CardProject from "./CardProject";
+import SoftSkillElement from "../SoftSkillElement";
+import CardProject from "../CardProject";
 
 export default function AboutMePage() {
   return (
@@ -189,16 +189,6 @@ export default function AboutMePage() {
           />
         </CardCurriculum>
       </div>
-      {/* <div className={styles.contactBox + " page-height-full"}>
-        <label>
-          Email
-          <p>monteiro1998@live.com</p>
-        </label>
-        <label>
-          Telefone
-          <p>monteiro1998@live.com</p>
-        </label>
-      </div> */}
     </>
   );
 }
