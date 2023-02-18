@@ -6,7 +6,7 @@ function SoftSkillsPage() {
   return (
     <TemplatePage
       title={'Hernande Monteiro - Soft-Skills'}
-      description={''}
+      description="Conheça aqui todas as Soft-Skills de Hernande Monteiro, que se desenvolve sempre para alcançar um perfil de profissional excelente."
       HomeMenu
     >
       <SoftSkills />

@@ -4,7 +4,11 @@ import Academic from '../../components/Academic';
 
 function AcademicPage() {
   return (
-    <TemplatePage HomeMenu title="Hernande Monteiro - Formações" description="">
+    <TemplatePage
+      HomeMenu
+      title="Hernande Monteiro - Formações"
+      description="Cursos e Formações de Hernande Monteiro, aqui você sabe um pouco sobre a trajetória de estudo de Hernande."
+    >
       <Academic />
     </TemplatePage>
   );
