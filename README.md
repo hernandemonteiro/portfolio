@@ -1,4 +1,4 @@
-<h1 align= "center">Hernande Monteiro - Personal Portfolio</h1>
+<h1 align= "center">Hernande Monteiro - Dev. Portfolio</h1>
 <p align="center">
 <img src="./public/favicon.png" alt="Hernande Monteiro Logotipo" style="width: 50%;height: 50%"/>
 </p>
@@ -10,7 +10,7 @@
 
 <hr>
 
-<p  align= "center">This project is a portfolio to showcase my skills and knowledge.</p>
+<p  align= "center">This project is a portfolio to showcase my skills and knowledges.</p>
 
 <hr>
 

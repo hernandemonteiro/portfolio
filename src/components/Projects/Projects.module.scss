@@ -1,0 +1,29 @@
+@import "../../styles/base.scss";
+
+.projectBox {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2%;
+    flex-wrap: wrap;
+}
+
+// images project
+
+.baseProjectImg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-position: 100%;
+    z-index: $Zindex;
+}
+
+.imgProjectQR {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/projectQR.png");
+}
+
+.imgProjectJobel {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/jobel1.png");
+}

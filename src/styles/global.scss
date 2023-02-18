@@ -1,0 +1,117 @@
+@import "./base.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $Cormorant, sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $blackBackground;
+  // cursor: url("../../public/images/system/icons8-cursor-50.png"), auto;
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grayDefault;
+    border-radius: 20px;
+    border: 2px solid $blackBackground;
+  }
+}
+
+footer {
+  width: 100%;
+  p {
+    text-align: center;
+    color: #fafafa;
+  }
+}
+
+a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+hr {
+  margin: 2%;
+  color: black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+
+.page-height-full {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-height-semi-full {
+  height: 90vh;
+}
+
+.Container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 8em;
+}
+
+table {
+  margin-top: 2%;
+  width: 100%;
+  color: white;
+  text-align: center;
+
+  td,
+  th {
+    user-select: none;
+    padding: 3%;
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    background-color: rgba(250, 250, 250, 0.02);
+    margin: 2%;
+  }
+
+  td {
+    font-weight: bold;
+  }
+}
+
+main {
+  z-index: $Zindex;
+}
+
+@media (max-width: 800px) {
+  .Container {
+    width: 100vw;
+    justify-content: center;
+    padding: 0 0.1em;
+  }
+
+  .page-height-full {
+    margin-bottom: 30%;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+}

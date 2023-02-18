@@ -1,0 +1,41 @@
+@import "../../styles/base.scss";
+
+.card {
+  width: 400px;
+  margin: 1%;
+  z-index: $Zindex;
+
+  &:hover {
+    transform: scale(1.05);
+    .titleProject {
+      color: greenyellow;
+    }
+  }
+}
+
+.cardProject {
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  border-radius: 7px;
+  
+}
+
+.titleProject {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 4%;
+  h4 {
+    font-weight: bold;
+  }
+  
+}
+
+@media (max-width: 400px) {
+  .card {
+    margin: 4%;
+  }
+}

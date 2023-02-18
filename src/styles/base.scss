@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap");
+// fonts:
+$Cormorant: Cormorant, sans-serif;
+
+// colors:
+$blackBackground: rgb(24, 24, 24);
+$grayDefault: #706d6d;
+$Zindex: 5;
+
+
+
+// component bases: 
+
+.skillsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.containerBox {
+  width: 90vw;
+}
+
+// transitions;
+
+.transitionEasyInOut {
+  transition: 100ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.21);
+    opacity: 0.9;
+  }
+}
