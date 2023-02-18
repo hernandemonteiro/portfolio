@@ -13,9 +13,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noImplicitAny": false,
-    "isolatedModules": true, 
+    "isolatedModules": true,
     "jsx": "preserve",
-    "types": ["jest", "cypress"],
+    "types": ["jest"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true
   },
@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "*.cy.js",
-    "jest.config.js"
-, "index.test.js"  ],
-  "exclude": ["node_modules", "cypress", "*.test.ts", "*.test.tsx"]
+    "jest.config.js",
+  ],
+  "exclude": ["node_modules", "*.test.ts", "*.test.tsx"]
 }
