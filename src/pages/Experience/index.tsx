@@ -6,7 +6,7 @@ export default function ExperiencePage() {
   return (
     <TemplatePage
       title="Hernande Monteiro - Experiências de trabalho"
-      description=""
+      description="Experiências de trabalho de Hernande Monteiro, aqui você encontra em quais empresas já trabalhei."
       HomeMenu
     >
       <Experience />
