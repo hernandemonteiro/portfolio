@@ -11,7 +11,10 @@ function ProjectModal(props: iProjectModal) {
 
   return (
     <div className="modalDiv">
-      <button onClick={toggle} className={styles.ModalOpenButton}>
+      <button
+        onClick={toggle}
+        className={styles.ModalOpenButton}
+      >
         {props.projectCard}
       </button>
       <Modal isOpen={modal} toggle={toggle} centered={true} backdrop={true}>

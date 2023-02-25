@@ -33,7 +33,7 @@ function HardSkills() {
           Clique sobre os icones para sabe mais!
         </p>
         <ModalIcons
-          icon={<SiHtml5 color="orange" />}
+          icon={<SiHtml5 data-testid={'clickSvgTest'} color="orange" />}
           title={'HTML5'}
           since={2017}
           aboutLanguage={

@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Presentation.module.scss';
-import Link from 'next/link';
 import { SiGithub, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
 
 function Presentation() {
@@ -8,30 +7,28 @@ function Presentation() {
     <div className={styles.presentation}>
       <div
         className={styles.avatarImg}
+        data-testid={'avatarImgTest'}
         aria-label="Foto de Hernande Monteiro, ele usa uma blusa branca com um pequeno colar dourado aparente, cabelo crespo, pele parda e sorriso no rosto."
       />
       <header className={'text-center'}>
         <h1 className="text-white">Hernande Monteiro</h1>
         <h2 className="text-white">Full-Stack Developer</h2>
         <div className={styles.SocialLinks}>
-          <Link href="https://github.com/hernandemonteiro" target="_blank">
+          <a href="https://github.com/hernandemonteiro" target="__blank">
             <SiGithub />
-          </Link>
+          </a>
 
-          <Link
-            href="https://linkedin.com/in/hernande-monteiro"
-            target="_blank"
-          >
+          <a href="https://linkedin.com/in/hernande-monteiro" target="__blank">
             <SiLinkedin />
-          </Link>
+          </a>
 
-          <Link href="https://instagram.com/monteiro.ops" target="_blank">
+          <a href="https://instagram.com/monteiro.ops" target="__blank">
             <SiInstagram />
-          </Link>
+          </a>
 
-          <Link href="https://wa.me/41999175718" target="_blank">
+          <a href="https://wa.me/41999175718" target="__blank">
             <SiWhatsapp />
-          </Link>
+          </a>
         </div>
         <div>
           <p className="text-white">

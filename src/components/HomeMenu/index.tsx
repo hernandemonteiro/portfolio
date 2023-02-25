@@ -3,10 +3,10 @@ import styles from './HomeMenu.module.scss';
 import { iHomeMenu } from '../../interfaces/iHomeMenu';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 function HomeMenu(props: iHomeMenu) {
-  const router = useRouter();
+  const router = usePathname();
 
   const [menuShow, setMenuShow] = useState(false);
   const [loadingRoute, setLoadingRoute] = useState(false);
@@ -23,7 +23,7 @@ function HomeMenu(props: iHomeMenu) {
     route: string,
     component: React.ReactNode
   ) {
-    return router.route != route && component;
+    return router != route && component;
   }
 
   return (
@@ -32,12 +32,13 @@ function HomeMenu(props: iHomeMenu) {
         <>
           <button
             className={styles.menuButton}
+            data-testid={'menuButton'}
             onClick={() => setMenuShow(!menuShow)}
           >
             {!menuShow ? <AiOutlineMenu /> : <AiOutlineClose />}
           </button>
           {menuShow && (
-            <nav className={styles.navHome}>
+            <nav className={styles.navHome} data-testid={'nav'}>
               {menuLinkRouteRenderControll(
                 '/',
                 <Link href="/" onClick={handleRouteHelpers}>
@@ -64,7 +65,11 @@ function HomeMenu(props: iHomeMenu) {
               )}
               {menuLinkRouteRenderControll(
                 '/Experience',
-                <Link href="/Experience" onClick={handleRouteHelpers}>
+                <Link
+                  href="/Experience"
+                  data-testid={'navigate_test'}
+                  onClick={handleRouteHelpers}
+                >
                   Experiência
                 </Link>
               )}

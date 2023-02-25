@@ -11,6 +11,7 @@ function Projects() {
         <ProjectModal
           projectCard={
             <CardProject
+              data-testid={'modalButton'}
               title={'Jobel Embalagens'}
               className={styles.imgProjectJobel}
             />

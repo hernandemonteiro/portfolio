@@ -36,8 +36,9 @@
 .SocialLinks {
     margin: 7% 0%;
   
-    a {
+    svg {
       font-size: 2em;
+      cursor: pointer;
       margin: 2%;
       outline: none;
       color: greenyellow;
