@@ -3,8 +3,9 @@
 .projectBox {
     width: 100vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding-top: 2%;
+    padding: 3.2%;
     flex-wrap: wrap;
 }
 
@@ -26,4 +27,14 @@
 .imgProjectJobel {
     @extend .baseProjectImg;
     background-image: url("/images/projects/jobel1.png");
+}
+
+.imgFernandev2 {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/fernandev2.png");
+}
+
+.imgSecretWord {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/Secret Word - online game.png");
 }

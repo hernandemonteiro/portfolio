@@ -59,13 +59,13 @@ hr {
 
 .page-height-full {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
 
 .page-height-semi-full {
-  height: 90vh;
+  min-height: 90vh;
 }
 
 .Container {

@@ -1,0 +1,58 @@
+@import "../../styles/base.scss";
+
+.tecnologiesTitle > h3, .projectTitle {
+    margin: 1%;
+    font-size: 2em;
+    color: greenyellow;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tecnologiesTitle > h3  {
+    font-size: 1em;
+}
+
+.ModalBackground {
+    background-color: $blackBackground;
+    color: white;
+    button {
+        background-color: white;
+        color: $blackBackground;
+        font-weight: bold;
+    }
+    user-select: none;
+}
+
+.contentModal {
+    margin: 10% 0;
+    padding: 2%;
+}
+
+.ModalOpenButton {
+    background: none;
+    border: none;
+}
+
+.footerButtons {
+    display: flex;
+    width: 70%;
+    justify-content: flex-end;
+    text-align: end;
+    align-items: center;   
+}
+
+.tecnologiesBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .tecnologiesUsed {
+        background-color: greenyellow;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 1.5%;
+        margin: 2%;
+        border-radius: 7px;
+        color: black;
+    }
+}
