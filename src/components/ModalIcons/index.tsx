@@ -10,7 +10,10 @@ function ModalIcons(props: iModalIcons) {
 
   return (
     <div className="modalDiv">
-      <button onClick={toggle} className={styles.ModalIcon}>
+      <button
+        onClick={toggle}
+        className={styles.ModalIcon}
+      >
         {props.icon}
       </button>
       <Modal isOpen={modal} toggle={toggle} centered={true} backdrop={true}>
@@ -21,7 +24,9 @@ function ModalIcons(props: iModalIcons) {
           </div>
           <div className="text-center">
             <h5>Conhecimento desde {props.since}</h5>
-            <p style={{marginTop: "2%", padding: "2%"}}>{props.aboutLanguage}</p>
+            <p style={{ marginTop: '2%', padding: '2%' }}>
+              {props.aboutLanguage}
+            </p>
           </div>
         </ModalBody>
         <ModalFooter className={styles.ModalBackground}>
