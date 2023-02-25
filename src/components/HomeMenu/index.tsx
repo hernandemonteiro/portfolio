@@ -3,8 +3,11 @@ import styles from './HomeMenu.module.scss';
 import { iHomeMenu } from '../../interfaces/iHomeMenu';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 function HomeMenu(props: iHomeMenu) {
+  const router = useRouter();
+
   const [menuShow, setMenuShow] = useState(false);
   const [loadingRoute, setLoadingRoute] = useState(false);
 
@@ -14,6 +17,13 @@ function HomeMenu(props: iHomeMenu) {
   }
   if (loadingRoute) {
     setTimeout(() => setLoadingRoute(!loadingRoute), 4000);
+  }
+
+  function menuLinkRouteRenderControll(
+    route: string,
+    component: React.ReactNode
+  ) {
+    return router.route != route && component;
   }
 
   return (
@@ -28,24 +38,42 @@ function HomeMenu(props: iHomeMenu) {
           </button>
           {menuShow && (
             <nav className={styles.navHome}>
-              <Link href="/" onClick={handleRouteHelpers}>
-                Home
-              </Link>
-              <Link href="/HardSkills" onClick={handleRouteHelpers}>
-                Hard-Skills
-              </Link>
-              <Link href="/SoftSkills" onClick={handleRouteHelpers}>
-                Soft-Skills
-              </Link>
-              <Link href="/Academic" onClick={handleRouteHelpers}>
-                Acadêmico
-              </Link>
-              <Link href="/Experience" onClick={handleRouteHelpers}>
-                Experiência
-              </Link>
-              <Link href="/Projects" onClick={handleRouteHelpers}>
-                Projetos
-              </Link>
+              {menuLinkRouteRenderControll(
+                '/',
+                <Link href="/" onClick={handleRouteHelpers}>
+                  Home
+                </Link>
+              )}
+              {menuLinkRouteRenderControll(
+                '/HardSkills',
+                <Link href="/HardSkills" onClick={handleRouteHelpers}>
+                  Hard-Skills
+                </Link>
+              )}
+              {menuLinkRouteRenderControll(
+                '/SoftSkills',
+                <Link href="/SoftSkills" onClick={handleRouteHelpers}>
+                  Soft-Skills
+                </Link>
+              )}
+              {menuLinkRouteRenderControll(
+                '/Academic',
+                <Link href="/Academic" onClick={handleRouteHelpers}>
+                  Acadêmico
+                </Link>
+              )}
+              {menuLinkRouteRenderControll(
+                '/Experience',
+                <Link href="/Experience" onClick={handleRouteHelpers}>
+                  Experiência
+                </Link>
+              )}
+              {menuLinkRouteRenderControll(
+                '/Projects',
+                <Link href="/Projects" onClick={handleRouteHelpers}>
+                  Projetos
+                </Link>
+              )}
             </nav>
           )}
           {!menuShow && props.children}
