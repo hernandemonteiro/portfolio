@@ -5,7 +5,6 @@ module.exports = {
       displayName: 'dom',
       testEnvironment: 'jsdom',
       testMatch: ['**/*.test.tsx'],
-      verbose: true,
       transform: {
         '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
       },

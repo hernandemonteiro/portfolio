@@ -3,10 +3,10 @@ import styles from './HomeMenu.module.scss';
 import { iHomeMenu } from '../../interfaces/iHomeMenu';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 function HomeMenu(props: iHomeMenu) {
-  const router = usePathname();
+  const router = useRouter();
 
   const [menuShow, setMenuShow] = useState(false);
   const [loadingRoute, setLoadingRoute] = useState(false);
@@ -23,7 +23,7 @@ function HomeMenu(props: iHomeMenu) {
     route: string,
     component: React.ReactNode
   ) {
-    return router != route && component;
+    return router.route != route && component;
   }
 
   return (

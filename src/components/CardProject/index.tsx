@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './CardProject.module.scss';
 import { iCardProject } from '../../interfaces/iCardProject';
-import Link from 'next/link';
 
 function CardProject(props: iCardProject) {
   return (
