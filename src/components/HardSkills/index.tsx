@@ -29,7 +29,7 @@ function HardSkills() {
   return (
     <div className="page-height-full">
       <CardCurriculum className={styles.skillsBox} title="Hard-skills">
-        <p className={styles.InfoIconClick}>
+        <p className={'InfoIconClick'}>
           Clique sobre os icones para sabe mais!
         </p>
         <ModalIcons

@@ -8,6 +8,9 @@ function Projects() {
   return (
     <div className="page-height-full">
       <CardCurriculum className={styles.projectBox} title="Projetos">
+      <p className={"InfoIconClick"}>
+          Clique sobre os cards para sabe mais!
+        </p>
         <ProjectModal
           projectCard={
             <CardProject
