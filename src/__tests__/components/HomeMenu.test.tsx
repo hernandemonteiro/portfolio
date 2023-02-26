@@ -2,6 +2,16 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import HomeMenu from '../../components/HomeMenu';
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      route: '/',
+      pathname: '',
+      query: '',
+      asPath: '',
+    };
+  },
+}));
 describe('<HomeMenu/> test', () => {
   it('render', () => {
     render(<HomeMenu>Page Inside to Show First</HomeMenu>);
