@@ -44,7 +44,7 @@ function Projects() {
         />
         <ProjectModal
           projectCard={
-            <CardProject title={'UI-Card'} className={styles.imgConvicta} />
+            <CardProject title={'ConvictaPrev'} className={styles.imgConvicta} />
           }
           projectTitle="ConvictaPrev"
           aboutTheProject={
