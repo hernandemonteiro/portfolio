@@ -46,7 +46,7 @@ function Projects() {
           projectCard={
             <CardProject title={'UI-Card'} className={styles.imgConvicta} />
           }
-          projectTitle="UI-Card"
+          projectTitle="ConvictaPrev"
           aboutTheProject={
             <>
               A ConvictaPrev é consultoria previdênciaria, o principal ojetivo
