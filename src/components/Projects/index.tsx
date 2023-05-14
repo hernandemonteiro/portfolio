@@ -8,9 +8,7 @@ function Projects() {
   return (
     <div className="page-height-full">
       <CardCurriculum className={styles.projectBox} title="Projetos">
-      <p className={"InfoIconClick"}>
-          Clique sobre os cards para sabe mais!
-        </p>
+        <p className={'InfoIconClick'}>Clique sobre os cards para sabe mais!</p>
         <ProjectModal
           projectCard={
             <CardProject
@@ -46,29 +44,38 @@ function Projects() {
         />
         <ProjectModal
           projectCard={
-            <CardProject title={'UI-Card'} className={styles.imgProjectQR} />
+            <CardProject title={'ConvictaPrev'} className={styles.imgConvicta} />
           }
-          projectTitle="UI-Card"
+          projectTitle="ConvictaPrev"
           aboutTheProject={
             <>
-              Desenvolvi este projeto, proposto pelo site FrontEndMentor, para
-              treinar minhas habilidades em programação web e melhorar minha
-              compreensão de HTML, CSS e Design.
+              A ConvictaPrev é consultoria previdênciaria, o principal ojetivo
+              desse projeto é captar clientes e ajudar organizar os atendimentos
+              diários da empresa.
               <br />
               <br />
               Neste projeto, fui responsável por desenvolver o design do site,
-              escrever o código HTML e CSS, e implementar alguns recursos
-              básicos de responsividade.
+              escrever o código em NextJS utilizando boas práticas, trabalhar
+              com o SEO, realizar os testes e implementar recursos de
+              responsividade.
               <br />
               <br />
-              Este projeto me permitiu aprimorar minhas habilidades em HTML e
-              CSS e aprender um pouco mais sobre o Design. Agora me sinto mais
-              confortável trabalhando com protótipos para o desenvolvimento.
+              Este projeto me permitiu aprimorar minhas habilidades em NextJS e
+              aprender um pouco mais sobre a integração de ferramentas de SEO.
             </>
           }
-          tecnologiesUsed={['HTML5', 'CSS3', 'Github Pages']}
-          projectLink="https://hernandemonteiro.github.io/qrcode-mentor/"
-          codeLink="https://github.com/hernandemonteiro/qrcode-mentor"
+          tecnologiesUsed={[
+            'NextJS',
+            'React',
+            'SASS',
+            'Vercel',
+            'Jest',
+            'React-Icons',
+            'Mongoose',
+            'MongoDB',
+            'Google Analytics'
+          ]}
+          projectLink="https://www.convictaprev.com.br/"
         />
         <ProjectModal
           projectCard={
