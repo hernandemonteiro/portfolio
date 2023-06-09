@@ -38,3 +38,8 @@
     @extend .baseProjectImg;
     background-image: url("/images/projects/Secret Word - online game.png");
 }
+
+.imgDtAnalyse {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/data_analise.png");
+}

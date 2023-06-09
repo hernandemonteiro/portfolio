@@ -6,6 +6,7 @@ import {
   SiCss3,
   SiCypress,
   SiDocker,
+  SiFlask,
   SiGit,
   SiGithub,
   SiGithubactions,
@@ -18,6 +19,7 @@ import {
   SiNodedotjs,
   SiPostgresql,
   SiPrisma,
+  SiPython,
   SiReact,
   SiSass,
   SiSequelize,
@@ -324,6 +326,59 @@ function HardSkills() {
               Prisma Studio: o produto principal da tecnologia. Trata-se de uma
               interface do usuário feita para visualizar e editar os dados na
               database;
+            </>
+          }
+        />
+        <ModalIcons
+          icon={<SiPython color="yellow" />}
+          title={'Python'}
+          since={2022}
+          aboutLanguage={
+            <>
+              Python é uma linguagem de programação de alto nível e versátil.
+              <br />
+              Tenho habilidades sólidas em manipulação de dados, automação de
+              tarefas, desenvolvimento web, scripting e análise de dados.
+              <br />
+              Sou capaz de desenvolver aplicações robustas e eficientes
+              utilizando frameworks como Flask, além de bibliotecas populares
+              como NumPy, Pandas e Matplotlib para manipulação e visualização de
+              dados.
+              <br />
+              Estou sempre atualizado com as melhores práticas e recursos mais
+              recentes da linguagem, o que me permite escrever código limpo,
+              legível e de fácil manutenção.
+              <br />
+              Atualmente sigo me aprimorando em estudos na área de análise de
+              dados para entregar melhores resultados.
+            </>
+          }
+        />
+        <ModalIcons
+          icon={<SiFlask color="white" />}
+          title={'Flask'}
+          since={2022}
+          aboutLanguage={
+            <>
+              Possuo habilidades no desenvolvimento de aplicações web e apis
+              utilizando o framework Flask.
+              <br />
+              Tenho experiência na criação de APIs RESTful, construção de
+              sistemas web escaláveis e implementação de autenticação e
+              autorização.
+              <br/>
+              Sou capaz de criar rotas, manipular solicitações e
+              respostas HTTP, trabalhar com bancos de dados e integrar APIs de
+              terceiros.
+              <br/>
+              Tenho conhecimento em utilização de templates para
+              renderização de páginas dinâmicas e aplicação de estilos com CSS.
+              <br/>
+              Além disso, estou familiarizado com o uso de extensões e plugins
+              do Flask para adicionar funcionalidades extras à minha aplicação.
+              <br/>
+              Estou sempre buscando aprimorar minhas habilidades em Flask e
+              acompanhar as melhores práticas de desenvolvimento web.
             </>
           }
         />

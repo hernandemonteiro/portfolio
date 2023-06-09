@@ -13,6 +13,10 @@ function Presentation() {
       <header className={'text-center'}>
         <h1 className="text-white">Hernande Monteiro</h1>
         <h2 className="text-white">Full-Stack Developer</h2>
+        <h3 style={{ color: 'yellow' }}>
+          {'"'}starting as a beginner in datascience{'"'}
+        </h3>
+
         <div className={styles.SocialLinks}>
           <a href="https://github.com/hernandemonteiro" target="__blank">
             <SiGithub />

@@ -44,7 +44,10 @@ function Projects() {
         />
         <ProjectModal
           projectCard={
-            <CardProject title={'ConvictaPrev'} className={styles.imgConvicta} />
+            <CardProject
+              title={'ConvictaPrev'}
+              className={styles.imgConvicta}
+            />
           }
           projectTitle="ConvictaPrev"
           aboutTheProject={
@@ -73,7 +76,7 @@ function Projects() {
             'React-Icons',
             'Mongoose',
             'MongoDB',
-            'Google Analytics'
+            'Google Analytics',
           ]}
           projectLink="https://www.convictaprev.com.br/"
         />
@@ -135,6 +138,38 @@ function Projects() {
           tecnologiesUsed={['React', 'Typescript', 'JSX', 'Sass', 'Vercel']}
           projectLink="https://secret-word-zeta.vercel.app/"
           codeLink="https://github.com/hernandemonteiro/secret_word"
+        />
+        <ProjectModal
+          projectCard={
+            <CardProject
+              title={'Análise de PNAD 2015'}
+              className={styles.imgDtAnalyse}
+            />
+          }
+          projectTitle="Análise de PNAD 2015"
+          aboutTheProject={
+            <>
+              Nesta aplicação, desenvolvida utilizando Python, utilizei as
+              bibliotecas Seaborn e Pandas para realizar a análise de dados da
+              Pesquisa Nacional por Amostra de Domicílios (PNAD).
+              <br />A PNAD é uma importante fonte de dados socioeconômicos e
+              demográficos no Brasil, e meu objetivo foi explorar e visualizar
+              esses dados de maneira eficiente e informativa. Utilizando a
+              biblioteca Pandas, realizei a leitura dos dados da PNAD, que
+              estavam em formato CSV ou Excel, e os manipulei para extrair as
+              informações relevantes.
+              <br />
+              Através da combinação do poder do Python, do Pandas e do Seaborn,
+              pude realizar análises detalhadas e visualmente atraentes.
+              <br />A aplicação de análise de dados da PNAD desenvolvida em
+              Python demonstra minhas habilidades em manipulação e análise de
+              dados, além da capacidade de criar visualizações impactantes. Foi
+              uma oportunidade para aplicar meus conhecimentos em ciência de
+              dados que cursei na plataforma Alura.
+            </>
+          }
+          tecnologiesUsed={['Python', 'Pandas', 'Colab', 'Matplot', 'Github']}
+          codeLink="https://github.com/hernandemonteiro/host_national_search_2015"
         />
       </CardCurriculum>
     </div>
