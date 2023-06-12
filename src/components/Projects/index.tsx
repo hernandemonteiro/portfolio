@@ -83,35 +83,6 @@ function Projects() {
         <ProjectModal
           projectCard={
             <CardProject
-              title={'Challenge React Jr.'}
-              className={styles.imgFernandev2}
-            />
-          }
-          projectTitle="Challenge React Jr."
-          aboutTheProject={
-            <>
-              Desenvolvi um projeto como parte de um desafio para uma vaga de
-              React Junior. O objetivo deste projeto era demonstrar minhas
-              habilidades em programação web e minha compreensão do React.
-              <br />
-              <br />
-              Neste projeto, fui responsável por terminar a implementação da
-              pagina de login, adicionando suas funcionalidades guiado por todo
-              {"'"}s deixados na pagina.
-              <br />
-              <br />
-              Este projeto me desafiou a aplicar minhas habilidades existentes
-              em um projeto real. Aprendi mais sobre a dinâmica de trabalhar em
-              grupo, finalizando trabalhos que ficaram para serem finalizados.
-            </>
-          }
-          tecnologiesUsed={['React', 'Hooks', 'Javascript', 'Vercel']}
-          projectLink="https://fernandev-react-challenge-02.vercel.app/"
-          codeLink="https://github.com/hernandemonteiro/fernandev-react-challenge-02"
-        />
-        <ProjectModal
-          projectCard={
-            <CardProject
               title={'Secret Word Game'}
               className={styles.imgSecretWord}
             />
@@ -163,12 +134,12 @@ function Projects() {
               pude realizar análises detalhadas e visualmente atraentes.
               <br />A aplicação de análise de dados da PNAD desenvolvida em
               Python demonstra minhas habilidades em manipulação e análise de
-              dados, além da capacidade de criar visualizações impactantes. Foi
-              uma oportunidade para aplicar meus conhecimentos em ciência de
-              dados que cursei na plataforma Alura.
+              dados, além da capacidade de criar visualizações impactantes.
+              Foi  meu primeiro curso em DataScience o que me deu uma oportunidade de aplicar meus conhecimentos
+              em ciência de dados e aprender com o processo.
             </>
           }
-          tecnologiesUsed={['Python', 'Pandas', 'Colab', 'Matplot', 'Github']}
+          tecnologiesUsed={['Python', 'Pandas', 'Colaboratory', 'Matplot', 'Github']}
           codeLink="https://github.com/hernandemonteiro/host_national_search_2015"
         />
       </CardCurriculum>
