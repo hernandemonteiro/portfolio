@@ -43,3 +43,8 @@
     @extend .baseProjectImg;
     background-image: url("/images/projects/data_analise.png");
 }
+
+.imgSolutions {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/solutions.png");
+}
