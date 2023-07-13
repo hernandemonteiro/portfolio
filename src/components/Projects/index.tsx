@@ -123,18 +123,17 @@ function Projects() {
               Aplicação pessoal que tem como objetivo documentar anotações
               feitas por mim enquanto desenvolvo.
               <br/>
-              As documentações estão em fase de escrita, mas acredito que com
-              isso vou poder ter atenção a pontos especificos em meu desenvolvimento,
+              As documentações estão em fase de escrita, mas com isso posso ter
+              uma melhor visibilidade de pontos especificos em meu desenvolvimento,
               além de conseguir utilizar as anotações para aprimorar boas práticas e 
               fazer teste de conceitos.
               <br/>
-              Essa aplicação também serviu para demonstrar um pouco de meus conhecimentos
-              em Cloud com AWS e uso de ferramentas para IaC (Infra as Code), além de Cloud também
-              faço uso de Python com Flask que permitiu um ambiente mais elástico ao fazer deploy com Ansible.
+              Essa aplicação também serviu para demonstrar a elasticidade de entrega da Vercel,
+              me permitindo hospedar meu projeto feito em python de forma estática.
             </>
           }
-          tecnologiesUsed={['Python', 'Flask', 'Gunicorn', 'AWS Ec2', 'Ansible', 'Terraform']}
-          projectLink="http://solutions.hernandemonteiro.com"
+          tecnologiesUsed={['Python', 'Flask', 'Vercel/@python']}
+          projectLink="https://solutions.hernandemonteiro.com"
           codeLink="https://github.com/hernandemonteiro/solutions"
         />
         <ProjectModal
