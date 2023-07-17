@@ -12,7 +12,7 @@ function Presentation() {
       />
       <header className={'text-center'}>
         <h1 className="text-white">Hernande Monteiro</h1>
-        <h2 className="text-white">Full-Stack Developer</h2>
+        <h2 className="text-white">Agente Tecnológico - Banco do Brasil</h2>
         <h3 style={{ color: 'yellow' }}>
           {'"'}starting as a beginner in datascience{'"'}
         </h3>
