@@ -12,39 +12,6 @@ function Projects() {
         <ProjectModal
           projectCard={
             <CardProject
-              data-testid={'modalButton'}
-              title={'Jobel Embalagens'}
-              className={styles.imgProjectJobel}
-            />
-          }
-          projectTitle="Jobel Embalagens"
-          aboutTheProject={
-            <>
-              Desenvolvi um site institucional para a empresa Jobel com o
-              objetivo de criar uma presença online para a empresa e fornecer
-              informações sobre seus produtos e serviços aos clientes em
-              potencial.
-              <br />
-              <br />
-              Este site institucional aumentou a visibilidade da empresa online
-              e proporcionou uma experiência melhor aos clientes.
-            </>
-          }
-          tecnologiesUsed={[
-            'React',
-            'Next',
-            'Typescript',
-            'Jest',
-            'Sass',
-            'JSX',
-            'NodeMailer',
-            'Vercel',
-          ]}
-          projectLink="https://jobel-hernandemonteiro.vercel.app"
-        />
-        <ProjectModal
-          projectCard={
-            <CardProject
               title={'ConvictaPrev'}
               className={styles.imgConvicta}
             />
