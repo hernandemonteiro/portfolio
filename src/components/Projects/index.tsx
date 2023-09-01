@@ -77,64 +77,6 @@ function Projects() {
           projectLink="https://secret-word-zeta.vercel.app/"
           codeLink="https://github.com/hernandemonteiro/secret_word"
         />
-           <ProjectModal
-          projectCard={
-            <CardProject
-              title={'Solutions'}
-              className={styles.imgSolutions}
-            />
-          }
-          projectTitle="Solutions"
-          aboutTheProject={
-            <>
-              Aplicação pessoal que tem como objetivo documentar anotações
-              feitas por mim enquanto desenvolvo.
-              <br/>
-              As documentações estão em fase de escrita, mas com isso posso ter
-              uma melhor visibilidade de pontos especificos em meu desenvolvimento,
-              além de conseguir utilizar as anotações para aprimorar boas práticas e 
-              fazer teste de conceitos.
-              <br/>
-              Essa aplicação também serviu para demonstrar a elasticidade de entrega da Vercel,
-              me permitindo hospedar meu projeto feito em python de forma estática.
-            </>
-          }
-          tecnologiesUsed={['Python', 'Flask', 'Vercel/@python']}
-          projectLink="https://solutions.hernandemonteiro.com"
-          codeLink="https://github.com/hernandemonteiro/solutions"
-        />
-        <ProjectModal
-          projectCard={
-            <CardProject
-              title={'Análise de PNAD 2015'}
-              className={styles.imgDtAnalyse}
-            />
-          }
-          projectTitle="Análise de PNAD 2015"
-          aboutTheProject={
-            <>
-              Nesta aplicação, desenvolvida utilizando Python, utilizei as
-              bibliotecas Seaborn e Pandas para realizar a análise de dados da
-              Pesquisa Nacional por Amostra de Domicílios (PNAD).
-              <br />A PNAD é uma importante fonte de dados socioeconômicos e
-              demográficos no Brasil, e meu objetivo foi explorar e visualizar
-              esses dados de maneira eficiente e informativa. Utilizando a
-              biblioteca Pandas, realizei a leitura dos dados da PNAD, que
-              estavam em formato CSV ou Excel, e os manipulei para extrair as
-              informações relevantes.
-              <br />
-              Através da combinação do poder do Python, do Pandas e do Seaborn,
-              pude realizar análises detalhadas e visualmente atraentes.
-              <br />A aplicação de análise de dados da PNAD desenvolvida em
-              Python demonstra minhas habilidades em manipulação e análise de
-              dados, além da capacidade de criar visualizações impactantes.
-              Foi  meu primeiro curso em DataScience o que me deu uma oportunidade de aplicar meus conhecimentos
-              em ciência de dados e aprender com o processo.
-            </>
-          }
-          tecnologiesUsed={['Python', 'Pandas', 'Colaboratory', 'Matplot', 'Github']}
-          codeLink="https://github.com/hernandemonteiro/host_national_search_2015"
-        />
       </CardCurriculum>
     </div>
   );
