@@ -21,11 +21,6 @@ function Academic() {
               <td>Concluido</td>
             </tr>
             <tr>
-              <td>Gastronomia</td>
-              <td>Técnico</td>
-              <td>Concluido</td>
-            </tr>
-            <tr>
               <td>Eng. da Computação</td>
               <td>Graduação</td>
               <td>Trancado</td>
