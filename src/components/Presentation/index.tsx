@@ -12,9 +12,9 @@ function Presentation() {
       />
       <header className={'text-center'}>
         <h1 className="text-white">Hernande Monteiro</h1>
-        <h5 className="text-white">Software Engineer</h5>
+        <h5 className="text-white">Software Developer</h5>
         <h3 style={{ color: 'yellow' }}>
-          {'"'}starting as a beginner in datascience{'"'}
+          {'"'}starting as a beginner in Data Science{'"'}
         </h3>
 
         <div className={styles.SocialLinks}>
@@ -39,8 +39,7 @@ function Presentation() {
             Apaixonado por tecnologia e inovação! 😍💻📱
             <br />
             <br />
-            Desde 2019 descobrindo novas maneiras de transformar o mundo com a
-            programação.
+            Desde 2019 descobrindo novas maneiras de transformar o mundo com código.
           </p>
         </div>
       </header>

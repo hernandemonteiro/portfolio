@@ -104,21 +104,6 @@ function HardSkills() {
           }
         />
         <ModalIcons
-          icon={<SiReact color="aqua" />}
-          title={'React'}
-          since={2018}
-          aboutLanguage={
-            <>
-              O React é uma biblioteca Javascript de código aberto criada pela
-              empresa Meta.
-              <br />
-              Com foco em criar interfaces de usuário em páginas web de maneira
-              reativa, atualmente é uma das preferidas para desenvolvimento de
-              UI{"'"}s.
-            </>
-          }
-        />
-        <ModalIcons
           icon={<SiNextdotjs color="white" />}
           title={'NextJS'}
           since={2019}
@@ -131,67 +116,7 @@ function HardSkills() {
             </>
           }
         />
-        <ModalIcons
-          icon={<SiDocker color="aqua" />}
-          title={'Docker'}
-          since={2020}
-          aboutLanguage={
-            <>
-              Docker é um conjunto de produtos de plataforma como serviço que
-              usam virtualização de nível de sistema operacional para entregar
-              software em pacotes chamados contêineres.
-              <br />
-              Os contêineres são isolados uns dos outros e agrupam seus próprios
-              softwares, bibliotecas e arquivos de configuração.
-            </>
-          }
-        />
-        <ModalIcons
-          icon={<SiSass color="pink" />}
-          title={'Sass'}
-          since={2020}
-          aboutLanguage={
-            <>
-              Sass é uma linguagem de folhas de estilo concebida inicialmente
-              por Hampton Catlin e desenvolvida por Natalie Weizenbaum.
-              <br /> Essa ferramenta da superpoderes ao CSS permitindo utilizar
-              mixins, herança, variaveis e outras funcionalidades.
-            </>
-          }
-        />
-        <ModalIcons
-          icon={<SiCypress color="greenyellow" />}
-          title={'Cypress'}
-          since={2021}
-          aboutLanguage={
-            <>
-              Cypress é uma ferramenta de teste de front-end para aplicativos da
-              web.
-              <br />
-              O Cypress é executado no Windows, Linux e macOS.
-              <br />
-              Comparado ao selênio, essa ferramenta permite ao desenvolvedor
-              criar testes EndToEnd para melhores entregas.
-            </>
-          }
-        />
-        <ModalIcons
-          icon={<SiJest color="orangered" />}
-          title={'Jest'}
-          since={2020}
-          aboutLanguage={
-            <>
-              Jest é uma estrutura de teste de JavaScript construída sobre o
-              Jasmine e mantida pela Meta.
-              <br />
-              Projetado e construído por Christoph Nakazawa com foco na
-              simplicidade e suporte para grandes aplicativos da web.
-              <br />
-              Funciona com projetos usando Babel, TypeScript, Node.js, React,
-              Angular, Vue.js e Svelte.
-            </>
-          }
-        />
+
         <ModalIcons
           icon={<SiGithub color="white" />}
           title={'Github'}
@@ -277,21 +202,6 @@ function HardSkills() {
             </>
           }
         />
-        <ModalIcons
-          icon={<SiGithubactions color="orange" />}
-          title={'Github Actions'}
-          since={2020}
-          aboutLanguage={
-            <>
-              GitHub Actions é uma plataforma de integração contínua e entrega
-              contínua (CI/CD) que permite automatizar a sua compilação, testar
-              e implantar mais facilmente e de maneira segura.
-              <br />É possível criar fluxos de trabalho que criam e testam cada
-              pull request no seu repositório, ou implantar pull requests
-              mesclados em produção.
-            </>
-          }
-        />
 
         <ModalIcons
           icon={<SiSequelize color="aqua" />}
@@ -351,34 +261,6 @@ function HardSkills() {
               <br />
               Atualmente sigo me aprimorando em estudos na área de análise de
               dados para entregar melhores resultados.
-            </>
-          }
-        />
-        <ModalIcons
-          icon={<SiFlask color="white" />}
-          title={'Flask'}
-          since={2022}
-          aboutLanguage={
-            <>
-              Possuo habilidades no desenvolvimento de aplicações web e apis
-              utilizando o framework Flask.
-              <br />
-              Tenho experiência na criação de APIs RESTful, construção de
-              sistemas web escaláveis e implementação de autenticação e
-              autorização.
-              <br/>
-              Sou capaz de criar rotas, manipular solicitações e
-              respostas HTTP, trabalhar com bancos de dados e integrar APIs de
-              terceiros.
-              <br/>
-              Tenho conhecimento em utilização de templates para
-              renderização de páginas dinâmicas e aplicação de estilos com CSS.
-              <br/>
-              Além disso, estou familiarizado com o uso de extensões e plugins
-              do Flask para adicionar funcionalidades extras à minha aplicação.
-              <br/>
-              Estou sempre buscando aprimorar minhas habilidades em Flask e
-              acompanhar as melhores práticas de desenvolvimento web.
             </>
           }
         />
