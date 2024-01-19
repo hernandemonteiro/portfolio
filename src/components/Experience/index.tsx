@@ -26,9 +26,7 @@ function Experience() {
               <td>2018</td>
             </tr>
             <tr>
-              <td>
-                HM Solutions {'('}Freelancer{')'}
-              </td>
+              <td>Self Employed - Developer</td>
               <td>2019</td>
               <td>ATUALMENTE</td>
             </tr>

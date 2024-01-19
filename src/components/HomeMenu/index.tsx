@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './HomeMenu.module.scss';
 import { iHomeMenu } from '../../interfaces/iHomeMenu';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { routes } from './routes';
 
 function HomeMenu(props: iHomeMenu) {
-  const router = useRouter();
-
   const [menuShow, setMenuShow] = useState(false);
   const [loadingRoute, setLoadingRoute] = useState(false);
+  const router = useRouter();
 
-  function handleRouteHelpers() {
+  function handleRouteHelpers(route: string) {
     setMenuShow(!menuShow);
-    setLoadingRoute(!loadingRoute);
-  }
-  if (loadingRoute) {
-    setTimeout(() => setLoadingRoute(!loadingRoute), 4000);
+    if (router.route !== route) {
+      setLoadingRoute(!loadingRoute);
+    }
   }
 
-  function menuLinkRouteRenderControll(
-    route: string,
-    component: React.ReactNode
-  ) {
-    return router.route != route && component;
-  }
+  useEffect(() => {
+    loadingRoute && setLoadingRoute(!loadingRoute);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const verifyRouteToReturnStyle = (route: string) =>
+    `${styles.link} ${router.route === route && styles.link_active}`;
 
   return (
     <>
@@ -37,62 +37,25 @@ function HomeMenu(props: iHomeMenu) {
           >
             {!menuShow ? <AiOutlineMenu /> : <AiOutlineClose />}
           </button>
-          {menuShow && (
+          {menuShow ? (
             <nav className={styles.navHome} data-testid={'nav'}>
-              {menuLinkRouteRenderControll(
-                '/',
-                <Link href="/" onClick={handleRouteHelpers}>
-                  Home
-                </Link>
-              )}
-              {menuLinkRouteRenderControll(
-                '/HardSkills',
-                <Link href="/HardSkills" onClick={handleRouteHelpers}>
-                  Hard-Skills
-                </Link>
-              )}
-              {menuLinkRouteRenderControll(
-                '/SoftSkills',
-                <Link href="/SoftSkills" onClick={handleRouteHelpers}>
-                  Soft-Skills
-                </Link>
-              )}
-              {menuLinkRouteRenderControll(
-                '/Academic',
-                <Link href="/Academic" onClick={handleRouteHelpers}>
-                  Acadêmico
-                </Link>
-              )}
-              {menuLinkRouteRenderControll(
-                '/Experience',
+              {routes.map((route) => (
                 <Link
-                  href="/Experience"
-                  data-testid={'navigate_test'}
-                  onClick={handleRouteHelpers}
+                  href={route.route}
+                  key={route.route}
+                  className={verifyRouteToReturnStyle(route.route)}
+                  onClick={() => handleRouteHelpers(route.route)}
                 >
-                  Experiência
+                  {route.name}
                 </Link>
-              )}
-              {menuLinkRouteRenderControll(
-                '/Projects',
-                <Link href="/Projects" onClick={handleRouteHelpers}>
-                  Projetos
-                </Link>
-              )}
+              ))}
             </nav>
+          ) : (
+            props.children
           )}
-          {!menuShow && props.children}
         </>
       ) : (
-        <div
-          style={{
-            height: '100vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: 'white',
-          }}
-        >
+        <div className={styles.loading}>
           <h1>Carregando...</h1>
         </div>
       )}

@@ -31,14 +31,6 @@ All the routes of this application will be placed in this directory.
 For each route, you will have a separate file, which is named as the route.
 You will get more information about the routing in the official documentation from Next.js.
 
-### ./src/stories
-
-All files of Storybook Documentation, here you can document components and modules to the future of this project.
-
-* in development;
-
-You will get more information about the routing in the official documentation from StoryBook.
-
 
 ### ./src/styles
 

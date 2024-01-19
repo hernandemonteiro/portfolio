@@ -1,11 +1,15 @@
 @import "../../styles/base.scss";
 
 .skillSoft {
-  background-color: white;
-  padding: 1%;
-  border-radius: 7px;
-  margin: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+  padding: 1% 2%;
+  border-radius: 4px;
   text-transform: uppercase;
   user-select: none;
-  z-index: $Zindex;
+  filter: blur(4%);
+  opacity: 0.6;
+  color: black
 }

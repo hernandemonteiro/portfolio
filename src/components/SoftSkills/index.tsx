@@ -10,11 +10,12 @@ function SoftSkills() {
         <div className={styles.skillsBox + ' ' + styles.marginTopSkills}>
           <SoftSkillElement skill={'Inteligência Emocional'} />
           <SoftSkillElement skill={'Criatividade'} />
-          <SoftSkillElement skill={'Autodidata'} />
+          <SoftSkillElement skill={'Autodidatismo'} />
+          <SoftSkillElement skill={'Proatividade'} />
           <SoftSkillElement skill={'Empatia'} />
           <SoftSkillElement skill={'Trabalho em Equipe'} />
-          <SoftSkillElement skill={'Dicotômico'} />
-          <SoftSkillElement skill={'Liderança'} />
+          <SoftSkillElement skill={'Dicotômia'} />
+          <SoftSkillElement skill={'Senso de Liderança'} />
         </div>
       </CardCurriculum>
     </div>

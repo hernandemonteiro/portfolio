@@ -57,10 +57,10 @@ function Projects() {
           projectTitle="Secret Word Game"
           aboutTheProject={
             <>
-              Desenvolvi um jogo chamado Secret Word, que tem como objetivo
-              testar as habilidades de vocabulário e pensamento rápido dos
-              jogadores. Este projeto foi criado para demonstrar minhas
-              habilidades em React, Typescript e Sass.
+              Jogo chamado Secret Word, que tem como objetivo testar as
+              habilidades de vocabulário e pensamento rápido dos jogadores. Este
+              projeto foi criado para demonstrar minhas habilidades em React,
+              Typescript e Sass.
               <br />
               <br />
               Neste projeto, fui responsável pelo design e desenvolvimento do
@@ -69,8 +69,8 @@ function Projects() {
               necessários para garantir que o jogo funcione corretamente.
               <br />
               <br />
-              Este projeto foi um desafio para mim e me permitiu aprender muito
-              sobre programação e renderização condicional do React.
+              Este projeto me permitiu treinar um pouco sobre programação
+              enquanto criei um jogo engraçado para meus sobrinhos jogarem.
             </>
           }
           tecnologiesUsed={['React', 'Typescript', 'JSX', 'Sass', 'Vercel']}

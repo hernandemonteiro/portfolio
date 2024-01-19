@@ -21,9 +21,9 @@ function Academic() {
               <td>Concluido</td>
             </tr>
             <tr>
-              <td>Eng. da Computação</td>
+              <td>Análise e Desen. de Sistemas</td>
               <td>Graduação</td>
-              <td>Trancado</td>
+              <td>Cursando</td>
             </tr>
           </tbody>
         </table>

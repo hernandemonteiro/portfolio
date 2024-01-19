@@ -1,5 +1,4 @@
 import React from 'react';
-import { BackgroundStars } from '../BackgroundStars';
 import HomeMenu from '../HomeMenu';
 import Head from 'next/head';
 import { iTemplatePage } from '../../interfaces/iTemplatePage';
@@ -12,7 +11,6 @@ function TemplatePage(props: iTemplatePage) {
         <meta name="description" content={props.description} />
         <meta name="robots" content="index, follow" />
       </Head>
-      <BackgroundStars />
       <div className="Container">
         <main>
           {props.HomeMenu && <HomeMenu>{props.children}</HomeMenu>}

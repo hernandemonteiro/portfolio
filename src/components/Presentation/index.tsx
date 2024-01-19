@@ -5,17 +5,11 @@ import { SiGithub, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
 function Presentation() {
   return (
     <div className={styles.presentation}>
-      <div
-        className={styles.avatarImg}
-        data-testid={'avatarImgTest'}
-        aria-label="Foto de Hernande Monteiro, ele usa uma blusa branca com um pequeno colar dourado aparente, cabelo crespo, pele parda e sorriso no rosto."
-      />
       <header className={'text-center'}>
-        <h1 className="text-white">Hernande Monteiro</h1>
-        <h5 className="text-white">Software Developer</h5>
-        <h3 style={{ color: 'yellow' }}>
-          {'"'}starting as a beginner in Data Science{'"'}
-        </h3>
+        <h1 className="text-green">Hernande Monteiro</h1>
+        <h5 className="text-white">
+          Software Developer and Data Scientist Enthusiastic
+        </h5>
 
         <div className={styles.SocialLinks}>
           <a href="https://github.com/hernandemonteiro" target="__blank">
@@ -39,7 +33,8 @@ function Presentation() {
             Apaixonado por tecnologia e inovação! 😍💻📱
             <br />
             <br />
-            Desde 2019 descobrindo novas maneiras de transformar o mundo com código.
+            Desde 2019 descobrindo novas maneiras de transformar o mundo com
+            código.
           </p>
         </div>
       </header>

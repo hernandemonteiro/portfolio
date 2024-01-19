@@ -3,11 +3,7 @@ import styles from './SoftSkillElement.module.scss';
 import { iSoftSkillElement } from '../../interfaces/iSoftSkillElement';
 
 function SoftSkillElement(props: iSoftSkillElement) {
-  return (
-    <div className={styles.skillSoft}>
-      <h4>{props.skill}</h4>
-    </div>
-  );
+  return <h4 className={styles.skillSoft}>{props.skill}</h4>;
 }
 
 export default SoftSkillElement;

@@ -8,13 +8,16 @@
     align-items: center;
     text-align: center;
 
-    a {
+    .link {
         color: greenyellow;
         text-transform: uppercase;
         margin: 7%;
         font-size: 2em;
-        @extend .transitionEasyInOut
-        
+        @extend .transitionEasyInOut;
+    }
+    
+    .link_active {
+        text-decoration: underline;
     }
 }
 
@@ -35,3 +38,10 @@
 
 }
 
+.loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

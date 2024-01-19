@@ -1,5 +1,8 @@
 @import "../../styles/base.scss";
 
 .marginTopSkills {
-    padding-top: 4%
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 3% 5%;
 }

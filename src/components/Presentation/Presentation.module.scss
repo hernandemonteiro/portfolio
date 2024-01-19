@@ -1,16 +1,5 @@
 @import "../../styles/base.scss";
 
-.avatarImg {
-    width: 19vw;
-    height: 19vw;
-    background-image: url("../../../public/4cada0cd-d281-4d41-b227-df23502efa9c.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    margin-bottom: 2%;
-  }
-  
-
   
   .presentation {
     width: 100%;
@@ -23,11 +12,21 @@
     z-index: $Zindex;
     font-weight: bold;
     text-align: center;
+
     h1 {
-      color: greenyellow
+      color: greenyellow;
     }
+
     h2 {
       font-size: 1.5em;
+    }
+
+    h5{
+      margin-bottom: 5%;
+    }
+
+    p, h5, h1 { 
+      animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
   }
 
@@ -41,17 +40,17 @@
       margin: 2%;
       outline: none;
       color: greenyellow;
+      transition: 50ms;
       &:hover {
-        opacity: 0.6;
+        transform: scale(1.2);
+        opacity: 0.8;
       }
+      animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
     }
   }
 
   @media (max-width: 600px) {
-    .avatarImg {
-      width: 35vw;
-      height: 35vw;
-    }
 
     .presentation {
       p {
@@ -60,3 +59,4 @@
     }
   }
   
+

@@ -1,10 +1,12 @@
 @import "./base.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200&family=Share+Tech+Mono&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: $Cormorant, sans-serif;
+  font-family:"Share Tech Mono", monospace;
+  user-select: none;
 }
 
 html,
@@ -12,7 +14,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: $blackBackground;
-  // cursor: url("../../public/images/system/icons8-cursor-50.png"), auto;
+  
   &::-webkit-scrollbar {
     width: 12px;
   }
