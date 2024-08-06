@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Presentation.module.scss';
 import { SiGithub, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
+import { FaBlog } from "react-icons/fa";
+
 
 function Presentation() {
   return (
@@ -22,6 +24,10 @@ function Presentation() {
 
           <a href="https://instagram.com/monteiro.ops" target="__blank">
             <SiInstagram />
+          </a>
+          
+           <a href="https://medium.com/@monteiro_ops" target="__blank">
+            <FaBlog />
           </a>
 
           <a href="https://wa.me/41999175718" target="__blank">
