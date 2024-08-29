@@ -4,6 +4,7 @@ import ModalIcons from '../ModalIcons';
 import {
   SiAmazonaws,
   SiCss3,
+  SiFlask,
   SiGit,
   SiGithub,
   SiHtml5,
@@ -254,6 +255,32 @@ function HardSkills() {
               <br />
               Atualmente sigo me aprimorando em estudos na área de análise de
               dados para entregar melhores resultados.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<SiFlask color="#05d7f2" />}
+          title={'Flask'}
+          since={2022}
+          aboutLanguage={
+            <>
+              Flask é um microframework web em Python que é leve e fácil de
+              usar.
+              <br />
+              Tenho experiência no desenvolvimento de aplicações web rápidas e
+              eficientes usando Flask.
+              <br />
+              Domino o uso de rotas, templates e integração com bancos de dados,
+              o que me permite criar aplicações web robustas e escaláveis.
+              <br />
+              Além disso, utilizo extensões populares como Flask-Login e
+              Flask-WTF para adicionar funcionalidades avançadas às aplicações,
+              mantendo-as seguras e fáceis de manter.
+              <br />
+              Estou sempre buscando novas formas de melhorar minhas habilidades
+              com Flask, explorando novos recursos e mantendo-me atualizado com
+              as melhores práticas.
             </>
           }
         />
