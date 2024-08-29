@@ -12,40 +12,39 @@ function Projects() {
         <ProjectModal
           projectCard={
             <CardProject
-              title={'ConvictaPrev'}
-              className={styles.imgConvicta}
+              title={'Acesso Comercial'}
+              className={styles.imgAcesso}
             />
           }
-          projectTitle="ConvictaPrev"
+          projectTitle="Acesso Comercial"
           aboutTheProject={
             <>
-              A ConvictaPrev é consultoria previdênciaria, o principal ojetivo
-              desse projeto é captar clientes e ajudar organizar os atendimentos
-              diários da empresa.
+              Acesso comercial é uma empresa que fornece uma interface para que
+              pessoas que não tenham conhecimento em programação possam ter sua
+              loja online e aproveitar de nvoas tecnologias.
               <br />
               <br />
-              Neste projeto, fui responsável por desenvolver o design do site,
-              escrever o código em NextJS utilizando boas práticas, trabalhar
-              com o SEO, realizar os testes e implementar recursos de
-              responsividade.
+              Neste projeto, fui responsável por desenvolver o blog da empresa,
+              do zero, foi uma ótima forma de colocar meus conhecimentos em
+              prática, onde conheci a empresa e prestei outros serviços, como
+              uma plataforma de controle que permite atendimento multicontas.
               <br />
-              <br />
-              Este projeto me permitiu aprimorar minhas habilidades em NextJS e
-              aprender um pouco mais sobre a integração de ferramentas de SEO.
+              <br />O projeto me permitiu aprimorar minhas habilidades em NextJS
+              e aprender um pouco mais sobre a integração com GraphQL usando
+              apollo.
             </>
           }
           tecnologiesUsed={[
             'NextJS',
             'React',
-            'SASS',
-            'Vercel',
+            'Styled-Components',
             'Jest',
             'React-Icons',
             'Mongoose',
             'MongoDB',
-            'Google Analytics',
+            'GraphQL',
           ]}
-          projectLink="https://www.convictaprev.com.br/"
+          projectLink="https://blog.acessocomercial.com/"
         />
         <ProjectModal
           projectCard={
