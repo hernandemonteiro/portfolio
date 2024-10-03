@@ -46,6 +46,42 @@ function Projects() {
           ]}
           projectLink="https://blog.acessocomercial.com/"
         />
+
+        <ProjectModal
+          projectCard={
+            <CardProject
+              title={'Virtual Hand Cursor'}
+              className={styles.imgVirtualHandCursor}
+            />
+          }
+          projectTitle="Virtual Hand Cursor"
+          aboutTheProject={
+            <>
+              O Virtual Hand Cursor é um projeto inovador que permite controlar
+              um cursor virtual apenas com os movimentos da mão. A experiência é
+              ainda mais envolvente com a interação sonora, onde um som é
+              ativado ao abrir e fechar a mão.
+              <br />
+              <br />
+              Neste projeto, utilizei TensorFlow.js para a detecção das mãos e
+              implementei uma interface intuitiva com tecnologia nativa. Foi uma
+              ótima oportunidade para aprimorar minhas habilidades em JavaScript
+              e explorar novas possibilidades de interação com a tecnologia.
+              <br />
+              <br />O projeto foi desafiador e gratificante, e estou animado
+              para receber feedback e sugestões de melhorias!
+            </>
+          }
+          tecnologiesUsed={[
+            'TensorFlow.js',
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'GitHub Pages',
+          ]}
+          projectLink="https://hernandemonteiro.github.io/virtual_hand_cursor/"
+          codeLink="https://github.com/hernandemonteiro/virtual_hand_cursor"
+        />
         <ProjectModal
           projectCard={
             <CardProject

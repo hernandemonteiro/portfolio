@@ -39,6 +39,11 @@
     background-image: url("/images/projects/Secret Word - online game.png");
 }
 
+.imgVirtualHandCursor {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/cursor.png");
+}
+
 
 .imgDtAnalyse {
     @extend .baseProjectImg;
