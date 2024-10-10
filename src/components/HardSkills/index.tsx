@@ -20,6 +20,9 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import styles from './HardSkill.module.scss';
+import { FaDocker, FaFileExcel, FaRust } from 'react-icons/fa';
+import { VscTerminalBash } from 'react-icons/vsc';
+import { DiRedis } from 'react-icons/di';
 
 function HardSkills() {
   return (
@@ -181,6 +184,7 @@ function HardSkills() {
             </>
           }
         />
+
         <ModalIcons
           icon={<SiAmazonaws color="yellow" />}
           title={'AWS'}
@@ -193,6 +197,33 @@ function HardSkills() {
               Os serviços são oferecidos em várias áreas geográficas
               distribuídas pelo mundo e permitem colocar aplicações para
               funcionar de maneira escalavel.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<FaFileExcel color="green" />}
+          title={'Excel'}
+          since={2021}
+          aboutLanguage={
+            <>
+              Excel é uma ferramenta poderosa que utilizo para análise de dados,
+              automação de processos e criação de relatórios dinâmicos.
+              <br />
+              Tenho experiência avançada no uso de fórmulas como `PROCV`,
+              `ÍNDICE`, `CORRESP`, e `SOMASE`, permitindo análises complexas e
+              cálculos eficientes.
+              <br />
+              Domino o uso de tabelas dinâmicas, gráficos e formatação
+              condicional, o que me ajuda a visualizar dados de forma clara e
+              tomar decisões informadas.
+              <br />
+              Além disso, automatizo tarefas repetitivas com macros e VBA,
+              melhorando a produtividade e reduzindo erros manuais em grandes
+              volumes de dados.
+              <br />
+              Estou sempre explorando novas funções e técnicas no Excel para
+              aumentar a precisão e eficiência das minhas análises.
             </>
           }
         />
@@ -242,7 +273,8 @@ function HardSkills() {
               Python é uma linguagem de programação de alto nível e versátil.
               <br />
               Tenho habilidades sólidas em manipulação de dados, automação de
-              tarefas, desenvolvimento web, scripting e análise de dados.
+              tarefas, machine learning, desenvolvimento web, scripting e
+              análise de dados.
               <br />
               Sou capaz de desenvolver aplicações robustas e eficientes
               utilizando frameworks como Flask, além de bibliotecas populares
@@ -252,9 +284,6 @@ function HardSkills() {
               Estou sempre atualizado com as melhores práticas e recursos mais
               recentes da linguagem, o que me permite escrever código limpo,
               legível e de fácil manutenção.
-              <br />
-              Atualmente sigo me aprimorando em estudos na área de análise de
-              dados para entregar melhores resultados.
             </>
           }
         />
@@ -281,6 +310,112 @@ function HardSkills() {
               Estou sempre buscando novas formas de melhorar minhas habilidades
               com Flask, explorando novos recursos e mantendo-me atualizado com
               as melhores práticas.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<DiRedis color="red" />}
+          title={'Redis'}
+          since={2023}
+          aboutLanguage={
+            <>
+              Redis é uma poderosa ferramenta de banco de dados em memória que
+              utilizo para construir aplicações rápidas e escaláveis.
+              <br />
+              Tenho experiência no uso do Redis para cacheamento de dados,
+              gerenciamento de sessões e filas de mensagens, otimizando o
+              desempenho e a eficiência das aplicações.
+              <br />
+              Domino comandos essenciais como `SET`, `GET`, `EXPIRE`, e o uso de
+              estruturas de dados como listas, hashes e conjuntos, permitindo
+              criar soluções flexíveis e performáticas.
+              <br />
+              Além disso, integro Redis com outras tecnologias, garantindo alta
+              disponibilidade e escalabilidade por meio de configurações como
+              replicação e persistência de dados.
+              <br />
+              Estou sempre explorando novos casos de uso e melhores práticas no
+              uso do Redis para maximizar sua eficiência nas minhas soluções.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<VscTerminalBash color="#42b883" />}
+          title={'Bash'}
+          since={2023}
+          aboutLanguage={
+            <>
+              Bash é uma poderosa linguagem de script utilizada para automação
+              de tarefas e administração de sistemas.
+              <br />
+              Tenho experiência no desenvolvimento de scripts eficientes e
+              confiáveis em Bash, otimizando processos e simplificando fluxos de
+              trabalho.
+              <br />
+              Domino o uso de comandos Unix, variáveis, loops, condicionais e
+              manipulação de arquivos, o que me permite criar soluções
+              automatizadas robustas.
+              <br />
+              Além disso, faço uso de boas práticas como o tratamento de erros,
+              modularização e documentação dos scripts, garantindo
+              manutenibilidade e escalabilidade no uso.
+              <br />
+              Estou sempre em busca de melhorar minhas habilidades com Bash,
+              explorando novos comandos e padrões que otimizam o desempenho dos
+              scripts.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<FaDocker color="#66e8f9" />}
+          title={'Flask'}
+          since={2022}
+          aboutLanguage={
+            <>
+              Docker é uma ferramenta essencial que utilizo para criar, testar e
+              implantar aplicações de maneira eficiente e consistente.
+              <br />
+              Tenho experiência na criação de contêineres Docker para isolar
+              ambientes de desenvolvimento, facilitando a escalabilidade e o
+              gerenciamento de aplicações.
+              <br />
+              Domino o uso de `Dockerfile`, `docker-compose` e a integração com
+              registros de contêineres como Docker Hub, garantindo que as
+              aplicações sejam facilmente replicáveis e portáveis.
+              <br />
+              Além disso, utilizo práticas como multi-stage builds, otimização
+              de imagens e gerenciamento de volumes e redes, melhorando o
+              desempenho e a organização dos contêineres.
+              <br />
+              Estou sempre acompanhando as inovações e aprimorando minhas
+              habilidades com Docker para garantir implementações ágeis e
+              seguras.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<FaRust color="gainsboro" />}
+          title={'Rust'}
+          since={2024}
+          aboutLanguage={
+            <>
+              Rust é uma linguagem de programação de sistema de propósito geral
+              que é projetada para ser segura, concorrente e prática.
+              <br />
+              Segurança, concorrência e desempenho.
+              <br />
+              Os temas que desperataram meu interesse em Rust.
+              <br />
+              Estou me dedicando a me aprofundar em Rust para desenvolver
+              aplicações mais avançadas, mas no momento já possuo as habilidades
+              em construção de APIs e código embarcado para microcontroladores.
+              <br />
+              Em breve, estarei compartilhando meus projetos e aprendizados com
+              essa linguagem que só cresce.
             </>
           }
         />

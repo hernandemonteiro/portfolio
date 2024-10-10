@@ -50,6 +50,19 @@
     }
   }
 
+  .badge {
+
+    img {
+      width: 90px;
+      height: 90px;
+      opacity: 0.9;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
   @media (max-width: 600px) {
 
     .presentation {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Presentation.module.scss';
 import { SiGithub, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
-import { FaBlog } from "react-icons/fa";
-
+import { FaBlog } from 'react-icons/fa';
+import Image from 'next/image';
 
 function Presentation() {
   return (
@@ -10,7 +10,7 @@ function Presentation() {
       <header className={'text-center'}>
         <h1 className="text-green">Hernande Monteiro</h1>
         <h5 className="text-white">
-          Software Developer and Data Scientist Enthusiastic
+          Software Engineer and Data Scientist Enthusiastic
         </h5>
 
         <div className={styles.SocialLinks}>
@@ -25,8 +25,8 @@ function Presentation() {
           <a href="https://instagram.com/monteiro.ops" target="__blank">
             <SiInstagram />
           </a>
-          
-           <a href="https://medium.com/@monteiro_ops" target="__blank">
+
+          <a href="https://medium.com/@monteiro_ops" target="__blank">
             <FaBlog />
           </a>
 
@@ -44,6 +44,24 @@ function Presentation() {
           </p>
         </div>
       </header>
+      <div
+        style={{
+          display: 'flex',
+          gap: '10px',
+        }}
+      >
+        <abbr
+          title="Selo de introdução a ciência de dados - Cisco"
+          className={styles.badge}
+        >
+          <Image
+            src="/images/system/introduction-to-data-science.png"
+            width={1000}
+            height={1000}
+            alt="Selo de introdução a ciência de dados - Cisco"
+          />
+        </abbr>
+      </div>
     </div>
   );
 }
