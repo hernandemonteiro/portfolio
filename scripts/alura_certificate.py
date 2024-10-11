@@ -15,8 +15,7 @@ course_list = []
 
 course_list_exists = []
 
-course_list_final = []
-
+# Criação da lista de cursos
 for course in courses:
     course_name = course.get_text(strip=True)
     course_list.append({
@@ -24,19 +23,36 @@ for course in courses:
         .replace('                                ', ' ')
         .replace('                            ', ' '),
         "Organization": "Alura",
-        "url": URL})
+        "url": URL
+    })
 
+course_list_final = course_list
 
+# Carregamento da lista de cursos já existentes
 with open('./public/cursos.json', 'r', encoding='utf-8') as f:
     course_list_exists = json.load(f)
 
-
-for course in course_list:
-    if course not in course_list_exists:
+# Adiciona cursos existentes, caso não estejam na lista final
+for course in course_list_exists:
+    if course not in course_list_final:
         course_list_final.append(course)
+
+# Remover duplicados usando um conjunto para rastrear vistos
+unique_courses = []
+seen = set()
+
+for course in course_list_final:
+    course_tuple = (course['title'], course['Organization'],
+                    course['url'])  # Criação de uma tupla única
+    if course_tuple not in seen:
+        seen.add(course_tuple)
+        unique_courses.append(course)
+
+course_list_final = unique_courses
+
 
 if len(course_list_final) > len(course_list_exists):
     print("Novos cursos encontrados")
     with open('./public/cursos.json', 'w', encoding='utf-8') as f:
-        json.dump(course_list, f, ensure_ascii=False, indent=4)
+        json.dump(course_list_final, f, ensure_ascii=False, indent=4)
     print("Os cursos foram salvos em cursos.json")
