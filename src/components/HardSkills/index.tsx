@@ -3,6 +3,7 @@ import CardCurriculum from '../CardCurriculum';
 import ModalIcons from '../ModalIcons';
 import {
   SiAmazonaws,
+  SiApacheairflow,
   SiCss3,
   SiFlask,
   SiGit,
@@ -20,7 +21,7 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import styles from './HardSkill.module.scss';
-import { FaDocker, FaFileExcel, FaRust } from 'react-icons/fa';
+import { FaDocker, FaFileExcel, FaJenkins, FaRust } from 'react-icons/fa';
 import { VscTerminalBash } from 'react-icons/vsc';
 import { DiRedis } from 'react-icons/di';
 
@@ -416,6 +417,54 @@ function HardSkills() {
               <br />
               Em breve, estarei compartilhando meus projetos e aprendizados com
               essa linguagem que só cresce.
+            </>
+          }
+        />
+        <ModalIcons
+          icon={<SiApacheairflow color="rgb(18,124,238)" />}
+          title={'Apache Airflow'}
+          since={2024}
+          aboutLanguage={
+            <>
+              Apache Airflow é uma plataforma de código aberto para programar,
+              monitorar e gerenciar fluxos de trabalho.
+              <br />
+              É projetado para gerenciar tarefas complexas em ambientes de dados
+              em larga escala.
+              <br />
+              Os temas que despertaram meu interesse no Airflow incluem
+              automação de pipelines de dados e orquestração de tarefas.
+              <br />
+              Estou explorando o Airflow para aprimorar minha capacidade de
+              gerenciar processos de ETL e orquestração de fluxos de trabalho de
+              dados.
+              <br />
+              Em breve, estarei compartilhando meus projetos e aprendizados com
+              esta poderosa ferramenta.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<FaJenkins color="#f8c17d" />}
+          title={'Jenkins'}
+          since={2024}
+          aboutLanguage={
+            <>
+              Jenkins é uma ferramenta de automação de código aberto que ajuda a
+              implementar integração contínua e entrega contínua (CI/CD).
+              <br />
+              É projetado para facilitar a automação de builds e testes em
+              projetos de software.
+              <br />
+              Os temas que despertaram meu interesse no Jenkins incluem
+              automação de testes e entrega contínua de software.
+              <br />
+              Estou me aprofundando no Jenkins para otimizar meus fluxos de
+              trabalho de desenvolvimento e implementar práticas de DevOps.
+              <br />
+              Em breve, estarei compartilhando meus projetos e aprendizados com
+              esta ferramenta essencial para desenvolvimento ágil.
             </>
           }
         />

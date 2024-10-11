@@ -10,12 +10,10 @@ function ModalIcons(props: iModalIcons) {
 
   return (
     <div className="modalDiv">
-      <button
-        onClick={toggle}
-        className={styles.ModalIcon}
-      >
-        {props.icon}
+      <button onClick={toggle} className={styles.ModalIcon}>
+        <abbr title={props.title}>{props.icon}</abbr>
       </button>
+
       <Modal isOpen={modal} toggle={toggle} centered={true} backdrop={true}>
         <ModalBody className={styles.ModalBackground}>
           <div className={styles.InsideModalIcon}>
