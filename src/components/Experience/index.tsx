@@ -26,7 +26,7 @@ function Experience() {
               <td>2018</td>
             </tr>
             <tr>
-              <td>Self Employed - Developer</td>
+              <td>Software Engineer - Autônomo</td>
               <td>2019</td>
               <td>ATUALMENTE</td>
             </tr>
