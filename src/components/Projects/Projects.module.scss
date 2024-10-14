@@ -44,6 +44,11 @@
     background-image: url("/images/projects/cursor.png");
 }
 
+.imgPM2Dashboard {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/project_pm2.png");
+}
+
 
 .imgDtAnalyse {
     @extend .baseProjectImg;

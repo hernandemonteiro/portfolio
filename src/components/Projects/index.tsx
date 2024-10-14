@@ -82,6 +82,47 @@ function Projects() {
           projectLink="https://hernandemonteiro.github.io/virtual_hand_cursor/"
           codeLink="https://github.com/hernandemonteiro/virtual_hand_cursor"
         />
+
+        <ProjectModal
+          projectCard={
+            <CardProject
+              title={'PM2 Dashboard'}
+              className={styles.imgPM2Dashboard}
+            />
+          }
+          projectTitle="PM2 Dashboard"
+          aboutTheProject={
+            <>
+              O PM2 Dashboard é um dashboard open-source criado para monitorar
+              processos que utilizam o gerenciador de processos PM2. Ele oferece
+              uma interface amigável para visualização e controle dos processos
+              diretamente na máquina onde o projeto está rodando.
+              <br />
+              <br />
+              Neste projeto, fui responsável por todo o desenvolvimento, desde a
+              concepção da interface até a implementação da lógica de captura de
+              logs do PM2, usando comandos do sistema. Além disso, inclui
+              recursos para visualização de informações sobre processos,
+              reinicialização e controle dos mesmos, com foco em facilidade de
+              uso.
+              <br />
+              <br />O projeto também suporta variáveis de ambiente para
+              personalização (como `PASSWORD` e `PORT`), e foi criado com a
+              ideia de ser facilmente hospedado e configurado em servidores
+              rodando PM2.
+            </>
+          }
+          tecnologiesUsed={[
+            'Node.js',
+            'Express',
+            'PM2',
+            'Typescript',
+            'HTML',
+            'CSS',
+          ]}
+          codeLink="https://github.com/hernandemonteiro/node_pm2"
+        />
+
         <ProjectModal
           projectCard={
             <CardProject
