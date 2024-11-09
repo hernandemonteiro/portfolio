@@ -6,7 +6,7 @@ function Experience() {
   return (
     <div className="page-height-full">
       <CardCurriculum className={styles.containerBox} title="Experiências">
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Empresa</th>
@@ -16,18 +16,38 @@ function Experience() {
           </thead>
           <tbody className={styles.tbody}>
             <tr>
-              <td>Bellinati Perez - Estágio</td>
+              <td>Atendente - Bellinati Perez</td>
               <td>2017</td>
               <td>2017</td>
             </tr>
             <tr>
-              <td>Espaço Gourmet</td>
+              <td>Auxiliar - Espaço Gourmet</td>
               <td>2018</td>
               <td>2018</td>
             </tr>
             <tr>
-              <td>Software Engineer - Autônomo</td>
+              <td>Web Developer - PJ - Costa Bebidas</td>
               <td>2019</td>
+              <td>2020</td>
+            </tr>
+            <tr>
+              <td>Software Developer - PJ - Grupo Seu Antônio</td>
+              <td>2019</td>
+              <td>2020</td>
+            </tr>
+            <tr>
+              <td>Web and Mobile Developer - Freelancer - Workana</td>
+              <td>2021</td>
+              <td>2023</td>
+            </tr>
+            <tr>
+              <td>Web Developer - PJ - Acesso Comercial</td>
+              <td>2023</td>
+              <td>ATUALMENTE</td>
+            </tr>
+            <tr>
+              <td>Web Developer - PJ - Petroplus</td>
+              <td>2024</td>
               <td>ATUALMENTE</td>
             </tr>
           </tbody>

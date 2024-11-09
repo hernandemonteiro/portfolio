@@ -1,1 +1,9 @@
 @import "../../styles/base.scss";
+
+.table  {
+    font-size: 1.1rem;
+    margin-bottom: 3%;
+    th, td {
+        padding: 1rem !important;
+    }
+}
