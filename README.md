@@ -14,6 +14,6 @@
 
 <hr>
 
-<p align= "center"><a href="https://hernandemonteiro.vercel.app" target="_blank">GO TO PROJECT!</a></p>
+<p align= "center"><a href="https://hernandemonteiro.com" target="_blank">GO TO PROJECT!</a></p>
 
 <hr>
