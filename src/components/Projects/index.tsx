@@ -153,6 +153,88 @@ function Projects() {
           projectLink="https://secret-word-zeta.vercel.app/"
           codeLink="https://github.com/hernandemonteiro/secret_word"
         />
+        <ProjectModal
+          projectCard={
+            <CardProject
+              title={'Petroplay - Gestão de Concessionárias'}
+              className={styles.imgPetroplay}
+            />
+          }
+          projectTitle="Petroplay - Gestão de Concessionárias"
+          aboutTheProject={
+            <>
+              Plataforma chamada Petroplay, desenvolvida para facilitar a gestão
+              de atendimentos em concessionárias, especialmente na área de
+              manutenção de veículos. O projeto tem como foco otimizar
+              processos, organizar agendamentos e melhorar a experiência do
+              cliente.
+              <br />
+              <br />
+              Neste projeto, participei ativamente no desenvolvimento backend e
+              frontend, criando a lógica de diversas funcionalidades da
+              aplicação. Fui responsável por implementar e fazer manutenção de
+              algumas rotas das APIs e criação de novas features no frontend.
+              Trabalhei também no design da arquitetura backend e a mudança para
+              nova linguagem (C#), garantindo escalabilidade, segurança e
+              eficiência.
+              <br />
+              <br />
+              Este projeto me permitiu aplicar habilidades avançadas em
+              desenvolvimento fullstack e me aprofundar em boas práticas de
+              arquitetura de software.
+            </>
+          }
+          tecnologiesUsed={[
+            'Node.js',
+            'NestJS',
+            'Typescript',
+            'PostgreSQL',
+            'AWS',
+            'NextJS',
+            'C#',
+            '.NET',
+          ]}
+        />
+
+        <ProjectModal
+          projectCard={
+            <CardProject
+              title={'Petroflow - Gestão de Atendimentos'}
+              className={styles.imgPetroflow}
+            />
+          }
+          projectTitle="Petroflow - Gestão de Atendimentos"
+          aboutTheProject={
+            <>
+              Plataforma chamada Petroflow, desenvolvida para facilitar a gestão
+              de atendimentos em concessionárias, especialmente na área de
+              manutenção de veículos. O projeto tem como foco otimizar
+              processos, organizar agendamentos e melhorar a experiência do
+              cliente.
+              <br />
+              <br />
+              Neste projeto, participei ativamente no desenvolvimento completo,
+              sendo responsável desde o levantamento dos dados até a
+              implementação. Trabalhei com desenvolvimento frontend e no design
+              da arquitetura backend, garantindo escalabilidade, segurança e
+              eficiência.
+              <br />
+              <br />
+              Este projeto me permitiu aplicar habilidades avançadas em
+              desenvolvimento fullstack, levantamento de requisitos e me
+              aprofundar em boas práticas de desenvolvimento de software.
+            </>
+          }
+          tecnologiesUsed={[
+            'Node.js',
+            'Express',
+            'Typescript',
+            'MongoDB',
+            'AWS',
+            'S3',
+            'NextJS',
+          ]}
+        />
       </CardCurriculum>
     </div>
   );

@@ -60,3 +60,13 @@
     background-image: url("/images/projects/solutions.png");
 }
 
+.imgPetroplay {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/petroplay.png");
+}
+
+
+.imgPetroflow {
+    @extend .baseProjectImg;
+    background-image: url("/images/projects/petroflow.png");
+}
