@@ -32,6 +32,7 @@
     background-color: rgba(180, 180, 180, 0.3);
     border: none;
     color: #fafafa;
+    z-index: 9999;
     padding: 1%;
     border-radius: 30%;
     @extend .transitionEasyInOut
