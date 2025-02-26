@@ -12,7 +12,7 @@ function Projects() {
         <ProjectModal
           projectCard={
             <CardProject
-              title={'Acesso Comercial'}
+              title={'Acesso Comercial - Blog'}
               className={styles.imgAcesso}
             />
           }

@@ -20,6 +20,7 @@ import {
   SiSequelize,
   SiTypescript,
 } from 'react-icons/si';
+import { TbBrandCSharp } from 'react-icons/tb';
 import styles from './HardSkill.module.scss';
 import { FaDocker, FaFileExcel, FaJenkins, FaRust } from 'react-icons/fa';
 import { VscTerminalBash } from 'react-icons/vsc';
@@ -465,6 +466,26 @@ function HardSkills() {
               <br />
               Em breve, estarei compartilhando meus projetos e aprendizados com
               esta ferramenta essencial para desenvolvimento ágil.
+            </>
+          }
+        />
+
+        <ModalIcons
+          icon={<TbBrandCSharp color="#66528f" />}
+          title={'C#'}
+          since={2025}
+          aboutLanguage={
+            <>
+              C# é uma linguagem de programação moderna, orientada a objetos e
+              desenvolvida pela Microsoft. <br />
+              É amplamente usada para desenvolvimento de aplicações desktop,
+              web, mobile e jogos com Unity. <br />
+              O que me atrai no C# é sua versatilidade, forte tipagem e a
+              robustez da plataforma .NET. <br />
+              Estou explorando C# para criar aplicações escaláveis, eficientes e
+              integradas ao ecossistema Microsoft. <br />
+              Em breve, compartilharei meus projetos e descobertas sobre essa
+              poderosa linguagem de programação.
             </>
           }
         />
