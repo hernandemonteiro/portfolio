@@ -1,12 +1,30 @@
 @import "./base.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --color-bg: #0b0f1a;
+  --color-surface: #111827;
+  --color-surface-strong: #0f172a;
+  --color-accent: #72f5d5;
+  --color-accent-strong: #3ff4ff;
+  --color-text: #e8ecf3;
+  --color-muted: #9aa4b2;
+  --color-outline: rgba(114, 245, 213, 0.25);
+  --shadow-glow: 0 0 24px rgba(114, 245, 213, 0.25);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+}
+
+.modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:"Share Tech Mono", monospace;
-  user-select: none;
 }
 
 html,
@@ -14,40 +32,77 @@ body {
   padding: 0;
   margin: 0;
   background-color: $blackBackground;
-  
+  color: var(--color-text);
+  font-family: $FontSans;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+
   &::-webkit-scrollbar {
     width: 12px;
   }
 
   &::-webkit-scrollbar-track {
-    background: none;
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $grayDefault;
+    background-color: rgba(114, 245, 213, 0.35);
     border-radius: 20px;
     border: 2px solid $blackBackground;
   }
 }
 
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(63, 244, 255, 0.2), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(114, 245, 213, 0.15), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(63, 244, 255, 0.1), transparent 45%);
+  filter: blur(0.5px);
+}
+
+body::after {
+  background: linear-gradient(180deg, rgba(11, 15, 26, 0.2) 0%, rgba(11, 15, 26, 0.85) 60%, rgba(11, 15, 26, 1) 100%);
+}
+
 footer {
   width: 100%;
+  padding: 2rem 0 3rem;
+
   p {
     text-align: center;
-    color: #fafafa;
+    color: var(--color-muted);
+    font-family: $FontMono;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 }
 
 a {
-  width: 100%;
-  color: white;
+  width: auto;
+  color: var(--color-text);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 hr {
-  margin: 2%;
-  color: black;
+  margin: 2% 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(114, 245, 213, 0.5), transparent);
 }
 
 .text-center {
@@ -55,7 +110,11 @@ hr {
 }
 
 .text-white {
-  color: white;
+  color: var(--color-text);
+}
+
+.text-green {
+  color: var(--color-accent);
 }
 
 
@@ -64,6 +123,7 @@ hr {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  padding: 5vh 0;
 }
 
 .page-height-semi-full {
@@ -75,46 +135,60 @@ hr {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 0 8em;
+  padding: 0 6vw;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 table {
   margin-top: 2%;
   width: 100%;
-  color: white;
+  color: var(--color-text);
   text-align: center;
+  border-collapse: collapse;
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 
   td,
   th {
-    user-select: none;
-    padding: 3%;
-    border: 1px solid rgba(250, 250, 250, 0.2);
-    background-color: rgba(250, 250, 250, 0.02);
-    margin: 2%;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(114, 245, 213, 0.1);
+    background-color: transparent;
+    margin: 0;
+  }
+
+  th {
+    font-family: $FontMono;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--color-muted);
   }
 
   td {
-    font-weight: bold;
+    font-weight: 600;
   }
 }
 
 main {
   z-index: $Zindex;
+  width: 100%;
 }
 
 @media (max-width: 800px) {
   .Container {
     width: 100vw;
     justify-content: center;
-    padding: 0 0.1em;
+    padding: 0 1.2rem;
   }
 
   .page-height-full {
-    margin-bottom: 30%;
+    margin-bottom: 10vh;
   }
 
   table {
-    font-size: 0.8em;
+    font-size: 0.85rem;
   }
 }

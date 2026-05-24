@@ -4,35 +4,62 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4em;
-    background: none;
-    border: none;
+    font-size: 3.6rem;
+    background: rgba(17, 24, 39, 0.45);
+    border: 1px solid rgba(114, 245, 213, 0.2);
+    border-radius: 16px;
+    padding: 0.6rem;
     cursor: pointer;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
     @extend .transitionEasyInOut;
-
-   
 }
 .InsideModalIcon {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $blackBackground;
-    font-size: 3em;
+    background: transparent;
+    font-size: 2.2rem;
     text-align: center;
-    padding: 4%;
+    padding: 1.5rem;
+    gap: 1rem;
+
     svg {
-        margin-right: 5%;
+        margin-right: 0;
     }
+
     h2 {
-        color: white;
+        color: var(--color-text);
+        font-family: $FontMono;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
     }
 }
 .ModalBackground {
-    background-color: $blackBackground;
-    color: white;
+    background: linear-gradient(160deg, rgba(17, 24, 39, 0.96), rgba(15, 23, 42, 0.98));
+    color: var(--color-text);
+    border: 1px solid rgba(114, 245, 213, 0.2);
+
     button {
-        background-color: white;
-        color: $blackBackground;
-        font-weight: bold;
+        background: linear-gradient(120deg, rgba(63, 244, 255, 0.9), rgba(114, 245, 213, 0.8));
+        color: #071018;
+        font-weight: 700;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 999px;
+        font-family: $FontMono;
+        letter-spacing: 0.05em;
     }
+}
+
+.ModalMeta {
+    color: var(--color-muted);
+    font-family: $FontMono;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.ModalCopy {
+    margin-top: 1.2rem;
+    padding: 0 0.5rem 0.5rem;
+    color: var(--color-text);
 }

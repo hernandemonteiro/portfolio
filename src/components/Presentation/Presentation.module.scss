@@ -1,76 +1,113 @@
 @import "../../styles/base.scss";
 
-  
-  .presentation {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    z-index: $Zindex;
-    font-weight: bold;
-    text-align: center;
+.presentation {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: $Zindex;
+  font-weight: 600;
+  text-align: center;
+  gap: 1.2rem;
+  position: relative;
+  padding: 6vh 0;
+}
 
-    h1 {
-      color: greenyellow;
-    }
+.heroContent {
+  width: min(760px, 92vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
-    h2 {
-      font-size: 1.5em;
-    }
+.presentation h1 {
+  color: var(--color-accent);
+  font-size: clamp(2.2rem, 4.8vw, 4.4rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: $FontMono;
+  text-shadow: 0 0 22px rgba(114, 245, 213, 0.4);
+}
 
-    h5{
-      margin-bottom: 5%;
-    }
+.presentation h5 {
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  color: var(--color-muted);
+  font-weight: 500;
+}
 
-    p, h5, h1 { 
-      animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
-  }
+.presentation p,
+.presentation h5,
+.presentation h1 {
+  animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
+.presentation p {
+  max-width: 560px;
+  color: var(--color-text);
+}
 
 .SocialLinks {
-    margin: 7% 0%;
-  
-    svg {
-      font-size: 2em;
-      cursor: pointer;
-      margin: 2%;
-      outline: none;
-      color: greenyellow;
-      transition: 50ms;
-      &:hover {
-        transform: scale(1.2);
-        opacity: 0.8;
-      }
-      animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  margin: 2rem 0 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    }
+  a {
+    width: auto;
   }
 
-  .badge {
-    cursor: default !important;
+  svg {
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+    color: var(--color-accent);
+    transition: 160ms ease-in-out;
+    padding: 0.35rem;
+    border-radius: 12px;
+    background: rgba(17, 24, 39, 0.5);
+    border: 1px solid rgba(114, 245, 213, 0.25);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 
-    img {
-      width: 90px;
-      height: 90px;
-      opacity: 0.9;
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      color: var(--color-accent-strong);
+      box-shadow: var(--shadow-glow);
+    }
 
-      &:hover {
-        transform: scale(1.2);
-      }
+    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+}
+
+.badgeRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.badge {
+  cursor: default !important;
+
+  img {
+    width: 90px;
+    height: 90px;
+    opacity: 0.9;
+    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.35));
+
+    &:hover {
+      transform: scale(1.08);
     }
   }
+}
 
-  @media (max-width: 600px) {
-
-    .presentation {
-      p {
-        padding: 5%
-      }
-    }
+@media (max-width: 600px) {
+  .presentation p {
+    padding: 0 0.5rem;
   }
-  
+}
+
 

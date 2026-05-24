@@ -21,10 +21,10 @@ function ModalIcons(props: iModalIcons) {
             <h2>{props.title}</h2>
           </div>
           <div className="text-center">
-            <h5>Conhecimento desde {props.since}</h5>
-            <p style={{ marginTop: '2%', padding: '2%' }}>
-              {props.aboutLanguage}
-            </p>
+            <h5 className={styles.ModalMeta}>
+              Conhecimento desde {props.since}
+            </h5>
+            <p className={styles.ModalCopy}>{props.aboutLanguage}</p>
           </div>
         </ModalBody>
         <ModalFooter className={styles.ModalBackground}>

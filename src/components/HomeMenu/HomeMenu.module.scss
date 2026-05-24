@@ -7,17 +7,32 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 1.2rem;
+    position: relative;
+    z-index: 2;
 
     .link {
-        color: greenyellow;
+        color: var(--color-text);
         text-transform: uppercase;
-        margin: 7%;
-        font-size: 2em;
+        letter-spacing: 0.15em;
+        font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+        padding: 0.6rem 1.2rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-family: $FontMono;
         @extend .transitionEasyInOut;
     }
-    
+
+    .link:hover {
+        border-color: var(--color-outline);
+        background: rgba(114, 245, 213, 0.08);
+        color: var(--color-accent);
+    }
+
     .link_active {
-        text-decoration: underline;
+        color: var(--color-accent-strong);
+        border-color: rgba(63, 244, 255, 0.4);
+        box-shadow: var(--shadow-glow);
     }
 }
 
@@ -26,17 +41,21 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 25px;
-    right: 15px;
-    font-size: 2em;
-    background-color: rgba(180, 180, 180, 0.3);
-    border: none;
-    color: #fafafa;
+    bottom: 28px;
+    right: 24px;
+    font-size: 2rem;
+    background: radial-gradient(circle at top, rgba(63, 244, 255, 0.45), rgba(114, 245, 213, 0.2));
+    border: 1px solid rgba(114, 245, 213, 0.45);
+    color: var(--color-text);
     z-index: 9999;
-    padding: 1%;
-    border-radius: 30%;
-    @extend .transitionEasyInOut
+    padding: 0.8rem;
+    border-radius: 999px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    @extend .transitionEasyInOut;
+}
 
+.menuButton:hover {
+    color: var(--color-accent);
 }
 
 .loading {
@@ -44,5 +63,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--color-text);
+    font-family: $FontMono;
+    letter-spacing: 0.12em;
 }

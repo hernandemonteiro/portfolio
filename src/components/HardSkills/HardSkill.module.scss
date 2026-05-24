@@ -1,7 +1,9 @@
 @import "../../styles/base.scss";
 
 .skillsBox {
-    div {
-        margin: 3%;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.6rem;
+    align-items: center;
+    justify-items: center;
 }

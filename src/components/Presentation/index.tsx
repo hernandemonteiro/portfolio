@@ -7,7 +7,7 @@ import Image from 'next/image';
 function Presentation() {
   return (
     <div className={styles.presentation}>
-      <header className={'text-center'}>
+      <header className={styles.heroContent + ' text-center'}>
         <h1 className="text-green">Hernande Monteiro</h1>
         <h5 className="text-white">
           Software Engineer and Data Scientist Enthusiastic
@@ -44,12 +44,7 @@ function Presentation() {
           </p>
         </div>
       </header>
-      <div
-        style={{
-          display: 'flex',
-          gap: '10px',
-        }}
-      >
+      <div className={styles.badgeRow}>
         <abbr
           title="Selo de introdução a ciência de dados - Cisco"
           className={styles.badge}

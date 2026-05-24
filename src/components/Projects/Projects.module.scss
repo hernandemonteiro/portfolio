@@ -1,12 +1,15 @@
 @import "../../styles/base.scss";
 
 .projectBox {
-    width: 100vw;
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 2%;
-    padding: 3.2%;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0 1.5rem;
+    justify-items: center;
+    justify-content: center;
+    max-width: min(1200px, 96vw);
+    margin: 0 auto;
 }
 
 // images project
@@ -15,7 +18,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    background-position: 100%;
+    background-position: 50% 20%;
     z-index: $Zindex;
 }
 

@@ -1,15 +1,45 @@
+@import "../../styles/base.scss";
+
 .TitleCard {
   text-transform: uppercase;
   text-align: center;
-  user-select: none;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.8rem;
+  position: relative;
+
   h3 {
-    color: greenyellow;
-    font-weight: bold;
-    font-size: 2.5em;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 2.5vw, 2.8rem);
+    letter-spacing: 0.08em;
+    font-family: $FontMono;
+  }
+
+  &::after {
+    content: "";
+    width: min(220px, 60%);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(114, 245, 213, 0.6), transparent);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
   }
 }
 
 .CardCurriculum {
   width: 100%;
-  margin-top: 4%;
+  max-width: min(1200px, 94vw);
+  margin: 4% auto 0;
+  padding: 2.5rem clamp(1.5rem, 3vw, 3rem);
+  border-radius: var(--radius-lg);
+  @extend .glassSurface;
+}
+
+.CardContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }

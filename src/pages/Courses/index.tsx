@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import TemplatePage from '../../components/TemplatePage';
 import Link from 'next/link';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import styles from './Courses.module.scss';
 
 // TODO: refactor and turn into smaller components
 export default function CoursesPage() {
@@ -38,136 +39,55 @@ export default function CoursesPage() {
       description="Experiências de trabalho de Hernande Monteiro, aqui você encontra em quais empresas já trabalhei."
       HomeMenu
     >
-      <div>
-        <h1
-          style={{
-            color: 'white',
-            width: '100%',
-            textAlign: 'center',
-            padding: '20px',
-          }}
-        >
-          Cursos e Formações ({courses.length})
-        </h1>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '20px',
-            width: '70vw',
-          }}
-        >
+      <div className={styles.page}>
+        <h1 className={styles.title}>Cursos e Formações ({courses.length})</h1>
+        <div className={styles.list}>
           {Array.from(
             new Set(courses.map((course) => course.Organization))
           ).map((course, index) => {
+            const organizationCourses = courses.filter(
+              (courseTitle) => courseTitle.Organization == course
+            );
+
             return (
-              <ul
-                style={{
-                  width: '100%',
-                }}
-                key={index}
-              >
-                <li
-                  style={{
-                    width: '100%',
-                  }}
+              <div className={styles.orgItem} key={index}>
+                <button
+                  className={styles.orgHeader}
+                  onClick={() => toggleCourse(course)}
                 >
-                  <hr
-                    style={{
-                      color: 'white',
-                      width: '100%',
-                      height: '1px',
-                      backgroundColor: 'white',
-                      border: 'none',
-                      margin: '10px 0',
-                    }}
-                  />
-                  <div
-                    style={{
-                      display: 'flex',
-                      width: '100%',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      padding: '10px',
-                      cursor: 'pointer',
-                    }}
-                    onClick={() => toggleCourse(course)}
-                  >
-                    <h2
-                      style={{
-                        color: 'white',
-                      }}
-                    >
-                      {course}
-                    </h2>
-                    {courseShow == course ? (
-                      <IoIosArrowUp color="white" />
-                    ) : (
-                      <IoIosArrowDown color="white" />
-                    )}
+                  <div>
+                    <div className={styles.orgName}>{course}</div>
+                    <div className={styles.orgMeta}>
+                      {organizationCourses.length} cursos
+                    </div>
                   </div>
-                  <hr
-                    style={{
-                      color: 'white',
-                      width: '100%',
-                      height: '1px',
-                      backgroundColor: 'white',
-                      border: 'none',
-                      margin: '10px 0',
-                    }}
-                  />
-                  {courseShow === course && (
-                    <ul
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '20px',
-                        width: '70vw',
-                        marginLeft: '-30px',
-                      }}
-                    >
-                      {courses
-                        .filter(
-                          (courseTitle) => courseTitle.Organization == course
-                        )
-                        .map((course, index) => {
-                          return (
-                            <li
-                              style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '10px',
-                                width: '100%',
-                              }}
-                              key={index}
-                            >
-                              <span
-                                style={{
-                                  color: 'white',
-                                }}
-                              >
-                                {index + 1} - {course.title}
-                              </span>
-                              <Link target="__blank" href={course.url}>
-                                Ver Certificado Completo
-                              </Link>
-                              <hr
-                                style={{
-                                  color: 'white',
-                                  width: '100%',
-                                  height: '1px',
-                                  backgroundColor: 'white',
-                                  border: 'none',
-                                  margin: '10px 0',
-                                }}
-                              />
-                            </li>
-                          );
-                        })}
-                    </ul>
-                  )}
-                </li>
-              </ul>
+                  <span className={styles.orgChevron}>
+                    {courseShow == course ? (
+                      <IoIosArrowUp />
+                    ) : (
+                      <IoIosArrowDown />
+                    )}
+                  </span>
+                </button>
+                {courseShow === course && (
+                  <ul className={styles.coursesList}>
+                    {organizationCourses.map((course, index) => (
+                      <li className={styles.courseItem} key={index}>
+                        <span className={styles.courseTitle}>
+                          {index + 1} - {course.title}
+                        </span>
+                        <Link
+                          className={styles.courseLink}
+                          target="__blank"
+                          href={course.url}
+                        >
+                          Ver certificado completo
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             );
           })}
         </div>
